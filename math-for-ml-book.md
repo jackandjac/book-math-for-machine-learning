@@ -1,9 +1,400 @@
+<div class="toc-wrapper">
+<h1 class="toc-title" style="page-break-before:avoid;">Table of Contents</h1>
+<div class="toc">
+<div class="toc-entry toc-h1" style="padding-left:0em"><a href="#chapter-1-why-math-for-ml-and-how-to-read-this-book">Chapter 1: Why Math for ML? — And How to Read This Book</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#10-what-you-need-before-this-book">1.0 What You Need Before This Book</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#11-you-already-know-more-than-you-think">1.1 You Already Know More Than You Think</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#12-why-cant-you-skip-the-math">1.2 Why Can't You Skip the Math?</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#13-the-four-pillars-of-ml-math">1.3 The Four Pillars of ML Math</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#14-how-this-book-is-organized">1.4 How This Book Is Organized</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#15-how-to-read-math-notation">1.5 How to Read Math Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#summation-sum">Summation:</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#product-prod">Product:</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#subscript-and-superscript">Subscript and Superscript</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#common-greek-letters">Common Greek Letters</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#for-all-and-there-exists">"For All" and "There Exists"</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#absolute-value-and-norms">Absolute Value and Norms</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#functions">Functions</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#sets-of-numbers">Sets of Numbers</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#16-a-note-on-proofs">1.6 A Note on Proofs</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#17-setting-up-your-environment">1.7 Setting Up Your Environment</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#18-chapter-summary">1.8 Chapter Summary</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#exercises">Exercises</a></div>
+<div class="toc-entry toc-h1" style="padding-left:0em"><a href="#chapter-2-linear-algebra-i-vectors">Chapter 2: Linear Algebra I — Vectors</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#21-the-concept-what-is-a-vector">2.1 The Concept: What Is a Vector?</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#vectors-as-arrows">Vectors as Arrows</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#notation">Notation</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#22-vector-operations">2.2 Vector Operations</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#221-addition">2.2.1 Addition</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#222-scalar-multiplication">2.2.2 Scalar Multiplication</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#223-element-wise-multiplication-hadamard-product">2.2.3 Element-wise Multiplication (Hadamard Product)</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#23-the-dot-product">2.3 The Dot Product</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#definition">Definition</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#the-geometric-meaning">The Geometric Meaning</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#24-vector-norms-length">2.4 Vector Norms (Length)</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#l2-norm-euclidean-norm">L2 Norm (Euclidean Norm)</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#l1-norm-manhattan-norm">L1 Norm (Manhattan Norm)</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#l-norm">L∞ Norm</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#25-unit-vectors-and-normalization">2.5 Unit Vectors and Normalization</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#26-cosine-similarity">2.6 Cosine Similarity</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#27-linear-combinations-and-span">2.7 Linear Combinations and Span</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#28-linear-independence">2.8 Linear Independence</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#29-engineers-angle-vectors-in-ml-code">2.9 Engineer's Angle: Vectors in ML Code</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#features-as-vectors">Features as Vectors</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#the-problem-with-different-scales">The Problem with Different Scales</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#distance-between-examples">Distance Between Examples</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#210-full-code-example">2.10 Full Code Example</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#211-chapter-summary">2.11 Chapter Summary</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#exercises">Exercises</a></div>
+<div class="toc-entry toc-h1" style="padding-left:0em"><a href="#chapter-3-linear-algebra-ii-matrices">Chapter 3: Linear Algebra II — Matrices</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#31-the-concept-what-is-a-matrix">3.1 The Concept: What Is a Matrix?</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#32-notation-and-anatomy">3.2 Notation and Anatomy</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#special-matrix-shapes">Special Matrix Shapes</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#33-matrix-operations">3.3 Matrix Operations</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#331-transpose">3.3.1 Transpose</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#332-addition-and-subtraction">3.3.2 Addition and Subtraction</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#333-scalar-multiplication">3.3.3 Scalar Multiplication</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#34-matrix-multiplication">3.4 Matrix Multiplication</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#the-rule">The Rule</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#step-by-step-worked-example">Step-by-Step Worked Example</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#matrix-vector-the-core-ml-operation">Matrix × Vector (The Core ML Operation)</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#critical-property-matrix-multiplication-is-not-commutative">Critical Property: Matrix Multiplication is NOT Commutative</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#35-special-matrices">3.5 Special Matrices</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#identity-matrix-i">Identity Matrix</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#diagonal-matrix">Diagonal Matrix</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#symmetric-matrix">Symmetric Matrix</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#orthogonal-matrix">Orthogonal Matrix</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#36-the-matrix-inverse">3.6 The Matrix Inverse</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#when-does-the-inverse-not-exist">When Does the Inverse Not Exist?</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#37-the-determinant">3.7 The Determinant</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#38-matrix-rank">3.8 Matrix Rank</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#39-systems-of-linear-equations">3.9 Systems of Linear Equations</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#310-broadcasting-in-numpy">3.10 Broadcasting in NumPy</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#311-full-code-example">3.11 Full Code Example</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#312-chapter-summary">3.12 Chapter Summary</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#exercises">Exercises</a></div>
+<div class="toc-entry toc-h1" style="padding-left:0em"><a href="#chapter-4-linear-algebra-iii-decompositions">Chapter 4: Linear Algebra III — Decompositions</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#41-the-concept-why-decompose-a-matrix">4.1 The Concept: Why Decompose a Matrix?</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#42-eigenvectors-and-eigenvalues">4.2 Eigenvectors and Eigenvalues</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#the-core-idea">The Core Idea</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#a-visual-intuition">A Visual Intuition</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#finding-eigenvalues">Finding Eigenvalues</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#finding-eigenvectors">Finding Eigenvectors</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#what-eigenvalues-tell-you">What Eigenvalues Tell You</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#43-eigendecomposition">4.3 Eigendecomposition</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#44-singular-value-decomposition-svd">4.4 Singular Value Decomposition (SVD)</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#the-decomposition">The Decomposition</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#geometric-interpretation">Geometric Interpretation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example">Worked Example</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#low-rank-approximation-the-key-application">Low-Rank Approximation: The Key Application</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#45-principal-component-analysis-pca">4.5 Principal Component Analysis (PCA)</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#the-problem-pca-solves">The Problem PCA Solves</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#the-covariance-matrix">The Covariance Matrix</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#pca-step-by-step">PCA Step by Step</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-pca-from-scratch">Worked Example — PCA from Scratch</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#pca-with-sklearn-production-use">PCA with sklearn (Production Use)</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#why-variance-information">Why Variance = Information</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#reading-a-scree-plot">Reading a Scree Plot</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#46-svd-vs-pca-whats-the-connection">4.6 SVD vs PCA: What's the Connection?</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#47-engineers-angle-when-to-use-each-technique">4.7 Engineer's Angle: When to Use Each Technique</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#lora-low-rank-adaptation-in-llms">LoRA: Low-Rank Adaptation in LLMs</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#48-full-code-example">4.8 Full Code Example</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#49-chapter-summary">4.9 Chapter Summary</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#exercises">Exercises</a></div>
+<div class="toc-entry toc-h1" style="padding-left:0em"><a href="#chapter-5-calculus-i-derivatives">Chapter 5: Calculus I — Derivatives</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#51-the-concept-what-is-a-derivative">5.1 The Concept: What Is a Derivative?</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#from-average-rate-of-change-to-instantaneous">From Average Rate of Change to Instantaneous</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#52-notation">5.2 Notation</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#53-basic-derivative-rules">5.3 Basic Derivative Rules</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#rule-1-power-rule">Rule 1: Power Rule</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#rule-2-constant-rule">Rule 2: Constant Rule</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#rule-3-constant-multiple-rule">Rule 3: Constant Multiple Rule</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#rule-4-sumdifference-rule">Rule 4: Sum/Difference Rule</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#rule-5-product-rule">Rule 5: Product Rule</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#rule-6-chain-rule-critical-for-ml">Rule 6: Chain Rule (CRITICAL for ML)</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#54-derivatives-of-common-functions">5.4 Derivatives of Common Functions</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#the-sigmoid-derivative-worked">The Sigmoid Derivative — Worked</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#55-critical-points-minima-maxima-saddle-points">5.5 Critical Points: Minima, Maxima, Saddle Points</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#types-of-critical-points">Types of Critical Points</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#the-second-derivative">The Second Derivative</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example">Worked Example</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#why-saddle-points-matter-in-ml">Why Saddle Points Matter in ML</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#56-the-chain-rule-in-detail-backpropagation-preview">5.6 The Chain Rule in Detail: Backpropagation Preview</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#57-numerical-differentiation-verifying-derivatives">5.7 Numerical Differentiation: Verifying Derivatives</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#58-full-code-example">5.8 Full Code Example</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#59-chapter-summary">5.9 Chapter Summary</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#exercises">Exercises</a></div>
+<div class="toc-entry toc-h1" style="padding-left:0em"><a href="#chapter-6-calculus-ii-gradients-and-optimization">Chapter 6: Calculus II — Gradients and Optimization</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#61-from-derivatives-to-gradients">6.1 From Derivatives to Gradients</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#62-partial-derivatives">6.2 Partial Derivatives</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#63-the-gradient-as-a-direction">6.3 The Gradient as a Direction</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#64-gradient-descent">6.4 Gradient Descent</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#the-update-rule">The Update Rule</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-minimizing-a-1d-function">Worked Example — Minimizing a 1D Function</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#the-learning-rate-effect">The Learning Rate Effect</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#65-variants-of-gradient-descent">6.5 Variants of Gradient Descent</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#batch-gradient-descent">Batch Gradient Descent</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#stochastic-gradient-descent-sgd">Stochastic Gradient Descent (SGD)</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#mini-batch-gradient-descent">Mini-Batch Gradient Descent</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#66-the-loss-landscape">6.6 The Loss Landscape</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#convex-vs-non-convex">Convex vs Non-Convex</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#the-role-of-initialization">The Role of Initialization</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#67-beyond-vanilla-gradient-descent-momentum-and-adam">6.7 Beyond Vanilla Gradient Descent: Momentum and Adam</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#momentum">Momentum</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#adam-adaptive-moment-estimation">Adam (Adaptive Moment Estimation)</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#68-the-jacobian-and-hessian-brief-introduction">6.8 The Jacobian and Hessian (Brief Introduction)</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#jacobian">Jacobian</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#hessian">Hessian</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#69-gradient-descent-for-linear-regression-full-example">6.9 Gradient Descent for Linear Regression — Full Example</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#610-chapter-summary">6.10 Chapter Summary</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#exercises">Exercises</a></div>
+<div class="toc-entry toc-h1" style="padding-left:0em"><a href="#chapter-7-probability-i-foundations">Chapter 7: Probability I — Foundations</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#71-sample-spaces-events-and-outcomes">7.1 Sample Spaces, Events, and Outcomes</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-711-a-fair-die">Worked Example 7.1.1 — A Fair Die</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-712-email-classification">Worked Example 7.1.2 — Email Classification</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#72-probability-axioms-kolmogorov">7.2 Probability Axioms (Kolmogorov)</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#key-consequences-derived-from-the-axioms">Key Consequences Derived from the Axioms</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-721-die-probabilities">Worked Example 7.2.1 — Die Probabilities</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle-axioms-in-softmax">Engineer's Angle: Axioms in Softmax</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#73-conditional-probability">7.3 Conditional Probability</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-731-two-dice">Worked Example 7.3.1 — Two Dice</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-732-email-spam">Worked Example 7.3.2 — Email Spam</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle-generative-vs-discriminative-models">Engineer's Angle: Generative vs. Discriminative Models</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#74-independence-of-events">7.4 Independence of Events</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-741-two-coin-flips">Worked Example 7.4.1 — Two Coin Flips</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-742-dependent-events">Worked Example 7.4.2 — Dependent Events</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle-the-naive-bayes-assumption">Engineer's Angle: The Naive Bayes Assumption</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#75-bayes-theorem">7.5 Bayes' Theorem</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#derivation-heres-why">Derivation — "Here's why"</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-751-medical-test-the-classic">Worked Example 7.5.1 — Medical Test (the Classic)</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-752-naive-bayes-spam-classification">Worked Example 7.5.2 — Naive Bayes Spam Classification</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#76-total-probability-theorem">7.6 Total Probability Theorem</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-761-spam-word-frequency">Worked Example 7.6.1 — Spam Word Frequency</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-762-mixture-model-ml-connection">Worked Example 7.6.2 — Mixture Model (ML Connection)</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#77-random-variables">7.7 Random Variables</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-771-discrete-die-as-a-random-variable">Worked Example 7.7.1 — Discrete: Die as a Random Variable</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-772-discrete-bernoulli-and-binomial-pmfs">Worked Example 7.7.2 — Discrete: Bernoulli and Binomial PMFs</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-773-continuous-uniform-distribution">Worked Example 7.7.3 — Continuous: Uniform Distribution</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#78-expected-value-and-variance">7.8 Expected Value and Variance</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-781-fair-die-ex-and-varx">Worked Example 7.8.1 — Fair Die: E[X] and Var(X)</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-782-expected-loss">Worked Example 7.8.2 — Expected Loss</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-783-continuous-uniform01">Worked Example 7.8.3 — Continuous: Uniform[0,1]</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#79-joint-marginal-and-conditional-distributions">7.9 Joint, Marginal, and Conditional Distributions</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-791-joint-distribution-table">Worked Example 7.9.1 — Joint Distribution Table</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-792-chain-rule-of-probability">Worked Example 7.9.2 — Chain Rule of Probability</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle-px-y-factorizations">Engineer's Angle: P(x, y) Factorizations</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#710-summary-table">7.10 Summary Table</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#711-exercises">7.11 Exercises</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#exercise-71-easy-sample-space-and-events">Exercise 7.1 [Easy] — Sample Space and Events</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#exercise-72-easy-conditional-probability">Exercise 7.2 [Easy] — Conditional Probability</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#exercise-73-medium-bayes-theorem">Exercise 7.3 [Medium] — Bayes' Theorem</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#exercise-74-medium-expected-value-and-variance">Exercise 7.4 [Medium] — Expected Value and Variance</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#exercise-75-hard-joint-distribution-and-naive-bayes">Exercise 7.5 [Hard] — Joint Distribution and Naive Bayes</a></div>
+<div class="toc-entry toc-h1" style="padding-left:0em"><a href="#chapter-8-probability-ii-key-distributions">Chapter 8: Probability II — Key Distributions</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#81-bernoulli-distribution">8.1 Bernoulli Distribution</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-811-a-biased-coin">Worked Example 8.1.1 — A Biased Coin</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-812-binary-classifier-output">Worked Example 8.1.2 — Binary Classifier Output</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#82-binomial-distribution">8.2 Binomial Distribution</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-821-quality-control">Worked Example 8.2.1 — Quality Control</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-822-model-accuracy-on-a-batch">Worked Example 8.2.2 — Model Accuracy on a Batch</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#83-categorical-and-multinomial-distributions">8.3 Categorical and Multinomial Distributions</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-831-three-class-image-classifier">Worked Example 8.3.1 — Three-Class Image Classifier</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-832-rolling-a-die-twice">Worked Example 8.3.2 — Rolling a Die Twice</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#84-uniform-distribution">8.4 Uniform Distribution</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-841-fair-six-sided-die">Worked Example 8.4.1 — Fair Six-Sided Die</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-842-continuous-uniform-on-1-1">Worked Example 8.4.2 — Continuous Uniform on</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#85-gaussian-normal-distribution">8.5 Gaussian (Normal) Distribution</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#851-the-standard-normal-and-z-scores">8.5.1 The Standard Normal and Z-Scores</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#852-the-68-95-997-rule">8.5.2 The 68-95-99.7 Rule</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#853-worked-examples">8.5.3 Worked Examples</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#854-why-does-the-gaussian-appear-everywhere-central-limit-theorem">8.5.4 Why Does the Gaussian Appear Everywhere? (Central Limit Theorem)</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#86-exponential-distribution">8.6 Exponential Distribution</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-861-web-server-requests">Worked Example 8.6.1 — Web Server Requests</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-862-memoryless-property-in-action">Worked Example 8.6.2 — Memoryless Property in Action</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#87-softmax-as-a-distribution">8.7 Softmax as a Distribution</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-871-three-class-logits">Worked Example 8.7.1 — Three-Class Logits</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-872-sigmoid-as-two-class-softmax">Worked Example 8.7.2 — Sigmoid as Two-Class Softmax</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#88-kl-divergence-measuring-distance-between-distributions">8.8 KL Divergence — Measuring Distance Between Distributions</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-881-kl-divergence-and-its-asymmetry">Worked Example 8.8.1 — KL Divergence and Its Asymmetry</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-882-zero-kl-when-p-q">Worked Example 8.8.2 — Zero KL When</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#89-entropy">8.9 Entropy</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-891">Worked Example 8.9.1</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#810-cross-entropy-and-its-connection-to-kl-divergence">8.10 Cross-Entropy and Its Connection to KL Divergence</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-8101-multiclass-cross-entropy-loss">Worked Example 8.10.1 — Multiclass Cross-Entropy Loss</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-8102-binary-cross-entropy">Worked Example 8.10.2 — Binary Cross-Entropy</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#811-summary-table">8.11 Summary Table</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#812-exercises">8.12 Exercises</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#exercise-81-easy-bernoulli-and-binomial">Exercise 8.1 [Easy] — Bernoulli and Binomial</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#exercise-82-easy-gaussian-z-scores">Exercise 8.2 [Easy] — Gaussian Z-Scores</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#exercise-83-medium-exponential-memoryless-property">Exercise 8.3 [Medium] — Exponential Memoryless Property</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#exercise-84-medium-softmax-and-temperature">Exercise 8.4 [Medium] — Softmax and Temperature</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#exercise-85-hard-kl-divergence-and-cross-entropy-in-classifier-training">Exercise 8.5 [Hard] — KL Divergence and Cross-Entropy in Classifier Training</a></div>
+<div class="toc-entry toc-h1" style="padding-left:0em"><a href="#chapter-9-statistics-for-ml">Chapter 9: Statistics for ML</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#91-point-estimation-what-does-it-mean-to-fit-a-model">9.1 Point Estimation — What Does It Mean to Fit a Model?</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#92-maximum-likelihood-estimation-mle">9.2 Maximum Likelihood Estimation (MLE)</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#921-the-log-likelihood-trick-products-become-sums">9.2.1 The Log-Likelihood Trick: Products Become Sums</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#922-deriving-mle-for-the-bernoulli-parameter">9.2.2 Deriving MLE for the Bernoulli Parameter</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-921-mle-for-bernoulli">Worked Example 9.2.1 — MLE for Bernoulli</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#923-deriving-mle-for-the-gaussian-mean">9.2.3 Deriving MLE for the Gaussian Mean</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-922-mle-for-gaussian-mean">Worked Example 9.2.2 — MLE for Gaussian Mean</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#summary-mle-loss-functions">Summary: MLE Loss Functions</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#93-the-normal-equation-closed-form-linear-regression">9.3 The Normal Equation — Closed-Form Linear Regression</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-931-fitting-a-line">Worked Example 9.3.1 — Fitting a Line</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#931-normal-equation-vs-gradient-descent">9.3.1 Normal Equation vs. Gradient Descent</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#94-bias-variance-tradeoff">9.4 Bias-Variance Tradeoff</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-941-two-models-at-a-test-point">Worked Example 9.4.1 — Two Models at a Test Point</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#941-the-tradeoff">9.4.1 The Tradeoff</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#95-overfitting-and-regularization">9.5 Overfitting and Regularization</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#951-l2-regularization-ridge">9.5.1 L2 Regularization (Ridge)</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-951-ridge-vs-ols">Worked Example 9.5.1 — Ridge vs OLS</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#952-l1-regularization-lasso-and-why-it-causes-sparsity">9.5.2 L1 Regularization (Lasso) and Why It Causes Sparsity</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#953-bayesian-interpretation-of-regularization">9.5.3 Bayesian Interpretation of Regularization</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#96-train-validation-test-split">9.6 Train / Validation / Test Split</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#the-three-splits">The Three Splits</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#the-information-hierarchy">The Information Hierarchy</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#practical-guidance-for-engineers">Practical Guidance for Engineers</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#97-cross-validation">9.7 Cross-Validation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#how-k-fold-works">How K-Fold Works</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#when-to-use-cross-validation">When to Use Cross-Validation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-971-5-fold-cross-validation">Worked Example 9.7.1 — 5-Fold Cross-Validation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#98-hypothesis-testing-is-your-model-improvement-real">9.8 Hypothesis Testing — Is Your Model Improvement Real?</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#two-proportion-z-test">Two-Proportion Z-Test</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-981-is-model-b-better">Worked Example 9.8.1 — Is Model B Better?</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#99-confidence-intervals">9.9 Confidence Intervals</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#plain-english-first">Plain English First</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#the-correct-interpretation">The Correct Interpretation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#formal-notation">Formal Notation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-991-accuracy-confidence-interval">Worked Example 9.9.1 — Accuracy Confidence Interval</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#worked-example-992-how-many-examples-do-you-need">Worked Example 9.9.2 — How Many Examples Do You Need?</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#engineers-angle">Engineer's Angle</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#910-connecting-everything-the-full-model-evaluation-pipeline">9.10 Connecting Everything: The Full Model Evaluation Pipeline</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#911-summary-table">9.11 Summary Table</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#912-exercises">9.12 Exercises</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#exercise-91-easy-mle-for-bernoulli">Exercise 9.1 [Easy] — MLE for Bernoulli</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#exercise-92-easy-normal-equation">Exercise 9.2 [Easy] — Normal Equation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#exercise-93-medium-bias-variance-decomposition">Exercise 9.3 [Medium] — Bias-Variance Decomposition</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#exercise-94-medium-regularization-and-the-bayesian-interpretation">Exercise 9.4 [Medium] — Regularization and the Bayesian Interpretation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#exercise-95-hard-full-evaluation-pipeline">Exercise 9.5 [Hard] — Full Evaluation Pipeline</a></div>
+<div class="toc-entry toc-h1" style="padding-left:0em"><a href="#chapter-10-putting-it-all-together-math-inside-a-neural-network">Chapter 10: Putting It All Together — Math Inside a Neural Network</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#100-what-this-chapter-does">10.0 What This Chapter Does</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#101-the-big-picture-how-the-four-pillars-combine">10.1 The Big Picture — How the Four Pillars Combine</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#102-the-forward-pass-computing-a-prediction">10.2 The Forward Pass — Computing a Prediction</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#1021-the-linear-layer-mathbfh-wmathbfx-mathbfb">10.2.1 The Linear Layer:</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#1022-relu-activation-why-we-need-nonlinearity">10.2.2 ReLU Activation — Why We Need Nonlinearity</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#1023-softmax-output-converting-scores-to-probabilities">10.2.3 Softmax Output — Converting Scores to Probabilities</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#1024-complete-forward-pass-summary">10.2.4 Complete Forward Pass Summary</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#103-the-loss-function-cross-entropy-from-mle">10.3 The Loss Function — Cross-Entropy from MLE</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#1031-what-the-loss-measures">10.3.1 What the Loss Measures</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#1032-why-cross-entropy-comes-from-mle">10.3.2 Why Cross-Entropy Comes from MLE</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#104-the-backward-pass-backpropagation">10.4 The Backward Pass — Backpropagation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#1041-the-key-insight-softmax-cross-entropy-collapses-beautifully">10.4.1 The Key Insight: Softmax + Cross-Entropy Collapses Beautifully</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#1042-gradient-with-respect-to-output-layer-weights-w_2">10.4.2 Gradient with Respect to Output Layer Weights</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#1043-gradient-with-respect-to-hidden-layer-weights-w_1">10.4.3 Gradient with Respect to Hidden Layer Weights</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#1044-complete-backpropagation-all-gradients">10.4.4 Complete Backpropagation — All Gradients</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#105-weight-update-gradient-descent-and-adam">10.5 Weight Update — Gradient Descent and Adam</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#1051-vanilla-sgd">10.5.1 Vanilla SGD</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#1052-adam-for-reference">10.5.2 Adam (for reference)</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#106-regularization-in-neural-networks">10.6 Regularization in Neural Networks</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#1061-l2-weight-decay">10.6.1 L2 Weight Decay</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#1062-dropout-regularization-by-forgetting">10.6.2 Dropout — Regularization by Forgetting</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#107-complete-from-scratch-implementation">10.7 Complete From-Scratch Implementation</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#1071-running-the-code-verified-output">10.7.1 Running the Code — Verified Output</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#1072-tracing-the-math-through-one-training-step">10.7.2 Tracing the Math Through One Training Step</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#108-what-you-now-know-the-complete-map">10.8 What You Now Know — The Complete Map</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#109-common-failure-modes-using-the-math-to-debug">10.9 Common Failure Modes — Using the Math to Debug</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#1010-scaling-up-from-xor-to-real-networks">10.10 Scaling Up — From XOR to Real Networks</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#1011-where-to-go-next">10.11 Where to Go Next</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#implement-before-moving-on">Implement Before Moving On</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#core-resources">Core Resources</a></div>
+<div class="toc-entry toc-h3" style="padding-left:2.8em"><a href="#the-next-layer-of-math">The Next Layer of Math</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#1012-chapter-summary">10.12 Chapter Summary</a></div>
+<div class="toc-entry toc-h2" style="padding-left:1.4em"><a href="#exercises">Exercises</a></div>
+</div>
+</div>
+
+<div style="page-break-after:always;"></div>
+
+<a id="chapter-1-why-math-for-ml-and-how-to-read-this-book"></a>
 # Chapter 1: Why Math for ML? — And How to Read This Book
 
 > *"Pure mathematicians prove theorems. Engineers ship products. ML practitioners need just enough math to know which theorem to reach for."*
 
 ---
 
+<a id="10-what-you-need-before-this-book"></a>
 ## 1.0 What You Need Before This Book
 
 This book assumes you are a working software engineer. Specifically:
@@ -24,6 +415,7 @@ If you passed high school math and write code for a living, you're ready.
 
 ---
 
+<a id="11-you-already-know-more-than-you-think"></a>
 ## 1.1 You Already Know More Than You Think
 
 If you've written a loop that processes a list of numbers, you've done linear algebra.  
@@ -36,6 +428,7 @@ This book translates that syntax.
 
 ---
 
+<a id="12-why-cant-you-skip-the-math"></a>
 ## 1.2 Why Can't You Skip the Math?
 
 A fair question. Many ML libraries abstract the math away — you can call `model.fit(X, y)` without knowing what happens inside. So why bother?
@@ -53,6 +446,7 @@ The math gives you *debugging superpowers*. It's the difference between driving 
 
 ---
 
+<a id="13-the-four-pillars-of-ml-math"></a>
 ## 1.3 The Four Pillars of ML Math
 
 Everything in machine learning rests on four mathematical foundations:
@@ -92,6 +486,7 @@ Everything in machine learning rests on four mathematical foundations:
 
 ---
 
+<a id="14-how-this-book-is-organized"></a>
 ## 1.4 How This Book Is Organized
 
 We go in dependency order — each chapter builds on the last:
@@ -118,14 +513,16 @@ Each chapter follows this structure:
 
 ---
 
+<a id="15-how-to-read-math-notation"></a>
 ## 1.5 How to Read Math Notation
 
 Math notation intimidates most programmers at first. Here's a decoder ring.
 
+<a id="summation-sum"></a>
 ### Summation: <span class="math-inline">$\sum$</span>
 
 
-<div class="math-block">$\sum_{i=1}^{n} x_i = x_1 + x_2 + x_3 + \cdots + x_n$</div>
+<div class="math-block">$$\sum_{i=1}^{n} x_i = x_1 + x_2 + x_3 + \cdots + x_n$$</div>
 
 
 **In code:**
@@ -137,10 +534,11 @@ total = sum(x)
 
 Think of <span class="math-inline">$\sum$</span> as a `for` loop that adds things up.
 
+<a id="product-prod"></a>
 ### Product: <span class="math-inline">$\prod$</span>
 
 
-<div class="math-block">$\prod_{i=1}^{n} x_i = x_1 \times x_2 \times x_3 \times \cdots \times x_n$</div>
+<div class="math-block">$$\prod_{i=1}^{n} x_i = x_1 \times x_2 \times x_3 \times \cdots \times x_n$$</div>
 
 
 **In code:**
@@ -151,6 +549,7 @@ product = math.prod(x)
 
 Think of <span class="math-inline">$\prod$</span> as a `for` loop that multiplies things.
 
+<a id="subscript-and-superscript"></a>
 ### Subscript and Superscript
 
 - <span class="math-inline">$x_i$</span> means "the <span class="math-inline">$i$</span>-th element of <span class="math-inline">$x$</span>" — like `x[i]`
@@ -170,6 +569,7 @@ x = 5
 x_squared = x ** 2        # x^2: five squared → 25
 ```
 
+<a id="common-greek-letters"></a>
 ### Common Greek Letters
 
 | Symbol | Name | Common ML use |
@@ -183,25 +583,29 @@ x_squared = x ** 2        # x^2: five squared → 25
 | <span class="math-inline">$\lambda$</span> | lambda | Regularization strength |
 | <span class="math-inline">$\nabla$</span> | nabla | Gradient operator |
 
+<a id="for-all-and-there-exists"></a>
 ### "For All" and "There Exists"
 
 - <span class="math-inline">$\forall x$</span> means "for all x" — like iterating over all elements
 - <span class="math-inline">$\exists x$</span> means "there exists an x" — like a search/find operation
 
+<a id="absolute-value-and-norms"></a>
 ### Absolute Value and Norms
 
 - <span class="math-inline">$|x|$</span> — absolute value of a scalar: <span class="math-inline">$|-3| = 3$</span>
 - <span class="math-inline">$\|v\|$</span> — "norm" or "length" of a vector (more on this in Chapter 2)
 
+<a id="functions"></a>
 ### Functions
 
 
-<div class="math-block">$f: \mathbb{R}^n \rightarrow \mathbb{R}$</div>
+<div class="math-block">$$f: \mathbb{R}^n \rightarrow \mathbb{R}$$</div>
 
 
 Read: "function <span class="math-inline">$f$</span> takes an <span class="math-inline">$n$</span>-dimensional real-valued vector as input and returns a real number."  
 In code: `def f(x: np.ndarray) -> float`
 
+<a id="sets-of-numbers"></a>
 ### Sets of Numbers
 
 | Symbol | Meaning | Example |
@@ -214,6 +618,7 @@ In code: `def f(x: np.ndarray) -> float`
 
 ---
 
+<a id="16-a-note-on-proofs"></a>
 ## 1.6 A Note on Proofs
 
 This book does **not** require you to prove theorems. We'll show *why* things work using intuition and examples, and we'll verify with code. When a proof matters for understanding, we'll walk through it conversationally.
@@ -233,6 +638,7 @@ Honesty about complexity is more useful than false simplicity.
 
 ---
 
+<a id="17-setting-up-your-environment"></a>
 ## 1.7 Setting Up Your Environment
 
 All code examples use Python with NumPy. Here's how to follow along:
@@ -274,6 +680,7 @@ The `@` operator is Python's matrix multiplication operator (PEP 465, Python 3.5
 
 ---
 
+<a id="18-chapter-summary"></a>
 ## 1.8 Chapter Summary
 
 | Topic | Key Takeaway |
@@ -287,6 +694,7 @@ The `@` operator is Python's matrix multiplication operator (PEP 465, Python 3.5
 
 ---
 
+<a id="exercises"></a>
 ## Exercises
 
 **1.1** Look at this expression: <span class="math-inline">$\sum_{i=1}^{5} i^2$</span>. Compute it by hand, then verify with Python.
@@ -321,12 +729,14 @@ Read as: "the model with parameters <span class="math-inline">$\theta$</span> pr
 ---
 
 *Next: Chapter 2 — Vectors. The fundamental unit of everything in ML.*
+<a id="chapter-2-linear-algebra-i-vectors"></a>
 # Chapter 2: Linear Algebra I — Vectors
 
 > *"A vector is just an array with geometry attached."*
 
 ---
 
+<a id="21-the-concept-what-is-a-vector"></a>
 ## 2.1 The Concept: What Is a Vector?
 
 In programming, an array is just a container of numbers:
@@ -339,6 +749,7 @@ A **vector** is the same thing, but with an important extra property: the *posit
 
 This geometric interpretation is what makes vectors powerful for ML. Every data point in your training set is a vector. Every image, sentence embedding, and user feature profile is a vector. The math we do on vectors — dot products, norms, projections — directly translates to ML operations.
 
+<a id="vectors-as-arrows"></a>
 ### Vectors as Arrows
 
 Think of the vector <span class="math-inline">$\mathbf{v} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}$</span> as an arrow:
@@ -358,6 +769,7 @@ Think of the vector <span class="math-inline">$\mathbf{v} = \begin{bmatrix} 3 \\
 
 The vector starts at the origin (0, 0) and points to (3, 4). The length of this arrow is something we'll compute shortly — it's called the **norm**.
 
+<a id="notation"></a>
 ### Notation
 
 We write vectors in bold lowercase: <span class="math-inline">$\mathbf{v}$</span>, <span class="math-inline">$\mathbf{x}$</span>, <span class="math-inline">$\mathbf{w}$</span>.
@@ -365,7 +777,7 @@ We write vectors in bold lowercase: <span class="math-inline">$\mathbf{v}$</span
 A vector in <span class="math-inline">$n$</span>-dimensional space:
 
 
-<div class="math-block">$\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} \in \mathbb{R}^n$</div>
+<div class="math-block">$$\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} \in \mathbb{R}^n$$</div>
 
 
 - <span class="math-inline">$v_1, v_2, \ldots, v_n$</span> are the **components** (or elements)
@@ -388,20 +800,22 @@ v_col = v.reshape(-1, 1)   # shape: (2, 1)
 
 ---
 
+<a id="22-vector-operations"></a>
 ## 2.2 Vector Operations
 
+<a id="221-addition"></a>
 ### 2.2.1 Addition
 
 Adding two vectors: add component by component.
 
 
-<div class="math-block">$\mathbf{u} + \mathbf{v} = \begin{bmatrix} u_1 \\ u_2 \end{bmatrix} + \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} u_1 + v_1 \\ u_2 + v_2 \end{bmatrix}$</div>
+<div class="math-block">$$\mathbf{u} + \mathbf{v} = \begin{bmatrix} u_1 \\ u_2 \end{bmatrix} + \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} u_1 + v_1 \\ u_2 + v_2 \end{bmatrix}$$</div>
 
 
 **Worked example:**
 
 
-<div class="math-block">$\begin{bmatrix} 1 \\ 3 \end{bmatrix} + \begin{bmatrix} 4 \\ 2 \end{bmatrix} = \begin{bmatrix} 1+4 \\ 3+2 \end{bmatrix} = \begin{bmatrix} 5 \\ 5 \end{bmatrix}$</div>
+<div class="math-block">$$\begin{bmatrix} 1 \\ 3 \end{bmatrix} + \begin{bmatrix} 4 \\ 2 \end{bmatrix} = \begin{bmatrix} 1+4 \\ 3+2 \end{bmatrix} = \begin{bmatrix} 5 \\ 5 \end{bmatrix}$$</div>
 
 
 **Geometric meaning:** Vector addition is like following two arrows end-to-end. Go 1 right and 3 up, then go 4 right and 2 up — you end up at (5, 5).
@@ -415,18 +829,19 @@ print(result)  # [5. 5.]
 
 **Rule:** Vectors must have the same dimension to be added. Adding a 3D vector to a 2D vector is a type error — both in math and NumPy.
 
+<a id="222-scalar-multiplication"></a>
 ### 2.2.2 Scalar Multiplication
 
 A **scalar** is a single number (as opposed to a vector). Multiplying a vector by a scalar stretches or shrinks it:
 
 
-<div class="math-block">$c \cdot \mathbf{v} = c \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} c \cdot v_1 \\ c \cdot v_2 \end{bmatrix}$</div>
+<div class="math-block">$$c \cdot \mathbf{v} = c \begin{bmatrix} v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} c \cdot v_1 \\ c \cdot v_2 \end{bmatrix}$$</div>
 
 
 **Worked example:**
 
 
-<div class="math-block">$3 \cdot \begin{bmatrix} 2 \\ 1 \end{bmatrix} = \begin{bmatrix} 6 \\ 3 \end{bmatrix}$</div>
+<div class="math-block">$$3 \cdot \begin{bmatrix} 2 \\ 1 \end{bmatrix} = \begin{bmatrix} 6 \\ 3 \end{bmatrix}$$</div>
 
 
 If <span class="math-inline">$c > 1$</span>: stretches the vector (makes it longer).  
@@ -440,12 +855,13 @@ print(-1 * v)   # [-2. -1.]  ← flipped direction
 print(0.5 * v)  # [1. 0.5]   ← shrunk
 ```
 
+<a id="223-element-wise-multiplication-hadamard-product"></a>
 ### 2.2.3 Element-wise Multiplication (Hadamard Product)
 
 Not to be confused with the dot product. The Hadamard product multiplies corresponding elements:
 
 
-<div class="math-block">$\mathbf{u} \odot \mathbf{v} = \begin{bmatrix} u_1 \cdot v_1 \\ u_2 \cdot v_2 \end{bmatrix}$</div>
+<div class="math-block">$$\mathbf{u} \odot \mathbf{v} = \begin{bmatrix} u_1 \cdot v_1 \\ u_2 \cdot v_2 \end{bmatrix}$$</div>
 
 
 ```python
@@ -458,6 +874,7 @@ This is used in neural network attention mechanisms and gating. The dot product 
 
 ---
 
+<a id="23-the-dot-product"></a>
 ## 2.3 The Dot Product
 
 The dot product is the single most important vector operation in ML. It appears in:
@@ -466,12 +883,13 @@ The dot product is the single most important vector operation in ML. It appears 
 - Cosine similarity for embeddings
 - The attention mechanism in Transformers
 
+<a id="definition"></a>
 ### Definition
 
 Given two vectors <span class="math-inline">$\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$</span>, their dot product is:
 
 
-<div class="math-block">$\mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^{n} u_i v_i = u_1 v_1 + u_2 v_2 + \cdots + u_n v_n$</div>
+<div class="math-block">$$\mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^{n} u_i v_i = u_1 v_1 + u_2 v_2 + \cdots + u_n v_n$$</div>
 
 
 The result is a **scalar** (a single number), not a vector.
@@ -479,11 +897,11 @@ The result is a **scalar** (a single number), not a vector.
 **Worked example — 3D vectors:**
 
 
-<div class="math-block">$\mathbf{u} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \quad \mathbf{v} = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}$</div>
+<div class="math-block">$$\mathbf{u} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \quad \mathbf{v} = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}$$</div>
 
 
 
-<div class="math-block">$\mathbf{u} \cdot \mathbf{v} = (1)(4) + (2)(5) + (3)(6) = 4 + 10 + 18 = 32$</div>
+<div class="math-block">$$\mathbf{u} \cdot \mathbf{v} = (1)(4) + (2)(5) + (3)(6) = 4 + 10 + 18 = 32$$</div>
 
 
 ```python
@@ -496,12 +914,13 @@ print(u @ v)          # 32.0  ← preferred in modern ML code
 print(sum(u * v))     # 32.0  ← explicit version
 ```
 
+<a id="the-geometric-meaning"></a>
 ### The Geometric Meaning
 
 Here's the key insight the formula hides:
 
 
-<div class="math-block">$\mathbf{u} \cdot \mathbf{v} = \|\mathbf{u}\| \|\mathbf{v}\| \cos\theta$</div>
+<div class="math-block">$$\mathbf{u} \cdot \mathbf{v} = \|\mathbf{u}\| \|\mathbf{v}\| \cos\theta$$</div>
 
 
 where <span class="math-inline">$\theta$</span> is the angle between the two vectors.
@@ -518,7 +937,7 @@ This means:
 In a neural network, a neuron computes:
 
 
-<div class="math-block">$\text{output} = \mathbf{w} \cdot \mathbf{x} = \sum_{i} w_i x_i$</div>
+<div class="math-block">$$\text{output} = \mathbf{w} \cdot \mathbf{x} = \sum_{i} w_i x_i$$</div>
 
 
 where <span class="math-inline">$\mathbf{w}$</span> is the weight vector and <span class="math-inline">$\mathbf{x}$</span> is the input feature vector. The dot product measures how much <span class="math-inline">$\mathbf{x}$</span> "aligns with" <span class="math-inline">$\mathbf{w}$</span>. High alignment = high activation. This is literally what it means for a neuron to "fire" strongly.
@@ -528,7 +947,7 @@ where <span class="math-inline">$\mathbf{w}$</span> is the weight vector and <sp
 Let <span class="math-inline">$\mathbf{u} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$</span> (pointing right) and <span class="math-inline">$\mathbf{v} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$</span> (pointing up).
 
 
-<div class="math-block">$\mathbf{u} \cdot \mathbf{v} = (1)(0) + (0)(1) = 0$</div>
+<div class="math-block">$$\mathbf{u} \cdot \mathbf{v} = (1)(0) + (0)(1) = 0$$</div>
 
 
 Zero — they're perpendicular. In ML terms: these two features are completely uncorrelated in the direction they "point."
@@ -551,16 +970,18 @@ print(c @ d)  # -1.0 — negative, opposed
 
 ---
 
+<a id="24-vector-norms-length"></a>
 ## 2.4 Vector Norms (Length)
 
 The **norm** of a vector is its length — the distance from the origin to its tip.
 
+<a id="l2-norm-euclidean-norm"></a>
 ### L2 Norm (Euclidean Norm)
 
 The most common norm. For vector <span class="math-inline">$\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix}$</span>:
 
 
-<div class="math-block">$\|\mathbf{v}\|_2 = \sqrt{v_1^2 + v_2^2 + \cdots + v_n^2} = \sqrt{\sum_{i=1}^n v_i^2}$</div>
+<div class="math-block">$$\|\mathbf{v}\|_2 = \sqrt{v_1^2 + v_2^2 + \cdots + v_n^2} = \sqrt{\sum_{i=1}^n v_i^2}$$</div>
 
 
 This is just the Pythagorean theorem generalized to <span class="math-inline">$n$</span> dimensions.
@@ -568,11 +989,11 @@ This is just the Pythagorean theorem generalized to <span class="math-inline">$n
 **Worked example:**
 
 
-<div class="math-block">$\mathbf{v} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}$</div>
+<div class="math-block">$$\mathbf{v} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}$$</div>
 
 
 
-<div class="math-block">$\|\mathbf{v}\|_2 = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5$</div>
+<div class="math-block">$$\|\mathbf{v}\|_2 = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5$$</div>
 
 
 This is the famous 3-4-5 right triangle. The vector has length 5.
@@ -586,18 +1007,19 @@ print(np.sqrt(v @ v))        # 5.0  ← computed from dot product
 
 Note: <span class="math-inline">$\|\mathbf{v}\|^2 = \mathbf{v} \cdot \mathbf{v}$</span> — the squared norm equals the dot product with itself. This identity appears constantly in ML loss functions.
 
+<a id="l1-norm-manhattan-norm"></a>
 ### L1 Norm (Manhattan Norm)
 
 Sum of absolute values:
 
 
-<div class="math-block">$\|\mathbf{v}\|_1 = |v_1| + |v_2| + \cdots + |v_n| = \sum_{i=1}^n |v_i|$</div>
+<div class="math-block">$$\|\mathbf{v}\|_1 = |v_1| + |v_2| + \cdots + |v_n| = \sum_{i=1}^n |v_i|$$</div>
 
 
 **Worked example:**
 
 
-<div class="math-block">$\mathbf{v} = \begin{bmatrix} 3 \\ -4 \end{bmatrix}, \quad \|\mathbf{v}\|_1 = |3| + |-4| = 3 + 4 = 7$</div>
+<div class="math-block">$$\mathbf{v} = \begin{bmatrix} 3 \\ -4 \end{bmatrix}, \quad \|\mathbf{v}\|_1 = |3| + |-4| = 3 + 4 = 7$$</div>
 
 
 The L1 norm doesn't use the Pythagorean theorem — it's the distance you'd travel if you could only move along grid lines (like city blocks). This is why it's called the "Manhattan" norm.
@@ -616,10 +1038,11 @@ print(np.sum(np.abs(v)))      # 7.0
 | L1 | <span class="math-inline">$\|\mathbf{w}\|_1$</span> | L1 regularization (Lasso); promotes sparsity (many weights → 0) |
 | L∞ | <span class="math-inline">$\|\mathbf{w}\|_\infty$</span> | Max absolute element; used in adversarial robustness (e.g., FGSM attacks) |
 
+<a id="l-norm"></a>
 ### L∞ Norm
 
 
-<div class="math-block">$\|\mathbf{v}\|_\infty = \max_i |v_i|$</div>
+<div class="math-block">$$\|\mathbf{v}\|_\infty = \max_i |v_i|$$</div>
 
 
 ```python
@@ -629,12 +1052,13 @@ print(np.linalg.norm(v, np.inf))  # 4.0 — largest absolute value
 
 ---
 
+<a id="25-unit-vectors-and-normalization"></a>
 ## 2.5 Unit Vectors and Normalization
 
 A **unit vector** has norm exactly 1. You create one by dividing a vector by its norm:
 
 
-<div class="math-block">$\hat{\mathbf{v}} = \frac{\mathbf{v}}{\|\mathbf{v}\|}$</div>
+<div class="math-block">$$\hat{\mathbf{v}} = \frac{\mathbf{v}}{\|\mathbf{v}\|}$$</div>
 
 
 (The hat notation <span class="math-inline">$\hat{}$</span> means "unit vector in direction of.")
@@ -642,11 +1066,11 @@ A **unit vector** has norm exactly 1. You create one by dividing a vector by its
 **Worked example:**
 
 
-<div class="math-block">$\mathbf{v} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}, \quad \|\mathbf{v}\| = 5$</div>
+<div class="math-block">$$\mathbf{v} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}, \quad \|\mathbf{v}\| = 5$$</div>
 
 
 
-<div class="math-block">$\hat{\mathbf{v}} = \frac{1}{5}\begin{bmatrix} 3 \\ 4 \end{bmatrix} = \begin{bmatrix} 0.6 \\ 0.8 \end{bmatrix}$</div>
+<div class="math-block">$$\hat{\mathbf{v}} = \frac{1}{5}\begin{bmatrix} 3 \\ 4 \end{bmatrix} = \begin{bmatrix} 0.6 \\ 0.8 \end{bmatrix}$$</div>
 
 
 Verify: <span class="math-inline">$\|\hat{\mathbf{v}}\| = \sqrt{0.6^2 + 0.8^2} = \sqrt{0.36 + 0.64} = \sqrt{1.0} = 1$</span> ✓
@@ -662,12 +1086,13 @@ print(np.linalg.norm(v_hat))      # 1.0
 
 ---
 
+<a id="26-cosine-similarity"></a>
 ## 2.6 Cosine Similarity
 
 Cosine similarity measures how similar two vectors are *in direction*, regardless of magnitude. It's the backbone of recommendation systems, search, and NLP embeddings.
 
 
-<div class="math-block">$\text{cosine similarity}(\mathbf{u}, \mathbf{v}) = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|}$</div>
+<div class="math-block">$$\text{cosine similarity}(\mathbf{u}, \mathbf{v}) = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|}$$</div>
 
 
 This is exactly <span class="math-inline">$\cos\theta$</span> from the geometric dot product formula. Output range: <span class="math-inline">$[-1, 1]$</span>.
@@ -683,34 +1108,34 @@ This is exactly <span class="math-inline">$\cos\theta$</span> from the geometric
 Imagine words are represented as 3D vectors (in reality, 768 or more dimensions):
 
 
-<div class="math-block">$\text{"king"} = \begin{bmatrix} 0.8 \\ 0.3 \\ 0.1 \end{bmatrix}, \quad \text{"queen"} = \begin{bmatrix} 0.7 \\ 0.4 \\ 0.2 \end{bmatrix}, \quad \text{"apple"} = \begin{bmatrix} 0.1 \\ 0.9 \\ 0.8 \end{bmatrix}$</div>
+<div class="math-block">$$\text{"king"} = \begin{bmatrix} 0.8 \\ 0.3 \\ 0.1 \end{bmatrix}, \quad \text{"queen"} = \begin{bmatrix} 0.7 \\ 0.4 \\ 0.2 \end{bmatrix}, \quad \text{"apple"} = \begin{bmatrix} 0.1 \\ 0.9 \\ 0.8 \end{bmatrix}$$</div>
 
 
 Step 1 — compute dot products:
 
-<div class="math-block">$\text{"king"} \cdot \text{"queen"} = (0.8)(0.7) + (0.3)(0.4) + (0.1)(0.2) = 0.56 + 0.12 + 0.02 = 0.70$</div>
+<div class="math-block">$$\text{"king"} \cdot \text{"queen"} = (0.8)(0.7) + (0.3)(0.4) + (0.1)(0.2) = 0.56 + 0.12 + 0.02 = 0.70$$</div>
 
 
-<div class="math-block">$\text{"king"} \cdot \text{"apple"} = (0.8)(0.1) + (0.3)(0.9) + (0.1)(0.8) = 0.08 + 0.27 + 0.08 = 0.43$</div>
+<div class="math-block">$$\text{"king"} \cdot \text{"apple"} = (0.8)(0.1) + (0.3)(0.9) + (0.1)(0.8) = 0.08 + 0.27 + 0.08 = 0.43$$</div>
 
 
 Step 2 — compute norms:
 
-<div class="math-block">$\|\text{"king"}\| = \sqrt{0.64 + 0.09 + 0.01} = \sqrt{0.74} \approx 0.860$</div>
+<div class="math-block">$$\|\text{"king"}\| = \sqrt{0.64 + 0.09 + 0.01} = \sqrt{0.74} \approx 0.860$$</div>
 
 
-<div class="math-block">$\|\text{"queen"}\| = \sqrt{0.49 + 0.16 + 0.04} = \sqrt{0.69} \approx 0.831$</div>
+<div class="math-block">$$\|\text{"queen"}\| = \sqrt{0.49 + 0.16 + 0.04} = \sqrt{0.69} \approx 0.831$$</div>
 
 
-<div class="math-block">$\|\text{"apple"}\| = \sqrt{0.01 + 0.81 + 0.64} = \sqrt{1.46} \approx 1.208$</div>
+<div class="math-block">$$\|\text{"apple"}\| = \sqrt{0.01 + 0.81 + 0.64} = \sqrt{1.46} \approx 1.208$$</div>
 
 
 Step 3 — compute cosine similarity:
 
-<div class="math-block">$\text{sim}(\text{"king"}, \text{"queen"}) = \frac{0.70}{0.860 \times 0.831} \approx \frac{0.70}{0.715} \approx 0.980$</div>
+<div class="math-block">$$\text{sim}(\text{"king"}, \text{"queen"}) = \frac{0.70}{0.860 \times 0.831} \approx \frac{0.70}{0.715} \approx 0.980$$</div>
 
 
-<div class="math-block">$\text{sim}(\text{"king"}, \text{"apple"}) = \frac{0.43}{0.860 \times 1.208} \approx \frac{0.43}{1.039} \approx 0.414$</div>
+<div class="math-block">$$\text{sim}(\text{"king"}, \text{"apple"}) = \frac{0.43}{0.860 \times 1.208} \approx \frac{0.43}{1.039} \approx 0.414$$</div>
 
 
 "King" and "queen" have similarity 0.979 (nearly identical direction) while "king" and "apple" have 0.414 — far less similar. The model has learned that kings and queens are semantically close.
@@ -729,12 +1154,13 @@ print(f"king  vs apple: {cosine_similarity(king, apple):.4f}")  # ~0.4137
 
 ---
 
+<a id="27-linear-combinations-and-span"></a>
 ## 2.7 Linear Combinations and Span
 
 A **linear combination** of vectors is the result of scaling and adding them:
 
 
-<div class="math-block">$c_1 \mathbf{v}_1 + c_2 \mathbf{v}_2 + \cdots + c_k \mathbf{v}_k$</div>
+<div class="math-block">$$c_1 \mathbf{v}_1 + c_2 \mathbf{v}_2 + \cdots + c_k \mathbf{v}_k$$</div>
 
 
 where <span class="math-inline">$c_1, c_2, \ldots, c_k$</span> are scalars.
@@ -742,7 +1168,7 @@ where <span class="math-inline">$c_1, c_2, \ldots, c_k$</span> are scalars.
 **Example:**
 
 
-<div class="math-block">$3 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + 2 \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 3 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ 2 \end{bmatrix} = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$</div>
+<div class="math-block">$$3 \begin{bmatrix} 1 \\ 0 \end{bmatrix} + 2 \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 3 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ 2 \end{bmatrix} = \begin{bmatrix} 3 \\ 2 \end{bmatrix}$$</div>
 
 
 The **span** of a set of vectors is all possible linear combinations — the set of all points you can reach by choosing any scalars <span class="math-inline">$c_1, c_2, \ldots$</span>
@@ -758,13 +1184,14 @@ The zero vector <span class="math-inline">$\mathbf{0} = \begin{bmatrix}0\\0\end{
 **Why this matters for ML:** Every prediction a linear model makes is a linear combination of the input features:
 
 
-<div class="math-block">$\hat{y} = w_1 x_1 + w_2 x_2 + \cdots + w_n x_n = \mathbf{w} \cdot \mathbf{x}$</div>
+<div class="math-block">$$\hat{y} = w_1 x_1 + w_2 x_2 + \cdots + w_n x_n = \mathbf{w} \cdot \mathbf{x}$$</div>
 
 
 This is literally the dot product — and the entire expressiveness of a linear model is limited to linear combinations of its input features.
 
 ---
 
+<a id="28-linear-independence"></a>
 ## 2.8 Linear Independence
 
 Two vectors are **linearly independent** if neither is a scalar multiple of the other — they point in genuinely different directions and neither can be built from the other.
@@ -772,7 +1199,7 @@ Two vectors are **linearly independent** if neither is a scalar multiple of the 
 **Example — dependent:**
 
 
-<div class="math-block">$\mathbf{v}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \quad \mathbf{v}_2 = \begin{bmatrix} 2 \\ 4 \end{bmatrix} = 2\mathbf{v}_1$</div>
+<div class="math-block">$$\mathbf{v}_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \quad \mathbf{v}_2 = \begin{bmatrix} 2 \\ 4 \end{bmatrix} = 2\mathbf{v}_1$$</div>
 
 
 <span class="math-inline">$\mathbf{v}_2$</span> is just <span class="math-inline">$\mathbf{v}_1$</span> scaled by 2. They're on the same line — linearly **dependent**.
@@ -780,7 +1207,7 @@ Two vectors are **linearly independent** if neither is a scalar multiple of the 
 **Example — independent:**
 
 
-<div class="math-block">$\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \quad \mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$</div>
+<div class="math-block">$$\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \quad \mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$</div>
 
 
 Neither can be built from the other. They're linearly **independent**.
@@ -793,10 +1220,12 @@ Neither can be built from the other. They're linearly **independent**.
 
 ---
 
+<a id="29-engineers-angle-vectors-in-ml-code"></a>
 ## 2.9 Engineer's Angle: Vectors in ML Code
 
 Let's connect everything to real ML workflows.
 
+<a id="features-as-vectors"></a>
 ### Features as Vectors
 
 Every row in your training data is a feature vector:
@@ -818,6 +1247,7 @@ user_0 = X[0]  # np.array([25., 50000., 2.])
 incomes = X[:, 1]  # np.array([50000., 85000., 62000., 120000.])
 ```
 
+<a id="the-problem-with-different-scales"></a>
 ### The Problem with Different Scales
 
 Look at the data above: age is ~25–45, but income is 50,000–120,000. If we compute dot products directly, income will dominate by a factor of thousands.
@@ -842,12 +1272,13 @@ print(X_norm)
 
 This is **feature normalization** — it converts each feature to a unit vector space. The math is straightforward: subtract the mean (shift to center), divide by std (scale to unit variance).
 
+<a id="distance-between-examples"></a>
 ### Distance Between Examples
 
 How "similar" are two users? Use the L2 distance (Euclidean distance):
 
 
-<div class="math-block">$d(\mathbf{x}^{(0)}, \mathbf{x}^{(1)}) = \|\mathbf{x}^{(0)} - \mathbf{x}^{(1)}\|_2$</div>
+<div class="math-block">$$d(\mathbf{x}^{(0)}, \mathbf{x}^{(1)}) = \|\mathbf{x}^{(0)} - \mathbf{x}^{(1)}\|_2$$</div>
 
 
 ```python
@@ -865,6 +1296,7 @@ This is exactly what **k-NN (k-Nearest Neighbors)** does — finds training exam
 
 ---
 
+<a id="210-full-code-example"></a>
 ## 2.10 Full Code Example
 
 ```python
@@ -934,6 +1366,7 @@ print(f"ReLU(z) = {activation:.4f}")  # 0.64 (positive, so unchanged)
 
 ---
 
+<a id="211-chapter-summary"></a>
 ## 2.11 Chapter Summary
 
 | Concept | Formula | Code |
@@ -953,12 +1386,13 @@ print(f"ReLU(z) = {activation:.4f}")  # 0.64 (positive, so unchanged)
 
 ---
 
+<a id="exercises-1"></a>
 ## Exercises
 
 **2.1** Compute <span class="math-inline">$\mathbf{u} \cdot \mathbf{v}$</span> by hand, then in Python:
 
 
-<div class="math-block">$\mathbf{u} = \begin{bmatrix} 2 \\ -1 \\ 3 \end{bmatrix}, \quad \mathbf{v} = \begin{bmatrix} 1 \\ 4 \\ 2 \end{bmatrix}$</div>
+<div class="math-block">$$\mathbf{u} = \begin{bmatrix} 2 \\ -1 \\ 3 \end{bmatrix}, \quad \mathbf{v} = \begin{bmatrix} 1 \\ 4 \\ 2 \end{bmatrix}$$</div>
 
 
 *Solution:* <span class="math-inline">$(2)(1) + (-1)(4) + (3)(2) = 2 - 4 + 6 = 4$</span>
@@ -990,10 +1424,10 @@ print(np.linalg.norm(w))  # 13.0
 
 *Solution:*
 
-<div class="math-block">$\mathbf{v} \cdot \mathbf{v} = \sum_{i=1}^n v_i \cdot v_i = \sum_{i=1}^n v_i^2$</div>
+<div class="math-block">$$\mathbf{v} \cdot \mathbf{v} = \sum_{i=1}^n v_i \cdot v_i = \sum_{i=1}^n v_i^2$$</div>
 
 
-<div class="math-block">$\|\mathbf{v}\|^2 = \left(\sqrt{\sum_{i=1}^n v_i^2}\right)^2 = \sum_{i=1}^n v_i^2$</div>
+<div class="math-block">$$\|\mathbf{v}\|^2 = \left(\sqrt{\sum_{i=1}^n v_i^2}\right)^2 = \sum_{i=1}^n v_i^2$$</div>
 
 
 They're equal. <span class="math-inline">$\square$</span>
@@ -1001,12 +1435,14 @@ They're equal. <span class="math-inline">$\square$</span>
 ---
 
 *Next: Chapter 3 — Matrices. Vectors in groups, and the operations that transform them.*
+<a id="chapter-3-linear-algebra-ii-matrices"></a>
 # Chapter 3: Linear Algebra II — Matrices
 
 > *"A matrix is a function in disguise — it transforms one vector into another."*
 
 ---
 
+<a id="31-the-concept-what-is-a-matrix"></a>
 ## 3.1 The Concept: What Is a Matrix?
 
 In Chapter 2, a vector was a 1D array of numbers. A **matrix** is a 2D array — a grid of numbers organized into rows and columns.
@@ -1024,22 +1460,23 @@ But here's the deeper insight: **a matrix is a transformation**. When you multip
 Think of a matrix as a function: it takes a vector as input and produces a new vector as output.
 
 
-<div class="math-block">$A: \mathbb{R}^n \rightarrow \mathbb{R}^m$</div>
+<div class="math-block">$$A: \mathbb{R}^n \rightarrow \mathbb{R}^m$$</div>
 
 
 ---
 
+<a id="32-notation-and-anatomy"></a>
 ## 3.2 Notation and Anatomy
 
 An <span class="math-inline">$m \times n$</span> matrix has <span class="math-inline">$m$</span> rows and <span class="math-inline">$n$</span> columns:
 
 
-<div class="math-block">$A = \begin{bmatrix}
+<div class="math-block">$$A = \begin{bmatrix}
 a_{11} & a_{12} & \cdots & a_{1n} \\
 a_{21} & a_{22} & \cdots & a_{2n} \\
 \vdots & \vdots & \ddots & \vdots \\
 a_{m1} & a_{m2} & \cdots & a_{mn}
-\end{bmatrix} \in \mathbb{R}^{m \times n}$</div>
+\end{bmatrix} \in \mathbb{R}^{m \times n}$$</div>
 
 
 - <span class="math-inline">$a_{ij}$</span> means row <span class="math-inline">$i$</span>, column <span class="math-inline">$j$</span> — like `A[i][j]` (1-indexed in math, 0-indexed in Python)
@@ -1049,7 +1486,7 @@ a_{m1} & a_{m2} & \cdots & a_{mn}
 **Concrete example:**
 
 
-<div class="math-block">$A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix} \in \mathbb{R}^{2 \times 3}$</div>
+<div class="math-block">$$A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix} \in \mathbb{R}^{2 \times 3}$$</div>
 
 
 - <span class="math-inline">$a_{12} = 2$</span> (row 1, col 2)
@@ -1065,6 +1502,7 @@ print(A[0, 1])    # 2    ← a_12 (0-indexed)
 print(A[1, 0])    # 4    ← a_21 (0-indexed)
 ```
 
+<a id="special-matrix-shapes"></a>
 ### Special Matrix Shapes
 
 | Name | Shape | Description |
@@ -1076,14 +1514,16 @@ print(A[1, 0])    # 4    ← a_21 (0-indexed)
 
 ---
 
+<a id="33-matrix-operations"></a>
 ## 3.3 Matrix Operations
 
+<a id="331-transpose"></a>
 ### 3.3.1 Transpose
 
 The **transpose** <span class="math-inline">$A^T$</span> flips a matrix across its diagonal — rows become columns, columns become rows:
 
 
-<div class="math-block">$\text{If } A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix} \text{ then } A^T = \begin{bmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{bmatrix}$</div>
+<div class="math-block">$$\text{If } A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix} \text{ then } A^T = \begin{bmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{bmatrix}$$</div>
 
 
 If <span class="math-inline">$A \in \mathbb{R}^{m \times n}$</span>, then <span class="math-inline">$A^T \in \mathbb{R}^{n \times m}$</span>.
@@ -1102,18 +1542,19 @@ print(A.T.shape)  # (3, 2)
 
 **Why it matters in ML:** The relationship between row and column vectors uses transpose. When computing <span class="math-inline">$\mathbf{u} \cdot \mathbf{v}$</span> as a matrix product, it's written <span class="math-inline">$\mathbf{u}^T \mathbf{v}$</span> (row vector times column vector = scalar).
 
+<a id="332-addition-and-subtraction"></a>
 ### 3.3.2 Addition and Subtraction
 
 Add element-by-element. Both matrices must have **identical** shape.
 
 
-<div class="math-block">$A + B = \begin{bmatrix} a_{11}+b_{11} & a_{12}+b_{12} \\ a_{21}+b_{21} & a_{22}+b_{22} \end{bmatrix}$</div>
+<div class="math-block">$$A + B = \begin{bmatrix} a_{11}+b_{11} & a_{12}+b_{12} \\ a_{21}+b_{21} & a_{22}+b_{22} \end{bmatrix}$$</div>
 
 
 **Worked example:**
 
 
-<div class="math-block">$\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} + \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} = \begin{bmatrix} 6 & 8 \\ 10 & 12 \end{bmatrix}$</div>
+<div class="math-block">$$\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} + \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} = \begin{bmatrix} 6 & 8 \\ 10 & 12 \end{bmatrix}$$</div>
 
 
 ```python
@@ -1124,12 +1565,13 @@ print(A + B)
 #  [10 12]]
 ```
 
+<a id="333-scalar-multiplication"></a>
 ### 3.3.3 Scalar Multiplication
 
 Multiply every element by the scalar:
 
 
-<div class="math-block">$3 \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} = \begin{bmatrix} 3 & 6 \\ 9 & 12 \end{bmatrix}$</div>
+<div class="math-block">$$3 \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} = \begin{bmatrix} 3 & 6 \\ 9 & 12 \end{bmatrix}$$</div>
 
 
 ```python
@@ -1141,16 +1583,18 @@ print(3 * A)
 
 ---
 
+<a id="34-matrix-multiplication"></a>
 ## 3.4 Matrix Multiplication
 
 This is the most important operation in all of ML. **Every neural network forward pass is a sequence of matrix multiplications.**
 
+<a id="the-rule"></a>
 ### The Rule
 
 To multiply <span class="math-inline">$A \in \mathbb{R}^{m \times k}$</span> by <span class="math-inline">$B \in \mathbb{R}^{k \times n}$</span>, the **inner dimensions must match**. The result is <span class="math-inline">$C \in \mathbb{R}^{m \times n}$</span>.
 
 
-<div class="math-block">$A_{m \times k} \times B_{k \times n} = C_{m \times n}$</div>
+<div class="math-block">$$A_{m \times k} \times B_{k \times n} = C_{m \times n}$$</div>
 
 
 **Memory trick:**
@@ -1163,32 +1607,33 @@ To multiply <span class="math-inline">$A \in \mathbb{R}^{m \times k}$</span> by 
 Each element <span class="math-inline">$c_{ij}$</span> of <span class="math-inline">$C$</span> is the dot product of row <span class="math-inline">$i$</span> of <span class="math-inline">$A$</span> with column <span class="math-inline">$j$</span> of <span class="math-inline">$B$</span>:
 
 
-<div class="math-block">$c_{ij} = \sum_{l=1}^{k} a_{il} \cdot b_{lj}$</div>
+<div class="math-block">$$c_{ij} = \sum_{l=1}^{k} a_{il} \cdot b_{lj}$$</div>
 
 
+<a id="step-by-step-worked-example"></a>
 ### Step-by-Step Worked Example
 
 
-<div class="math-block">$A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, \quad B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}$</div>
+<div class="math-block">$$A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, \quad B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}$$</div>
 
 
 Both are <span class="math-inline">$2 \times 2$</span>, so <span class="math-inline">$C = AB$</span> is also <span class="math-inline">$2 \times 2$</span>:
 
 
-<div class="math-block">$c_{11} = \text{row 1 of } A \cdot \text{col 1 of } B = (1)(5) + (2)(7) = 5 + 14 = 19$</div>
+<div class="math-block">$$c_{11} = \text{row 1 of } A \cdot \text{col 1 of } B = (1)(5) + (2)(7) = 5 + 14 = 19$$</div>
 
 
-<div class="math-block">$c_{12} = \text{row 1 of } A \cdot \text{col 2 of } B = (1)(6) + (2)(8) = 6 + 16 = 22$</div>
+<div class="math-block">$$c_{12} = \text{row 1 of } A \cdot \text{col 2 of } B = (1)(6) + (2)(8) = 6 + 16 = 22$$</div>
 
 
-<div class="math-block">$c_{21} = \text{row 2 of } A \cdot \text{col 1 of } B = (3)(5) + (4)(7) = 15 + 28 = 43$</div>
+<div class="math-block">$$c_{21} = \text{row 2 of } A \cdot \text{col 1 of } B = (3)(5) + (4)(7) = 15 + 28 = 43$$</div>
 
 
-<div class="math-block">$c_{22} = \text{row 2 of } A \cdot \text{col 2 of } B = (3)(6) + (4)(8) = 18 + 32 = 50$</div>
+<div class="math-block">$$c_{22} = \text{row 2 of } A \cdot \text{col 2 of } B = (3)(6) + (4)(8) = 18 + 32 = 50$$</div>
 
 
 
-<div class="math-block">$C = AB = \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}$</div>
+<div class="math-block">$$C = AB = \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}$$</div>
 
 
 ```python
@@ -1200,12 +1645,13 @@ print(C)
 #  [43 50]]
 ```
 
+<a id="matrix-vector-the-core-ml-operation"></a>
 ### Matrix × Vector (The Core ML Operation)
 
 When a matrix multiplies a vector, the output is a new vector:
 
 
-<div class="math-block">$A\mathbf{x} = \begin{bmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 1x_1 + 2x_2 \\ 3x_1 + 4x_2 \\ 5x_1 + 6x_2 \end{bmatrix}$</div>
+<div class="math-block">$$A\mathbf{x} = \begin{bmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 1x_1 + 2x_2 \\ 3x_1 + 4x_2 \\ 5x_1 + 6x_2 \end{bmatrix}$$</div>
 
 
 Each output element is a dot product of one row with <span class="math-inline">$\mathbf{x}$</span>.
@@ -1213,11 +1659,11 @@ Each output element is a dot product of one row with <span class="math-inline">$
 **Worked example:**
 
 
-<div class="math-block">$A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, \quad \mathbf{x} = \begin{bmatrix} 5 \\ 6 \end{bmatrix}$</div>
+<div class="math-block">$$A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, \quad \mathbf{x} = \begin{bmatrix} 5 \\ 6 \end{bmatrix}$$</div>
 
 
 
-<div class="math-block">$A\mathbf{x} = \begin{bmatrix} (1)(5)+(2)(6) \\ (3)(5)+(4)(6) \end{bmatrix} = \begin{bmatrix} 17 \\ 39 \end{bmatrix}$</div>
+<div class="math-block">$$A\mathbf{x} = \begin{bmatrix} (1)(5)+(2)(6) \\ (3)(5)+(4)(6) \end{bmatrix} = \begin{bmatrix} 17 \\ 39 \end{bmatrix}$$</div>
 
 
 ```python
@@ -1229,7 +1675,7 @@ print(A @ x)  # [17. 39.]
 **Neural network connection:** A fully connected layer computes:
 
 
-<div class="math-block">$\mathbf{h} = W\mathbf{x} + \mathbf{b}$</div>
+<div class="math-block">$$\mathbf{h} = W\mathbf{x} + \mathbf{b}$$</div>
 
 
 where:
@@ -1240,16 +1686,17 @@ where:
 
 A 3-layer network is just: <span class="math-inline">$\hat{y} = W_3(\text{activation}(W_2(\text{activation}(W_1\mathbf{x} + \mathbf{b}_1)) + \mathbf{b}_2)) + \mathbf{b}_3$</span>
 
+<a id="critical-property-matrix-multiplication-is-not-commutative"></a>
 ### Critical Property: Matrix Multiplication is NOT Commutative
 
 For scalars: <span class="math-inline">$3 \times 5 = 5 \times 3$</span>. For matrices: **<span class="math-inline">$AB \neq BA$</span> in general.**
 
 
-<div class="math-block">$\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} 2 & 1 \\ 4 & 3 \end{bmatrix}$</div>
+<div class="math-block">$$\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} 2 & 1 \\ 4 & 3 \end{bmatrix}$$</div>
 
 
 
-<div class="math-block">$\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} = \begin{bmatrix} 3 & 4 \\ 1 & 2 \end{bmatrix}$</div>
+<div class="math-block">$$\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} = \begin{bmatrix} 3 & 4 \\ 1 & 2 \end{bmatrix}$$</div>
 
 
 These are different!
@@ -1268,14 +1715,16 @@ Both lines run without errors. Both produce output of the same shape. But you've
 
 ---
 
+<a id="35-special-matrices"></a>
 ## 3.5 Special Matrices
 
+<a id="identity-matrix-i"></a>
 ### Identity Matrix <span class="math-inline">$I$</span>
 
 The identity matrix has 1s on the diagonal and 0s everywhere else:
 
 
-<div class="math-block">$I_3 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$</div>
+<div class="math-block">$$I_3 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$</div>
 
 
 Property: <span class="math-inline">$AI = IA = A$</span> for any compatible matrix <span class="math-inline">$A$</span>. It's the matrix equivalent of multiplying by 1.
@@ -1287,12 +1736,13 @@ I2 = np.eye(2)
 print(A @ I2)  # [[1. 2.] [3. 4.]] — unchanged
 ```
 
+<a id="diagonal-matrix"></a>
 ### Diagonal Matrix
 
 Only the diagonal elements are non-zero:
 
 
-<div class="math-block">$D = \begin{bmatrix} d_1 & 0 & 0 \\ 0 & d_2 & 0 \\ 0 & 0 & d_3 \end{bmatrix}$</div>
+<div class="math-block">$$D = \begin{bmatrix} d_1 & 0 & 0 \\ 0 & d_2 & 0 \\ 0 & 0 & d_3 \end{bmatrix}$$</div>
 
 
 Multiplying by a diagonal matrix scales each dimension independently.
@@ -1303,12 +1753,13 @@ x = np.array([1.0, 1.0, 1.0])
 print(D @ x)  # [2. 3. 5.] — each dim scaled separately
 ```
 
+<a id="symmetric-matrix"></a>
 ### Symmetric Matrix
 
 <span class="math-inline">$A = A^T$</span> — the matrix equals its own transpose.
 
 
-<div class="math-block">$A = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 5 & 4 \\ 3 & 4 & 6 \end{bmatrix}$</div>
+<div class="math-block">$$A = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 5 & 4 \\ 3 & 4 & 6 \end{bmatrix}$$</div>
 
 
 **Why it matters:** Covariance matrices (used in PCA, Gaussian distributions) are always symmetric. This is a critical structural property that simplifies decomposition (Chapter 4).
@@ -1318,6 +1769,7 @@ A = np.array([[1, 2, 3], [2, 5, 4], [3, 4, 6]])
 print(np.allclose(A, A.T))  # True — it's symmetric
 ```
 
+<a id="orthogonal-matrix"></a>
 ### Orthogonal Matrix
 
 A square matrix <span class="math-inline">$Q$</span> where <span class="math-inline">$Q^T Q = I$</span> — the columns are all unit vectors and are mutually perpendicular.
@@ -1328,12 +1780,13 @@ This property is used extensively in eigendecomposition and SVD (Chapter 4).
 
 ---
 
+<a id="36-the-matrix-inverse"></a>
 ## 3.6 The Matrix Inverse
 
 For a square matrix <span class="math-inline">$A$</span>, its inverse <span class="math-inline">$A^{-1}$</span> satisfies:
 
 
-<div class="math-block">$AA^{-1} = A^{-1}A = I$</div>
+<div class="math-block">$$AA^{-1} = A^{-1}A = I$$</div>
 
 
 Think of it like the reciprocal: <span class="math-inline">$3 \times \frac{1}{3} = 1$</span>. The inverse "undoes" the transformation.
@@ -1343,7 +1796,7 @@ Think of it like the reciprocal: <span class="math-inline">$3 \times \frac{1}{3}
 For <span class="math-inline">$A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$</span>, the inverse is:
 
 
-<div class="math-block">$A^{-1} = \frac{1}{ad - bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$</div>
+<div class="math-block">$$A^{-1} = \frac{1}{ad - bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$$</div>
 
 
 The quantity <span class="math-inline">$ad - bc$</span> is called the **determinant**.
@@ -1351,20 +1804,20 @@ The quantity <span class="math-inline">$ad - bc$</span> is called the **determin
 > **Trust this result:** This formula is derived by solving <span class="math-inline">$AA^{-1} = I$</span> as a system of four equations. For <span class="math-inline">$3\times3$</span> and larger matrices, the formula becomes far more complex (Cramer's rule, cofactor expansion). In practice, you never compute inverses by hand for matrices larger than <span class="math-inline">$2\times2$</span> — that's what `np.linalg.inv` is for. **Do not try to generalize the 2×2 formula to 3×3** — it doesn't extend directly.
 
 
-<div class="math-block">$A = \begin{bmatrix} 2 & 1 \\ 5 & 3 \end{bmatrix}$</div>
+<div class="math-block">$$A = \begin{bmatrix} 2 & 1 \\ 5 & 3 \end{bmatrix}$$</div>
 
 
 Step 1 — determinant: <span class="math-inline">$\det(A) = (2)(3) - (1)(5) = 6 - 5 = 1$</span>
 
 Step 2 — inverse:
 
-<div class="math-block">$A^{-1} = \frac{1}{1} \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix} = \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix}$</div>
+<div class="math-block">$$A^{-1} = \frac{1}{1} \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix} = \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix}$$</div>
 
 
 Step 3 — verify: <span class="math-inline">$AA^{-1}$</span> should equal <span class="math-inline">$I$</span>:
 
 
-<div class="math-block">$\begin{bmatrix} 2 & 1 \\ 5 & 3 \end{bmatrix} \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix} = \begin{bmatrix} (6-5) & (-2+2) \\ (15-15) & (-5+6) \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I \checkmark$</div>
+<div class="math-block">$$\begin{bmatrix} 2 & 1 \\ 5 & 3 \end{bmatrix} \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix} = \begin{bmatrix} (6-5) & (-2+2) \\ (15-15) & (-5+6) \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I \checkmark$$</div>
 
 
 ```python
@@ -1379,12 +1832,13 @@ print(A @ A_inv)
 print(np.allclose(A @ A_inv, np.eye(2)))  # True
 ```
 
+<a id="when-does-the-inverse-not-exist"></a>
 ### When Does the Inverse Not Exist?
 
 When the determinant is zero: <span class="math-inline">$\det(A) = 0$</span>. This means the matrix "squashes" space — it collapses a dimension, so you can't undo it.
 
 
-<div class="math-block">$B = \begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}, \quad \det(B) = (1)(4) - (2)(2) = 4 - 4 = 0$</div>
+<div class="math-block">$$B = \begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}, \quad \det(B) = (1)(4) - (2)(2) = 4 - 4 = 0$$</div>
 
 
 <span class="math-inline">$B$</span> has no inverse. This matrix maps all of <span class="math-inline">$\mathbb{R}^2$</span> onto a single line, losing all information in one direction.
@@ -1399,12 +1853,13 @@ In ML, a **singular** (non-invertible) matrix is often a sign of **multicollinea
 
 ---
 
+<a id="37-the-determinant"></a>
 ## 3.7 The Determinant
 
 The **determinant** of a square matrix is a single number that encodes whether the matrix is invertible and how it scales areas/volumes.
 
 
-<div class="math-block">$\det\left(\begin{bmatrix} a & b \\ c & d \end{bmatrix}\right) = ad - bc$</div>
+<div class="math-block">$$\det\left(\begin{bmatrix} a & b \\ c & d \end{bmatrix}\right) = ad - bc$$</div>
 
 
 **Geometric interpretation:** The determinant is the scale factor of the area transformation.
@@ -1423,6 +1878,7 @@ print(np.linalg.det(A))  # 6.0 — areas scaled by 6x
 
 ---
 
+<a id="38-matrix-rank"></a>
 ## 3.8 Matrix Rank
 
 The **rank** of a matrix is the number of linearly independent rows (or columns) — equivalently, the "true" dimensionality of the information the matrix contains.
@@ -1435,7 +1891,7 @@ For <span class="math-inline">$A \in \mathbb{R}^{m \times n}$</span>:
 **Example:**
 
 
-<div class="math-block">$A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 5 & 7 & 9 \end{bmatrix}$</div>
+<div class="math-block">$$A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 5 & 7 & 9 \end{bmatrix}$$</div>
 
 
 Row 3 = Row 1 + Row 2: <span class="math-inline">$[5, 7, 9] = [1,2,3] + [4,5,6]$</span>. So rank = 2, not 3.
@@ -1452,27 +1908,28 @@ print(np.linalg.matrix_rank(A))  # 2
 
 ---
 
+<a id="39-systems-of-linear-equations"></a>
 ## 3.9 Systems of Linear Equations
 
 A system of linear equations can always be written as <span class="math-inline">$A\mathbf{x} = \mathbf{b}$</span>:
 
 **System:**
 
-<div class="math-block">$2x + y = 5$</div>
+<div class="math-block">$$2x + y = 5$$</div>
 
 
-<div class="math-block">$5x + 3y = 13$</div>
+<div class="math-block">$$5x + 3y = 13$$</div>
 
 
 **Matrix form:**
 
-<div class="math-block">$\underbrace{\begin{bmatrix} 2 & 1 \\ 5 & 3 \end{bmatrix}}_{A} \underbrace{\begin{bmatrix} x \\ y \end{bmatrix}}_{\mathbf{x}} = \underbrace{\begin{bmatrix} 5 \\ 13 \end{bmatrix}}_{\mathbf{b}}$</div>
+<div class="math-block">$$\underbrace{\begin{bmatrix} 2 & 1 \\ 5 & 3 \end{bmatrix}}_{A} \underbrace{\begin{bmatrix} x \\ y \end{bmatrix}}_{\mathbf{x}} = \underbrace{\begin{bmatrix} 5 \\ 13 \end{bmatrix}}_{\mathbf{b}}$$</div>
 
 
 **Solution:** If <span class="math-inline">$A$</span> is invertible: <span class="math-inline">$\mathbf{x} = A^{-1}\mathbf{b}$</span>
 
 
-<div class="math-block">$\mathbf{x} = \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix} \begin{bmatrix} 5 \\ 13 \end{bmatrix} = \begin{bmatrix} (15-13) \\ (-25+26) \end{bmatrix} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}$</div>
+<div class="math-block">$$\mathbf{x} = \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix} \begin{bmatrix} 5 \\ 13 \end{bmatrix} = \begin{bmatrix} (15-13) \\ (-25+26) \end{bmatrix} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}$$</div>
 
 
 Verify: <span class="math-inline">$x=2, y=1$</span>: <span class="math-inline">$2(2)+1=5$</span> ✓ and <span class="math-inline">$5(2)+3(1)=13$</span> ✓
@@ -1495,13 +1952,14 @@ print(x)  # [2. 1.]
 **Connection to ML:** Linear regression solves exactly this — find weights <span class="math-inline">$\mathbf{w}$</span> such that <span class="math-inline">$X\mathbf{w} \approx \mathbf{y}$</span>. The closed-form solution (the Normal Equation) is:
 
 
-<div class="math-block">$\mathbf{w} = (X^T X)^{-1} X^T \mathbf{y}$</div>
+<div class="math-block">$$\mathbf{w} = (X^T X)^{-1} X^T \mathbf{y}$$</div>
 
 
 > **Warning:** This formula requires computing a matrix inverse, which is <span class="math-inline">$O(n^3)$</span> and numerically unstable when features are nearly linearly dependent (making <span class="math-inline">$X^TX$</span> nearly singular). In practice, scikit-learn and other libraries use gradient descent or QR decomposition instead. We'll discuss when the Normal Equation is and isn't appropriate in Chapter 9.
 
 ---
 
+<a id="310-broadcasting-in-numpy"></a>
 ## 3.10 Broadcasting in NumPy
 
 One NumPy feature every ML engineer needs to understand is **broadcasting** — it's NumPy's way of automatically expanding shapes to make operations work.
@@ -1561,6 +2019,7 @@ h = x_batch @ W.T + b       # shape: (100, 4)
 
 ---
 
+<a id="311-full-code-example"></a>
 ## 3.11 Full Code Example
 
 ```python
@@ -1632,6 +2091,7 @@ print(f"h[1] = {h1:.4f}")  # 0.6500
 
 ---
 
+<a id="312-chapter-summary"></a>
 ## 3.12 Chapter Summary
 
 | Concept | Definition | Code |
@@ -1653,24 +2113,25 @@ print(f"h[1] = {h1:.4f}")  # 0.6500
 
 ---
 
+<a id="exercises-2"></a>
 ## Exercises
 
 **3.1** Compute <span class="math-inline">$AB$</span> by hand:
 
 
-<div class="math-block">$A = \begin{bmatrix} 2 & 0 \\ 1 & 3 \end{bmatrix}, \quad B = \begin{bmatrix} 1 & 4 \\ 2 & 1 \end{bmatrix}$</div>
+<div class="math-block">$$A = \begin{bmatrix} 2 & 0 \\ 1 & 3 \end{bmatrix}, \quad B = \begin{bmatrix} 1 & 4 \\ 2 & 1 \end{bmatrix}$$</div>
 
 
 *Solution:*
 
-<div class="math-block">$c_{11} = 2(1)+0(2)=2, \quad c_{12}=2(4)+0(1)=8$</div>
+<div class="math-block">$$c_{11} = 2(1)+0(2)=2, \quad c_{12}=2(4)+0(1)=8$$</div>
 
 
-<div class="math-block">$c_{21} = 1(1)+3(2)=7, \quad c_{22}=1(4)+3(1)=7$</div>
+<div class="math-block">$$c_{21} = 1(1)+3(2)=7, \quad c_{22}=1(4)+3(1)=7$$</div>
 
 
 
-<div class="math-block">$AB = \begin{bmatrix} 2 & 8 \\ 7 & 7 \end{bmatrix}$</div>
+<div class="math-block">$$AB = \begin{bmatrix} 2 & 8 \\ 7 & 7 \end{bmatrix}$$</div>
 
 
 ```python
@@ -1683,14 +2144,14 @@ print(A @ B)  # [[ 2  8] [ 7  7]]
 
 *Solution:*
 
-<div class="math-block">$b_{11}=1(2)+4(1)=6, \quad b_{12}=1(0)+4(3)=12$</div>
+<div class="math-block">$$b_{11}=1(2)+4(1)=6, \quad b_{12}=1(0)+4(3)=12$$</div>
 
 
-<div class="math-block">$b_{21}=2(2)+1(1)=5, \quad b_{22}=2(0)+1(3)=3$</div>
+<div class="math-block">$$b_{21}=2(2)+1(1)=5, \quad b_{22}=2(0)+1(3)=3$$</div>
 
 
 
-<div class="math-block">$BA = \begin{bmatrix} 6 & 12 \\ 5 & 3 \end{bmatrix} \neq AB = \begin{bmatrix} 2 & 8 \\ 7 & 7 \end{bmatrix}$</div>
+<div class="math-block">$$BA = \begin{bmatrix} 6 & 12 \\ 5 & 3 \end{bmatrix} \neq AB = \begin{bmatrix} 2 & 8 \\ 7 & 7 \end{bmatrix}$$</div>
 
 
 Matrix multiplication is **not** commutative.
@@ -1699,11 +2160,11 @@ Matrix multiplication is **not** commutative.
 
 *Solution:*
 
-<div class="math-block">$W\mathbf{x} = \begin{bmatrix} 1(1)+(-1)(2)+2(3) \\ 0(1)+3(2)+(-2)(3) \end{bmatrix} = \begin{bmatrix} 1-2+6 \\ 0+6-6 \end{bmatrix} = \begin{bmatrix} 5 \\ 0 \end{bmatrix}$</div>
+<div class="math-block">$$W\mathbf{x} = \begin{bmatrix} 1(1)+(-1)(2)+2(3) \\ 0(1)+3(2)+(-2)(3) \end{bmatrix} = \begin{bmatrix} 1-2+6 \\ 0+6-6 \end{bmatrix} = \begin{bmatrix} 5 \\ 0 \end{bmatrix}$$</div>
 
 
 
-<div class="math-block">$W\mathbf{x} + \mathbf{b} = \begin{bmatrix} 5.5 \\ -0.5 \end{bmatrix}$</div>
+<div class="math-block">$$W\mathbf{x} + \mathbf{b} = \begin{bmatrix} 5.5 \\ -0.5 \end{bmatrix}$$</div>
 
 
 **3.4** Find the inverse of <span class="math-inline">$A = \begin{bmatrix} 3 & 1 \\ 2 & 1 \end{bmatrix}$</span> by hand using the 2×2 formula.
@@ -1711,7 +2172,7 @@ Matrix multiplication is **not** commutative.
 *Solution:* <span class="math-inline">$\det(A) = 3(1) - 1(2) = 1$</span>
 
 
-<div class="math-block">$A^{-1} = \frac{1}{1}\begin{bmatrix} 1 & -1 \\ -2 & 3 \end{bmatrix} = \begin{bmatrix} 1 & -1 \\ -2 & 3 \end{bmatrix}$</div>
+<div class="math-block">$$A^{-1} = \frac{1}{1}\begin{bmatrix} 1 & -1 \\ -2 & 3 \end{bmatrix} = \begin{bmatrix} 1 & -1 \\ -2 & 3 \end{bmatrix}$$</div>
 
 
 Verify: <span class="math-inline">$\begin{bmatrix}3&1\\2&1\end{bmatrix}\begin{bmatrix}1&-1\\-2&3\end{bmatrix} = \begin{bmatrix}3-2&-3+3\\2-2&-2+3\end{bmatrix} = \begin{bmatrix}1&0\\0&1\end{bmatrix}$</span> ✓
@@ -1723,12 +2184,14 @@ Verify: <span class="math-inline">$\begin{bmatrix}3&1\\2&1\end{bmatrix}\begin{bm
 ---
 
 *Next: Chapter 4 — Decompositions. We'll break matrices apart to reveal their hidden structure — and discover PCA.*
+<a id="chapter-4-linear-algebra-iii-decompositions"></a>
 # Chapter 4: Linear Algebra III — Decompositions
 
 > *"Every matrix hides a story. Decomposition tells you that story."*
 
 ---
 
+<a id="41-the-concept-why-decompose-a-matrix"></a>
 ## 4.1 The Concept: Why Decompose a Matrix?
 
 A matrix looks like a grid of numbers. Decomposition reveals the *structure* underneath those numbers: the directions of maximum variance, the rank, the meaningful components.
@@ -1745,8 +2208,10 @@ We'll build them in order, each one resting on the previous.
 
 ---
 
+<a id="42-eigenvectors-and-eigenvalues"></a>
 ## 4.2 Eigenvectors and Eigenvalues
 
+<a id="the-core-idea"></a>
 ### The Core Idea
 
 Most vectors, when multiplied by a matrix, both rotate *and* scale. But some special vectors only **scale** — they don't rotate. These are called **eigenvectors**.
@@ -1754,12 +2219,13 @@ Most vectors, when multiplied by a matrix, both rotate *and* scale. But some spe
 Formally, for a square matrix <span class="math-inline">$A$</span>:
 
 
-<div class="math-block">$A\mathbf{v} = \lambda \mathbf{v}$</div>
+<div class="math-block">$$A\mathbf{v} = \lambda \mathbf{v}$$</div>
 
 
 - <span class="math-inline">$\mathbf{v}$</span> is an **eigenvector** (a non-zero vector that doesn't rotate when <span class="math-inline">$A$</span> is applied)
 - <span class="math-inline">$\lambda$</span> (lambda) is the corresponding **eigenvalue** (the scalar it gets stretched by)
 
+<a id="a-visual-intuition"></a>
 ### A Visual Intuition
 
 Imagine a rubber sheet stretched by matrix <span class="math-inline">$A$</span>. Most points on the sheet move to new locations — they rotate and scale. But there are special directions along which points only slide forward or backward (scale), never rotating. Those directions are the eigenvectors.
@@ -1772,21 +2238,22 @@ Before A:                  After A:
    → v₂                 →→→→→ v₂    ← eigenvalue = 3 (stretched more)
 ```
 
+<a id="finding-eigenvalues"></a>
 ### Finding Eigenvalues
 
 The condition <span class="math-inline">$A\mathbf{v} = \lambda\mathbf{v}$</span> can be rewritten as:
 
 
-<div class="math-block">$A\mathbf{v} - \lambda\mathbf{v} = \mathbf{0}$</div>
+<div class="math-block">$$A\mathbf{v} - \lambda\mathbf{v} = \mathbf{0}$$</div>
 
 
-<div class="math-block">$(A - \lambda I)\mathbf{v} = \mathbf{0}$</div>
+<div class="math-block">$$(A - \lambda I)\mathbf{v} = \mathbf{0}$$</div>
 
 
 For this to have a non-trivial solution (non-zero <span class="math-inline">$\mathbf{v}$</span>), the matrix <span class="math-inline">$(A - \lambda I)$</span> must be singular:
 
 
-<div class="math-block">$\det(A - \lambda I) = 0$</div>
+<div class="math-block">$$\det(A - \lambda I) = 0$$</div>
 
 
 This is the **characteristic equation**. Solving it gives the eigenvalues.
@@ -1794,28 +2261,29 @@ This is the **characteristic equation**. Solving it gives the eigenvalues.
 **Worked example — finding eigenvalues of a 2×2 matrix:**
 
 
-<div class="math-block">$A = \begin{bmatrix} 4 & 1 \\ 2 & 3 \end{bmatrix}$</div>
+<div class="math-block">$$A = \begin{bmatrix} 4 & 1 \\ 2 & 3 \end{bmatrix}$$</div>
 
 
 
-<div class="math-block">$A - \lambda I = \begin{bmatrix} 4-\lambda & 1 \\ 2 & 3-\lambda \end{bmatrix}$</div>
+<div class="math-block">$$A - \lambda I = \begin{bmatrix} 4-\lambda & 1 \\ 2 & 3-\lambda \end{bmatrix}$$</div>
 
 
 
-<div class="math-block">$\det(A - \lambda I) = (4-\lambda)(3-\lambda) - (1)(2) = 0$</div>
+<div class="math-block">$$\det(A - \lambda I) = (4-\lambda)(3-\lambda) - (1)(2) = 0$$</div>
 
 
-<div class="math-block">$= 12 - 4\lambda - 3\lambda + \lambda^2 - 2 = 0$</div>
+<div class="math-block">$$= 12 - 4\lambda - 3\lambda + \lambda^2 - 2 = 0$$</div>
 
 
-<div class="math-block">$= \lambda^2 - 7\lambda + 10 = 0$</div>
+<div class="math-block">$$= \lambda^2 - 7\lambda + 10 = 0$$</div>
 
 
-<div class="math-block">$= (\lambda - 5)(\lambda - 2) = 0$</div>
+<div class="math-block">$$= (\lambda - 5)(\lambda - 2) = 0$$</div>
 
 
 So <span class="math-inline">$\lambda_1 = 5$</span> and <span class="math-inline">$\lambda_2 = 2$</span>.
 
+<a id="finding-eigenvectors"></a>
 ### Finding Eigenvectors
 
 For each eigenvalue, solve <span class="math-inline">$(A - \lambda I)\mathbf{v} = \mathbf{0}$</span>.
@@ -1823,7 +2291,7 @@ For each eigenvalue, solve <span class="math-inline">$(A - \lambda I)\mathbf{v} 
 **For <span class="math-inline">$\lambda_1 = 5$</span>:**
 
 
-<div class="math-block">$A - 5I = \begin{bmatrix} -1 & 1 \\ 2 & -2 \end{bmatrix}$</div>
+<div class="math-block">$$A - 5I = \begin{bmatrix} -1 & 1 \\ 2 & -2 \end{bmatrix}$$</div>
 
 
 Both rows say the same thing: <span class="math-inline">$-v_1 + v_2 = 0$</span>, so <span class="math-inline">$v_1 = v_2$</span>.
@@ -1835,7 +2303,7 @@ Eigenvector: <span class="math-inline">$\mathbf{v}_1 = \begin{bmatrix} 1 \\ 1 \e
 **For <span class="math-inline">$\lambda_2 = 2$</span>:**
 
 
-<div class="math-block">$A - 2I = \begin{bmatrix} 2 & 1 \\ 2 & 1 \end{bmatrix}$</div>
+<div class="math-block">$$A - 2I = \begin{bmatrix} 2 & 1 \\ 2 & 1 \end{bmatrix}$$</div>
 
 
 Both rows say: <span class="math-inline">$2v_1 + v_2 = 0$</span>, so <span class="math-inline">$v_2 = -2v_1$</span>.
@@ -1866,6 +2334,7 @@ for i in range(2):
     print(f"  Match: {np.allclose(A @ v, lam * v)}")
 ```
 
+<a id="what-eigenvalues-tell-you"></a>
 ### What Eigenvalues Tell You
 
 - **Large eigenvalue:** that eigenvector direction is strongly amplified by <span class="math-inline">$A$</span>
@@ -1877,6 +2346,7 @@ In ML, large eigenvalues = directions of large variance in your data. This is th
 
 ---
 
+<a id="43-eigendecomposition"></a>
 ## 4.3 Eigendecomposition
 
 If a matrix <span class="math-inline">$A \in \mathbb{R}^{n \times n}$</span> has <span class="math-inline">$n$</span> linearly independent eigenvectors, we can write:
@@ -1884,7 +2354,7 @@ If a matrix <span class="math-inline">$A \in \mathbb{R}^{n \times n}$</span> has
 > **Edge case:** Not all matrices are diagonalizable. If a matrix has repeated eigenvalues, it may not have <span class="math-inline">$n$</span> independent eigenvectors (e.g., <span class="math-inline">$\begin{bmatrix}1&1\\0&1\end{bmatrix}$</span> has eigenvalue 1 with multiplicity 2 but only one independent eigenvector). In ML practice, covariance matrices (which are symmetric positive semi-definite) are always diagonalizable, so this edge case rarely bites you.
 
 
-<div class="math-block">$A = Q \Lambda Q^{-1}$</div>
+<div class="math-block">$$A = Q \Lambda Q^{-1}$$</div>
 
 
 where:
@@ -1895,7 +2365,7 @@ where:
 For **symmetric** matrices (covariance matrices are always symmetric), <span class="math-inline">$Q^{-1} = Q^T$</span> (the eigenvectors form an orthogonal basis), so:
 
 
-<div class="math-block">$A = Q \Lambda Q^T$</div>
+<div class="math-block">$$A = Q \Lambda Q^T$$</div>
 
 
 This is called the **spectral decomposition**. It decomposes the matrix into its natural "components."
@@ -1905,7 +2375,7 @@ This is called the **spectral decomposition**. It decomposes the matrix into its
 Using <span class="math-inline">$A = \begin{bmatrix} 4 & 1 \\ 2 & 3 \end{bmatrix}$</span>, <span class="math-inline">$\lambda_1=5$</span>, <span class="math-inline">$\lambda_2=2$</span>, <span class="math-inline">$\mathbf{v}_1=\begin{bmatrix}1\\1\end{bmatrix}$</span>, <span class="math-inline">$\mathbf{v}_2=\begin{bmatrix}1\\-2\end{bmatrix}$</span>:
 
 
-<div class="math-block">$Q = \begin{bmatrix} 1 & 1 \\ 1 & -2 \end{bmatrix}, \quad \Lambda = \begin{bmatrix} 5 & 0 \\ 0 & 2 \end{bmatrix}$</div>
+<div class="math-block">$$Q = \begin{bmatrix} 1 & 1 \\ 1 & -2 \end{bmatrix}, \quad \Lambda = \begin{bmatrix} 5 & 0 \\ 0 & 2 \end{bmatrix}$$</div>
 
 
 ```python
@@ -1920,16 +2390,18 @@ print("Reconstructed A:\n", A_reconstructed.round(10))
 
 ---
 
+<a id="44-singular-value-decomposition-svd"></a>
 ## 4.4 Singular Value Decomposition (SVD)
 
 Eigendecomposition only works for square matrices. **SVD works for any matrix**, which is why it's the more general and practically useful tool.
 
+<a id="the-decomposition"></a>
 ### The Decomposition
 
 For any matrix <span class="math-inline">$A \in \mathbb{R}^{m \times n}$</span>:
 
 
-<div class="math-block">$A = U \Sigma V^T$</div>
+<div class="math-block">$$A = U \Sigma V^T$$</div>
 
 
 where:
@@ -1939,6 +2411,7 @@ where:
 
 The **singular values** <span class="math-inline">$\sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_r \geq 0$</span> are the key. They measure how much "action" the matrix has in each direction.
 
+<a id="geometric-interpretation"></a>
 ### Geometric Interpretation
 
 Any matrix <span class="math-inline">$A$</span> can be understood as three operations in sequence:
@@ -1950,10 +2423,11 @@ Any matrix <span class="math-inline">$A$</span> can be understood as three opera
 Input space  →(V^T)→  Rotated  →(Σ)→  Scaled  →(U)→  Output space
 ```
 
+<a id="worked-example"></a>
 ### Worked Example
 
 
-<div class="math-block">$A = \begin{bmatrix} 3 & 2 \\ 2 & 3 \\ 2 & -2 \end{bmatrix}$</div>
+<div class="math-block">$$A = \begin{bmatrix} 3 & 2 \\ 2 & 3 \\ 2 & -2 \end{bmatrix}$$</div>
 
 
 ```python
@@ -1973,12 +2447,13 @@ A_reconstructed = U @ Sigma @ Vt
 print("Reconstructed:\n", A_reconstructed.round(10))
 ```
 
+<a id="low-rank-approximation-the-key-application"></a>
 ### Low-Rank Approximation: The Key Application
 
 Here's the most important property of SVD: **you can approximate a matrix by keeping only the top-<span class="math-inline">$k$</span> singular values** and discarding the rest. This gives you the best possible rank-<span class="math-inline">$k$</span> approximation.
 
 
-<div class="math-block">$A \approx A_k = U_k \Sigma_k V_k^T$</div>
+<div class="math-block">$$A \approx A_k = U_k \Sigma_k V_k^T$$</div>
 
 
 where we keep only the first <span class="math-inline">$k$</span> columns of <span class="math-inline">$U$</span>, the first <span class="math-inline">$k$</span> singular values of <span class="math-inline">$\Sigma$</span>, and the first <span class="math-inline">$k$</span> rows of <span class="math-inline">$V^T$</span>.
@@ -2017,22 +2492,25 @@ print(f"Compression: {original_values} → {compressed_values} values")
 
 ---
 
+<a id="45-principal-component-analysis-pca"></a>
 ## 4.5 Principal Component Analysis (PCA)
 
 PCA is the most commonly used dimensionality reduction technique in ML. It finds the directions of **maximum variance** in your data and projects onto them.
 
+<a id="the-problem-pca-solves"></a>
 ### The Problem PCA Solves
 
 Suppose your data has 100 features (dimensions). Visualizing or training on 100D data is hard. PCA finds the 2 or 3 directions that capture the most information, letting you project to 2D or 3D for visualization or downstream modeling.
 
 **Key insight:** The directions of maximum variance are the eigenvectors of the **covariance matrix** of your data.
 
+<a id="the-covariance-matrix"></a>
 ### The Covariance Matrix
 
 For a dataset <span class="math-inline">$X \in \mathbb{R}^{n \times d}$</span> (n examples, d features), after centering (subtracting the mean):
 
 
-<div class="math-block">$\Sigma = \frac{1}{n-1} X^T X \in \mathbb{R}^{d \times d}$</div>
+<div class="math-block">$$\Sigma = \frac{1}{n-1} X^T X \in \mathbb{R}^{d \times d}$$</div>
 
 
 Each entry <span class="math-inline">$\Sigma_{ij}$</span> measures how much feature <span class="math-inline">$i$</span> and feature <span class="math-inline">$j$</span> vary together.
@@ -2040,18 +2518,19 @@ Each entry <span class="math-inline">$\Sigma_{ij}$</span> measures how much feat
 - <span class="math-inline">$\Sigma_{ii}$</span> = variance of feature <span class="math-inline">$i$</span>
 - <span class="math-inline">$\Sigma_{ij} = \Sigma_{ji}$</span> = covariance of features <span class="math-inline">$i$</span> and <span class="math-inline">$j$</span> (always symmetric!)
 
+<a id="pca-step-by-step"></a>
 ### PCA Step by Step
 
 **Step 1: Center the data** (subtract mean of each feature)
 
 
-<div class="math-block">$\tilde{X} = X - \bar{X}$</div>
+<div class="math-block">$$\tilde{X} = X - \bar{X}$$</div>
 
 
 **Step 2: Compute the covariance matrix** (using the *centered* <span class="math-inline">$\tilde{X}$</span> from Step 1)
 
 
-<div class="math-block">$\Sigma = \frac{1}{n-1} \tilde{X}^T \tilde{X}$</div>
+<div class="math-block">$$\Sigma = \frac{1}{n-1} \tilde{X}^T \tilde{X}$$</div>
 
 
 Note: this formula only works on the already-centered data <span class="math-inline">$\tilde{X}$</span>. Using the raw <span class="math-inline">$X$</span> here would give the wrong result (it would measure distance from the origin, not from the mean).
@@ -2059,7 +2538,7 @@ Note: this formula only works on the already-centered data <span class="math-inl
 **Step 3: Compute eigendecomposition of <span class="math-inline">$\Sigma$</span>**
 
 
-<div class="math-block">$\Sigma = Q \Lambda Q^T$</div>
+<div class="math-block">$$\Sigma = Q \Lambda Q^T$$</div>
 
 
 The eigenvectors (columns of <span class="math-inline">$Q$</span>) are the **principal components** — the new axes.
@@ -2071,11 +2550,12 @@ The eigenvector with the largest eigenvalue is the direction of maximum variance
 **Step 5: Project data onto top-<span class="math-inline">$k$</span> components**
 
 
-<div class="math-block">$X_{\text{reduced}} = \tilde{X} \cdot Q_k$</div>
+<div class="math-block">$$X_{\text{reduced}} = \tilde{X} \cdot Q_k$$</div>
 
 
 where <span class="math-inline">$Q_k$</span> contains the top-<span class="math-inline">$k$</span> eigenvectors.
 
+<a id="worked-example-pca-from-scratch"></a>
 ### Worked Example — PCA from Scratch
 
 ```python
@@ -2133,6 +2613,7 @@ print("\nVariance explained per component:", (variance_explained * 100).round(1)
 # The first PC should explain ~96% of the variance for this dataset
 ```
 
+<a id="pca-with-sklearn-production-use"></a>
 ### PCA with sklearn (Production Use)
 
 ```python
@@ -2145,12 +2626,14 @@ print("Explained variance ratio:", pca.explained_variance_ratio_)
 # Should match our manual calculation
 ```
 
+<a id="why-variance-information"></a>
 ### Why Variance = Information
 
 Variance measures how "spread out" data is along a direction. Low variance means the data points are nearly the same along that axis — there's little information. High variance means points vary a lot — there's rich information.
 
 PCA finds the directions where your data is most "interesting."
 
+<a id="reading-a-scree-plot"></a>
 ### Reading a Scree Plot
 
 A **scree plot** shows eigenvalues (variance explained) per component. You look for the "elbow" — where adding more components gives diminishing returns.
@@ -2170,6 +2653,7 @@ Variance
 
 ---
 
+<a id="46-svd-vs-pca-whats-the-connection"></a>
 ## 4.6 SVD vs PCA: What's the Connection?
 
 PCA can be computed via SVD of the centered data matrix directly — without explicitly computing the covariance matrix:
@@ -2199,6 +2683,7 @@ print("Eigenvalues via SVD:", variance_via_svd.round(4))
 
 ---
 
+<a id="47-engineers-angle-when-to-use-each-technique"></a>
 ## 4.7 Engineer's Angle: When to Use Each Technique
 
 | Technique | Use when | Don't use when |
@@ -2207,6 +2692,7 @@ print("Eigenvalues via SVD:", variance_via_svd.round(4))
 | SVD | Matrix factorization, recommendation systems, text analysis (LSA) | You need interpretable components |
 | Eigendecomposition | Symmetric matrices only; graph algorithms (PageRank); understanding covariance | Non-square matrices |
 
+<a id="lora-low-rank-adaptation-in-llms"></a>
 ### LoRA: Low-Rank Adaptation in LLMs
 
 One of the most important recent applications of SVD principles is **LoRA** (Low-Rank Adaptation), which enables efficient fine-tuning of large language models.
@@ -2214,7 +2700,7 @@ One of the most important recent applications of SVD principles is **LoRA** (Low
 The idea: instead of updating the full weight matrix <span class="math-inline">$W$</span> (billions of parameters), decompose the update into a low-rank matrix:
 
 
-<div class="math-block">$W_{\text{updated}} = W_{\text{pretrained}} + \Delta W, \quad \text{where} \quad \Delta W = BA$</div>
+<div class="math-block">$$W_{\text{updated}} = W_{\text{pretrained}} + \Delta W, \quad \text{where} \quad \Delta W = BA$$</div>
 
 
 with <span class="math-inline">$B \in \mathbb{R}^{d \times r}$</span> and <span class="math-inline">$A \in \mathbb{R}^{r \times d}$</span> and <span class="math-inline">$r \ll d$</span>.
@@ -2225,6 +2711,7 @@ This works because: weight updates tend to be low-rank — the "meaningful" dire
 
 ---
 
+<a id="48-full-code-example"></a>
 ## 4.8 Full Code Example
 
 ```python
@@ -2291,6 +2778,7 @@ print("Projected shape:", X_1d.shape)  # (10, 1)
 
 ---
 
+<a id="49-chapter-summary"></a>
 ## 4.9 Chapter Summary
 
 | Concept | Formula | Key Property |
@@ -2311,6 +2799,7 @@ print("Projected shape:", X_1d.shape)  # (10, 1)
 
 ---
 
+<a id="exercises-3"></a>
 ## Exercises
 
 **4.1** Find the eigenvalues of <span class="math-inline">$A = \begin{bmatrix} 2 & 0 \\ 0 & 5 \end{bmatrix}$</span> without computation. Explain.
@@ -2335,7 +2824,7 @@ Keep **2 principal components**.
 
 *Solution:* If <span class="math-inline">$\tilde{X} = U\Sigma V^T$</span>, then:
 
-<div class="math-block">$\tilde{X}^T\tilde{X} = (U\Sigma V^T)^T(U\Sigma V^T) = V\Sigma^T U^T U \Sigma V^T = V\Sigma^T\Sigma V^T = V(\Sigma^2)V^T$</div>
+<div class="math-block">$$\tilde{X}^T\tilde{X} = (U\Sigma V^T)^T(U\Sigma V^T) = V\Sigma^T U^T U \Sigma V^T = V\Sigma^T\Sigma V^T = V(\Sigma^2)V^T$$</div>
 
 
 This is exactly the eigendecomposition of <span class="math-inline">$\tilde{X}^T\tilde{X}$</span>: eigenvectors are the columns of <span class="math-inline">$V$</span> (right singular vectors of <span class="math-inline">$\tilde{X}$</span>) and eigenvalues are <span class="math-inline">$\sigma_i^2$</span>. Dividing by <span class="math-inline">$(n-1)$</span> gives the covariance matrix eigenvalues <span class="math-inline">$\sigma_i^2/(n-1)$</span>. The eigenvectors are identical. <span class="math-inline">$\square$</span>
@@ -2343,12 +2832,14 @@ This is exactly the eigendecomposition of <span class="math-inline">$\tilde{X}^T
 ---
 
 *Next: Chapter 5 — Calculus. We've described data; now we learn how models improve.*
+<a id="chapter-5-calculus-i-derivatives"></a>
 # Chapter 5: Calculus I — Derivatives
 
 > *"The derivative tells you which way is downhill. Gradient descent is just repeatedly following that direction."*
 
 ---
 
+<a id="51-the-concept-what-is-a-derivative"></a>
 ## 5.1 The Concept: What Is a Derivative?
 
 Imagine you're driving on a hilly road. At any point, you can ask: "Am I currently going uphill or downhill, and how steep is it?" The answer is the **derivative**.
@@ -2357,18 +2848,19 @@ More precisely, the derivative of a function <span class="math-inline">$f$</span
 
 This is the foundation of how models learn. The loss function tells you how wrong your model is. The derivative tells you which way to adjust the parameters to make it less wrong.
 
+<a id="from-average-rate-of-change-to-instantaneous"></a>
 ### From Average Rate of Change to Instantaneous
 
 The **average rate of change** of <span class="math-inline">$f$</span> between <span class="math-inline">$x$</span> and <span class="math-inline">$x + h$</span> is:
 
 
-<div class="math-block">$\frac{f(x + h) - f(x)}{h}$</div>
+<div class="math-block">$$\frac{f(x + h) - f(x)}{h}$$</div>
 
 
 This is the slope of the line connecting two points. As we make <span class="math-inline">$h$</span> smaller and smaller, this approaches the **instantaneous rate of change** — the derivative:
 
 
-<div class="math-block">$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$</div>
+<div class="math-block">$$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$</div>
 
 
 The symbol <span class="math-inline">$\lim_{h \to 0}$</span> means "as <span class="math-inline">$h$</span> approaches zero" — we're making the gap infinitesimally small.
@@ -2389,6 +2881,7 @@ As h→0, the secant line becomes a tangent line — that's the derivative.
 
 ---
 
+<a id="52-notation"></a>
 ## 5.2 Notation
 
 There are several equivalent ways to write "derivative of <span class="math-inline">$f$</span>":
@@ -2404,14 +2897,16 @@ In ML, you'll most often see <span class="math-inline">$\frac{df}{dx}$</span> or
 
 ---
 
+<a id="53-basic-derivative-rules"></a>
 ## 5.3 Basic Derivative Rules
 
 You don't need to compute limits every time. These rules handle 95% of ML calculus.
 
+<a id="rule-1-power-rule"></a>
 ### Rule 1: Power Rule
 
 
-<div class="math-block">$\frac{d}{dx} x^n = n \cdot x^{n-1}$</div>
+<div class="math-block">$$\frac{d}{dx} x^n = n \cdot x^{n-1}$$</div>
 
 
 **Examples:**
@@ -2428,47 +2923,51 @@ You don't need to compute limits every time. These rules handle 95% of ML calcul
 **Worked example:**
 
 
-<div class="math-block">$f(x) = x^4$</div>
+<div class="math-block">$$f(x) = x^4$$</div>
 
 
-<div class="math-block">$f'(x) = 4x^3$</div>
+<div class="math-block">$$f'(x) = 4x^3$$</div>
 
 
 At <span class="math-inline">$x=2$</span>: <span class="math-inline">$f'(2) = 4(2)^3 = 32$</span>. The function is rising at a rate of 32 units per unit of <span class="math-inline">$x$</span> at this point.
 
+<a id="rule-2-constant-rule"></a>
 ### Rule 2: Constant Rule
 
 
-<div class="math-block">$\frac{d}{dx} c = 0 \quad \text{(c is any constant)}$</div>
+<div class="math-block">$$\frac{d}{dx} c = 0 \quad \text{(c is any constant)}$$</div>
 
 
 A constant never changes, so its rate of change is zero.
 
+<a id="rule-3-constant-multiple-rule"></a>
 ### Rule 3: Constant Multiple Rule
 
 
-<div class="math-block">$\frac{d}{dx} [c \cdot f(x)] = c \cdot f'(x)$</div>
+<div class="math-block">$$\frac{d}{dx} [c \cdot f(x)] = c \cdot f'(x)$$</div>
 
 
 **Example:** <span class="math-inline">$\frac{d}{dx}[5x^2] = 5 \cdot 2x = 10x$</span>
 
+<a id="rule-4-sumdifference-rule"></a>
 ### Rule 4: Sum/Difference Rule
 
 
-<div class="math-block">$\frac{d}{dx}[f(x) \pm g(x)] = f'(x) \pm g'(x)$</div>
+<div class="math-block">$$\frac{d}{dx}[f(x) \pm g(x)] = f'(x) \pm g'(x)$$</div>
 
 
 **Example:**
 
-<div class="math-block">$\frac{d}{dx}[3x^3 - 2x^2 + 7x - 5] = 9x^2 - 4x + 7$</div>
+<div class="math-block">$$\frac{d}{dx}[3x^3 - 2x^2 + 7x - 5] = 9x^2 - 4x + 7$$</div>
 
 
 (Differentiate term by term; the constant <span class="math-inline">$-5$</span> disappears.)
 
+<a id="rule-5-product-rule"></a>
 ### Rule 5: Product Rule
 
 
-<div class="math-block">$\frac{d}{dx}[f(x) \cdot g(x)] = f'(x)g(x) + f(x)g'(x)$</div>
+<div class="math-block">$$\frac{d}{dx}[f(x) \cdot g(x)] = f'(x)g(x) + f(x)g'(x)$$</div>
 
 
 **Memory trick:** "First times derivative of second, plus second times derivative of first"
@@ -2476,14 +2975,15 @@ A constant never changes, so its rate of change is zero.
 **Worked example:**
 
 
-<div class="math-block">$h(x) = x^2 \cdot \sin(x)$</div>
+<div class="math-block">$$h(x) = x^2 \cdot \sin(x)$$</div>
 
 
-<div class="math-block">$h'(x) = 2x \cdot \sin(x) + x^2 \cdot \cos(x)$</div>
+<div class="math-block">$$h'(x) = 2x \cdot \sin(x) + x^2 \cdot \cos(x)$$</div>
 
 
 **ML use:** The product rule appears in attention mechanisms. The scaled dot-product attention score <span class="math-inline">$\text{score}(q, k) = q^T k / \sqrt{d}$</span> involves a product of two learned vectors; when computing gradients through both <span class="math-inline">$q$</span> and <span class="math-inline">$k$</span>, the product rule applies.
 
+<a id="rule-6-chain-rule-critical-for-ml"></a>
 ### Rule 6: Chain Rule (CRITICAL for ML)
 
 The chain rule computes the derivative of a **composed** function.
@@ -2491,7 +2991,7 @@ The chain rule computes the derivative of a **composed** function.
 If <span class="math-inline">$h(x) = f(g(x))$</span>, then:
 
 
-<div class="math-block">$h'(x) = f'(g(x)) \cdot g'(x)$</div>
+<div class="math-block">$$h'(x) = f'(g(x)) \cdot g'(x)$$</div>
 
 
 **In words:** "derivative of outer function (evaluated at inner function) times derivative of inner function"
@@ -2499,13 +2999,13 @@ If <span class="math-inline">$h(x) = f(g(x))$</span>, then:
 **Leibniz notation** (clearer for ML):
 
 
-<div class="math-block">$\frac{dh}{dx} = \frac{df}{dg} \cdot \frac{dg}{dx}$</div>
+<div class="math-block">$$\frac{dh}{dx} = \frac{df}{dg} \cdot \frac{dg}{dx}$$</div>
 
 
 **Worked example:**
 
 
-<div class="math-block">$h(x) = (3x + 1)^5$</div>
+<div class="math-block">$$h(x) = (3x + 1)^5$$</div>
 
 
 Here <span class="math-inline">$f(u) = u^5$</span> and <span class="math-inline">$g(x) = 3x + 1$</span>:
@@ -2513,26 +3013,27 @@ Here <span class="math-inline">$f(u) = u^5$</span> and <span class="math-inline"
 - <span class="math-inline">$g'(x) = 3$</span>
 
 
-<div class="math-block">$h'(x) = 5(3x+1)^4 \cdot 3 = 15(3x+1)^4$</div>
+<div class="math-block">$$h'(x) = 5(3x+1)^4 \cdot 3 = 15(3x+1)^4$$</div>
 
 
 **Another example with nesting:**
 
 
-<div class="math-block">$h(x) = \sin(x^2)$</div>
+<div class="math-block">$$h(x) = \sin(x^2)$$</div>
 
 
 - Outer: <span class="math-inline">$f(u) = \sin(u)$</span>, <span class="math-inline">$f'(u) = \cos(u)$</span>
 - Inner: <span class="math-inline">$g(x) = x^2$</span>, <span class="math-inline">$g'(x) = 2x$</span>
 
 
-<div class="math-block">$h'(x) = \cos(x^2) \cdot 2x$</div>
+<div class="math-block">$$h'(x) = \cos(x^2) \cdot 2x$$</div>
 
 
 **Why the chain rule dominates ML:** A neural network is a composition of functions: <span class="math-inline">$\hat{y} = f_L(f_{L-1}(\cdots f_1(\mathbf{x})))$</span>. Backpropagation — the algorithm that trains neural networks — is just the chain rule applied repeatedly from output to input.
 
 ---
 
+<a id="54-derivatives-of-common-functions"></a>
 ## 5.4 Derivatives of Common Functions
 
 | Function | Derivative | Why it matters in ML |
@@ -2544,30 +3045,31 @@ Here <span class="math-inline">$f(u) = u^5$</span> and <span class="math-inline"
 | <span class="math-inline">$\ln(x)$</span>, <span class="math-inline">$x > 0$</span> | <span class="math-inline">$1/x$</span> | Cross-entropy loss contains <span class="math-inline">$\ln$</span> |
 | <span class="math-inline">$\sigma(x) = \frac{1}{1+e^{-x}}$</span> | <span class="math-inline">$\sigma(x)(1-\sigma(x))$</span> | Sigmoid activation, logistic regression |
 
+<a id="the-sigmoid-derivative-worked"></a>
 ### The Sigmoid Derivative — Worked
 
 This appears in every logistic regression and sigmoid-activated network.
 
 
-<div class="math-block">$\sigma(x) = \frac{1}{1+e^{-x}}$</div>
+<div class="math-block">$$\sigma(x) = \frac{1}{1+e^{-x}}$$</div>
 
 
 Let's compute <span class="math-inline">$\sigma'(x)$</span> using the quotient rule and chain rule:
 
 
-<div class="math-block">$\sigma(x) = (1 + e^{-x})^{-1}$</div>
+<div class="math-block">$$\sigma(x) = (1 + e^{-x})^{-1}$$</div>
 
 
 Using chain rule with <span class="math-inline">$u = 1 + e^{-x}$</span>:
 
 
-<div class="math-block">$\frac{d\sigma}{dx} = -1 \cdot (1+e^{-x})^{-2} \cdot (-e^{-x}) = \frac{e^{-x}}{(1+e^{-x})^2}$</div>
+<div class="math-block">$$\frac{d\sigma}{dx} = -1 \cdot (1+e^{-x})^{-2} \cdot (-e^{-x}) = \frac{e^{-x}}{(1+e^{-x})^2}$$</div>
 
 
 Now we simplify using a trick. Note that <span class="math-inline">$\sigma(x) = \frac{1}{1+e^{-x}}$</span> so <span class="math-inline">$1 - \sigma(x) = \frac{e^{-x}}{1+e^{-x}}$</span>:
 
 
-<div class="math-block">$\frac{d\sigma}{dx} = \frac{e^{-x}}{(1+e^{-x})^2} = \frac{1}{1+e^{-x}} \cdot \frac{e^{-x}}{1+e^{-x}} = \sigma(x)(1-\sigma(x))$</div>
+<div class="math-block">$$\frac{d\sigma}{dx} = \frac{e^{-x}}{(1+e^{-x})^2} = \frac{1}{1+e^{-x}} \cdot \frac{e^{-x}}{1+e^{-x}} = \sigma(x)(1-\sigma(x))$$</div>
 
 
 The sigmoid derivative is expressible entirely in terms of <span class="math-inline">$\sigma(x)$</span> itself! This is computationally efficient in backpropagation — you already computed <span class="math-inline">$\sigma(x)$</span> in the forward pass, so the backward pass needs no new function calls. (Compare to <span class="math-inline">$e^x$</span>, which is the only function that literally equals its own derivative; sigmoid is different but similarly convenient.)
@@ -2601,12 +3103,14 @@ Note: the gradient is maximum (0.25) at <span class="math-inline">$x=0$</span> a
 
 ---
 
+<a id="55-critical-points-minima-maxima-saddle-points"></a>
 ## 5.5 Critical Points: Minima, Maxima, Saddle Points
 
 Training an ML model means **minimizing** a loss function. Calculus tells us where minima live.
 
 **Critical points** occur where <span class="math-inline">$f'(x) = 0$</span> — the function is momentarily flat.
 
+<a id="types-of-critical-points"></a>
 ### Types of Critical Points
 
 ```
@@ -2623,6 +3127,7 @@ For a differentiable function:
 - <span class="math-inline">$f'(x) = 0$</span> AND <span class="math-inline">$f''(x) < 0$</span>: **local maximum** (curve is concave down)
 - <span class="math-inline">$f'(x) = 0$</span> AND <span class="math-inline">$f''(x) = 0$</span>: **inconclusive** — the second derivative test fails; the point could be a local min, local max, or saddle point. Higher-order analysis is required.
 
+<a id="the-second-derivative"></a>
 ### The Second Derivative
 
 The second derivative <span class="math-inline">$f''(x)$</span> is the derivative of the derivative — it measures how the slope is changing (curvature):
@@ -2630,23 +3135,24 @@ The second derivative <span class="math-inline">$f''(x)$</span> is the derivativ
 - <span class="math-inline">$f''(x) > 0$</span>: slope is increasing → concave up → like a valley
 - <span class="math-inline">$f''(x) < 0$</span>: slope is decreasing → concave down → like a hill
 
+<a id="worked-example-1"></a>
 ### Worked Example
 
 
-<div class="math-block">$f(x) = x^3 - 3x + 2$</div>
+<div class="math-block">$$f(x) = x^3 - 3x + 2$$</div>
 
 
 **Step 1:** Find critical points — set <span class="math-inline">$f'(x) = 0$</span>:
 
-<div class="math-block">$f'(x) = 3x^2 - 3 = 0$</div>
+<div class="math-block">$$f'(x) = 3x^2 - 3 = 0$$</div>
 
 
-<div class="math-block">$3x^2 = 3 \implies x^2 = 1 \implies x = \pm 1$</div>
+<div class="math-block">$$3x^2 = 3 \implies x^2 = 1 \implies x = \pm 1$$</div>
 
 
 **Step 2:** Classify using second derivative:
 
-<div class="math-block">$f''(x) = 6x$</div>
+<div class="math-block">$$f''(x) = 6x$$</div>
 
 
 - At <span class="math-inline">$x = 1$</span>: <span class="math-inline">$f''(1) = 6 > 0$</span> → **local minimum**. <span class="math-inline">$f(1) = 1 - 3 + 2 = 0$</span>
@@ -2666,6 +3172,7 @@ for x_crit in [-1, 1]:
     print(f"  → {typ}")
 ```
 
+<a id="why-saddle-points-matter-in-ml"></a>
 ### Why Saddle Points Matter in ML
 
 In high dimensions (millions of weights), true local minima are rare. Most critical points are **saddle points** — they're local minima in some directions but local maxima in others. 
@@ -2674,6 +3181,7 @@ Research shows that for large neural networks, most saddle points have similar l
 
 ---
 
+<a id="56-the-chain-rule-in-detail-backpropagation-preview"></a>
 ## 5.6 The Chain Rule in Detail: Backpropagation Preview
 
 Let's trace the chain rule through a tiny 2-layer network to preview how backpropagation works.
@@ -2695,7 +3203,7 @@ We want <span class="math-inline">$\frac{dL}{dw}$</span> — how the loss change
 **Backward pass (apply chain rule repeatedly):**
 
 
-<div class="math-block">$\frac{dL}{dw} = \frac{dL}{dz_2} \cdot \frac{dz_2}{da_1} \cdot \frac{da_1}{dz_1} \cdot \frac{dz_1}{dw}$</div>
+<div class="math-block">$$\frac{dL}{dw} = \frac{dL}{dz_2} \cdot \frac{dz_2}{da_1} \cdot \frac{da_1}{dz_1} \cdot \frac{dz_1}{dw}$$</div>
 
 
 Compute each factor:
@@ -2705,7 +3213,7 @@ Compute each factor:
 4. <span class="math-inline">$\frac{dz_1}{dw} = x$</span>
 
 
-<div class="math-block">$\frac{dL}{dw} = -2(y - z_2) \cdot v \cdot \sigma(z_1)(1-\sigma(z_1)) \cdot x$</div>
+<div class="math-block">$$\frac{dL}{dw} = -2(y - z_2) \cdot v \cdot \sigma(z_1)(1-\sigma(z_1)) \cdot x$$</div>
 
 
 **Worked numerical example:**
@@ -2737,12 +3245,13 @@ This number <span class="math-inline">$\frac{dL}{dw} \approx -1.65$</span> tells
 
 ---
 
+<a id="57-numerical-differentiation-verifying-derivatives"></a>
 ## 5.7 Numerical Differentiation: Verifying Derivatives
 
 When you're unsure about a derivative, you can approximate it numerically using the definition:
 
 
-<div class="math-block">$f'(x) \approx \frac{f(x+h) - f(x-h)}{2h}$</div>
+<div class="math-block">$$f'(x) \approx \frac{f(x+h) - f(x-h)}{2h}$$</div>
 
 
 (Using the symmetric "central difference" formula — more accurate than the one-sided version.)
@@ -2774,6 +3283,7 @@ This technique — called **gradient checking** — was commonly used to verify 
 
 ---
 
+<a id="58-full-code-example"></a>
 ## 5.8 Full Code Example
 
 ```python
@@ -2843,6 +3353,7 @@ print(f"Match: {abs(dL_dw - grad_check) < 1e-4}")
 
 ---
 
+<a id="59-chapter-summary"></a>
 ## 5.9 Chapter Summary
 
 | Concept | Formula | Use in ML |
@@ -2860,13 +3371,14 @@ print(f"Match: {abs(dL_dw - grad_check) < 1e-4}")
 
 ---
 
+<a id="exercises-4"></a>
 ## Exercises
 
 **5.1** Compute the derivative of <span class="math-inline">$f(x) = 4x^3 - 2x^2 + 5x - 7$</span>.
 
 *Solution:*
 
-<div class="math-block">$f'(x) = 12x^2 - 4x + 5$</div>
+<div class="math-block">$$f'(x) = 12x^2 - 4x + 5$$</div>
 
 
 (Power rule + sum rule + constant disappears)
@@ -2875,13 +3387,13 @@ print(f"Match: {abs(dL_dw - grad_check) < 1e-4}")
 
 *Solution:*
 
-<div class="math-block">$f'(x) = 2x - 6 = 0 \implies x = 3$</div>
+<div class="math-block">$$f'(x) = 2x - 6 = 0 \implies x = 3$$</div>
 
 
-<div class="math-block">$f''(x) = 2 > 0 \implies \text{local minimum at } x=3$</div>
+<div class="math-block">$$f''(x) = 2 > 0 \implies \text{local minimum at } x=3$$</div>
 
 
-<div class="math-block">$f(3) = 9 - 18 + 9 = 0$</div>
+<div class="math-block">$$f(3) = 9 - 18 + 9 = 0$$</div>
 
 
 (This is <span class="math-inline">$(x-3)^2$</span>, a perfect square — minimum value is 0 at <span class="math-inline">$x=3$</span>.)
@@ -2893,7 +3405,7 @@ print(f"Match: {abs(dL_dw - grad_check) < 1e-4}")
 - Inner: <span class="math-inline">$g(x) = x^2 + 1$</span>, <span class="math-inline">$g'(x) = 2x$</span>
 
 
-<div class="math-block">$h'(x) = \frac{1}{x^2+1} \cdot 2x = \frac{2x}{x^2+1}$</div>
+<div class="math-block">$$h'(x) = \frac{1}{x^2+1} \cdot 2x = \frac{2x}{x^2+1}$$</div>
 
 
 ```python
@@ -2909,7 +3421,7 @@ print(f"Numerical: {num_grad(h, x):.6f}")
 *Solution:*
 
 
-<div class="math-block">$\text{ReLU}'(x) = \begin{cases} 1 & \text{if } x > 0 \\ 0 & \text{if } x < 0 \\ \text{undefined} & \text{if } x = 0 \end{cases}$</div>
+<div class="math-block">$$\text{ReLU}'(x) = \begin{cases} 1 & \text{if } x > 0 \\ 0 & \text{if } x < 0 \\ \text{undefined} & \text{if } x = 0 \end{cases}$$</div>
 
 
 In practice, the gradient at <span class="math-inline">$x=0$</span> is defined to be 0 (or sometimes 1, implementation-dependent). ReLU's derivative is called the **Heaviside step function**. The simplicity of this derivative is a key reason ReLU replaced sigmoid as the default activation — no <span class="math-inline">$\sigma(1-\sigma)$</span> computation needed, just 0 or 1.
@@ -2932,12 +3444,14 @@ This identity appears in the gradient of the binary cross-entropy loss (Chapter 
 ---
 
 *Next: Chapter 6 — Gradients and Optimization. We extend derivatives to multiple dimensions and show how gradient descent trains models.*
+<a id="chapter-6-calculus-ii-gradients-and-optimization"></a>
 # Chapter 6: Calculus II — Gradients and Optimization
 
 > *"Gradient descent is not magic. It is calculus applied one step at a time."*
 
 ---
 
+<a id="61-from-derivatives-to-gradients"></a>
 ## 6.1 From Derivatives to Gradients
 
 In Chapter 5, we computed derivatives of functions with **one input** — <span class="math-inline">$f(x)$</span>. But ML models have millions of parameters. We need derivatives with respect to **many variables simultaneously**.
@@ -2947,13 +3461,14 @@ The **gradient** is the generalization of the derivative to multi-variable funct
 If <span class="math-inline">$f: \mathbb{R}^n \rightarrow \mathbb{R}$</span> (takes an <span class="math-inline">$n$</span>-dimensional vector, returns a scalar):
 
 
-<div class="math-block">$\nabla f(\mathbf{x}) = \begin{bmatrix} \frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_n} \end{bmatrix}$</div>
+<div class="math-block">$$\nabla f(\mathbf{x}) = \begin{bmatrix} \frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_n} \end{bmatrix}$$</div>
 
 
 Each component <span class="math-inline">$\frac{\partial f}{\partial x_i}$</span> is a **partial derivative** — the rate of change of <span class="math-inline">$f$</span> when only <span class="math-inline">$x_i$</span> changes, holding all others constant.
 
 ---
 
+<a id="62-partial-derivatives"></a>
 ## 6.2 Partial Derivatives
 
 A **partial derivative** differentiates with respect to one variable, treating all others as constants.
@@ -2963,25 +3478,25 @@ A **partial derivative** differentiates with respect to one variable, treating a
 **Worked example:**
 
 
-<div class="math-block">$f(x, y) = x^2 + 3xy + y^3$</div>
+<div class="math-block">$$f(x, y) = x^2 + 3xy + y^3$$</div>
 
 
 Partial derivative with respect to <span class="math-inline">$x$</span> (treat <span class="math-inline">$y$</span> as a constant):
 
-<div class="math-block">$\frac{\partial f}{\partial x} = 2x + 3y$</div>
+<div class="math-block">$$\frac{\partial f}{\partial x} = 2x + 3y$$</div>
 
 
 Partial derivative with respect to <span class="math-inline">$y$</span> (treat <span class="math-inline">$x$</span> as a constant):
 
-<div class="math-block">$\frac{\partial f}{\partial y} = 3x + 3y^2$</div>
+<div class="math-block">$$\frac{\partial f}{\partial y} = 3x + 3y^2$$</div>
 
 
 At the point <span class="math-inline">$(x, y) = (2, 1)$</span>:
 
-<div class="math-block">$\frac{\partial f}{\partial x}\bigg|_{(2,1)} = 2(2) + 3(1) = 7$</div>
+<div class="math-block">$$\frac{\partial f}{\partial x}\bigg|_{(2,1)} = 2(2) + 3(1) = 7$$</div>
 
 
-<div class="math-block">$\frac{\partial f}{\partial y}\bigg|_{(2,1)} = 3(2) + 3(1)^2 = 9$</div>
+<div class="math-block">$$\frac{\partial f}{\partial y}\bigg|_{(2,1)} = 3(2) + 3(1)^2 = 9$$</div>
 
 
 So the gradient at <span class="math-inline">$(2, 1)$</span> is <span class="math-inline">$\nabla f(2,1) = \begin{bmatrix} 7 \\ 9 \end{bmatrix}$</span>.
@@ -3002,6 +3517,7 @@ print(f"gradient = [{df_dx(x,y)}, {df_dy(x,y)}]")  # [7, 9]
 
 ---
 
+<a id="63-the-gradient-as-a-direction"></a>
 ## 6.3 The Gradient as a Direction
 
 The gradient <span class="math-inline">$\nabla f(\mathbf{x})$</span> is a vector that points in the direction of **steepest ascent** — the direction in which <span class="math-inline">$f$</span> increases most rapidly.
@@ -3034,11 +3550,11 @@ f(x,y) as elevation:
 **Worked example — gradient at two points:**
 
 
-<div class="math-block">$f(x,y) = x^2 + y^2 \quad \text{(bowl-shaped, minimum at origin)}$</div>
+<div class="math-block">$$f(x,y) = x^2 + y^2 \quad \text{(bowl-shaped, minimum at origin)}$$</div>
 
 
 
-<div class="math-block">$\nabla f = \begin{bmatrix} 2x \\ 2y \end{bmatrix}$</div>
+<div class="math-block">$$\nabla f = \begin{bmatrix} 2x \\ 2y \end{bmatrix}$$</div>
 
 
 At <span class="math-inline">$(3, 4)$</span>: <span class="math-inline">$\nabla f = \begin{bmatrix} 6 \\ 8 \end{bmatrix}$</span> — points outward from origin (uphill)
@@ -3047,6 +3563,7 @@ At <span class="math-inline">$(0, 0)$</span>: <span class="math-inline">$\nabla 
 
 ---
 
+<a id="64-gradient-descent"></a>
 ## 6.4 Gradient Descent
 
 Gradient descent is the algorithm that trains virtually every ML model. The idea is elegant:
@@ -3056,10 +3573,11 @@ Gradient descent is the algorithm that trains virtually every ML model. The idea
 3. Take a small step in the **opposite** direction (downhill)
 4. Repeat until you reach a minimum
 
+<a id="the-update-rule"></a>
 ### The Update Rule
 
 
-<div class="math-block">$\theta_{\text{new}} = \theta_{\text{old}} - \alpha \cdot \nabla_\theta L(\theta)$</div>
+<div class="math-block">$$\theta_{\text{new}} = \theta_{\text{old}} - \alpha \cdot \nabla_\theta L(\theta)$$</div>
 
 
 - <span class="math-inline">$\theta$</span> — model parameters (weights), a vector
@@ -3069,10 +3587,11 @@ Gradient descent is the algorithm that trains virtually every ML model. The idea
 
 The minus sign is critical: we go **against** the gradient to go downhill.
 
+<a id="worked-example-minimizing-a-1d-function"></a>
 ### Worked Example — Minimizing a 1D Function
 
 
-<div class="math-block">$L(w) = w^2 - 4w + 5$</div>
+<div class="math-block">$$L(w) = w^2 - 4w + 5$$</div>
 
 
 Exact minimum: <span class="math-inline">$L'(w) = 2w - 4 = 0 \implies w^* = 2$</span>, <span class="math-inline">$L(2) = 4 - 8 + 5 = 1$</span>
@@ -3109,6 +3628,7 @@ print(f"\nFinal: w = {w:.6f}, L(w) = {loss(w):.6f}")
 print(f"True minimum: w = 2.0, L = 1.0")
 ```
 
+<a id="the-learning-rate-effect"></a>
 ### The Learning Rate Effect
 
 The learning rate <span class="math-inline">$\alpha$</span> is the most important hyperparameter in gradient descent:
@@ -3148,37 +3668,41 @@ Output:
 
 ---
 
+<a id="65-variants-of-gradient-descent"></a>
 ## 6.5 Variants of Gradient Descent
 
 In practice, computing the gradient over the entire dataset at each step is expensive. Three variants are used:
 
+<a id="batch-gradient-descent"></a>
 ### Batch Gradient Descent
 Use **all** training examples to compute the gradient:
 
 
-<div class="math-block">$\nabla_\theta L = \frac{1}{n} \sum_{i=1}^n \nabla_\theta L^{(i)}$</div>
+<div class="math-block">$$\nabla_\theta L = \frac{1}{n} \sum_{i=1}^n \nabla_\theta L^{(i)}$$</div>
 
 
 - **Pro:** Stable, accurate gradient estimate
 - **Con:** Slow for large datasets; must load all data into memory
 - **Use:** Small datasets or when exact gradient is critical
 
+<a id="stochastic-gradient-descent-sgd"></a>
 ### Stochastic Gradient Descent (SGD)
 Use **one random example** at each step:
 
 
-<div class="math-block">$\nabla_\theta L \approx \nabla_\theta L^{(i)} \quad \text{for random } i$</div>
+<div class="math-block">$$\nabla_\theta L \approx \nabla_\theta L^{(i)} \quad \text{for random } i$$</div>
 
 
 - **Pro:** Fast updates; can escape saddle points due to noise
 - **Con:** Noisy — loss bounces around; needs learning rate decay
 - **Use:** Online learning; very large datasets
 
+<a id="mini-batch-gradient-descent"></a>
 ### Mini-Batch Gradient Descent
 Use a **small random batch** (typically 32–512 examples):
 
 
-<div class="math-block">$\nabla_\theta L \approx \frac{1}{B} \sum_{i \in \text{batch}} \nabla_\theta L^{(i)}$</div>
+<div class="math-block">$$\nabla_\theta L \approx \frac{1}{B} \sum_{i \in \text{batch}} \nabla_\theta L^{(i)}$$</div>
 
 
 - **Pro:** Best of both worlds; efficient on GPUs (vectorized)
@@ -3220,10 +3744,12 @@ def mini_batch_gradient_descent(X, y, w_init, alpha=0.01, batch_size=32, epochs=
 
 ---
 
+<a id="66-the-loss-landscape"></a>
 ## 6.6 The Loss Landscape
 
 Understanding the loss landscape — the "terrain" of <span class="math-inline">$L(\theta)$</span> over all possible parameters — is key to understanding why training works or fails.
 
+<a id="convex-vs-non-convex"></a>
 ### Convex vs Non-Convex
 
 **Convex:** One global minimum, no local minima. Gradient descent always finds it.
@@ -3242,6 +3768,7 @@ Convex (bowl):           Non-convex (hills):
 
 **Neural networks** have non-convex loss landscapes. In practice, the many saddle points and local minima have similar loss values, and modern optimizers handle this well.
 
+<a id="the-role-of-initialization"></a>
 ### The Role of Initialization
 
 Where you start matters in non-convex landscapes:
@@ -3270,17 +3797,19 @@ for w_init in [-2.0, 0.5, 2.0]:
 
 ---
 
+<a id="67-beyond-vanilla-gradient-descent-momentum-and-adam"></a>
 ## 6.7 Beyond Vanilla Gradient Descent: Momentum and Adam
 
+<a id="momentum"></a>
 ### Momentum
 
 Vanilla gradient descent "forgets" previous steps — it only looks at the current gradient. **Momentum** adds memory: it accumulates a velocity vector, smoothing out oscillations.
 
 
-<div class="math-block">$\mathbf{v}_t = \beta \mathbf{v}_{t-1} + (1-\beta)\nabla L(\theta)$</div>
+<div class="math-block">$$\mathbf{v}_t = \beta \mathbf{v}_{t-1} + (1-\beta)\nabla L(\theta)$$</div>
 
 
-<div class="math-block">$\theta_t = \theta_{t-1} - \alpha \mathbf{v}_t$</div>
+<div class="math-block">$$\theta_t = \theta_{t-1} - \alpha \mathbf{v}_t$$</div>
 
 
 - <span class="math-inline">$\mathbf{v}$</span> is the velocity (exponential moving average of gradients)
@@ -3288,6 +3817,7 @@ Vanilla gradient descent "forgets" previous steps — it only looks at the curre
 
 Think of it like a ball rolling down a hill — it builds up speed in consistent directions and doesn't change course sharply on noisy gradients.
 
+<a id="adam-adaptive-moment-estimation"></a>
 ### Adam (Adaptive Moment Estimation)
 
 **Adam** is the most widely used optimizer in deep learning. It combines:
@@ -3295,16 +3825,16 @@ Think of it like a ball rolling down a hill — it builds up speed in consistent
 - **RMSProp:** exponential moving average of squared gradients (<span class="math-inline">$\mathbf{v}$</span>, second moment)
 
 
-<div class="math-block">$\mathbf{m}_t = \beta_1 \mathbf{m}_{t-1} + (1-\beta_1)\nabla L$</div>
+<div class="math-block">$$\mathbf{m}_t = \beta_1 \mathbf{m}_{t-1} + (1-\beta_1)\nabla L$$</div>
 
 
-<div class="math-block">$\mathbf{v}_t = \beta_2 \mathbf{v}_{t-1} + (1-\beta_2)(\nabla L)^2$</div>
+<div class="math-block">$$\mathbf{v}_t = \beta_2 \mathbf{v}_{t-1} + (1-\beta_2)(\nabla L)^2$$</div>
 
 
-<div class="math-block">$\hat{\mathbf{m}}_t = \frac{\mathbf{m}_t}{1-\beta_1^t}, \quad \hat{\mathbf{v}}_t = \frac{\mathbf{v}_t}{1-\beta_2^t} \quad \text{(bias correction)}$</div>
+<div class="math-block">$$\hat{\mathbf{m}}_t = \frac{\mathbf{m}_t}{1-\beta_1^t}, \quad \hat{\mathbf{v}}_t = \frac{\mathbf{v}_t}{1-\beta_2^t} \quad \text{(bias correction)}$$</div>
 
 
-<div class="math-block">$\theta_t = \theta_{t-1} - \alpha \frac{\hat{\mathbf{m}}_t}{\sqrt{\hat{\mathbf{v}}_t} + \epsilon}$</div>
+<div class="math-block">$$\theta_t = \theta_{t-1} - \alpha \frac{\hat{\mathbf{m}}_t}{\sqrt{\hat{\mathbf{v}}_t} + \epsilon}$$</div>
 
 
 **Default hyperparameters:** <span class="math-inline">$\alpha=0.001$</span>, <span class="math-inline">$\beta_1=0.9$</span>, <span class="math-inline">$\beta_2=0.999$</span>, <span class="math-inline">$\epsilon=10^{-8}$</span>
@@ -3324,30 +3854,33 @@ def adam_step(grad, m, v, t, alpha=0.001, beta1=0.9, beta2=0.999, eps=1e-8):
 
 ---
 
+<a id="68-the-jacobian-and-hessian-brief-introduction"></a>
 ## 6.8 The Jacobian and Hessian (Brief Introduction)
 
 For completeness — these appear in optimization literature.
 
+<a id="jacobian"></a>
 ### Jacobian
 
 When <span class="math-inline">$f: \mathbb{R}^n \rightarrow \mathbb{R}^m$</span> (vector input, vector output), the derivative is a matrix called the **Jacobian**:
 
 
-<div class="math-block">$J = \begin{bmatrix}
+<div class="math-block">$$J = \begin{bmatrix}
 \frac{\partial f_1}{\partial x_1} & \cdots & \frac{\partial f_1}{\partial x_n} \\
 \vdots & \ddots & \vdots \\
 \frac{\partial f_m}{\partial x_1} & \cdots & \frac{\partial f_m}{\partial x_n}
-\end{bmatrix} \in \mathbb{R}^{m \times n}$</div>
+\end{bmatrix} \in \mathbb{R}^{m \times n}$$</div>
 
 
 In ML: the Jacobian of the network output with respect to inputs tells you how sensitive each output is to each input feature — useful for saliency maps and explainability.
 
+<a id="hessian"></a>
 ### Hessian
 
 The **Hessian** <span class="math-inline">$H$</span> is the matrix of second-order partial derivatives of a scalar function:
 
 
-<div class="math-block">$H_{ij} = \frac{\partial^2 f}{\partial x_i \partial x_j}$</div>
+<div class="math-block">$$H_{ij} = \frac{\partial^2 f}{\partial x_i \partial x_j}$$</div>
 
 
 The Hessian tells you about the curvature of the loss landscape. Positive definite Hessian = local minimum. Indefinite Hessian = saddle point.
@@ -3356,6 +3889,7 @@ The Hessian tells you about the curvature of the loss landscape. Positive defini
 
 ---
 
+<a id="69-gradient-descent-for-linear-regression-full-example"></a>
 ## 6.9 Gradient Descent for Linear Regression — Full Example
 
 Let's see everything together on a concrete ML problem: fitting a line to data.
@@ -3364,17 +3898,17 @@ Let's see everything together on a concrete ML problem: fitting a line to data.
 
 **Loss (MSE):**
 
-<div class="math-block">$L(w, b) = \frac{1}{n}\sum_{i=1}^{n}(\hat{y}^{(i)} - y^{(i)})^2 = \frac{1}{n}\sum_{i=1}^{n}(wx^{(i)} + b - y^{(i)})^2$</div>
+<div class="math-block">$$L(w, b) = \frac{1}{n}\sum_{i=1}^{n}(\hat{y}^{(i)} - y^{(i)})^2 = \frac{1}{n}\sum_{i=1}^{n}(wx^{(i)} + b - y^{(i)})^2$$</div>
 
 
 **Gradients:**
 
 
-<div class="math-block">$\frac{\partial L}{\partial w} = \frac{2}{n}\sum_{i=1}^{n}(wx^{(i)} + b - y^{(i)}) \cdot x^{(i)}$</div>
+<div class="math-block">$$\frac{\partial L}{\partial w} = \frac{2}{n}\sum_{i=1}^{n}(wx^{(i)} + b - y^{(i)}) \cdot x^{(i)}$$</div>
 
 
 
-<div class="math-block">$\frac{\partial L}{\partial b} = \frac{2}{n}\sum_{i=1}^{n}(wx^{(i)} + b - y^{(i)})$</div>
+<div class="math-block">$$\frac{\partial L}{\partial b} = \frac{2}{n}\sum_{i=1}^{n}(wx^{(i)} + b - y^{(i)})$$</div>
 
 
 ```python
@@ -3422,6 +3956,7 @@ True:    w=2.0000, b=1.0000
 
 ---
 
+<a id="610-chapter-summary"></a>
 ## 6.10 Chapter Summary
 
 | Concept | Formula | Use in ML |
@@ -3440,19 +3975,20 @@ True:    w=2.0000, b=1.0000
 
 ---
 
+<a id="exercises-5"></a>
 ## Exercises
 
 **6.1** Compute the gradient of <span class="math-inline">$f(x, y) = x^2y + y^3$</span> at <span class="math-inline">$(x,y) = (1, 2)$</span>.
 
 *Solution:*
 
-<div class="math-block">$\frac{\partial f}{\partial x} = 2xy, \quad \frac{\partial f}{\partial y} = x^2 + 3y^2$</div>
+<div class="math-block">$$\frac{\partial f}{\partial x} = 2xy, \quad \frac{\partial f}{\partial y} = x^2 + 3y^2$$</div>
 
 
 At <span class="math-inline">$(1,2)$</span>: <span class="math-inline">$\frac{\partial f}{\partial x} = 2(1)(2) = 4$</span>, <span class="math-inline">$\frac{\partial f}{\partial y} = 1 + 12 = 13$</span>
 
 
-<div class="math-block">$\nabla f(1,2) = \begin{bmatrix} 4 \\ 13 \end{bmatrix}$</div>
+<div class="math-block">$$\nabla f(1,2) = \begin{bmatrix} 4 \\ 13 \end{bmatrix}$$</div>
 
 
 **6.2** Run 3 steps of gradient descent on <span class="math-inline">$L(w) = (w-5)^2$</span> starting at <span class="math-inline">$w=0$</span> with <span class="math-inline">$\alpha=0.4$</span>.
@@ -3473,10 +4009,10 @@ Converging toward 5.0. ✓
 Residual <span class="math-inline">$= wx + b - y = 1(2) + 0 - 3 = -1$</span>
 
 
-<div class="math-block">$\frac{\partial L}{\partial w} = 2(wx+b-y) \cdot x = 2(-1)(2) = -4$</div>
+<div class="math-block">$$\frac{\partial L}{\partial w} = 2(wx+b-y) \cdot x = 2(-1)(2) = -4$$</div>
 
 
-<div class="math-block">$\frac{\partial L}{\partial b} = 2(wx+b-y) \cdot 1 = 2(-1) = -2$</div>
+<div class="math-block">$$\frac{\partial L}{\partial b} = 2(wx+b-y) \cdot 1 = 2(-1) = -2$$</div>
 
 
 Gradient: <span class="math-inline">$\begin{bmatrix} -4 \\ -2 \end{bmatrix}$</span>. Gradient descent would increase both <span class="math-inline">$w$</span> and <span class="math-inline">$b$</span> (subtract negative gradient), moving toward the true <span class="math-inline">$w=1.5, b=0$</span> line passing through <span class="math-inline">$(2,3)$</span>.
@@ -3488,32 +4024,35 @@ Gradient: <span class="math-inline">$\begin{bmatrix} -4 \\ -2 \end{bmatrix}$</sp
 **6.5** (Challenge) Show that for <span class="math-inline">$L(w) = \frac{1}{n}\sum_{i=1}^n (wx_i - y_i)^2$</span>, the gradient is:
 
 
-<div class="math-block">$\frac{dL}{dw} = \frac{2}{n}\sum_{i=1}^n (wx_i - y_i)x_i$</div>
+<div class="math-block">$$\frac{dL}{dw} = \frac{2}{n}\sum_{i=1}^n (wx_i - y_i)x_i$$</div>
 
 
 *Solution:* Apply the chain rule to each term:
 
 
-<div class="math-block">$\frac{d}{dw}(wx_i - y_i)^2 = 2(wx_i - y_i) \cdot \frac{d}{dw}(wx_i - y_i) = 2(wx_i - y_i) \cdot x_i$</div>
+<div class="math-block">$$\frac{d}{dw}(wx_i - y_i)^2 = 2(wx_i - y_i) \cdot \frac{d}{dw}(wx_i - y_i) = 2(wx_i - y_i) \cdot x_i$$</div>
 
 
 Summing over all <span class="math-inline">$n$</span> examples and dividing by <span class="math-inline">$n$</span>:
 
 
-<div class="math-block">$\frac{dL}{dw} = \frac{1}{n}\sum_{i=1}^n 2(wx_i - y_i)x_i = \frac{2}{n}\sum_{i=1}^n (wx_i - y_i)x_i \quad \square$</div>
+<div class="math-block">$$\frac{dL}{dw} = \frac{1}{n}\sum_{i=1}^n 2(wx_i - y_i)x_i = \frac{2}{n}\sum_{i=1}^n (wx_i - y_i)x_i \quad \square$$</div>
 
 
 ---
 
 *Next: Chapter 7 — Probability Foundations. We've covered how data is represented and how models improve. Now: what the model actually predicts.*
+<a id="chapter-7-probability-i-foundations"></a>
 # Chapter 7: Probability I — Foundations
 
 > *"All models are wrong, but some are useful. Probability theory is how we quantify exactly how wrong."*
 
 ---
 
+<a id="71-sample-spaces-events-and-outcomes"></a>
 ## 7.1 Sample Spaces, Events, and Outcomes
 
+<a id="plain-english-first"></a>
 ### Plain English First
 
 When something random happens — flipping a coin, classifying an image, measuring sensor noise — there is a set of all the things that *could* happen. Probability theory starts by forcing you to write that set down explicitly. Once you have the full menu of possibilities, you can assign numbers (probabilities) to subsets of it.
@@ -3526,6 +4065,7 @@ Three vocabulary words matter:
 
 Think of the sample space as an enum in code — the complete, exhaustive list of variants. An event is a predicate that matches some of those variants.
 
+<a id="formal-notation"></a>
 ### Formal Notation
 
 Let <span class="math-inline">$\Omega$</span> be the **sample space** — a non-empty set. Any **outcome** <span class="math-inline">$\omega \in \Omega$</span> is a single element. An **event** <span class="math-inline">$A$</span> is a subset <span class="math-inline">$A \subseteq \Omega$</span>.
@@ -3539,12 +4079,13 @@ Let <span class="math-inline">$\Omega$</span> be the **sample space** — a non-
 | <span class="math-inline">$A \cup B$</span> | Union event ("A or B") | `A \| B` |
 | <span class="math-inline">$A \cap B$</span> | Intersection event ("A and B") | `A & B` |
 
+<a id="worked-example-711-a-fair-die"></a>
 ### Worked Example 7.1.1 — A Fair Die
 
 The experiment: roll one fair six-sided die.
 
 
-<div class="math-block">$\Omega = \{1, 2, 3, 4, 5, 6\}$</div>
+<div class="math-block">$$\Omega = \{1, 2, 3, 4, 5, 6\}$$</div>
 
 
 Define events:
@@ -3557,12 +4098,13 @@ Define events:
 
 **Verification:** <span class="math-inline">$|A| + |A^c| = 3 + 3 = 6 = |\Omega|$</span>. Correct.
 
+<a id="worked-example-712-email-classification"></a>
 ### Worked Example 7.1.2 — Email Classification
 
 The experiment: a classifier observes one email and assigns a label.
 
 
-<div class="math-block">$\Omega = \{\text{spam}, \text{ham}\}$</div>
+<div class="math-block">$$\Omega = \{\text{spam}, \text{ham}\}$$</div>
 
 
 - Event <span class="math-inline">$S$</span> = "email is spam" <span class="math-inline">$= \{\text{spam}\}$</span>
@@ -3571,17 +4113,18 @@ The experiment: a classifier observes one email and assigns a label.
 For a document classifier with three classes:
 
 
-<div class="math-block">$\Omega = \{\text{positive}, \text{negative}, \text{neutral}\}$</div>
+<div class="math-block">$$\Omega = \{\text{positive}, \text{negative}, \text{neutral}\}$$</div>
 
 
 The event "model is wrong on a negative example" is <span class="math-inline">$A = \{\text{positive}, \text{neutral}\}$</span> — everything except the correct label.
 
+<a id="engineers-angle"></a>
 ### Engineer's Angle
 
 In ML, the sample space is often implicit. When you define a classification task with <span class="math-inline">$K$</span> classes, you are implicitly defining:
 
 
-<div class="math-block">$\Omega = \{0, 1, 2, \ldots, K-1\}$</div>
+<div class="math-block">$$\Omega = \{0, 1, 2, \ldots, K-1\}$$</div>
 
 
 A model's output (a probability vector of length <span class="math-inline">$K$</span>) assigns a number to each singleton event <span class="math-inline">$\{\omega\}$</span>. The requirement that "they all sum to 1" is exactly the third Kolmogorov axiom — coming in the next section.
@@ -3604,55 +4147,59 @@ print(f"|A| + |A^c| == |Ω|: {len(A) + len(complement_A) == len(omega)}")  # Tru
 
 ---
 
+<a id="72-probability-axioms-kolmogorov"></a>
 ## 7.2 Probability Axioms (Kolmogorov)
 
+<a id="plain-english-first-1"></a>
 ### Plain English First
 
 We want to assign a "likelihood number" to every event. For that assignment to be internally consistent — so we never end up with paradoxes like "the probability of something happening is 120%" — we need three ground rules. Andrey Kolmogorov wrote these down in 1933 and they haven't changed since. Everything else in probability follows from these three rules.
 
+<a id="formal-notation-1"></a>
 ### Formal Notation
 
 A **probability measure** <span class="math-inline">$P$</span> is a function that assigns a real number to every event. It must satisfy three axioms:
 
 **Axiom 1 (Non-negativity):**
 
-<div class="math-block">$P(A) \geq 0 \quad \text{for every event } A$</div>
+<div class="math-block">$$P(A) \geq 0 \quad \text{for every event } A$$</div>
 
 
 **Axiom 2 (Normalization):**
 
-<div class="math-block">$P(\Omega) = 1$</div>
+<div class="math-block">$$P(\Omega) = 1$$</div>
 
 
 **Axiom 3 (Countable Additivity):**  
 If <span class="math-inline">$A$</span> and <span class="math-inline">$B$</span> are **mutually exclusive** (disjoint: <span class="math-inline">$A \cap B = \emptyset$</span>), then:
 
-<div class="math-block">$P(A \cup B) = P(A) + P(B)$</div>
+<div class="math-block">$$P(A \cup B) = P(A) + P(B)$$</div>
 
 
 More generally, for any countable collection of pairwise disjoint events <span class="math-inline">$A_1, A_2, \ldots$</span>:
 
-<div class="math-block">$P\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} P(A_i)$</div>
+<div class="math-block">$$P\!\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} P(A_i)$$</div>
 
 
 **Trust this result:** The entire edifice of probability — Bayes' theorem, expected value, everything — is derived from these three axioms.
 
+<a id="key-consequences-derived-from-the-axioms"></a>
 ### Key Consequences Derived from the Axioms
 
 **Here's why** the complement rule holds: <span class="math-inline">$P(A^c) = 1 - P(A)$</span>
 
 Since <span class="math-inline">$A$</span> and <span class="math-inline">$A^c$</span> are disjoint and their union is <span class="math-inline">$\Omega$</span>:
 
-<div class="math-block">$P(A \cup A^c) = P(A) + P(A^c) \quad \text{(by Axiom 3)}$</div>
+<div class="math-block">$$P(A \cup A^c) = P(A) + P(A^c) \quad \text{(by Axiom 3)}$$</div>
 
 
-<div class="math-block">$P(\Omega) = P(A) + P(A^c) \quad \text{(since } A \cup A^c = \Omega\text{)}$</div>
+<div class="math-block">$$P(\Omega) = P(A) + P(A^c) \quad \text{(since } A \cup A^c = \Omega\text{)}$$</div>
 
 
-<div class="math-block">$1 = P(A) + P(A^c) \quad \text{(by Axiom 2)}$</div>
+<div class="math-block">$$1 = P(A) + P(A^c) \quad \text{(by Axiom 2)}$$</div>
 
 
-<div class="math-block">$\therefore \quad P(A^c) = 1 - P(A) \quad \square$</div>
+<div class="math-block">$$\therefore \quad P(A^c) = 1 - P(A) \quad \square$$</div>
 
 
 **Here's why** the inclusion-exclusion rule holds: <span class="math-inline">$P(A \cup B) = P(A) + P(B) - P(A \cap B)$</span>
@@ -3660,7 +4207,7 @@ Since <span class="math-inline">$A$</span> and <span class="math-inline">$A^c$</
 Write <span class="math-inline">$A \cup B$</span> as three disjoint pieces:
 
 
-<div class="math-block">$A \cup B = (A \setminus B) \cup (A \cap B) \cup (B \setminus A)$</div>
+<div class="math-block">$$A \cup B = (A \setminus B) \cup (A \cap B) \cup (B \setminus A)$$</div>
 
 
 By Axiom 3: <span class="math-inline">$P(A \cup B) = P(A \setminus B) + P(A \cap B) + P(B \setminus A)$</span>
@@ -3671,41 +4218,43 @@ Adding: <span class="math-inline">$P(A) + P(B) = P(A \setminus B) + 2P(A \cap B)
 
 Subtracting <span class="math-inline">$P(A \cap B)$</span>: <span class="math-inline">$P(A) + P(B) - P(A \cap B) = P(A \cup B) \quad \square$</span>
 
+<a id="worked-example-721-die-probabilities"></a>
 ### Worked Example 7.2.1 — Die Probabilities
 
 For a fair six-sided die, each outcome is equally likely:
 
 
-<div class="math-block">$P(\{k\}) = \frac{1}{6} \quad \text{for } k = 1, 2, 3, 4, 5, 6$</div>
+<div class="math-block">$$P(\{k\}) = \frac{1}{6} \quad \text{for } k = 1, 2, 3, 4, 5, 6$$</div>
 
 
 **Verify Axiom 2:**
 
-<div class="math-block">$P(\Omega) = P(\{1\}) + P(\{2\}) + \cdots + P(\{6\}) = \frac{1}{6} \times 6 = 1 \checkmark$</div>
+<div class="math-block">$$P(\Omega) = P(\{1\}) + P(\{2\}) + \cdots + P(\{6\}) = \frac{1}{6} \times 6 = 1 \checkmark$$</div>
 
 
 **Compute <span class="math-inline">$P(A)$</span> where <span class="math-inline">$A = \{2, 4, 6\}$</span>:**
 
 Since <span class="math-inline">$\{2\}$</span>, <span class="math-inline">$\{4\}$</span>, <span class="math-inline">$\{6\}$</span> are disjoint, by Axiom 3:
 
-<div class="math-block">$P(A) = P(\{2\}) + P(\{4\}) + P(\{6\}) = \frac{1}{6} + \frac{1}{6} + \frac{1}{6} = \frac{3}{6} = \frac{1}{2}$</div>
+<div class="math-block">$$P(A) = P(\{2\}) + P(\{4\}) + P(\{6\}) = \frac{1}{6} + \frac{1}{6} + \frac{1}{6} = \frac{3}{6} = \frac{1}{2}$$</div>
 
 
 **Complement:** <span class="math-inline">$P(A^c) = 1 - \frac{1}{2} = \frac{1}{2}$</span>. Indeed <span class="math-inline">$A^c = \{1, 3, 5\}$</span> also has three elements.
 
 **Inclusion-exclusion** with <span class="math-inline">$B = \{5, 6\}$</span>:
 
-<div class="math-block">$P(A \cup B) = P(A) + P(B) - P(A \cap B) = \frac{3}{6} + \frac{2}{6} - \frac{1}{6} = \frac{4}{6} = \frac{2}{3}$</div>
+<div class="math-block">$$P(A \cup B) = P(A) + P(B) - P(A \cap B) = \frac{3}{6} + \frac{2}{6} - \frac{1}{6} = \frac{4}{6} = \frac{2}{3}$$</div>
 
 
 Cross-check: <span class="math-inline">$A \cup B = \{2, 4, 5, 6\}$</span> has 4 elements, so <span class="math-inline">$P(A \cup B) = \frac{4}{6} = \frac{2}{3}$</span>. <span class="math-inline">$\checkmark$</span>
 
+<a id="engineers-angle-axioms-in-softmax"></a>
 ### Engineer's Angle: Axioms in Softmax
 
 A softmax layer in a neural network takes a vector of raw scores (logits) <span class="math-inline">$\mathbf{z} \in \mathbb{R}^K$</span> and outputs:
 
 
-<div class="math-block">$\text{softmax}(\mathbf{z})_k = \frac{e^{z_k}}{\sum_{j=1}^{K} e^{z_j}}$</div>
+<div class="math-block">$$\text{softmax}(\mathbf{z})_k = \frac{e^{z_k}}{\sum_{j=1}^{K} e^{z_j}}$$</div>
 
 
 This construction is deliberately engineered to satisfy all three Kolmogorov axioms:
@@ -3733,18 +4282,21 @@ print(f"All >= 0: {all(p >= 0 for p in probs)}")  # Axiom 1
 
 ---
 
+<a id="73-conditional-probability"></a>
 ## 7.3 Conditional Probability
 
+<a id="plain-english-first-2"></a>
 ### Plain English First
 
 Conditional probability answers: "Given that I already know <span class="math-inline">$B$</span> happened, how likely is <span class="math-inline">$A$</span>?" Learning new information shrinks the universe of possibilities. If you know the first die came up 5, you no longer care about the other 35 outcomes — your world has collapsed to just the 6 outcomes where the first die shows 5.
 
+<a id="formal-notation-2"></a>
 ### Formal Notation
 
 The **conditional probability** of <span class="math-inline">$A$</span> given <span class="math-inline">$B$</span> (assuming <span class="math-inline">$P(B) > 0$</span>) is:
 
 
-<div class="math-block">$P(A \mid B) = \frac{P(A \cap B)}{P(B)}$</div>
+<div class="math-block">$$P(A \mid B) = \frac{P(A \cap B)}{P(B)}$$</div>
 
 
 Read as: "the fraction of <span class="math-inline">$B$</span>'s probability mass that also belongs to <span class="math-inline">$A$</span>."
@@ -3752,9 +4304,10 @@ Read as: "the fraction of <span class="math-inline">$B$</span>'s probability mas
 Rearranging (this is the **multiplication rule**, used constantly):
 
 
-<div class="math-block">$P(A \cap B) = P(A \mid B) \cdot P(B)$</div>
+<div class="math-block">$$P(A \cap B) = P(A \mid B) \cdot P(B)$$</div>
 
 
+<a id="worked-example-731-two-dice"></a>
 ### Worked Example 7.3.1 — Two Dice
 
 Roll two fair dice. Let:
@@ -3765,19 +4318,20 @@ Roll two fair dice. Let:
 
 Step 1 — Find <span class="math-inline">$A \cap B$</span>: pairs where first die = 5 AND sum = 8.
 
-<div class="math-block">$\text{Need second die} = 8 - 5 = 3 \Rightarrow (5, 3) \text{ only}$</div>
+<div class="math-block">$$\text{Need second die} = 8 - 5 = 3 \Rightarrow (5, 3) \text{ only}$$</div>
 
 
-<div class="math-block">$P(A \cap B) = \frac{1}{36}$</div>
+<div class="math-block">$$P(A \cap B) = \frac{1}{36}$$</div>
 
 
 Step 2 — Apply the formula:
 
-<div class="math-block">$P(A \mid B) = \frac{P(A \cap B)}{P(B)} = \frac{1/36}{6/36} = \frac{1/36}{1/6} = \frac{1}{36} \times \frac{6}{1} = \frac{6}{36} = \frac{1}{6}$</div>
+<div class="math-block">$$P(A \mid B) = \frac{P(A \cap B)}{P(B)} = \frac{1/36}{6/36} = \frac{1/36}{1/6} = \frac{1}{36} \times \frac{6}{1} = \frac{6}{36} = \frac{1}{6}$$</div>
 
 
 **Sanity check:** Given that first die = 5, the second die can be 1–6 equally. Sum = 8 requires second = 3. That's 1 outcome out of 6. So <span class="math-inline">$P(A \mid B) = \frac{1}{6}$</span>. <span class="math-inline">$\checkmark$</span>
 
+<a id="worked-example-732-email-spam"></a>
 ### Worked Example 7.3.2 — Email Spam
 
 Suppose 30% of emails are spam (<span class="math-inline">$P(S) = 0.3$</span>), and 80% of spam emails contain the word "win" (<span class="math-inline">$P(\text{"win"} \mid S) = 0.8$</span>). What fraction of *all* emails are spam emails containing "win"?
@@ -3785,11 +4339,12 @@ Suppose 30% of emails are spam (<span class="math-inline">$P(S) = 0.3$</span>), 
 This is a multiplication rule question:
 
 
-<div class="math-block">$P(S \cap \text{"win"}) = P(\text{"win"} \mid S) \cdot P(S) = 0.8 \times 0.3 = 0.24$</div>
+<div class="math-block">$$P(S \cap \text{"win"}) = P(\text{"win"} \mid S) \cdot P(S) = 0.8 \times 0.3 = 0.24$$</div>
 
 
 24% of all emails are spam emails that contain "win". Note this is NOT the same as <span class="math-inline">$P(S \mid \text{"win"})$</span> — that requires Bayes' theorem (Section 7.5).
 
+<a id="engineers-angle-generative-vs-discriminative-models"></a>
 ### Engineer's Angle: Generative vs. Discriminative Models
 
 Every supervised ML model is essentially trying to learn one of two things:
@@ -3820,47 +4375,51 @@ print(f"P(sum=8 | first=5) = {p_A_given_B}")  # 1/6
 
 ---
 
+<a id="74-independence-of-events"></a>
 ## 7.4 Independence of Events
 
+<a id="plain-english-first-3"></a>
 ### Plain English First
 
 Two events are independent if knowing one happened gives you zero information about whether the other happened. Flipping a coin twice: the second flip doesn't care what the first flip did. This is distinct from events being *mutually exclusive* (which means knowing one happened tells you the other definitely didn't happen — the opposite of independent).
 
 Independence is one of the most important — and most abused — assumptions in ML.
 
+<a id="formal-notation-3"></a>
 ### Formal Notation
 
 Events <span class="math-inline">$A$</span> and <span class="math-inline">$B$</span> are **independent** if and only if:
 
 
-<div class="math-block">$P(A \cap B) = P(A) \cdot P(B)$</div>
+<div class="math-block">$$P(A \cap B) = P(A) \cdot P(B)$$</div>
 
 
 **Equivalently** (when <span class="math-inline">$P(B) > 0$</span>):
 
 
-<div class="math-block">$P(A \mid B) = P(A)$</div>
+<div class="math-block">$$P(A \mid B) = P(A)$$</div>
 
 
 **Here's why** these are equivalent: if <span class="math-inline">$P(A \cap B) = P(A) \cdot P(B)$</span>, then:
 
-<div class="math-block">$P(A \mid B) = \frac{P(A \cap B)}{P(B)} = \frac{P(A) \cdot P(B)}{P(B)} = P(A)$</div>
+<div class="math-block">$$P(A \mid B) = \frac{P(A \cap B)}{P(B)} = \frac{P(A) \cdot P(B)}{P(B)} = P(A)$$</div>
 
 
 Knowing <span class="math-inline">$B$</span> occurred doesn't change <span class="math-inline">$A$</span>'s probability. <span class="math-inline">$\square$</span>
 
 Events <span class="math-inline">$A_1, A_2, \ldots, A_n$</span> are **mutually independent** if for every subset <span class="math-inline">$\{A_{i_1}, \ldots, A_{i_k}\}$</span>:
 
-<div class="math-block">$P(A_{i_1} \cap \cdots \cap A_{i_k}) = P(A_{i_1}) \cdots P(A_{i_k})$</div>
+<div class="math-block">$$P(A_{i_1} \cap \cdots \cap A_{i_k}) = P(A_{i_1}) \cdots P(A_{i_k})$$</div>
 
 
 Pairwise independence does NOT imply mutual independence — but mutual independence implies pairwise.
 
+<a id="worked-example-741-two-coin-flips"></a>
 ### Worked Example 7.4.1 — Two Coin Flips
 
 Flip a fair coin twice. Sample space:
 
-<div class="math-block">$\Omega = \{HH, HT, TH, TT\}, \quad P(\text{each}) = \frac{1}{4}$</div>
+<div class="math-block">$$\Omega = \{HH, HT, TH, TT\}, \quad P(\text{each}) = \frac{1}{4}$$</div>
 
 
 Let <span class="math-inline">$A$</span> = "first flip is H" <span class="math-inline">$= \{HH, HT\}$</span>, <span class="math-inline">$P(A) = \frac{2}{4} = \frac{1}{2}$</span>
@@ -3869,48 +4428,50 @@ Let <span class="math-inline">$B$</span> = "second flip is H" <span class="math-
 
 Check independence:
 
-<div class="math-block">$P(A \cap B) = P(\{HH\}) = \frac{1}{4}$</div>
+<div class="math-block">$$P(A \cap B) = P(\{HH\}) = \frac{1}{4}$$</div>
 
 
-<div class="math-block">$P(A) \cdot P(B) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}$</div>
+<div class="math-block">$$P(A) \cdot P(B) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}$$</div>
 
 
 Since <span class="math-inline">$P(A \cap B) = P(A) \cdot P(B)$</span>, the events are **independent**. <span class="math-inline">$\checkmark$</span>
 
 Intuitively: the second flip doesn't "remember" the first.
 
+<a id="worked-example-742-dependent-events"></a>
 ### Worked Example 7.4.2 — Dependent Events
 
 Roll one die. Let <span class="math-inline">$A$</span> = "result is even" <span class="math-inline">$= \{2,4,6\}$</span> and <span class="math-inline">$B$</span> = "result is greater than 4" <span class="math-inline">$= \{5, 6\}$</span>.
 
 
-<div class="math-block">$P(A) = \frac{3}{6} = \frac{1}{2}, \quad P(B) = \frac{2}{6} = \frac{1}{3}$</div>
+<div class="math-block">$$P(A) = \frac{3}{6} = \frac{1}{2}, \quad P(B) = \frac{2}{6} = \frac{1}{3}$$</div>
 
 
-<div class="math-block">$P(A \cap B) = P(\{6\}) = \frac{1}{6}$</div>
+<div class="math-block">$$P(A \cap B) = P(\{6\}) = \frac{1}{6}$$</div>
 
 
-<div class="math-block">$P(A) \cdot P(B) = \frac{1}{2} \times \frac{1}{3} = \frac{1}{6}$</div>
+<div class="math-block">$$P(A) \cdot P(B) = \frac{1}{2} \times \frac{1}{3} = \frac{1}{6}$$</div>
 
 
 These happen to be independent! (The outcome being even gives no information about whether it exceeds 4, on a fair die.)
 
 Now let <span class="math-inline">$C$</span> = "result is greater than 3" <span class="math-inline">$= \{4, 5, 6\}$</span>, <span class="math-inline">$P(C) = \frac{3}{6} = \frac{1}{2}$</span>.
 
-<div class="math-block">$P(A \cap C) = P(\{4, 6\}) = \frac{2}{6} = \frac{1}{3}$</div>
+<div class="math-block">$$P(A \cap C) = P(\{4, 6\}) = \frac{2}{6} = \frac{1}{3}$$</div>
 
 
-<div class="math-block">$P(A) \cdot P(C) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}$</div>
+<div class="math-block">$$P(A) \cdot P(C) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}$$</div>
 
 
 Since <span class="math-inline">$\frac{1}{3} \neq \frac{1}{4}$</span>, events <span class="math-inline">$A$</span> and <span class="math-inline">$C$</span> are **dependent**. Knowing the die shows more than 3 increases the chance it's even (from <span class="math-inline">$\frac{1}{2}$</span> to <span class="math-inline">$\frac{2}{3}$</span>).
 
+<a id="engineers-angle-the-naive-bayes-assumption"></a>
 ### Engineer's Angle: The Naive Bayes Assumption
 
 Naive Bayes classifiers classify documents by computing:
 
 
-<div class="math-block">$P(y \mid x_1, x_2, \ldots, x_n) \propto P(y) \cdot \prod_{i=1}^{n} P(x_i \mid y)$</div>
+<div class="math-block">$$P(y \mid x_1, x_2, \ldots, x_n) \propto P(y) \cdot \prod_{i=1}^{n} P(x_i \mid y)$$</div>
 
 
 The word "Naive" refers to the assumption that features <span class="math-inline">$x_1, \ldots, x_n$</span> are **mutually independent** given the class <span class="math-inline">$y$</span>. In spam filtering, this means "the probability of seeing 'free' and 'winner' together equals the product of their individual probabilities, given the email is spam."
@@ -3940,35 +4501,38 @@ print(f"Independent: {p_AB == p_A * p_B}")  # True
 
 ---
 
+<a id="75-bayes-theorem"></a>
 ## 7.5 Bayes' Theorem
 
+<a id="plain-english-first-4"></a>
 ### Plain English First
 
 Bayes' theorem is the mathematical rule for *updating your beliefs* when you get new evidence. Before seeing evidence: you have a **prior** belief (<span class="math-inline">$P(\text{hypothesis})$</span>). After seeing evidence: you compute a **posterior** belief (<span class="math-inline">$P(\text{hypothesis} \mid \text{evidence})$</span>). The theorem tells you exactly how to do this update.
 
 It is arguably the most important formula in machine learning.
 
+<a id="derivation-heres-why"></a>
 ### Derivation — "Here's why"
 
 Start from the **symmetry of joint probability**. The joint event "<span class="math-inline">$A$</span> and <span class="math-inline">$B$</span>" can be factored two ways using the multiplication rule:
 
 
-<div class="math-block">$P(A \cap B) = P(A \mid B) \cdot P(B) \quad \text{...(i)}$</div>
+<div class="math-block">$$P(A \cap B) = P(A \mid B) \cdot P(B) \quad \text{...(i)}$$</div>
 
 
-<div class="math-block">$P(A \cap B) = P(B \mid A) \cdot P(A) \quad \text{...(ii)}$</div>
+<div class="math-block">$$P(A \cap B) = P(B \mid A) \cdot P(A) \quad \text{...(ii)}$$</div>
 
 
 Since both equal <span class="math-inline">$P(A \cap B)$</span>, set them equal:
 
 
-<div class="math-block">$P(A \mid B) \cdot P(B) = P(B \mid A) \cdot P(A)$</div>
+<div class="math-block">$$P(A \mid B) \cdot P(B) = P(B \mid A) \cdot P(A)$$</div>
 
 
 Divide both sides by <span class="math-inline">$P(B)$</span> (assuming <span class="math-inline">$P(B) > 0$</span>):
 
 
-<div class="math-block">$\boxed{P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}}$</div>
+<div class="math-block">$$\boxed{P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}}$$</div>
 
 
 This is **Bayes' theorem**. <span class="math-inline">$\square$</span>
@@ -3979,6 +4543,7 @@ The names for each piece:
 - <span class="math-inline">$P(B)$</span>: **marginal likelihood** or **evidence** — how probable the evidence is overall
 - <span class="math-inline">$P(A \mid B)$</span>: **posterior** — your updated belief after seeing evidence
 
+<a id="worked-example-751-medical-test-the-classic"></a>
 ### Worked Example 7.5.1 — Medical Test (the Classic)
 
 A disease affects 1 in 1,000 people. A test for it has:
@@ -3989,102 +4554,104 @@ You test positive. What is <span class="math-inline">$P(\text{disease} \mid +)$<
 
 **Step 1 — State the priors:**
 
-<div class="math-block">$P(D) = \frac{1}{1000} = 0.001, \qquad P(D^c) = \frac{999}{1000} = 0.999$</div>
+<div class="math-block">$$P(D) = \frac{1}{1000} = 0.001, \qquad P(D^c) = \frac{999}{1000} = 0.999$$</div>
 
 
 **Step 2 — State the likelihoods:**
 
-<div class="math-block">$P(+ \mid D) = 0.99, \qquad P(+ \mid D^c) = 0.05$</div>
+<div class="math-block">$$P(+ \mid D) = 0.99, \qquad P(+ \mid D^c) = 0.05$$</div>
 
 
 **Step 3 — Compute <span class="math-inline">$P(+)$</span> using the total probability theorem** (derived in Section 7.6):
 
-<div class="math-block">$P(+) = P(+ \mid D) \cdot P(D) + P(+ \mid D^c) \cdot P(D^c)$</div>
+<div class="math-block">$$P(+) = P(+ \mid D) \cdot P(D) + P(+ \mid D^c) \cdot P(D^c)$$</div>
 
 
-<div class="math-block">$= 0.99 \times 0.001 + 0.05 \times 0.999$</div>
+<div class="math-block">$$= 0.99 \times 0.001 + 0.05 \times 0.999$$</div>
 
 
-<div class="math-block">$= 0.00099 + 0.04995 = 0.05094$</div>
+<div class="math-block">$$= 0.00099 + 0.04995 = 0.05094$$</div>
 
 
 **Step 4 — Apply Bayes:**
 
-<div class="math-block">$P(D \mid +) = \frac{P(+ \mid D) \cdot P(D)}{P(+)} = \frac{0.99 \times 0.001}{0.05094} = \frac{0.00099}{0.05094}$</div>
+<div class="math-block">$$P(D \mid +) = \frac{P(+ \mid D) \cdot P(D)}{P(+)} = \frac{0.99 \times 0.001}{0.05094} = \frac{0.00099}{0.05094}$$</div>
 
 
 **Arithmetic (exact fractions):**
 
 
-<div class="math-block">$P(D) = \frac{1}{1000}, \quad P(+ \mid D) = \frac{99}{100}$</div>
+<div class="math-block">$$P(D) = \frac{1}{1000}, \quad P(+ \mid D) = \frac{99}{100}$$</div>
 
 
-<div class="math-block">$\text{Numerator} = \frac{99}{100} \times \frac{1}{1000} = \frac{99}{100000}$</div>
-
-
-
-<div class="math-block">$P(D^c) = \frac{999}{1000}, \quad P(+ \mid D^c) = \frac{5}{100}$</div>
-
-
-<div class="math-block">$P(+ \mid D^c) \times P(D^c) = \frac{5}{100} \times \frac{999}{1000} = \frac{4995}{100000}$</div>
+<div class="math-block">$$\text{Numerator} = \frac{99}{100} \times \frac{1}{1000} = \frac{99}{100000}$$</div>
 
 
 
-<div class="math-block">$P(+) = \frac{99}{100000} + \frac{4995}{100000} = \frac{5094}{100000} = \frac{2547}{50000}$</div>
+<div class="math-block">$$P(D^c) = \frac{999}{1000}, \quad P(+ \mid D^c) = \frac{5}{100}$$</div>
+
+
+<div class="math-block">$$P(+ \mid D^c) \times P(D^c) = \frac{5}{100} \times \frac{999}{1000} = \frac{4995}{100000}$$</div>
 
 
 
-<div class="math-block">$P(D \mid +) = \frac{99/100000}{2547/50000} = \frac{99}{100000} \times \frac{50000}{2547} = \frac{99 \times 50000}{100000 \times 2547} = \frac{4950000}{254700000} = \frac{11}{566}$</div>
+<div class="math-block">$$P(+) = \frac{99}{100000} + \frac{4995}{100000} = \frac{5094}{100000} = \frac{2547}{50000}$$</div>
 
 
 
-<div class="math-block">$P(D \mid +) = \frac{11}{566} \approx 0.0194 = \mathbf{1.94\%}$</div>
+<div class="math-block">$$P(D \mid +) = \frac{99/100000}{2547/50000} = \frac{99}{100000} \times \frac{50000}{2547} = \frac{99 \times 50000}{100000 \times 2547} = \frac{4950000}{254700000} = \frac{11}{566}$$</div>
+
+
+
+<div class="math-block">$$P(D \mid +) = \frac{11}{566} \approx 0.0194 = \mathbf{1.94\%}$$</div>
 
 
 **Interpretation:** Even with a 99% sensitive test, a positive result means you have less than a 2% chance of actually having the disease. Why? Because the disease is so rare (<span class="math-inline">$0.1\%$</span> prevalence) that the 5% false positive rate generates far more false alarms than real cases.
 
 This result shocks most people and is the core of why medical tests need to be interpreted in context.
 
+<a id="worked-example-752-naive-bayes-spam-classification"></a>
 ### Worked Example 7.5.2 — Naive Bayes Spam Classification
 
 An email arrives with words "free" and "meeting". Prior probabilities and likelihoods:
 
 
-<div class="math-block">$P(S) = 0.4, \quad P(H) = 0.6$</div>
+<div class="math-block">$$P(S) = 0.4, \quad P(H) = 0.6$$</div>
 
 
-<div class="math-block">$P(\text{"free"} \mid S) = 0.6, \quad P(\text{"free"} \mid H) = 0.1$</div>
+<div class="math-block">$$P(\text{"free"} \mid S) = 0.6, \quad P(\text{"free"} \mid H) = 0.1$$</div>
 
 
-<div class="math-block">$P(\text{"meeting"} \mid S) = 0.05, \quad P(\text{"meeting"} \mid H) = 0.5$</div>
+<div class="math-block">$$P(\text{"meeting"} \mid S) = 0.05, \quad P(\text{"meeting"} \mid H) = 0.5$$</div>
 
 
 Under the Naive Bayes (independence) assumption:
 
 
-<div class="math-block">$P(S \mid \text{email}) \propto P(S) \cdot P(\text{"free"} \mid S) \cdot P(\text{"meeting"} \mid S)$</div>
+<div class="math-block">$$P(S \mid \text{email}) \propto P(S) \cdot P(\text{"free"} \mid S) \cdot P(\text{"meeting"} \mid S)$$</div>
 
 
-<div class="math-block">$= 0.4 \times 0.6 \times 0.05 = 0.012$</div>
+<div class="math-block">$$= 0.4 \times 0.6 \times 0.05 = 0.012$$</div>
 
 
 
-<div class="math-block">$P(H \mid \text{email}) \propto P(H) \cdot P(\text{"free"} \mid H) \cdot P(\text{"meeting"} \mid H)$</div>
+<div class="math-block">$$P(H \mid \text{email}) \propto P(H) \cdot P(\text{"free"} \mid H) \cdot P(\text{"meeting"} \mid H)$$</div>
 
 
-<div class="math-block">$= 0.6 \times 0.1 \times 0.5 = 0.030$</div>
+<div class="math-block">$$= 0.6 \times 0.1 \times 0.5 = 0.030$$</div>
 
 
 **Normalize** (these are proportional, not the actual posteriors yet):
 
-<div class="math-block">$P(S \mid \text{email}) = \frac{0.012}{0.012 + 0.030} = \frac{0.012}{0.042} = \frac{12}{42} = \frac{2}{7} \approx 0.286$</div>
+<div class="math-block">$$P(S \mid \text{email}) = \frac{0.012}{0.012 + 0.030} = \frac{0.012}{0.042} = \frac{12}{42} = \frac{2}{7} \approx 0.286$$</div>
 
 
-<div class="math-block">$P(H \mid \text{email}) = \frac{0.030}{0.042} = \frac{30}{42} = \frac{5}{7} \approx 0.714$</div>
+<div class="math-block">$$P(H \mid \text{email}) = \frac{0.030}{0.042} = \frac{30}{42} = \frac{5}{7} \approx 0.714$$</div>
 
 
 **Decision:** Classify as ham (probability 71.4%). The word "meeting" was a strong ham signal that outweighed "free".
 
+<a id="engineers-angle-1"></a>
 ### Engineer's Angle
 
 ```python
@@ -4123,32 +4690,36 @@ print(f"P(ham  | email)  = {score_H}/{total} = {score_H/total} ≈ {float(score_
 
 ---
 
+<a id="76-total-probability-theorem"></a>
 ## 7.6 Total Probability Theorem
 
+<a id="plain-english-first-5"></a>
 ### Plain English First
 
 Sometimes you want <span class="math-inline">$P(B)$</span> but you don't know it directly. However, you do know how likely <span class="math-inline">$B$</span> is within each "category" of some partition. The total probability theorem says: take each category's probability of <span class="math-inline">$B$</span>, weight it by how common that category is, and add them up.
 
 This is exactly how you compute the denominator in Bayes' theorem.
 
+<a id="formal-notation-4"></a>
 ### Formal Notation
 
 If events <span class="math-inline">$A_1, A_2, \ldots, A_n$</span> form a **partition** of <span class="math-inline">$\Omega$</span> (mutually exclusive, collectively exhaustive: <span class="math-inline">$A_i \cap A_j = \emptyset$</span> for <span class="math-inline">$i \neq j$</span> and <span class="math-inline">$\bigcup_i A_i = \Omega$</span>), then for any event <span class="math-inline">$B$</span>:
 
 
-<div class="math-block">$P(B) = \sum_{i=1}^{n} P(B \mid A_i) \cdot P(A_i)$</div>
+<div class="math-block">$$P(B) = \sum_{i=1}^{n} P(B \mid A_i) \cdot P(A_i)$$</div>
 
 
 **Here's why** this works: since the <span class="math-inline">$A_i$</span> partition <span class="math-inline">$\Omega$</span>, we can write:
 
-<div class="math-block">$B = B \cap \Omega = B \cap \left(\bigcup_{i=1}^{n} A_i\right) = \bigcup_{i=1}^{n} (B \cap A_i)$</div>
+<div class="math-block">$$B = B \cap \Omega = B \cap \left(\bigcup_{i=1}^{n} A_i\right) = \bigcup_{i=1}^{n} (B \cap A_i)$$</div>
 
 
 The sets <span class="math-inline">$B \cap A_i$</span> are disjoint (since <span class="math-inline">$A_i$</span> are disjoint), so by Axiom 3:
 
-<div class="math-block">$P(B) = \sum_{i=1}^{n} P(B \cap A_i) = \sum_{i=1}^{n} P(B \mid A_i) \cdot P(A_i) \quad \square$</div>
+<div class="math-block">$$P(B) = \sum_{i=1}^{n} P(B \cap A_i) = \sum_{i=1}^{n} P(B \mid A_i) \cdot P(A_i) \quad \square$$</div>
 
 
+<a id="worked-example-761-spam-word-frequency"></a>
 ### Worked Example 7.6.1 — Spam Word Frequency
 
 Three types of emails: spam (30%), newsletters (50%), personal (20%). Probability the word "win" appears:
@@ -4160,26 +4731,28 @@ Three types of emails: spam (30%), newsletters (50%), personal (20%). Probabilit
 Total probability of seeing "win" in a randomly chosen email:
 
 
-<div class="math-block">$P(\text{"win"}) = 0.80 \times 0.30 + 0.15 \times 0.50 + 0.05 \times 0.20$</div>
+<div class="math-block">$$P(\text{"win"}) = 0.80 \times 0.30 + 0.15 \times 0.50 + 0.05 \times 0.20$$</div>
 
 
 **Arithmetic:**
 
-<div class="math-block">$= 0.24 + 0.075 + 0.010 = 0.325$</div>
+<div class="math-block">$$= 0.24 + 0.075 + 0.010 = 0.325$$</div>
 
 
 Cross-check: the weighted average should be between the lowest (0.05) and highest (0.80) likelihood. <span class="math-inline">$0.325$</span> is in that range. <span class="math-inline">$\checkmark$</span>
 
+<a id="worked-example-762-mixture-model-ml-connection"></a>
 ### Worked Example 7.6.2 — Mixture Model (ML Connection)
 
 A Gaussian Mixture Model (GMM) assumes data is generated from <span class="math-inline">$K$</span> Gaussian components with mixing weights <span class="math-inline">$\pi_k$</span>. The marginal density of an observation <span class="math-inline">$x$</span> is:
 
 
-<div class="math-block">$p(x) = \sum_{k=1}^{K} \pi_k \cdot p(x \mid \text{component } k)$</div>
+<div class="math-block">$$p(x) = \sum_{k=1}^{K} \pi_k \cdot p(x \mid \text{component } k)$$</div>
 
 
 This is the total probability theorem in continuous form. The "partition" is over the latent variable (which component generated the point).
 
+<a id="engineers-angle-2"></a>
 ### Engineer's Angle
 
 ```python
@@ -4205,8 +4778,10 @@ for t, (lk, pr, product) in zip(types, terms):
 
 ---
 
+<a id="77-random-variables"></a>
 ## 7.7 Random Variables
 
+<a id="plain-english-first-6"></a>
 ### Plain English First
 
 A **random variable** is a function that assigns a number to every outcome in the sample space. Instead of working with abstract outcomes like "the email is spam", we work with numbers — which we can do math on. A random variable turns qualitative events into quantities.
@@ -4215,6 +4790,7 @@ There are two flavors:
 - **Discrete:** takes a countable set of values (e.g., number of errors in a batch, class label 0/1/2)
 - **Continuous:** takes any value in an interval (e.g., a model's confidence score, a pixel intensity)
 
+<a id="formal-notation-5"></a>
 ### Formal Notation
 
 A **random variable** <span class="math-inline">$X$</span> is a function <span class="math-inline">$X: \Omega \rightarrow \mathbb{R}$</span>.
@@ -4222,7 +4798,7 @@ A **random variable** <span class="math-inline">$X$</span> is a function <span c
 **Discrete random variable:** <span class="math-inline">$X$</span> takes values in <span class="math-inline">$\{x_1, x_2, \ldots\}$</span>. Characterized by its **probability mass function (PMF)**:
 
 
-<div class="math-block">$p_X(x) = P(X = x)$</div>
+<div class="math-block">$$p_X(x) = P(X = x)$$</div>
 
 
 Requirements: <span class="math-inline">$p_X(x) \geq 0$</span> and <span class="math-inline">$\sum_x p_X(x) = 1$</span> (Kolmogorov's axioms).
@@ -4230,7 +4806,7 @@ Requirements: <span class="math-inline">$p_X(x) \geq 0$</span> and <span class="
 **Continuous random variable:** <span class="math-inline">$X$</span> takes values in an interval. Characterized by its **probability density function (PDF)** <span class="math-inline">$f_X(x)$</span> where:
 
 
-<div class="math-block">$P(a \leq X \leq b) = \int_a^b f_X(x)\, dx$</div>
+<div class="math-block">$$P(a \leq X \leq b) = \int_a^b f_X(x)\, dx$$</div>
 
 
 **Trust this result:** The integral <span class="math-inline">$\int_a^b f_X(x)\, dx$</span> computes the area under the curve of <span class="math-inline">$f_X$</span> between <span class="math-inline">$a$</span> and <span class="math-inline">$b$</span> — think of it as the sum of infinitely many thin slivers, each of width <span class="math-inline">$dx$</span> and height <span class="math-inline">$f_X(x)$</span>. For Python programmers, it's like `sum(f(x) * dx for x in range(a, b, dx))` as `dx` approaches zero.
@@ -4239,12 +4815,13 @@ Requirements for PDF: <span class="math-inline">$f_X(x) \geq 0$</span> and <span
 
 Note: for a continuous RV, <span class="math-inline">$P(X = x) = 0$</span> for any single point — probability lives in *intervals*, not points.
 
+<a id="worked-example-771-discrete-die-as-a-random-variable"></a>
 ### Worked Example 7.7.1 — Discrete: Die as a Random Variable
 
 Define <span class="math-inline">$X$</span> = value shown by a fair die. The PMF is:
 
 
-<div class="math-block">$p_X(k) = \frac{1}{6} \quad \text{for } k \in \{1, 2, 3, 4, 5, 6\}$</div>
+<div class="math-block">$$p_X(k) = \frac{1}{6} \quad \text{for } k \in \{1, 2, 3, 4, 5, 6\}$$</div>
 
 
 **Verify:** <span class="math-inline">$\sum_{k=1}^{6} \frac{1}{6} = \frac{6}{6} = 1$</span>. <span class="math-inline">$\checkmark$</span>
@@ -4252,15 +4829,16 @@ Define <span class="math-inline">$X$</span> = value shown by a fair die. The PMF
 We can also define derived RVs: Let <span class="math-inline">$Y = \mathbf{1}[X \text{ is even}]$</span> (indicator of even outcome):
 
 
-<div class="math-block">$P(Y = 1) = P(X \in \{2,4,6\}) = \frac{3}{6} = \frac{1}{2}, \qquad P(Y = 0) = \frac{1}{2}$</div>
+<div class="math-block">$$P(Y = 1) = P(X \in \{2,4,6\}) = \frac{3}{6} = \frac{1}{2}, \qquad P(Y = 0) = \frac{1}{2}$$</div>
 
 
+<a id="worked-example-772-discrete-bernoulli-and-binomial-pmfs"></a>
 ### Worked Example 7.7.2 — Discrete: Bernoulli and Binomial PMFs
 
 A **Bernoulli** random variable <span class="math-inline">$X \sim \text{Bern}(p)$</span> models a single trial:
 
 
-<div class="math-block">$P(X=1) = p, \qquad P(X=0) = 1-p$</div>
+<div class="math-block">$$P(X=1) = p, \qquad P(X=0) = 1-p$$</div>
 
 
 In ML: <span class="math-inline">$Y_i = 1$</span> (correct prediction) or <span class="math-inline">$Y_i = 0$</span> (wrong prediction) with <span class="math-inline">$p = $</span> model accuracy.
@@ -4268,33 +4846,35 @@ In ML: <span class="math-inline">$Y_i = 1$</span> (correct prediction) or <span 
 A **Binomial** <span class="math-inline">$X \sim \text{Bin}(n, p)$</span> counts successes in <span class="math-inline">$n$</span> independent Bernoulli trials:
 
 
-<div class="math-block">$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$</div>
+<div class="math-block">$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$</div>
 
 
 Example: <span class="math-inline">$n = 4$</span> test examples, <span class="math-inline">$p = 0.7$</span> accuracy. What is <span class="math-inline">$P(X = 3)$</span> (exactly 3 correct)?
 
 
-<div class="math-block">$P(X = 3) = \binom{4}{3} (0.7)^3 (0.3)^1 = 4 \times 0.343 \times 0.3 = 4 \times 0.1029 = 0.4116$</div>
+<div class="math-block">$$P(X = 3) = \binom{4}{3} (0.7)^3 (0.3)^1 = 4 \times 0.343 \times 0.3 = 4 \times 0.1029 = 0.4116$$</div>
 
 
 **Verify:** <span class="math-inline">$4 \times 0.343 = 1.372$</span>; <span class="math-inline">$1.372 \times 0.3 = 0.4116$</span>. <span class="math-inline">$\checkmark$</span>
 
+<a id="worked-example-773-continuous-uniform-distribution"></a>
 ### Worked Example 7.7.3 — Continuous: Uniform Distribution
 
 <span class="math-inline">$X \sim \text{Uniform}(0, 1)$</span> has PDF:
 
 
-<div class="math-block">$f_X(x) = \begin{cases} 1 & 0 \leq x \leq 1 \\ 0 & \text{otherwise} \end{cases}$</div>
+<div class="math-block">$$f_X(x) = \begin{cases} 1 & 0 \leq x \leq 1 \\ 0 & \text{otherwise} \end{cases}$$</div>
 
 
 **Verify:** <span class="math-inline">$\int_0^1 1\, dx = 1$</span>. <span class="math-inline">$\checkmark$</span> (Area of a rectangle with width 1 and height 1.)
 
 
-<div class="math-block">$P(0.2 \leq X \leq 0.7) = \int_{0.2}^{0.7} 1\, dx = 0.7 - 0.2 = 0.5$</div>
+<div class="math-block">$$P(0.2 \leq X \leq 0.7) = \int_{0.2}^{0.7} 1\, dx = 0.7 - 0.2 = 0.5$$</div>
 
 
 This represents: "a randomly initialized neural network weight (drawn uniformly) has a 50% chance of landing in the interval <span class="math-inline">$[0.2, 0.7]$</span>."
 
+<a id="engineers-angle-3"></a>
 ### Engineer's Angle
 
 ```python
@@ -4337,8 +4917,10 @@ print(f"P(0.2 <= X <= 0.7) ≈ {approx_prob:.4f}")  # ≈ 0.5000
 
 ---
 
+<a id="78-expected-value-and-variance"></a>
 ## 7.8 Expected Value and Variance
 
+<a id="plain-english-first-7"></a>
 ### Plain English First
 
 The **expected value** is the long-run average of a random variable — if you repeated the experiment millions of times, what would you expect the average to be? It's the "center of gravity" of the probability distribution.
@@ -4347,30 +4929,31 @@ The **variance** measures how spread out the values are around that center. High
 
 In ML, expected value is the **expected loss** (the quantity we minimize during training), and variance is related to **model uncertainty** and the noise in stochastic gradient descent.
 
+<a id="formal-notation-6"></a>
 ### Formal Notation
 
 **Expected value** for a discrete RV:
 
 
-<div class="math-block">$\mathbb{E}[X] = \sum_{x} x \cdot P(X = x)$</div>
+<div class="math-block">$$\mathbb{E}[X] = \sum_{x} x \cdot P(X = x)$$</div>
 
 
 **Expected value** for a continuous RV:
 
 
-<div class="math-block">$\mathbb{E}[X] = \int_{-\infty}^{\infty} x \cdot f_X(x)\, dx$</div>
+<div class="math-block">$$\mathbb{E}[X] = \int_{-\infty}^{\infty} x \cdot f_X(x)\, dx$$</div>
 
 
 **Variance:**
 
 
-<div class="math-block">$\text{Var}(X) = \mathbb{E}\!\left[(X - \mathbb{E}[X])^2\right]$</div>
+<div class="math-block">$$\text{Var}(X) = \mathbb{E}\!\left[(X - \mathbb{E}[X])^2\right]$$</div>
 
 
 **Computational shortcut** (derived below):
 
 
-<div class="math-block">$\text{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$</div>
+<div class="math-block">$$\text{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$$</div>
 
 
 **Standard deviation:** <span class="math-inline">$\sigma_X = \sqrt{\text{Var}(X)}$</span>
@@ -4383,15 +4966,16 @@ In ML, expected value is the **expected loss** (the quantity we minimize during 
 **Here's why** the shortcut formula holds:
 
 
-<div class="math-block">$\text{Var}(X) = \mathbb{E}[(X - \mu)^2] = \mathbb{E}[X^2 - 2\mu X + \mu^2]$</div>
+<div class="math-block">$$\text{Var}(X) = \mathbb{E}[(X - \mu)^2] = \mathbb{E}[X^2 - 2\mu X + \mu^2]$$</div>
 
 
 By linearity of expectation (<span class="math-inline">$\mu = \mathbb{E}[X]$</span> is a constant):
 
 
-<div class="math-block">$= \mathbb{E}[X^2] - 2\mu\,\mathbb{E}[X] + \mu^2 = \mathbb{E}[X^2] - 2\mu^2 + \mu^2 = \mathbb{E}[X^2] - \mu^2 \quad \square$</div>
+<div class="math-block">$$= \mathbb{E}[X^2] - 2\mu\,\mathbb{E}[X] + \mu^2 = \mathbb{E}[X^2] - 2\mu^2 + \mu^2 = \mathbb{E}[X^2] - \mu^2 \quad \square$$</div>
 
 
+<a id="worked-example-781-fair-die-ex-and-varx"></a>
 ### Worked Example 7.8.1 — Fair Die: E[X] and Var(X)
 
 Let <span class="math-inline">$X$</span> = outcome of a fair die.
@@ -4399,25 +4983,25 @@ Let <span class="math-inline">$X$</span> = outcome of a fair die.
 **Step 1 — Expected value:**
 
 
-<div class="math-block">$\mathbb{E}[X] = \sum_{k=1}^{6} k \cdot \frac{1}{6} = \frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6) = \frac{21}{6} = \frac{7}{2} = 3.5$</div>
+<div class="math-block">$$\mathbb{E}[X] = \sum_{k=1}^{6} k \cdot \frac{1}{6} = \frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6) = \frac{21}{6} = \frac{7}{2} = 3.5$$</div>
 
 
 **Step 2 — Compute <span class="math-inline">$\mathbb{E}[X^2]$</span>:**
 
 
-<div class="math-block">$\mathbb{E}[X^2] = \frac{1}{6}(1^2 + 2^2 + 3^2 + 4^2 + 5^2 + 6^2) = \frac{1}{6}(1 + 4 + 9 + 16 + 25 + 36) = \frac{91}{6}$</div>
+<div class="math-block">$$\mathbb{E}[X^2] = \frac{1}{6}(1^2 + 2^2 + 3^2 + 4^2 + 5^2 + 6^2) = \frac{1}{6}(1 + 4 + 9 + 16 + 25 + 36) = \frac{91}{6}$$</div>
 
 
 **Step 3 — Variance via shortcut:**
 
 
-<div class="math-block">$\text{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2 = \frac{91}{6} - \left(\frac{7}{2}\right)^2 = \frac{91}{6} - \frac{49}{4}$</div>
+<div class="math-block">$$\text{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2 = \frac{91}{6} - \left(\frac{7}{2}\right)^2 = \frac{91}{6} - \frac{49}{4}$$</div>
 
 
 Convert to common denominator (12):
 
 
-<div class="math-block">$= \frac{182}{12} - \frac{147}{12} = \frac{35}{12} \approx 2.917$</div>
+<div class="math-block">$$= \frac{182}{12} - \frac{147}{12} = \frac{35}{12} \approx 2.917$$</div>
 
 
 **Step 4 — Verify via definitional formula** <span class="math-inline">$\text{Var}(X) = \sum_k P(X=k)(k - \mu)^2$</span>:
@@ -4436,34 +5020,37 @@ Both methods give <span class="math-inline">$\text{Var}(X) = \frac{35}{12}$</spa
 
 <span class="math-inline">$\sigma_X = \sqrt{35/12} \approx \sqrt{2.917} \approx 1.708$</span>
 
+<a id="worked-example-782-expected-loss"></a>
 ### Worked Example 7.8.2 — Expected Loss
 
 A model makes 4 predictions with losses <span class="math-inline">$\ell_1 = 0.5$</span>, <span class="math-inline">$\ell_2 = 0.2$</span>, <span class="math-inline">$\ell_3 = 0.8$</span>, <span class="math-inline">$\ell_4 = 0.3$</span>, all equally likely. Define <span class="math-inline">$L$</span> = loss on a random sample:
 
 
-<div class="math-block">$\mathbb{E}[L] = \frac{1}{4}(0.5 + 0.2 + 0.8 + 0.3) = \frac{1.8}{4} = 0.45$</div>
+<div class="math-block">$$\mathbb{E}[L] = \frac{1}{4}(0.5 + 0.2 + 0.8 + 0.3) = \frac{1.8}{4} = 0.45$$</div>
 
 
 This is the **empirical risk** — the average loss over a finite sample. Training a model minimizes <span class="math-inline">$\mathbb{E}[L]$</span> (or an approximation of it over the training set).
 
+<a id="worked-example-783-continuous-uniform01"></a>
 ### Worked Example 7.8.3 — Continuous: Uniform[0,1]
 
 For <span class="math-inline">$X \sim \text{Uniform}(0, 1)$</span>:
 
 
-<div class="math-block">$\mathbb{E}[X] = \int_0^1 x \cdot 1\, dx = \left[\frac{x^2}{2}\right]_0^1 = \frac{1}{2}$</div>
+<div class="math-block">$$\mathbb{E}[X] = \int_0^1 x \cdot 1\, dx = \left[\frac{x^2}{2}\right]_0^1 = \frac{1}{2}$$</div>
 
 
 
-<div class="math-block">$\mathbb{E}[X^2] = \int_0^1 x^2 \cdot 1\, dx = \left[\frac{x^3}{3}\right]_0^1 = \frac{1}{3}$</div>
+<div class="math-block">$$\mathbb{E}[X^2] = \int_0^1 x^2 \cdot 1\, dx = \left[\frac{x^3}{3}\right]_0^1 = \frac{1}{3}$$</div>
 
 
 
-<div class="math-block">$\text{Var}(X) = \frac{1}{3} - \left(\frac{1}{2}\right)^2 = \frac{1}{3} - \frac{1}{4} = \frac{4}{12} - \frac{3}{12} = \frac{1}{12}$</div>
+<div class="math-block">$$\text{Var}(X) = \frac{1}{3} - \left(\frac{1}{2}\right)^2 = \frac{1}{3} - \frac{1}{4} = \frac{4}{12} - \frac{3}{12} = \frac{1}{12}$$</div>
 
 
 **Trust this result:** The definite integral <span class="math-inline">$\int_a^b x^n\, dx = \left[\frac{x^{n+1}}{n+1}\right]_a^b$</span> — plug in <span class="math-inline">$b$</span> and subtract plugging in <span class="math-inline">$a$</span>.
 
+<a id="engineers-angle-4"></a>
 ### Engineer's Angle
 
 Expected value = **average loss** (cross-entropy, MSE). Variance matters for:
@@ -4509,50 +5096,54 @@ print(f"Uniform(0,1): Var(X) ≈ {Var_approx:.4f} (exact: {1/12:.4f})")
 
 ---
 
+<a id="79-joint-marginal-and-conditional-distributions"></a>
 ## 7.9 Joint, Marginal, and Conditional Distributions
 
+<a id="plain-english-first-8"></a>
 ### Plain English First
 
 So far we've worked with one random variable at a time. In ML we almost always have many variables at once: features <span class="math-inline">$x_1, x_2, \ldots, x_n$</span> and a label <span class="math-inline">$y$</span>. To reason about multiple variables together we need **joint distributions** — the probabilities of all combinations of values.
 
 From the joint you can "zoom out" to a single variable (**marginal distribution**) by averaging over everything else, or "zoom in" to one variable given a fixed value of another (**conditional distribution**).
 
+<a id="formal-notation-7"></a>
 ### Formal Notation
 
 For two discrete RVs <span class="math-inline">$X$</span> and <span class="math-inline">$Y$</span>, the **joint PMF** is:
 
 
-<div class="math-block">$p_{X,Y}(x, y) = P(X = x, Y = y)$</div>
+<div class="math-block">$$p_{X,Y}(x, y) = P(X = x, Y = y)$$</div>
 
 
 The **marginal PMF** of <span class="math-inline">$X$</span> is obtained by summing over all values of <span class="math-inline">$Y$</span>:
 
 
-<div class="math-block">$p_X(x) = \sum_y p_{X,Y}(x, y)$</div>
+<div class="math-block">$$p_X(x) = \sum_y p_{X,Y}(x, y)$$</div>
 
 
 The **conditional PMF** of <span class="math-inline">$X$</span> given <span class="math-inline">$Y = y$</span> is:
 
 
-<div class="math-block">$p_{X \mid Y}(x \mid y) = \frac{p_{X,Y}(x, y)}{p_Y(y)} \quad \text{(when } p_Y(y) > 0 \text{)}$</div>
+<div class="math-block">$$p_{X \mid Y}(x \mid y) = \frac{p_{X,Y}(x, y)}{p_Y(y)} \quad \text{(when } p_Y(y) > 0 \text{)}$$</div>
 
 
 For continuous RVs, replace sums with integrals:
 
 
-<div class="math-block">$f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y)\, dy$</div>
+<div class="math-block">$$f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y)\, dy$$</div>
 
 
 
-<div class="math-block">$f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x, y)}{f_Y(y)}$</div>
+<div class="math-block">$$f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x, y)}{f_Y(y)}$$</div>
 
 
 **Independence** in terms of distributions: <span class="math-inline">$X$</span> and <span class="math-inline">$Y$</span> are independent iff:
 
 
-<div class="math-block">$p_{X,Y}(x, y) = p_X(x) \cdot p_Y(y) \quad \text{for all } x, y$</div>
+<div class="math-block">$$p_{X,Y}(x, y) = p_X(x) \cdot p_Y(y) \quad \text{for all } x, y$$</div>
 
 
+<a id="worked-example-791-joint-distribution-table"></a>
 ### Worked Example 7.9.1 — Joint Distribution Table
 
 Let <span class="math-inline">$X$</span> = model correct? (0=no, 1=yes) and <span class="math-inline">$Y$</span> = data augmented? (0=no, 1=yes).
@@ -4560,38 +5151,38 @@ Let <span class="math-inline">$X$</span> = model correct? (0=no, 1=yes) and <spa
 Observed joint distribution over many experiments:
 
 
-<div class="math-block">$\begin{array}{c|cc|c}
+<div class="math-block">$$\begin{array}{c|cc|c}
  & Y=0 & Y=1 & \text{Marginal } P(X=x) \\
 \hline
 X=0 & 2/10 & 1/10 & 3/10 \\
 X=1 & 3/10 & 4/10 & 7/10 \\
 \hline
 \text{Marginal } P(Y=y) & 5/10 & 5/10 & 1 \\
-\end{array}$</div>
+\end{array}$$</div>
 
 
 **Step 1 — Verify:** <span class="math-inline">$\frac{2}{10} + \frac{1}{10} + \frac{3}{10} + \frac{4}{10} = \frac{10}{10} = 1$</span>. <span class="math-inline">$\checkmark$</span>
 
 **Step 2 — Marginal of <span class="math-inline">$X$</span>:**
 
-<div class="math-block">$P(X=0) = P(X=0, Y=0) + P(X=0, Y=1) = \frac{2}{10} + \frac{1}{10} = \frac{3}{10}$</div>
+<div class="math-block">$$P(X=0) = P(X=0, Y=0) + P(X=0, Y=1) = \frac{2}{10} + \frac{1}{10} = \frac{3}{10}$$</div>
 
 
-<div class="math-block">$P(X=1) = \frac{3}{10} + \frac{4}{10} = \frac{7}{10}$</div>
+<div class="math-block">$$P(X=1) = \frac{3}{10} + \frac{4}{10} = \frac{7}{10}$$</div>
 
 
 **Step 3 — Marginal of <span class="math-inline">$Y$</span>:**
 
-<div class="math-block">$P(Y=0) = \frac{2}{10} + \frac{3}{10} = \frac{5}{10} = \frac{1}{2}$</div>
+<div class="math-block">$$P(Y=0) = \frac{2}{10} + \frac{3}{10} = \frac{5}{10} = \frac{1}{2}$$</div>
 
 
-<div class="math-block">$P(Y=1) = \frac{1}{10} + \frac{4}{10} = \frac{5}{10} = \frac{1}{2}$</div>
+<div class="math-block">$$P(Y=1) = \frac{1}{10} + \frac{4}{10} = \frac{5}{10} = \frac{1}{2}$$</div>
 
 
 **Step 4 — Conditional <span class="math-inline">$P(X=1 \mid Y=0)$</span>:**
 
 
-<div class="math-block">$P(X=1 \mid Y=0) = \frac{P(X=1, Y=0)}{P(Y=0)} = \frac{3/10}{5/10} = \frac{3}{5} = 0.6$</div>
+<div class="math-block">$$P(X=1 \mid Y=0) = \frac{P(X=1, Y=0)}{P(Y=0)} = \frac{3/10}{5/10} = \frac{3}{5} = 0.6$$</div>
 
 
 Interpretation: when no augmentation is used, the model is correct 60% of the time.
@@ -4604,31 +5195,33 @@ But <span class="math-inline">$P(X=1, Y=0) = \frac{3}{10} = \frac{6}{20} \neq \f
 
 So <span class="math-inline">$X$</span> and <span class="math-inline">$Y$</span> are **not independent** — augmentation is associated with higher accuracy.
 
+<a id="worked-example-792-chain-rule-of-probability"></a>
 ### Worked Example 7.9.2 — Chain Rule of Probability
 
 The chain rule generalizes conditional probability to many variables. For three RVs:
 
 
-<div class="math-block">$P(X, Y, Z) = P(X \mid Y, Z) \cdot P(Y \mid Z) \cdot P(Z)$</div>
+<div class="math-block">$$P(X, Y, Z) = P(X \mid Y, Z) \cdot P(Y \mid Z) \cdot P(Z)$$</div>
 
 
 In an autoregressive language model generating tokens <span class="math-inline">$w_1, w_2, w_3, \ldots$</span>:
 
 
-<div class="math-block">$P(w_1, w_2, w_3) = P(w_1) \cdot P(w_2 \mid w_1) \cdot P(w_3 \mid w_1, w_2)$</div>
+<div class="math-block">$$P(w_1, w_2, w_3) = P(w_1) \cdot P(w_2 \mid w_1) \cdot P(w_3 \mid w_1, w_2)$$</div>
 
 
 This factorization is exact (no independence assumptions needed). Language models are trained to predict each <span class="math-inline">$P(w_t \mid w_1, \ldots, w_{t-1})$</span>.
 
+<a id="engineers-angle-px-y-factorizations"></a>
 ### Engineer's Angle: P(x, y) Factorizations
 
 Every supervised ML model implicitly or explicitly models the joint distribution <span class="math-inline">$P(\mathbf{x}, y)$</span>, which can be factored in two ways:
 
 
-<div class="math-block">$P(\mathbf{x}, y) = P(y \mid \mathbf{x}) \cdot P(\mathbf{x}) \quad \text{(discriminative decomposition)}$</div>
+<div class="math-block">$$P(\mathbf{x}, y) = P(y \mid \mathbf{x}) \cdot P(\mathbf{x}) \quad \text{(discriminative decomposition)}$$</div>
 
 
-<div class="math-block">$P(\mathbf{x}, y) = P(\mathbf{x} \mid y) \cdot P(y) \quad \text{(generative decomposition)}$</div>
+<div class="math-block">$$P(\mathbf{x}, y) = P(\mathbf{x} \mid y) \cdot P(y) \quad \text{(generative decomposition)}$$</div>
 
 
 Discriminative models (logistic regression, SVMs, neural networks) skip modeling <span class="math-inline">$P(\mathbf{x})$</span> and learn <span class="math-inline">$P(y \mid \mathbf{x})$</span> directly. Generative models (Naive Bayes, VAEs) learn <span class="math-inline">$P(\mathbf{x} \mid y)$</span> and <span class="math-inline">$P(y)$</span>, then use Bayes to get <span class="math-inline">$P(y \mid \mathbf{x})$</span>.
@@ -4674,6 +5267,7 @@ for x in [0, 1]:
 
 ---
 
+<a id="710-summary-table"></a>
 ## 7.10 Summary Table
 
 | Concept | Formula | ML Application |
@@ -4698,12 +5292,14 @@ for x in [0, 1]:
 
 ---
 
+<a id="711-exercises"></a>
 ## 7.11 Exercises
 
 Work through these before looking at the solutions. Each solution is fully worked out.
 
 ---
 
+<a id="exercise-71-easy-sample-space-and-events"></a>
 ### Exercise 7.1 [Easy] — Sample Space and Events
 
 Two fair coins are flipped. Define the sample space <span class="math-inline">$\Omega$</span> explicitly. Let <span class="math-inline">$A$</span> = "at least one head" and <span class="math-inline">$B$</span> = "exactly one head".
@@ -4717,39 +5313,40 @@ Two fair coins are flipped. Define the sample space <span class="math-inline">$\
 (a) <span class="math-inline">$\Omega = \{HH, HT, TH, TT\}$</span>, each with probability <span class="math-inline">$\frac{1}{4}$</span>.
 
 
-<div class="math-block">$A = \{HH, HT, TH\} \quad \text{(at least one H)}$</div>
+<div class="math-block">$$A = \{HH, HT, TH\} \quad \text{(at least one H)}$$</div>
 
 
-<div class="math-block">$B = \{HT, TH\} \quad \text{(exactly one H)}$</div>
+<div class="math-block">$$B = \{HT, TH\} \quad \text{(exactly one H)}$$</div>
 
 
-<div class="math-block">$A \cap B = \{HT, TH\} \quad \text{(at least one H AND exactly one H = exactly one H)}$</div>
+<div class="math-block">$$A \cap B = \{HT, TH\} \quad \text{(at least one H AND exactly one H = exactly one H)}$$</div>
 
 
-<div class="math-block">$A \cup B = \{HH, HT, TH\} = A \quad \text{(since } B \subseteq A\text{)}$</div>
+<div class="math-block">$$A \cup B = \{HH, HT, TH\} = A \quad \text{(since } B \subseteq A\text{)}$$</div>
 
 
-<div class="math-block">$A^c = \{TT\}$</div>
+<div class="math-block">$$A^c = \{TT\}$$</div>
 
 
 (b)
 
-<div class="math-block">$P(A) = \frac{3}{4}, \quad P(B) = \frac{2}{4} = \frac{1}{2}$</div>
+<div class="math-block">$$P(A) = \frac{3}{4}, \quad P(B) = \frac{2}{4} = \frac{1}{2}$$</div>
 
 
-<div class="math-block">$P(A \cap B) = \frac{2}{4} = \frac{1}{2}$</div>
+<div class="math-block">$$P(A \cap B) = \frac{2}{4} = \frac{1}{2}$$</div>
 
 
-<div class="math-block">$P(A \cup B) = P(A) = \frac{3}{4} \quad \text{(since } B \subseteq A\text{)}$</div>
+<div class="math-block">$$P(A \cup B) = P(A) = \frac{3}{4} \quad \text{(since } B \subseteq A\text{)}$$</div>
 
 
 (c) Inclusion-exclusion:
 
-<div class="math-block">$P(A \cup B) = P(A) + P(B) - P(A \cap B) = \frac{3}{4} + \frac{2}{4} - \frac{2}{4} = \frac{3}{4} \checkmark$</div>
+<div class="math-block">$$P(A \cup B) = P(A) + P(B) - P(A \cap B) = \frac{3}{4} + \frac{2}{4} - \frac{2}{4} = \frac{3}{4} \checkmark$$</div>
 
 
 ---
 
+<a id="exercise-72-easy-conditional-probability"></a>
 ### Exercise 7.2 [Easy] — Conditional Probability
 
 A bag has 3 red and 2 blue marbles. You draw one marble without looking, then draw a second (without replacement).
@@ -4762,12 +5359,12 @@ A bag has 3 red and 2 blue marbles. You draw one marble without looking, then dr
 
 (a) After drawing a red marble first, the bag has 2 red and 2 blue (4 total):
 
-<div class="math-block">$P(\text{2nd red} \mid \text{1st red}) = \frac{2}{4} = \frac{1}{2}$</div>
+<div class="math-block">$$P(\text{2nd red} \mid \text{1st red}) = \frac{2}{4} = \frac{1}{2}$$</div>
 
 
 (b) Multiplication rule:
 
-<div class="math-block">$P(\text{both red}) = P(\text{2nd red} \mid \text{1st red}) \cdot P(\text{1st red}) = \frac{2}{4} \times \frac{3}{5} = \frac{6}{20} = \frac{3}{10}$</div>
+<div class="math-block">$$P(\text{both red}) = P(\text{2nd red} \mid \text{1st red}) \cdot P(\text{1st red}) = \frac{2}{4} \times \frac{3}{5} = \frac{6}{20} = \frac{3}{10}$$</div>
 
 
 **Verify:** <span class="math-inline">$\binom{3}{2} / \binom{5}{2} = 3/10$</span>. <span class="math-inline">$\checkmark$</span>
@@ -4775,19 +5372,20 @@ A bag has 3 red and 2 blue marbles. You draw one marble without looking, then dr
 (c) Partition on the first draw:
 
 
-<div class="math-block">$P(\text{2nd red}) = P(\text{2nd red} \mid \text{1st red}) \cdot P(\text{1st red}) + P(\text{2nd red} \mid \text{1st blue}) \cdot P(\text{1st blue})$</div>
+<div class="math-block">$$P(\text{2nd red}) = P(\text{2nd red} \mid \text{1st red}) \cdot P(\text{1st red}) + P(\text{2nd red} \mid \text{1st blue}) \cdot P(\text{1st blue})$$</div>
 
 
 After drawing a blue first: 3 red, 1 blue (4 total), so <span class="math-inline">$P(\text{2nd red} \mid \text{1st blue}) = \frac{3}{4}$</span>.
 
 
-<div class="math-block">$P(\text{2nd red}) = \frac{2}{4} \times \frac{3}{5} + \frac{3}{4} \times \frac{2}{5} = \frac{6}{20} + \frac{6}{20} = \frac{12}{20} = \frac{3}{5}$</div>
+<div class="math-block">$$P(\text{2nd red}) = \frac{2}{4} \times \frac{3}{5} + \frac{3}{4} \times \frac{2}{5} = \frac{6}{20} + \frac{6}{20} = \frac{12}{20} = \frac{3}{5}$$</div>
 
 
 **Sanity check:** <span class="math-inline">$P(\text{2nd red}) = \frac{3}{5}$</span> — by symmetry, the second marble is equally likely to be any of the 5 original marbles, so the probability it's red is <span class="math-inline">$\frac{3}{5}$</span>. <span class="math-inline">$\checkmark$</span>
 
 ---
 
+<a id="exercise-73-medium-bayes-theorem"></a>
 ### Exercise 7.3 [Medium] — Bayes' Theorem
 
 A factory has three machines: Machine A produces 50% of widgets (2% defective), Machine B produces 30% (5% defective), Machine C produces 20% (10% defective).
@@ -4800,39 +5398,39 @@ Let <span class="math-inline">$D$</span> = defective, and let <span class="math-
 
 **Given:**
 
-<div class="math-block">$P(A) = 0.5, \quad P(B) = 0.3, \quad P(C) = 0.2$</div>
+<div class="math-block">$$P(A) = 0.5, \quad P(B) = 0.3, \quad P(C) = 0.2$$</div>
 
 
-<div class="math-block">$P(D \mid A) = 0.02, \quad P(D \mid B) = 0.05, \quad P(D \mid C) = 0.10$</div>
+<div class="math-block">$$P(D \mid A) = 0.02, \quad P(D \mid B) = 0.05, \quad P(D \mid C) = 0.10$$</div>
 
 
 **Step 1 — Total probability** (probability of a random widget being defective):
 
 
-<div class="math-block">$P(D) = P(D \mid A) \cdot P(A) + P(D \mid B) \cdot P(B) + P(D \mid C) \cdot P(C)$</div>
+<div class="math-block">$$P(D) = P(D \mid A) \cdot P(A) + P(D \mid B) \cdot P(B) + P(D \mid C) \cdot P(C)$$</div>
 
 
-<div class="math-block">$= 0.02 \times 0.5 + 0.05 \times 0.3 + 0.10 \times 0.2$</div>
+<div class="math-block">$$= 0.02 \times 0.5 + 0.05 \times 0.3 + 0.10 \times 0.2$$</div>
 
 
-<div class="math-block">$= 0.010 + 0.015 + 0.020 = 0.045$</div>
+<div class="math-block">$$= 0.010 + 0.015 + 0.020 = 0.045$$</div>
 
 
 **Step 2 — Bayes' theorem:**
 
 
-<div class="math-block">$P(C \mid D) = \frac{P(D \mid C) \cdot P(C)}{P(D)} = \frac{0.10 \times 0.20}{0.045} = \frac{0.020}{0.045} = \frac{20}{45} = \frac{4}{9} \approx 0.444$</div>
+<div class="math-block">$$P(C \mid D) = \frac{P(D \mid C) \cdot P(C)}{P(D)} = \frac{0.10 \times 0.20}{0.045} = \frac{0.020}{0.045} = \frac{20}{45} = \frac{4}{9} \approx 0.444$$</div>
 
 
 **Verification (all three machines):**
 
-<div class="math-block">$P(A \mid D) = \frac{0.010}{0.045} = \frac{2}{9} \approx 0.222$</div>
+<div class="math-block">$$P(A \mid D) = \frac{0.010}{0.045} = \frac{2}{9} \approx 0.222$$</div>
 
 
-<div class="math-block">$P(B \mid D) = \frac{0.015}{0.045} = \frac{3}{9} = \frac{1}{3} \approx 0.333$</div>
+<div class="math-block">$$P(B \mid D) = \frac{0.015}{0.045} = \frac{3}{9} = \frac{1}{3} \approx 0.333$$</div>
 
 
-<div class="math-block">$P(C \mid D) = \frac{0.020}{0.045} = \frac{4}{9} \approx 0.444$</div>
+<div class="math-block">$$P(C \mid D) = \frac{0.020}{0.045} = \frac{4}{9} \approx 0.444$$</div>
 
 
 Sum: <span class="math-inline">$\frac{2}{9} + \frac{3}{9} + \frac{4}{9} = \frac{9}{9} = 1$</span>. <span class="math-inline">$\checkmark$</span>
@@ -4841,6 +5439,7 @@ Machine C produces only 20% of widgets but accounts for 44% of defects — its h
 
 ---
 
+<a id="exercise-74-medium-expected-value-and-variance"></a>
 ### Exercise 7.4 [Medium] — Expected Value and Variance
 
 A fair four-sided die (values 1, 2, 3, 4) is rolled. Let <span class="math-inline">$X$</span> = outcome.
@@ -4855,17 +5454,17 @@ Each outcome has probability <span class="math-inline">$\frac{1}{4}$</span>.
 
 (a)
 
-<div class="math-block">$\mathbb{E}[X] = \frac{1}{4}(1 + 2 + 3 + 4) = \frac{10}{4} = \frac{5}{2} = 2.5$</div>
+<div class="math-block">$$\mathbb{E}[X] = \frac{1}{4}(1 + 2 + 3 + 4) = \frac{10}{4} = \frac{5}{2} = 2.5$$</div>
 
 
 (b) **Shortcut:**
 
 
-<div class="math-block">$\mathbb{E}[X^2] = \frac{1}{4}(1^2 + 2^2 + 3^2 + 4^2) = \frac{1}{4}(1 + 4 + 9 + 16) = \frac{30}{4} = \frac{15}{2}$</div>
+<div class="math-block">$$\mathbb{E}[X^2] = \frac{1}{4}(1^2 + 2^2 + 3^2 + 4^2) = \frac{1}{4}(1 + 4 + 9 + 16) = \frac{30}{4} = \frac{15}{2}$$</div>
 
 
 
-<div class="math-block">$\text{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2 = \frac{15}{2} - \left(\frac{5}{2}\right)^2 = \frac{15}{2} - \frac{25}{4} = \frac{30}{4} - \frac{25}{4} = \frac{5}{4} = 1.25$</div>
+<div class="math-block">$$\text{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2 = \frac{15}{2} - \left(\frac{5}{2}\right)^2 = \frac{15}{2} - \frac{25}{4} = \frac{30}{4} - \frac{25}{4} = \frac{5}{4} = 1.25$$</div>
 
 
 **Definitional check** (with <span class="math-inline">$\mu = \frac{5}{2}$</span>):
@@ -4883,15 +5482,16 @@ Each outcome has probability <span class="math-inline">$\frac{1}{4}$</span>.
 (c) Linear transformations with <span class="math-inline">$Y = 3X - 2$</span>:
 
 
-<div class="math-block">$\mathbb{E}[Y] = 3\,\mathbb{E}[X] - 2 = 3 \times \frac{5}{2} - 2 = \frac{15}{2} - 2 = \frac{11}{2} = 5.5$</div>
+<div class="math-block">$$\mathbb{E}[Y] = 3\,\mathbb{E}[X] - 2 = 3 \times \frac{5}{2} - 2 = \frac{15}{2} - 2 = \frac{11}{2} = 5.5$$</div>
 
 
 
-<div class="math-block">$\text{Var}(Y) = 3^2 \cdot \text{Var}(X) = 9 \times \frac{5}{4} = \frac{45}{4} = 11.25$</div>
+<div class="math-block">$$\text{Var}(Y) = 3^2 \cdot \text{Var}(X) = 9 \times \frac{5}{4} = \frac{45}{4} = 11.25$$</div>
 
 
 ---
 
+<a id="exercise-75-hard-joint-distribution-and-naive-bayes"></a>
 ### Exercise 7.5 [Hard] — Joint Distribution and Naive Bayes
 
 Three words appear in emails: "invoice", "meeting", "sale". The joint distribution of word presence and email type (work vs. promo) is given by the following joint counts over 1,000 emails:
@@ -4913,38 +5513,38 @@ Three words appear in emails: "invoice", "meeting", "sale". The joint distributi
 
 (a) From totals:
 
-<div class="math-block">$P(\text{work}) = \frac{600}{1000} = \frac{3}{5}, \qquad P(\text{promo}) = \frac{400}{1000} = \frac{2}{5}$</div>
+<div class="math-block">$$P(\text{work}) = \frac{600}{1000} = \frac{3}{5}, \qquad P(\text{promo}) = \frac{400}{1000} = \frac{2}{5}$$</div>
 
 
 (b) Within work emails: "sale" appears in 50 of 600.
 
 
-<div class="math-block">$P(\text{"sale"} \mid \text{work}) = \frac{50}{600} = \frac{1}{12} \approx 0.0833$</div>
+<div class="math-block">$$P(\text{"sale"} \mid \text{work}) = \frac{50}{600} = \frac{1}{12} \approx 0.0833$$</div>
 
 
 Within promo emails: "sale" appears in 300 of 400.
 
 
-<div class="math-block">$P(\text{"sale"} \mid \text{promo}) = \frac{300}{400} = \frac{3}{4} = 0.75$</div>
+<div class="math-block">$$P(\text{"sale"} \mid \text{promo}) = \frac{300}{400} = \frac{3}{4} = 0.75$$</div>
 
 
 (c) Total probability:
 
 
-<div class="math-block">$P(\text{"sale"}) = P(\text{"sale"} \mid \text{work}) \cdot P(\text{work}) + P(\text{"sale"} \mid \text{promo}) \cdot P(\text{promo})$</div>
+<div class="math-block">$$P(\text{"sale"}) = P(\text{"sale"} \mid \text{work}) \cdot P(\text{work}) + P(\text{"sale"} \mid \text{promo}) \cdot P(\text{promo})$$</div>
 
 
-<div class="math-block">$= \frac{1}{12} \times \frac{3}{5} + \frac{3}{4} \times \frac{2}{5} = \frac{3}{60} + \frac{6}{20} = \frac{1}{20} + \frac{6}{20} = \frac{7}{20}$</div>
+<div class="math-block">$$= \frac{1}{12} \times \frac{3}{5} + \frac{3}{4} \times \frac{2}{5} = \frac{3}{60} + \frac{6}{20} = \frac{1}{20} + \frac{6}{20} = \frac{7}{20}$$</div>
 
 
 Bayes:
 
 
-<div class="math-block">$P(\text{work} \mid \text{"sale"}) = \frac{P(\text{"sale"} \mid \text{work}) \cdot P(\text{work})}{P(\text{"sale"})} = \frac{1/12 \times 3/5}{7/20} = \frac{1/20}{7/20} = \frac{1}{7} \approx 0.143$</div>
+<div class="math-block">$$P(\text{work} \mid \text{"sale"}) = \frac{P(\text{"sale"} \mid \text{work}) \cdot P(\text{work})}{P(\text{"sale"})} = \frac{1/12 \times 3/5}{7/20} = \frac{1/20}{7/20} = \frac{1}{7} \approx 0.143$$</div>
 
 
 
-<div class="math-block">$P(\text{promo} \mid \text{"sale"}) = 1 - \frac{1}{7} = \frac{6}{7} \approx 0.857$</div>
+<div class="math-block">$$P(\text{promo} \mid \text{"sale"}) = 1 - \frac{1}{7} = \frac{6}{7} \approx 0.857$$</div>
 
 
 **Classify as promo.**
@@ -4952,40 +5552,40 @@ Bayes:
 (d) Compute <span class="math-inline">$P(\text{"meeting"} \mid \text{work})$</span> and <span class="math-inline">$P(\text{"meeting"} \mid \text{promo})$</span>:
 
 
-<div class="math-block">$P(\text{"meeting"} \mid \text{work}) = \frac{300}{600} = \frac{1}{2}$</div>
+<div class="math-block">$$P(\text{"meeting"} \mid \text{work}) = \frac{300}{600} = \frac{1}{2}$$</div>
 
 
-<div class="math-block">$P(\text{"meeting"} \mid \text{promo}) = \frac{20}{400} = \frac{1}{20}$</div>
+<div class="math-block">$$P(\text{"meeting"} \mid \text{promo}) = \frac{20}{400} = \frac{1}{20}$$</div>
 
 
 Naive Bayes scores (proportional to posterior, assuming independence of words given class):
 
 
-<div class="math-block">$\text{score}(\text{work}) = P(\text{work}) \cdot P(\text{"meeting"} \mid \text{work}) \cdot P(\text{"sale"} \mid \text{work})$</div>
+<div class="math-block">$$\text{score}(\text{work}) = P(\text{work}) \cdot P(\text{"meeting"} \mid \text{work}) \cdot P(\text{"sale"} \mid \text{work})$$</div>
 
 
-<div class="math-block">$= \frac{3}{5} \times \frac{1}{2} \times \frac{1}{12} = \frac{3}{120} = \frac{1}{40}$</div>
+<div class="math-block">$$= \frac{3}{5} \times \frac{1}{2} \times \frac{1}{12} = \frac{3}{120} = \frac{1}{40}$$</div>
 
 
 
-<div class="math-block">$\text{score}(\text{promo}) = P(\text{promo}) \cdot P(\text{"meeting"} \mid \text{promo}) \cdot P(\text{"sale"} \mid \text{promo})$</div>
+<div class="math-block">$$\text{score}(\text{promo}) = P(\text{promo}) \cdot P(\text{"meeting"} \mid \text{promo}) \cdot P(\text{"sale"} \mid \text{promo})$$</div>
 
 
-<div class="math-block">$= \frac{2}{5} \times \frac{1}{20} \times \frac{3}{4} = \frac{6}{400} = \frac{3}{200}$</div>
+<div class="math-block">$$= \frac{2}{5} \times \frac{1}{20} \times \frac{3}{4} = \frac{6}{400} = \frac{3}{200}$$</div>
 
 
 Normalize:
 
 
-<div class="math-block">$\text{total} = \frac{1}{40} + \frac{3}{200} = \frac{5}{200} + \frac{3}{200} = \frac{8}{200} = \frac{1}{25}$</div>
+<div class="math-block">$$\text{total} = \frac{1}{40} + \frac{3}{200} = \frac{5}{200} + \frac{3}{200} = \frac{8}{200} = \frac{1}{25}$$</div>
 
 
 
-<div class="math-block">$P(\text{work} \mid \text{"meeting", "sale"}) = \frac{1/40}{1/25} = \frac{25}{40} = \frac{5}{8} = 0.625$</div>
+<div class="math-block">$$P(\text{work} \mid \text{"meeting", "sale"}) = \frac{1/40}{1/25} = \frac{25}{40} = \frac{5}{8} = 0.625$$</div>
 
 
 
-<div class="math-block">$P(\text{promo} \mid \text{"meeting", "sale"}) = \frac{3/200}{1/25} = \frac{3 \times 25}{200} = \frac{75}{200} = \frac{3}{8} = 0.375$</div>
+<div class="math-block">$$P(\text{promo} \mid \text{"meeting", "sale"}) = \frac{3/200}{1/25} = \frac{3 \times 25}{200} = \frac{75}{200} = \frac{3}{8} = 0.375$$</div>
 
 
 **Classify as work** (probability 62.5%). Adding "meeting" flipped the classification from promo to work — the word "meeting" is a very strong work signal (<span class="math-inline">$P(\text{"meeting"} \mid \text{work}) = 50\%$</span> vs. <span class="math-inline">$P(\text{"meeting"} \mid \text{promo}) = 5\%$</span>).
@@ -4995,6 +5595,7 @@ Normalize:
 ---
 
 *Next: Chapter 8 — Probability II: Key Distributions, where we build on these foundations to study the distributions that appear everywhere in ML: Gaussian, Bernoulli, Categorical, Poisson, and more.*
+<a id="chapter-8-probability-ii-key-distributions"></a>
 # Chapter 8: Probability II — Key Distributions
 
 > *"Knowing which distribution fits your problem is half the battle. The other half is knowing why."*
@@ -5005,14 +5606,17 @@ Chapter 7 gave you the machinery: sample spaces, probability axioms, Bayes' theo
 
 ---
 
+<a id="81-bernoulli-distribution"></a>
 ## 8.1 Bernoulli Distribution
 
+<a id="plain-english-first-9"></a>
 ### Plain English First
 
 The Bernoulli distribution is the simplest possible random variable: one trial, two outcomes — success or failure, 1 or 0, yes or no. A single fair coin flip follows a Bernoulli distribution. So does a single binary classifier prediction: either the model says "positive" (1) or "negative" (0).
 
 The distribution has exactly one parameter, <span class="math-inline">$p$</span>, which is the probability of the success outcome. Everything else follows from that single number.
 
+<a id="formal-notation-8"></a>
 ### Formal Notation
 
 Let <span class="math-inline">$X$</span> be a Bernoulli random variable with parameter <span class="math-inline">$p \in [0, 1]$</span>. We write <span class="math-inline">$X \sim \text{Bernoulli}(p)$</span>.
@@ -5020,7 +5624,7 @@ Let <span class="math-inline">$X$</span> be a Bernoulli random variable with par
 **PMF:**
 
 
-<div class="math-block">$P(X = k) = \begin{cases} p & \text{if } k = 1 \\ 1 - p & \text{if } k = 0 \end{cases}$</div>
+<div class="math-block">$$P(X = k) = \begin{cases} p & \text{if } k = 1 \\ 1 - p & \text{if } k = 0 \end{cases}$$</div>
 
 
 A compact single-formula version: <span class="math-inline">$P(X = k) = p^k (1-p)^{1-k}$</span> for <span class="math-inline">$k \in \{0, 1\}$</span>.
@@ -5028,13 +5632,13 @@ A compact single-formula version: <span class="math-inline">$P(X = k) = p^k (1-p
 **Expected value:**
 
 
-<div class="math-block">$\mathbb{E}[X] = 1 \cdot p + 0 \cdot (1-p) = p$</div>
+<div class="math-block">$$\mathbb{E}[X] = 1 \cdot p + 0 \cdot (1-p) = p$$</div>
 
 
 **Variance:**
 
 
-<div class="math-block">$\text{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2 = p - p^2 = p(1-p)$</div>
+<div class="math-block">$$\text{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2 = p - p^2 = p(1-p)$$</div>
 
 
 **Here's why** <span class="math-inline">$\mathbb{E}[X^2] = p$</span>: since <span class="math-inline">$X$</span> only takes values 0 or 1, we have <span class="math-inline">$X^2 = X$</span>, so <span class="math-inline">$\mathbb{E}[X^2] = \mathbb{E}[X] = p$</span>.
@@ -5049,61 +5653,64 @@ A compact single-formula version: <span class="math-inline">$P(X = k) = p^k (1-p
 
 **Trust this result:** Variance <span class="math-inline">$p(1-p)$</span> is maximized at <span class="math-inline">$p = 0.5$</span> (most uncertain) and equals zero at <span class="math-inline">$p = 0$</span> or <span class="math-inline">$p = 1$</span> (completely certain). This makes intuitive sense.
 
+<a id="worked-example-811-a-biased-coin"></a>
 ### Worked Example 8.1.1 — A Biased Coin
 
 A biased coin lands heads with probability <span class="math-inline">$p = 0.7$</span>. Define <span class="math-inline">$X = 1$</span> for heads, <span class="math-inline">$X = 0$</span> for tails.
 
 **Step 1 — PMF:**
 
-<div class="math-block">$P(X = 1) = 0.7, \qquad P(X = 0) = 0.3$</div>
+<div class="math-block">$$P(X = 1) = 0.7, \qquad P(X = 0) = 0.3$$</div>
 
 
 **Step 2 — Verify normalization:**
 
-<div class="math-block">$0.7 + 0.3 = 1.0 \checkmark$</div>
+<div class="math-block">$$0.7 + 0.3 = 1.0 \checkmark$$</div>
 
 
 **Step 3 — Expected value:**
 
-<div class="math-block">$\mathbb{E}[X] = 0.7$</div>
+<div class="math-block">$$\mathbb{E}[X] = 0.7$$</div>
 
 
 **Step 4 — Variance:**
 
-<div class="math-block">$\text{Var}(X) = 0.7 \times (1 - 0.7) = 0.7 \times 0.3 = 0.21$</div>
+<div class="math-block">$$\text{Var}(X) = 0.7 \times (1 - 0.7) = 0.7 \times 0.3 = 0.21$$</div>
 
 
+<a id="worked-example-812-binary-classifier-output"></a>
 ### Worked Example 8.1.2 — Binary Classifier Output
 
 A spam classifier outputs probability <span class="math-inline">$\hat{y} = 0.82$</span> for a given email. We model the predicted label <span class="math-inline">$\hat{L} \sim \text{Bernoulli}(0.82)$</span>.
 
 
-<div class="math-block">$P(\hat{L} = 1) = 0.82, \qquad P(\hat{L} = 0) = 0.18$</div>
+<div class="math-block">$$P(\hat{L} = 1) = 0.82, \qquad P(\hat{L} = 0) = 0.18$$</div>
 
 
 If the true label is <span class="math-inline">$y = 1$</span>, the **binary cross-entropy loss** for this prediction is:
 
 
-<div class="math-block">$\mathcal{L} = -[y \log(\hat{y}) + (1-y)\log(1 - \hat{y})]$</div>
+<div class="math-block">$$\mathcal{L} = -[y \log(\hat{y}) + (1-y)\log(1 - \hat{y})]$$</div>
 
 
-<div class="math-block">$= -[1 \cdot \log(0.82) + 0 \cdot \log(0.18)]$</div>
+<div class="math-block">$$= -[1 \cdot \log(0.82) + 0 \cdot \log(0.18)]$$</div>
 
 
-<div class="math-block">$= -\log(0.82)$</div>
+<div class="math-block">$$= -\log(0.82)$$</div>
 
 
-<div class="math-block">$\approx 0.1985$</div>
+<div class="math-block">$$\approx 0.1985$$</div>
 
 
 For a wrong prediction <span class="math-inline">$\hat{y} = 0.3$</span> with true label <span class="math-inline">$y = 1$</span>:
 
 
-<div class="math-block">$\mathcal{L} = -\log(0.3) \approx 1.2040$</div>
+<div class="math-block">$$\mathcal{L} = -\log(0.3) \approx 1.2040$$</div>
 
 
 The loss is higher when the model is confidently wrong — exactly the behavior we want. We will derive where this formula comes from in Section 8.10.
 
+<a id="engineers-angle-5"></a>
 ### Engineer's Angle
 
 The Bernoulli distribution underlies **logistic regression**. The sigmoid function maps a real-valued score <span class="math-inline">$s$</span> to a probability <span class="math-inline">$\hat{y} = \sigma(s) = \frac{1}{1 + e^{-s}}$</span>, and then the predicted label is <span class="math-inline">$\hat{L} \sim \text{Bernoulli}(\hat{y})$</span>. Training minimizes the expected binary cross-entropy loss over the dataset.
@@ -5148,14 +5755,17 @@ print(f"score={score}, y_hat={y_hat:.4f}, loss={loss:.4f}")
 
 ---
 
+<a id="82-binomial-distribution"></a>
 ## 8.2 Binomial Distribution
 
+<a id="plain-english-first-10"></a>
 ### Plain English First
 
 If the Bernoulli distribution models one coin flip, the Binomial distribution models <span class="math-inline">$n$</span> independent flips and asks: how many heads? More concretely: if you run 10 independent trials each with success probability <span class="math-inline">$p$</span>, the Binomial distribution tells you the probability of getting exactly <span class="math-inline">$k$</span> successes.
 
 The word "independent" is critical — each trial cannot depend on the previous ones. This assumption is what lets us multiply probabilities.
 
+<a id="formal-notation-9"></a>
 ### Formal Notation
 
 Let <span class="math-inline">$X$</span> = number of successes in <span class="math-inline">$n$</span> independent Bernoulli(<span class="math-inline">$p$</span>) trials. We write <span class="math-inline">$X \sim \text{Binomial}(n, p)$</span>.
@@ -5163,7 +5773,7 @@ Let <span class="math-inline">$X$</span> = number of successes in <span class="m
 **PMF:**
 
 
-<div class="math-block">$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}, \qquad k = 0, 1, 2, \ldots, n$</div>
+<div class="math-block">$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}, \qquad k = 0, 1, 2, \ldots, n$$</div>
 
 
 where the **binomial coefficient** <span class="math-inline">$\binom{n}{k} = \frac{n!}{k!\,(n-k)!}$</span> counts the number of distinct ways to arrange <span class="math-inline">$k$</span> successes among <span class="math-inline">$n$</span> trials.
@@ -5173,13 +5783,13 @@ where the **binomial coefficient** <span class="math-inline">$\binom{n}{k} = \fr
 **Expected value:**
 
 
-<div class="math-block">$\mathbb{E}[X] = np$</div>
+<div class="math-block">$$\mathbb{E}[X] = np$$</div>
 
 
 **Variance:**
 
 
-<div class="math-block">$\text{Var}(X) = np(1-p)$</div>
+<div class="math-block">$$\text{Var}(X) = np(1-p)$$</div>
 
 
 **Trust this result:** Both formulas follow from viewing <span class="math-inline">$X$</span> as the sum of <span class="math-inline">$n$</span> independent Bernoulli(<span class="math-inline">$p$</span>) variables and applying the linearity of expectation and the variance-of-sum rule for independent variables.
@@ -5192,6 +5802,7 @@ where the **binomial coefficient** <span class="math-inline">$\binom{n}{k} = \fr
 | <span class="math-inline">$\mathbb{E}[X]$</span> | <span class="math-inline">$np$</span> |
 | <span class="math-inline">$\text{Var}(X)$</span> | <span class="math-inline">$np(1-p)$</span> |
 
+<a id="worked-example-821-quality-control"></a>
 ### Worked Example 8.2.1 — Quality Control
 
 A factory produces widgets. Each widget has a 40% defect rate independently (<span class="math-inline">$p = 0.4$</span>). A batch of <span class="math-inline">$n = 3$</span> widgets is inspected. Let <span class="math-inline">$X$</span> = number of defective widgets.
@@ -5201,69 +5812,71 @@ A factory produces widgets. Each widget has a 40% defect rate independently (<sp
 **Step 1 — Full PMF:**
 
 
-<div class="math-block">$P(X = 0) = \binom{3}{0}(0.4)^0(0.6)^3 = 1 \times 1 \times 0.216 = 0.216$</div>
+<div class="math-block">$$P(X = 0) = \binom{3}{0}(0.4)^0(0.6)^3 = 1 \times 1 \times 0.216 = 0.216$$</div>
 
 
 
-<div class="math-block">$P(X = 1) = \binom{3}{1}(0.4)^1(0.6)^2 = 3 \times 0.4 \times 0.36 = 0.432$</div>
+<div class="math-block">$$P(X = 1) = \binom{3}{1}(0.4)^1(0.6)^2 = 3 \times 0.4 \times 0.36 = 0.432$$</div>
 
 
 
-<div class="math-block">$P(X = 2) = \binom{3}{2}(0.4)^2(0.6)^1 = 3 \times 0.16 \times 0.6 = 0.288$</div>
+<div class="math-block">$$P(X = 2) = \binom{3}{2}(0.4)^2(0.6)^1 = 3 \times 0.16 \times 0.6 = 0.288$$</div>
 
 
 
-<div class="math-block">$P(X = 3) = \binom{3}{3}(0.4)^3(0.6)^0 = 1 \times 0.064 \times 1 = 0.064$</div>
+<div class="math-block">$$P(X = 3) = \binom{3}{3}(0.4)^3(0.6)^0 = 1 \times 0.064 \times 1 = 0.064$$</div>
 
 
 **Step 2 — Verify normalization:**
 
-<div class="math-block">$0.216 + 0.432 + 0.288 + 0.064 = 1.000 \checkmark$</div>
+<div class="math-block">$$0.216 + 0.432 + 0.288 + 0.064 = 1.000 \checkmark$$</div>
 
 
 **Step 3 — Expected value and variance:**
 
-<div class="math-block">$\mathbb{E}[X] = 3 \times 0.4 = 1.2$</div>
+<div class="math-block">$$\mathbb{E}[X] = 3 \times 0.4 = 1.2$$</div>
 
 
-<div class="math-block">$\text{Var}(X) = 3 \times 0.4 \times 0.6 = 0.72$</div>
+<div class="math-block">$$\text{Var}(X) = 3 \times 0.4 \times 0.6 = 0.72$$</div>
 
 
 **Step 4 — Verify <span class="math-inline">$\mathbb{E}[X]$</span> directly:**
 
-<div class="math-block">$\mathbb{E}[X] = 0(0.216) + 1(0.432) + 2(0.288) + 3(0.064)$</div>
+<div class="math-block">$$\mathbb{E}[X] = 0(0.216) + 1(0.432) + 2(0.288) + 3(0.064)$$</div>
 
 
-<div class="math-block">$= 0 + 0.432 + 0.576 + 0.192 = 1.200 \checkmark$</div>
+<div class="math-block">$$= 0 + 0.432 + 0.576 + 0.192 = 1.200 \checkmark$$</div>
 
 
+<a id="worked-example-822-model-accuracy-on-a-batch"></a>
 ### Worked Example 8.2.2 — Model Accuracy on a Batch
 
 A classifier has true accuracy 70% (<span class="math-inline">$p = 0.7$</span>). On a batch of <span class="math-inline">$n = 10$</span> samples, let <span class="math-inline">$X$</span> = number correct.
 
 
-<div class="math-block">$P(X = 7) = \binom{10}{7}(0.7)^7(0.3)^3$</div>
+<div class="math-block">$$P(X = 7) = \binom{10}{7}(0.7)^7(0.3)^3$$</div>
 
 
 **Step 1 — Binomial coefficient:**
 
-<div class="math-block">$\binom{10}{7} = \frac{10!}{7!\,3!} = \frac{10 \times 9 \times 8}{3 \times 2 \times 1} = \frac{720}{6} = 120$</div>
+<div class="math-block">$$\binom{10}{7} = \frac{10!}{7!\,3!} = \frac{10 \times 9 \times 8}{3 \times 2 \times 1} = \frac{720}{6} = 120$$</div>
 
 
 **Step 2 — Powers:**
 
-<div class="math-block">$(0.7)^7 = 0.0823543, \qquad (0.3)^3 = 0.027$</div>
+<div class="math-block">$$(0.7)^7 = 0.0823543, \qquad (0.3)^3 = 0.027$$</div>
 
 
 **Step 3 — Multiply:**
 
-<div class="math-block">$P(X = 7) = 120 \times 0.0823543 \times 0.027 = 120 \times 0.002224 \approx 0.2668$</div>
+<div class="math-block">$$P(X = 7) = 120 \times 0.0823543 \times 0.027 = 120 \times 0.002224 \approx 0.2668$$</div>
 
 
 There is about a 26.7% chance the model gets exactly 7 out of 10 correct.
 
 **Expected correct:** <span class="math-inline">$\mathbb{E}[X] = 10 \times 0.7 = 7$</span>
 
+<a id="engineers-angle-6"></a>
 ### Engineer's Angle
 
 Binomial distributions model **batch accuracy** and **A/B test counts**. When you split traffic 50/50 between model A and model B and count how many users in the B group convert, that count follows a Binomial distribution. Statistical significance tests for A/B results rely on the Binomial (or the Normal approximation to it via the Central Limit Theorem — see Section 8.5).
@@ -5296,20 +5909,23 @@ print(f"  Var(X) = {binom_var(n, p)}")  # 0.72
 
 ---
 
+<a id="83-categorical-and-multinomial-distributions"></a>
 ## 8.3 Categorical and Multinomial Distributions
 
+<a id="plain-english-first-11"></a>
 ### Plain English First
 
 The Bernoulli distribution handles two outcomes. The **Categorical** distribution generalizes it to <span class="math-inline">$K$</span> outcomes — one draw that lands on exactly one of <span class="math-inline">$K$</span> categories. A single die roll is Categorical. A single image classifier prediction (cat, dog, or bird?) is Categorical.
 
 The **Multinomial** distribution then generalizes Binomial: run <span class="math-inline">$n$</span> independent Categorical trials and count how many fall into each category. If you roll a die 60 times, the vector of counts (how many 1s, 2s, 3s, ...) follows a Multinomial distribution.
 
+<a id="formal-notation-10"></a>
 ### Formal Notation
 
 **Categorical distribution** with <span class="math-inline">$K$</span> classes: parameters are a probability vector <span class="math-inline">$\mathbf{p} = (p_1, p_2, \ldots, p_K)$</span> with <span class="math-inline">$p_k \geq 0$</span> and <span class="math-inline">$\sum_{k=1}^{K} p_k = 1$</span>.
 
 
-<div class="math-block">$P(X = k) = p_k, \qquad k \in \{1, 2, \ldots, K\}$</div>
+<div class="math-block">$$P(X = k) = p_k, \qquad k \in \{1, 2, \ldots, K\}$$</div>
 
 
 The **one-hot representation** encodes outcome <span class="math-inline">$k$</span> as a vector <span class="math-inline">$\mathbf{e}_k$</span> where the <span class="math-inline">$k$</span>-th entry is 1 and all others are 0.
@@ -5317,12 +5933,12 @@ The **one-hot representation** encodes outcome <span class="math-inline">$k$</sp
 **Multinomial distribution** with <span class="math-inline">$n$</span> trials: the count vector <span class="math-inline">$(C_1, C_2, \ldots, C_K)$</span> where <span class="math-inline">$C_k$</span> = number of times category <span class="math-inline">$k$</span> appears, <span class="math-inline">$\sum_k C_k = n$</span>.
 
 
-<div class="math-block">$P(C_1 = c_1, \ldots, C_K = c_K) = \frac{n!}{c_1!\, c_2!\, \cdots\, c_K!}\, p_1^{c_1} p_2^{c_2} \cdots p_K^{c_K}$</div>
+<div class="math-block">$$P(C_1 = c_1, \ldots, C_K = c_K) = \frac{n!}{c_1!\, c_2!\, \cdots\, c_K!}\, p_1^{c_1} p_2^{c_2} \cdots p_K^{c_K}$$</div>
 
 
 **Expected value of each count:**
 
-<div class="math-block">$\mathbb{E}[C_k] = n \, p_k$</div>
+<div class="math-block">$$\mathbb{E}[C_k] = n \, p_k$$</div>
 
 
 | Quantity | Categorical | Multinomial |
@@ -5331,44 +5947,47 @@ The **one-hot representation** encodes outcome <span class="math-inline">$k$</sp
 | Parameters | <span class="math-inline">$\mathbf{p} = (p_1,\ldots,p_K)$</span> | <span class="math-inline">$n$</span>, <span class="math-inline">$\mathbf{p}$</span> |
 | <span class="math-inline">$\mathbb{E}[\cdot]$</span> | N/A (each <span class="math-inline">$p_k$</span>) | <span class="math-inline">$\mathbb{E}[C_k] = np_k$</span> |
 
+<a id="worked-example-831-three-class-image-classifier"></a>
 ### Worked Example 8.3.1 — Three-Class Image Classifier
 
 A classifier assigns images to three classes with probabilities:
 
-<div class="math-block">$p_{\text{cat}} = 0.5, \quad p_{\text{dog}} = 0.3, \quad p_{\text{bird}} = 0.2$</div>
+<div class="math-block">$$p_{\text{cat}} = 0.5, \quad p_{\text{dog}} = 0.3, \quad p_{\text{bird}} = 0.2$$</div>
 
 
 **Verify normalization:** <span class="math-inline">$0.5 + 0.3 + 0.2 = 1.0 \checkmark$</span>
 
 For a batch of <span class="math-inline">$n = 100$</span> images, the expected counts are:
 
-<div class="math-block">$\mathbb{E}[C_{\text{cat}}] = 100 \times 0.5 = 50$</div>
+<div class="math-block">$$\mathbb{E}[C_{\text{cat}}] = 100 \times 0.5 = 50$$</div>
 
 
-<div class="math-block">$\mathbb{E}[C_{\text{dog}}] = 100 \times 0.3 = 30$</div>
+<div class="math-block">$$\mathbb{E}[C_{\text{dog}}] = 100 \times 0.3 = 30$$</div>
 
 
-<div class="math-block">$\mathbb{E}[C_{\text{bird}}] = 100 \times 0.2 = 20$</div>
+<div class="math-block">$$\mathbb{E}[C_{\text{bird}}] = 100 \times 0.2 = 20$$</div>
 
 
 **Multinomial probability of an exact count** — say, 50 cats, 30 dogs, 20 birds from 100 draws:
 
 
-<div class="math-block">$P(C_{\text{cat}}=50, C_{\text{dog}}=30, C_{\text{bird}}=20) = \frac{100!}{50!\,30!\,20!}(0.5)^{50}(0.3)^{30}(0.2)^{20}$</div>
+<div class="math-block">$$P(C_{\text{cat}}=50, C_{\text{dog}}=30, C_{\text{bird}}=20) = \frac{100!}{50!\,30!\,20!}(0.5)^{50}(0.3)^{30}(0.2)^{20}$$</div>
 
 
 This number is astronomically small (there are an enormous number of equally likely orderings). In practice we use the expected counts, not this exact probability.
 
+<a id="worked-example-832-rolling-a-die-twice"></a>
 ### Worked Example 8.3.2 — Rolling a Die Twice
 
 A fair die has <span class="math-inline">$K = 6$</span>, each <span class="math-inline">$p_k = \frac{1}{6}$</span>. Roll <span class="math-inline">$n = 2$</span> times. What is <span class="math-inline">$P(C_1 = 1, C_2 = 1, C_3 = 0, \ldots, C_6 = 0)$</span>? (Exactly one 1 and one 2.)
 
 
-<div class="math-block">$P = \frac{2!}{1!\,1!\,0!\cdots 0!} \left(\frac{1}{6}\right)^1 \left(\frac{1}{6}\right)^1 (1)^0 \cdots (1)^0 = 2 \times \frac{1}{36} = \frac{1}{18}$</div>
+<div class="math-block">$$P = \frac{2!}{1!\,1!\,0!\cdots 0!} \left(\frac{1}{6}\right)^1 \left(\frac{1}{6}\right)^1 (1)^0 \cdots (1)^0 = 2 \times \frac{1}{36} = \frac{1}{18}$$</div>
 
 
 **Verify:** The probability of rolling a 1 then a 2 is <span class="math-inline">$\frac{1}{6} \times \frac{1}{6} = \frac{1}{36}$</span>, and the same for rolling a 2 then a 1. Total: <span class="math-inline">$\frac{2}{36} = \frac{1}{18}$</span>. <span class="math-inline">$\checkmark$</span>
 
+<a id="engineers-angle-7"></a>
 ### Engineer's Angle
 
 The Categorical distribution is the output model for **multi-class classification**. The softmax function (Section 8.7) converts raw model scores into a Categorical probability vector. The true label in multiclass classification is one-hot — a degenerate Categorical with all probability on one class.
@@ -5401,32 +6020,35 @@ print(f"\nSum of probs: {sum(probs)}")   # 1.0
 
 ---
 
+<a id="84-uniform-distribution"></a>
 ## 8.4 Uniform Distribution
 
+<a id="plain-english-first-12"></a>
 ### Plain English First
 
 The Uniform distribution is the "I have no information" distribution. Every outcome in a range is equally likely. There are two flavors: discrete (a finite set of equally likely outcomes, like a fair die) and continuous (any value in an interval is equally likely).
 
+<a id="formal-notation-11"></a>
 ### Formal Notation
 
 **Discrete Uniform** on <span class="math-inline">$\{a, a+1, \ldots, b\}$</span> with <span class="math-inline">$n = b - a + 1$</span> values:
 
 
-<div class="math-block">$P(X = k) = \frac{1}{n}, \qquad k = a, a+1, \ldots, b$</div>
+<div class="math-block">$$P(X = k) = \frac{1}{n}, \qquad k = a, a+1, \ldots, b$$</div>
 
 
 
-<div class="math-block">$\mathbb{E}[X] = \frac{a + b}{2}, \qquad \text{Var}(X) = \frac{n^2 - 1}{12}$</div>
+<div class="math-block">$$\mathbb{E}[X] = \frac{a + b}{2}, \qquad \text{Var}(X) = \frac{n^2 - 1}{12}$$</div>
 
 
 **Continuous Uniform** on interval <span class="math-inline">$[a, b]$</span>:
 
 
-<div class="math-block">$f(x) = \frac{1}{b - a}, \qquad a \leq x \leq b, \qquad f(x) = 0 \text{ otherwise}$</div>
+<div class="math-block">$$f(x) = \frac{1}{b - a}, \qquad a \leq x \leq b, \qquad f(x) = 0 \text{ otherwise}$$</div>
 
 
 
-<div class="math-block">$\mathbb{E}[X] = \frac{a + b}{2}, \qquad \text{Var}(X) = \frac{(b-a)^2}{12}$</div>
+<div class="math-block">$$\mathbb{E}[X] = \frac{a + b}{2}, \qquad \text{Var}(X) = \frac{(b-a)^2}{12}$$</div>
 
 
 **Trust this result:** The PDF value <span class="math-inline">$\frac{1}{b-a}$</span> is chosen so that the total area under the curve equals 1: <span class="math-inline">$\int_a^b \frac{1}{b-a}\, dx = \frac{b-a}{b-a} = 1$</span>.
@@ -5437,45 +6059,48 @@ The Uniform distribution is the "I have no information" distribution. Every outc
 | <span class="math-inline">$\mathbb{E}[X]$</span> | <span class="math-inline">$(a+b)/2$</span> | <span class="math-inline">$(a+b)/2$</span> |
 | <span class="math-inline">$\text{Var}(X)$</span> | <span class="math-inline">$(n^2-1)/12$</span> | <span class="math-inline">$(b-a)^2/12$</span> |
 
+<a id="worked-example-841-fair-six-sided-die"></a>
 ### Worked Example 8.4.1 — Fair Six-Sided Die
 
 <span class="math-inline">$X \sim \text{DiscreteUniform}(1, 6)$</span>, so <span class="math-inline">$n = 6$</span>.
 
 
-<div class="math-block">$\mathbb{E}[X] = \frac{1 + 6}{2} = \frac{7}{2} = 3.5$</div>
+<div class="math-block">$$\mathbb{E}[X] = \frac{1 + 6}{2} = \frac{7}{2} = 3.5$$</div>
 
 
 
-<div class="math-block">$\text{Var}(X) = \frac{6^2 - 1}{12} = \frac{36 - 1}{12} = \frac{35}{12} \approx 2.917$</div>
+<div class="math-block">$$\text{Var}(X) = \frac{6^2 - 1}{12} = \frac{36 - 1}{12} = \frac{35}{12} \approx 2.917$$</div>
 
 
 **Verify against Chapter 7 Example 7.8.1:** We computed <span class="math-inline">$\mathbb{E}[X] = 3.5$</span> and <span class="math-inline">$\text{Var}(X) = \frac{35}{12}$</span> directly. <span class="math-inline">$\checkmark$</span>
 
+<a id="worked-example-842-continuous-uniform-on-1-1"></a>
 ### Worked Example 8.4.2 — Continuous Uniform on <span class="math-inline">$[{-1}, 1]$</span>
 
 <span class="math-inline">$X \sim \text{Uniform}(-1, 1)$</span>.
 
 
-<div class="math-block">$\mathbb{E}[X] = \frac{-1 + 1}{2} = 0$</div>
+<div class="math-block">$$\mathbb{E}[X] = \frac{-1 + 1}{2} = 0$$</div>
 
 
 
-<div class="math-block">$\text{Var}(X) = \frac{(1 - (-1))^2}{12} = \frac{4}{12} = \frac{1}{3} \approx 0.333$</div>
+<div class="math-block">$$\text{Var}(X) = \frac{(1 - (-1))^2}{12} = \frac{4}{12} = \frac{1}{3} \approx 0.333$$</div>
 
 
 **Verify the PDF integrates to 1:**
 
-<div class="math-block">$\int_{-1}^{1} \frac{1}{2}\, dx = \frac{1}{2} \times 2 = 1 \checkmark$</div>
+<div class="math-block">$$\int_{-1}^{1} \frac{1}{2}\, dx = \frac{1}{2} \times 2 = 1 \checkmark$$</div>
 
 
 **Compute a probability:** <span class="math-inline">$P(-0.5 \leq X \leq 0.5)$</span>:
 
 
-<div class="math-block">$P(-0.5 \leq X \leq 0.5) = \int_{-0.5}^{0.5} \frac{1}{2}\, dx = \frac{1}{2} \times (0.5 - (-0.5)) = \frac{1}{2} \times 1 = 0.5$</div>
+<div class="math-block">$$P(-0.5 \leq X \leq 0.5) = \int_{-0.5}^{0.5} \frac{1}{2}\, dx = \frac{1}{2} \times (0.5 - (-0.5)) = \frac{1}{2} \times 1 = 0.5$$</div>
 
 
 Exactly half the interval has half the probability. <span class="math-inline">$\checkmark$</span>
 
+<a id="engineers-angle-8"></a>
 ### Engineer's Angle
 
 Uniform distributions appear in two key places:
@@ -5523,14 +6148,17 @@ print(f"\nXavier init: Uniform(-{c:.4f}, {c:.4f})")
 
 ---
 
+<a id="85-gaussian-normal-distribution"></a>
 ## 8.5 Gaussian (Normal) Distribution
 
+<a id="plain-english-first-13"></a>
 ### Plain English First
 
 The Gaussian (Normal) distribution is the most important distribution in all of statistics and machine learning. It describes the bell-shaped curve you've seen everywhere: test scores, measurement errors, heights, and — after appropriate scaling — the outputs of almost any averaging process. It is symmetric around its center, tails off rapidly in both directions, and is completely characterized by just two numbers: the mean (center) and variance (spread).
 
 Why is it everywhere? Section 8.5.4 gives the answer (Central Limit Theorem). First, let's understand the shape.
 
+<a id="formal-notation-12"></a>
 ### Formal Notation
 
 <span class="math-inline">$X \sim \mathcal{N}(\mu, \sigma^2)$</span> (read: "<span class="math-inline">$X$</span> is Normal with mean <span class="math-inline">$\mu$</span> and variance <span class="math-inline">$\sigma^2$</span>").
@@ -5538,12 +6166,12 @@ Why is it everywhere? Section 8.5.4 gives the answer (Central Limit Theorem). Fi
 **PDF:**
 
 
-<div class="math-block">$f(x) = \frac{1}{\sigma\sqrt{2\pi}} \exp\!\left(-\frac{(x - \mu)^2}{2\sigma^2}\right), \qquad x \in (-\infty, +\infty)$</div>
+<div class="math-block">$$f(x) = \frac{1}{\sigma\sqrt{2\pi}} \exp\!\left(-\frac{(x - \mu)^2}{2\sigma^2}\right), \qquad x \in (-\infty, +\infty)$$</div>
 
 
 **Expected value and variance:**
 
-<div class="math-block">$\mathbb{E}[X] = \mu, \qquad \text{Var}(X) = \sigma^2$</div>
+<div class="math-block">$$\mathbb{E}[X] = \mu, \qquad \text{Var}(X) = \sigma^2$$</div>
 
 
 **Trust this result:** <span class="math-inline">$\displaystyle\int_{-\infty}^{+\infty} f(x)\, dx = 1$</span>. This integral requires a clever polar-coordinate trick; the result is taken as given. What matters is understanding why the formula has this shape.
@@ -5564,12 +6192,13 @@ Why is it everywhere? Section 8.5.4 gives the answer (Central Limit Theorem). Fi
 | <span class="math-inline">$\text{Var}(X)$</span> | <span class="math-inline">$\sigma^2$</span> |
 | Peak height | <span class="math-inline">$\frac{1}{\sigma\sqrt{2\pi}}$</span> |
 
+<a id="851-the-standard-normal-and-z-scores"></a>
 ### 8.5.1 The Standard Normal and Z-Scores
 
 The **standard normal** is the special case <span class="math-inline">$\mu = 0$</span>, <span class="math-inline">$\sigma^2 = 1$</span>, written <span class="math-inline">$Z \sim \mathcal{N}(0, 1)$</span>.
 
 
-<div class="math-block">$\phi(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2}$</div>
+<div class="math-block">$$\phi(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2}$$</div>
 
 
 The peak of the standard normal is at <span class="math-inline">$z = 0$</span> with height <span class="math-inline">$\frac{1}{\sqrt{2\pi}} \approx 0.3989$</span>.
@@ -5577,57 +6206,59 @@ The peak of the standard normal is at <span class="math-inline">$z = 0$</span> w
 The **CDF** of the standard normal is:
 
 
-<div class="math-block">$\Phi(z) = P(Z \leq z) = \int_{-\infty}^{z} \phi(t)\, dt$</div>
+<div class="math-block">$$\Phi(z) = P(Z \leq z) = \int_{-\infty}^{z} \phi(t)\, dt$$</div>
 
 
 This integral has no closed form in elementary functions, but it is related to the **error function** <span class="math-inline">$\text{erf}$</span>:
 
 
-<div class="math-block">$\Phi(z) = \frac{1}{2}\left[1 + \text{erf}\!\left(\frac{z}{\sqrt{2}}\right)\right]$</div>
+<div class="math-block">$$\Phi(z) = \frac{1}{2}\left[1 + \text{erf}\!\left(\frac{z}{\sqrt{2}}\right)\right]$$</div>
 
 
 **Converting any normal to standard:** If <span class="math-inline">$X \sim \mathcal{N}(\mu, \sigma^2)$</span>, then:
 
 
-<div class="math-block">$Z = \frac{X - \mu}{\sigma} \sim \mathcal{N}(0, 1)$</div>
+<div class="math-block">$$Z = \frac{X - \mu}{\sigma} \sim \mathcal{N}(0, 1)$$</div>
 
 
 The value <span class="math-inline">$Z$</span> is called the **Z-score**: it measures how many standard deviations <span class="math-inline">$X$</span> is above or below the mean.
 
 
-<div class="math-block">$P(X \leq x) = P\!\left(Z \leq \frac{x - \mu}{\sigma}\right) = \Phi\!\left(\frac{x - \mu}{\sigma}\right)$</div>
+<div class="math-block">$$P(X \leq x) = P\!\left(Z \leq \frac{x - \mu}{\sigma}\right) = \Phi\!\left(\frac{x - \mu}{\sigma}\right)$$</div>
 
 
+<a id="852-the-68-95-997-rule"></a>
 ### 8.5.2 The 68-95-99.7 Rule
 
 For any Gaussian, almost all probability mass lies within three standard deviations of the mean:
 
 
-<div class="math-block">$P(\mu - \sigma \leq X \leq \mu + \sigma) = P(-1 \leq Z \leq 1) = \text{erf}\!\left(\frac{1}{\sqrt{2}}\right) \approx 0.6827$</div>
+<div class="math-block">$$P(\mu - \sigma \leq X \leq \mu + \sigma) = P(-1 \leq Z \leq 1) = \text{erf}\!\left(\frac{1}{\sqrt{2}}\right) \approx 0.6827$$</div>
 
 
 
-<div class="math-block">$P(\mu - 2\sigma \leq X \leq \mu + 2\sigma) = P(-2 \leq Z \leq 2) = \text{erf}\!\left(\frac{2}{\sqrt{2}}\right) \approx 0.9545$</div>
+<div class="math-block">$$P(\mu - 2\sigma \leq X \leq \mu + 2\sigma) = P(-2 \leq Z \leq 2) = \text{erf}\!\left(\frac{2}{\sqrt{2}}\right) \approx 0.9545$$</div>
 
 
 
-<div class="math-block">$P(\mu - 3\sigma \leq X \leq \mu + 3\sigma) = P(-3 \leq Z \leq 3) = \text{erf}\!\left(\frac{3}{\sqrt{2}}\right) \approx 0.9973$</div>
+<div class="math-block">$$P(\mu - 3\sigma \leq X \leq \mu + 3\sigma) = P(-3 \leq Z \leq 3) = \text{erf}\!\left(\frac{3}{\sqrt{2}}\right) \approx 0.9973$$</div>
 
 
 **Verification using <span class="math-inline">$\text{erf}$</span>** (so this is not magic):
 
 
-<div class="math-block">$P(-1 \leq Z \leq 1) = \Phi(1) - \Phi(-1) = \frac{1}{2}\!\left[1 + \text{erf}\!\left(\frac{1}{\sqrt{2}}\right)\right] - \frac{1}{2}\!\left[1 + \text{erf}\!\left(\frac{-1}{\sqrt{2}}\right)\right]$</div>
+<div class="math-block">$$P(-1 \leq Z \leq 1) = \Phi(1) - \Phi(-1) = \frac{1}{2}\!\left[1 + \text{erf}\!\left(\frac{1}{\sqrt{2}}\right)\right] - \frac{1}{2}\!\left[1 + \text{erf}\!\left(\frac{-1}{\sqrt{2}}\right)\right]$$</div>
 
 
 Since <span class="math-inline">$\text{erf}(-x) = -\text{erf}(x)$</span> (erf is an odd function):
 
 
-<div class="math-block">$= \frac{1}{2}\!\left[\text{erf}\!\left(\frac{1}{\sqrt{2}}\right) + \text{erf}\!\left(\frac{1}{\sqrt{2}}\right)\right] = \text{erf}\!\left(\frac{1}{\sqrt{2}}\right)$</div>
+<div class="math-block">$$= \frac{1}{2}\!\left[\text{erf}\!\left(\frac{1}{\sqrt{2}}\right) + \text{erf}\!\left(\frac{1}{\sqrt{2}}\right)\right] = \text{erf}\!\left(\frac{1}{\sqrt{2}}\right)$$</div>
 
 
 Numerically: <span class="math-inline">$\text{erf}(1/\sqrt{2}) = \text{erf}(0.7071) \approx 0.6827$</span>. <span class="math-inline">$\checkmark$</span>
 
+<a id="853-worked-examples"></a>
 ### 8.5.3 Worked Examples
 
 **Worked Example 8.5.1 — Exam Scores**
@@ -5637,11 +6268,11 @@ Exam scores follow <span class="math-inline">$X \sim \mathcal{N}(\mu = 75, \sigm
 (a) What fraction of students score below 83?
 
 
-<div class="math-block">$z = \frac{83 - 75}{8} = \frac{8}{8} = 1.0$</div>
+<div class="math-block">$$z = \frac{83 - 75}{8} = \frac{8}{8} = 1.0$$</div>
 
 
 
-<div class="math-block">$P(X < 83) = \Phi(1.0) \approx 0.8413$</div>
+<div class="math-block">$$P(X < 83) = \Phi(1.0) \approx 0.8413$$</div>
 
 
 About **84.1%** of students score below 83.
@@ -5649,11 +6280,11 @@ About **84.1%** of students score below 83.
 (b) What fraction score between 67 and 83?
 
 
-<div class="math-block">$z_{\text{lo}} = \frac{67 - 75}{8} = -1.0, \qquad z_{\text{hi}} = \frac{83 - 75}{8} = +1.0$</div>
+<div class="math-block">$$z_{\text{lo}} = \frac{67 - 75}{8} = -1.0, \qquad z_{\text{hi}} = \frac{83 - 75}{8} = +1.0$$</div>
 
 
 
-<div class="math-block">$P(67 < X < 83) = \Phi(1) - \Phi(-1) \approx 0.8413 - 0.1587 = 0.6827$</div>
+<div class="math-block">$$P(67 < X < 83) = \Phi(1) - \Phi(-1) \approx 0.8413 - 0.1587 = 0.6827$$</div>
 
 
 About **68.3%** — exactly the 68-95-99.7 rule in action (one standard deviation band). <span class="math-inline">$\checkmark$</span>
@@ -5661,11 +6292,11 @@ About **68.3%** — exactly the 68-95-99.7 rule in action (one standard deviatio
 (c) What fraction score above 91?
 
 
-<div class="math-block">$z = \frac{91 - 75}{8} = \frac{16}{8} = 2.0$</div>
+<div class="math-block">$$z = \frac{91 - 75}{8} = \frac{16}{8} = 2.0$$</div>
 
 
 
-<div class="math-block">$P(X > 91) = 1 - \Phi(2.0) \approx 1 - 0.9772 = 0.0228$</div>
+<div class="math-block">$$P(X > 91) = 1 - \Phi(2.0) \approx 1 - 0.9772 = 0.0228$$</div>
 
 
 About **2.3%** — consistent with the 95.45% rule (leaving 4.55% outside two standard deviations, split equally on both tails gives about 2.28% on each side). <span class="math-inline">$\checkmark$</span>
@@ -5675,19 +6306,20 @@ About **2.3%** — consistent with the 95.45% rule (leaving 4.55% outside two st
 For <span class="math-inline">$X \sim \mathcal{N}(170, 100)$</span> (<span class="math-inline">$\mu = 170$</span>, <span class="math-inline">$\sigma = 10$</span>), what is the PDF at <span class="math-inline">$x = 185$</span>?
 
 
-<div class="math-block">$z = \frac{185 - 170}{10} = 1.5$</div>
+<div class="math-block">$$z = \frac{185 - 170}{10} = 1.5$$</div>
 
 
 
-<div class="math-block">$f(185) = \frac{1}{10\sqrt{2\pi}} e^{-1.5^2/2} = \frac{1}{10 \times 2.5066} e^{-1.125}$</div>
+<div class="math-block">$$f(185) = \frac{1}{10\sqrt{2\pi}} e^{-1.5^2/2} = \frac{1}{10 \times 2.5066} e^{-1.125}$$</div>
 
 
 
-<div class="math-block">$= \frac{1}{25.066} \times 0.3247 \approx \frac{0.3247}{25.066} \approx 0.01295$</div>
+<div class="math-block">$$= \frac{1}{25.066} \times 0.3247 \approx \frac{0.3247}{25.066} \approx 0.01295$$</div>
 
 
 **Remember:** this is a *density*, not a probability. The probability of <span class="math-inline">$X$</span> falling in a tiny interval <span class="math-inline">$[185, 185.01]$</span> would be approximately <span class="math-inline">$0.01295 \times 0.01 = 0.0001295$</span>.
 
+<a id="854-why-does-the-gaussian-appear-everywhere-central-limit-theorem"></a>
 ### 8.5.4 Why Does the Gaussian Appear Everywhere? (Central Limit Theorem)
 
 Here is one of the most important theorems in all of mathematics, stated intuitively:
@@ -5703,6 +6335,7 @@ In other words: add up 30 uniform random variables, or 30 exponential random var
 
 No proof is required here. The takeaway for engineers: *when a quantity is the result of summing or averaging many independent contributions, expect it to look Gaussian.*
 
+<a id="engineers-angle-9"></a>
 ### Engineer's Angle
 
 The Gaussian is central to:
@@ -5757,14 +6390,17 @@ print(f"\nHe init for n_in={n_in}: N(0, {2/n_in:.6f}), sigma={sigma_he:.6f}")
 
 ---
 
+<a id="86-exponential-distribution"></a>
 ## 8.6 Exponential Distribution
 
+<a id="plain-english-first-14"></a>
 ### Plain English First
 
 If you are waiting for something to happen — a server request, a hardware failure, a customer arriving — and the events occur at a constant average rate and independently of each other, then the time between events follows an Exponential distribution.
 
 The defining characteristic of the Exponential distribution is the **memoryless property**: if you have been waiting for 5 minutes, the probability of waiting another 3 minutes is exactly the same as it would have been if you had just started waiting. The distribution "forgets" how long you have already waited.
 
+<a id="formal-notation-13"></a>
 ### Formal Notation
 
 <span class="math-inline">$X \sim \text{Exponential}(\lambda)$</span> where <span class="math-inline">$\lambda > 0$</span> is the **rate parameter** (events per unit time).
@@ -5772,19 +6408,19 @@ The defining characteristic of the Exponential distribution is the **memoryless 
 **PDF:**
 
 
-<div class="math-block">$f(x) = \lambda e^{-\lambda x}, \qquad x \geq 0$</div>
+<div class="math-block">$$f(x) = \lambda e^{-\lambda x}, \qquad x \geq 0$$</div>
 
 
 **CDF** (probability that the wait is at most <span class="math-inline">$t$</span>):
 
 
-<div class="math-block">$F(t) = P(X \leq t) = 1 - e^{-\lambda t}$</div>
+<div class="math-block">$$F(t) = P(X \leq t) = 1 - e^{-\lambda t}$$</div>
 
 
 **Expected value and variance:**
 
 
-<div class="math-block">$\mathbb{E}[X] = \frac{1}{\lambda}, \qquad \text{Var}(X) = \frac{1}{\lambda^2}$</div>
+<div class="math-block">$$\mathbb{E}[X] = \frac{1}{\lambda}, \qquad \text{Var}(X) = \frac{1}{\lambda^2}$$</div>
 
 
 **Trust this result:** The mean <span class="math-inline">$1/\lambda$</span> makes intuitive sense: if events arrive at rate <span class="math-inline">$\lambda = 2$</span> per minute, you expect to wait <span class="math-inline">$1/2$</span> a minute on average.
@@ -5792,13 +6428,13 @@ The defining characteristic of the Exponential distribution is the **memoryless 
 **Memoryless property:** For <span class="math-inline">$s, t > 0$</span>:
 
 
-<div class="math-block">$P(X > s + t \mid X > s) = P(X > t)$</div>
+<div class="math-block">$$P(X > s + t \mid X > s) = P(X > t)$$</div>
 
 
 **Here's why** the memoryless property holds:
 
 
-<div class="math-block">$P(X > s + t \mid X > s) = \frac{P(X > s + t)}{P(X > s)} = \frac{e^{-\lambda(s+t)}}{e^{-\lambda s}} = \frac{e^{-\lambda s} e^{-\lambda t}}{e^{-\lambda s}} = e^{-\lambda t} = P(X > t) \quad \square$</div>
+<div class="math-block">$$P(X > s + t \mid X > s) = \frac{P(X > s + t)}{P(X > s)} = \frac{e^{-\lambda(s+t)}}{e^{-\lambda s}} = \frac{e^{-\lambda s} e^{-\lambda t}}{e^{-\lambda s}} = e^{-\lambda t} = P(X > t) \quad \square$$</div>
 
 
 | Quantity | Value |
@@ -5811,19 +6447,20 @@ The defining characteristic of the Exponential distribution is the **memoryless 
 | <span class="math-inline">$\text{Var}(X)$</span> | <span class="math-inline">$1/\lambda^2$</span> |
 | Standard deviation | <span class="math-inline">$1/\lambda$</span> (equals the mean!) |
 
+<a id="worked-example-861-web-server-requests"></a>
 ### Worked Example 8.6.1 — Web Server Requests
 
 Requests arrive at an average rate of <span class="math-inline">$\lambda = 0.5$</span> requests per minute. The time between requests follows <span class="math-inline">$X \sim \text{Exponential}(0.5)$</span>.
 
 **Expected wait time:**
 
-<div class="math-block">$\mathbb{E}[X] = \frac{1}{0.5} = 2 \text{ minutes}$</div>
+<div class="math-block">$$\mathbb{E}[X] = \frac{1}{0.5} = 2 \text{ minutes}$$</div>
 
 
 **Step 1 — Probability of waiting at most 3 minutes:**
 
 
-<div class="math-block">$P(X \leq 3) = 1 - e^{-0.5 \times 3} = 1 - e^{-1.5} = 1 - 0.2231 = 0.7769$</div>
+<div class="math-block">$$P(X \leq 3) = 1 - e^{-0.5 \times 3} = 1 - e^{-1.5} = 1 - 0.2231 = 0.7769$$</div>
 
 
 About **77.7%** of the time, the next request arrives within 3 minutes.
@@ -5831,28 +6468,30 @@ About **77.7%** of the time, the next request arrives within 3 minutes.
 **Step 2 — Probability of waiting more than 5 minutes:**
 
 
-<div class="math-block">$P(X > 5) = e^{-0.5 \times 5} = e^{-2.5} \approx 0.0821$</div>
+<div class="math-block">$$P(X > 5) = e^{-0.5 \times 5} = e^{-2.5} \approx 0.0821$$</div>
 
 
 About **8.2%** of inter-arrival gaps exceed 5 minutes.
 
+<a id="worked-example-862-memoryless-property-in-action"></a>
 ### Worked Example 8.6.2 — Memoryless Property in Action
 
 Using the same server (<span class="math-inline">$\lambda = 0.5$</span>). You have already waited 2 minutes without a request. What is the probability you wait at least 1 more minute?
 
 **Using the memoryless property directly:**
 
-<div class="math-block">$P(X > 3 \mid X > 2) = P(X > 1) = e^{-0.5 \times 1} = e^{-0.5} \approx 0.6065$</div>
+<div class="math-block">$$P(X > 3 \mid X > 2) = P(X > 1) = e^{-0.5 \times 1} = e^{-0.5} \approx 0.6065$$</div>
 
 
 **Verify by direct computation:**
 
 
-<div class="math-block">$P(X > 3 \mid X > 2) = \frac{P(X > 3)}{P(X > 2)} = \frac{e^{-1.5}}{e^{-1.0}} = \frac{0.2231}{0.3679} \approx 0.6065$</div>
+<div class="math-block">$$P(X > 3 \mid X > 2) = \frac{P(X > 3)}{P(X > 2)} = \frac{e^{-1.5}}{e^{-1.0}} = \frac{0.2231}{0.3679} \approx 0.6065$$</div>
 
 
 Both methods give the same answer. <span class="math-inline">$\checkmark$</span> The 2 minutes already elapsed are completely irrelevant — the exponential distribution has no memory.
 
+<a id="engineers-angle-10"></a>
 ### Engineer's Angle
 
 The Exponential distribution appears in:
@@ -5901,26 +6540,29 @@ print(f"            Equal: {abs(cond - direct) < 1e-10}")  # True
 
 ---
 
+<a id="87-softmax-as-a-distribution"></a>
 ## 8.7 Softmax as a Distribution
 
+<a id="plain-english-first-15"></a>
 ### Plain English First
 
 A neural network's final classification layer produces a vector of raw scores — one per class — called **logits**. Logits can be any real numbers: negative, zero, positive, large, small. We need to turn them into probabilities that sum to 1. The **softmax function** does exactly this, and the result is a valid Categorical distribution.
 
 The name "softmax" comes from the fact that it is a smooth, differentiable approximation of the "hardmax" (argmax) function. The class with the largest logit gets the most probability, but not all of it.
 
+<a id="formal-notation-14"></a>
 ### Formal Notation
 
 Given a vector of logits <span class="math-inline">$\mathbf{z} = (z_1, z_2, \ldots, z_K)$</span>, the softmax produces a probability vector <span class="math-inline">$\boldsymbol{\pi}$</span> where:
 
 
-<div class="math-block">$\pi_k = \text{softmax}(\mathbf{z})_k = \frac{e^{z_k}}{\displaystyle\sum_{j=1}^{K} e^{z_j}}, \qquad k = 1, 2, \ldots, K$</div>
+<div class="math-block">$$\pi_k = \text{softmax}(\mathbf{z})_k = \frac{e^{z_k}}{\displaystyle\sum_{j=1}^{K} e^{z_j}}, \qquad k = 1, 2, \ldots, K$$</div>
 
 
 **Proof that <span class="math-inline">$\sum_k \pi_k = 1$</span>:**
 
 
-<div class="math-block">$\sum_{k=1}^{K} \pi_k = \sum_{k=1}^{K} \frac{e^{z_k}}{\sum_{j=1}^{K} e^{z_j}} = \frac{\sum_{k=1}^{K} e^{z_k}}{\sum_{j=1}^{K} e^{z_j}} = 1 \quad \square$</div>
+<div class="math-block">$$\sum_{k=1}^{K} \pi_k = \sum_{k=1}^{K} \frac{e^{z_k}}{\sum_{j=1}^{K} e^{z_j}} = \frac{\sum_{k=1}^{K} e^{z_k}}{\sum_{j=1}^{K} e^{z_j}} = 1 \quad \square$$</div>
 
 
 **Proof that softmax reduces to sigmoid for <span class="math-inline">$K = 2$</span>:**
@@ -5928,7 +6570,7 @@ Given a vector of logits <span class="math-inline">$\mathbf{z} = (z_1, z_2, \ldo
 With <span class="math-inline">$K=2$</span>, logits <span class="math-inline">$(z_1, z_2)$</span>:
 
 
-<div class="math-block">$\pi_1 = \frac{e^{z_1}}{e^{z_1} + e^{z_2}} = \frac{1}{1 + e^{z_2 - z_1}} = \sigma(z_1 - z_2)$</div>
+<div class="math-block">$$\pi_1 = \frac{e^{z_1}}{e^{z_1} + e^{z_2}} = \frac{1}{1 + e^{z_2 - z_1}} = \sigma(z_1 - z_2)$$</div>
 
 
 where <span class="math-inline">$\sigma(s) = \frac{1}{1+e^{-s}}$</span> is the sigmoid function. Binary logistic regression is the two-class special case of softmax classification. <span class="math-inline">$\square$</span>
@@ -5936,60 +6578,63 @@ where <span class="math-inline">$\sigma(s) = \frac{1}{1+e^{-s}}$</span> is the s
 **Temperature scaling:** A parameter <span class="math-inline">$T > 0$</span> can be introduced:
 
 
-<div class="math-block">$\pi_k = \frac{e^{z_k/T}}{\sum_j e^{z_j/T}}$</div>
+<div class="math-block">$$\pi_k = \frac{e^{z_k/T}}{\sum_j e^{z_j/T}}$$</div>
 
 
 - <span class="math-inline">$T \to 0$</span>: distribution collapses to a one-hot on the argmax (hardmax).
 - <span class="math-inline">$T \to \infty$</span>: distribution approaches Uniform (maximum uncertainty).
 
+<a id="worked-example-871-three-class-logits"></a>
 ### Worked Example 8.7.1 — Three-Class Logits
 
 Logits from a classifier: <span class="math-inline">$\mathbf{z} = (2.0, 1.0, 0.5)$</span>.
 
 **Step 1 — Compute exponentials:**
 
-<div class="math-block">$e^{2.0} = 7.3891, \quad e^{1.0} = 2.7183, \quad e^{0.5} = 1.6487$</div>
+<div class="math-block">$$e^{2.0} = 7.3891, \quad e^{1.0} = 2.7183, \quad e^{0.5} = 1.6487$$</div>
 
 
 **Step 2 — Sum:**
 
-<div class="math-block">$S = 7.3891 + 2.7183 + 1.6487 = 11.7561$</div>
+<div class="math-block">$$S = 7.3891 + 2.7183 + 1.6487 = 11.7561$$</div>
 
 
 **Step 3 — Divide:**
 
-<div class="math-block">$\pi_1 = \frac{7.3891}{11.7561} \approx 0.6285, \quad \pi_2 = \frac{2.7183}{11.7561} \approx 0.2312, \quad \pi_3 = \frac{1.6487}{11.7561} \approx 0.1402$</div>
+<div class="math-block">$$\pi_1 = \frac{7.3891}{11.7561} \approx 0.6285, \quad \pi_2 = \frac{2.7183}{11.7561} \approx 0.2312, \quad \pi_3 = \frac{1.6487}{11.7561} \approx 0.1402$$</div>
 
 
 **Step 4 — Verify:**
 
-<div class="math-block">$0.6285 + 0.2312 + 0.1402 = 0.9999 \approx 1.0000 \checkmark$</div>
+<div class="math-block">$$0.6285 + 0.2312 + 0.1402 = 0.9999 \approx 1.0000 \checkmark$$</div>
 
 
 The largest logit (2.0) gets the majority of the probability mass, but the smaller logits still get non-zero probability.
 
+<a id="worked-example-872-sigmoid-as-two-class-softmax"></a>
 ### Worked Example 8.7.2 — Sigmoid as Two-Class Softmax
 
 Logits <span class="math-inline">$\mathbf{z} = (1.5, 0.0)$</span> (two classes).
 
 **Softmax:**
 
-<div class="math-block">$\pi_1 = \frac{e^{1.5}}{e^{1.5} + e^{0.0}} = \frac{4.4817}{4.4817 + 1.0000} = \frac{4.4817}{5.4817} \approx 0.8176$</div>
+<div class="math-block">$$\pi_1 = \frac{e^{1.5}}{e^{1.5} + e^{0.0}} = \frac{4.4817}{4.4817 + 1.0000} = \frac{4.4817}{5.4817} \approx 0.8176$$</div>
 
 
 **Sigmoid:**
 
-<div class="math-block">$\sigma(1.5 - 0.0) = \sigma(1.5) = \frac{1}{1 + e^{-1.5}} = \frac{1}{1 + 0.2231} = \frac{1}{1.2231} \approx 0.8176$</div>
+<div class="math-block">$$\sigma(1.5 - 0.0) = \sigma(1.5) = \frac{1}{1 + e^{-1.5}} = \frac{1}{1 + 0.2231} = \frac{1}{1.2231} \approx 0.8176$$</div>
 
 
 Same result. <span class="math-inline">$\checkmark$</span> Binary classification with logistic regression is exactly two-class softmax with logits <span class="math-inline">$(s, 0)$</span>.
 
+<a id="engineers-angle-11"></a>
 ### Engineer's Angle
 
 In PyTorch/TensorFlow, `nn.CrossEntropyLoss` (or `tf.keras.losses.CategoricalCrossentropy`) combines softmax and cross-entropy in a single, numerically stable operation. The trick is the **log-sum-exp** computation:
 
 
-<div class="math-block">$\log \pi_k = z_k - \log\!\left(\sum_j e^{z_j}\right)$</div>
+<div class="math-block">$$\log \pi_k = z_k - \log\!\left(\sum_j e^{z_j}\right)$$</div>
 
 
 Subtracting the maximum logit before exponentiating prevents overflow — a "numeric stabilization" trick.
@@ -6040,8 +6685,10 @@ print(f"Equal: {abs(sm2[0] - sig) < 1e-10}")   # True
 
 ---
 
+<a id="88-kl-divergence-measuring-distance-between-distributions"></a>
 ## 8.8 KL Divergence — Measuring Distance Between Distributions
 
+<a id="plain-english-first-16"></a>
 ### Plain English First
 
 Suppose you have two probability distributions: <span class="math-inline">$P$</span> (the "truth") and <span class="math-inline">$Q$</span> (your model's approximation). How different are they? Intuitively, they are "close" if they assign similar probabilities to similar events. KL divergence gives a precise numerical measure of how much information you lose by using <span class="math-inline">$Q$</span> to represent <span class="math-inline">$P$</span>.
@@ -6051,18 +6698,19 @@ There are two important warnings about KL divergence:
 1. It is **not a distance** in the mathematical sense, because <span class="math-inline">$D_{KL}(P \| Q) \neq D_{KL}(Q \| P)$</span> in general. Direction matters.
 2. It is always **non-negative**: <span class="math-inline">$D_{KL}(P \| Q) \geq 0$</span>, with equality if and only if <span class="math-inline">$P = Q$</span> everywhere.
 
+<a id="formal-notation-15"></a>
 ### Formal Notation
 
 **Discrete case** (<span class="math-inline">$P$</span> and <span class="math-inline">$Q$</span> are distributions over the same finite set):
 
 
-<div class="math-block">$D_{KL}(P \| Q) = \sum_{k} P(k) \log \frac{P(k)}{Q(k)}$</div>
+<div class="math-block">$$D_{KL}(P \| Q) = \sum_{k} P(k) \log \frac{P(k)}{Q(k)}$$</div>
 
 
 **Continuous case:**
 
 
-<div class="math-block">$D_{KL}(P \| Q) = \int_{-\infty}^{\infty} p(x) \log \frac{p(x)}{q(x)}\, dx$</div>
+<div class="math-block">$$D_{KL}(P \| Q) = \int_{-\infty}^{\infty} p(x) \log \frac{p(x)}{q(x)}\, dx$$</div>
 
 
 **Convention:** We use natural logarithm (base <span class="math-inline">$e$</span>) throughout, giving units of **nats**. (Using log base 2 gives bits; the choice is cosmetic.)
@@ -6071,6 +6719,7 @@ There are two important warnings about KL divergence:
 
 **Trust this result:** <span class="math-inline">$D_{KL}(P \| Q) \geq 0$</span>, with equality iff <span class="math-inline">$P = Q$</span> everywhere. This follows from Jensen's inequality applied to the convex function <span class="math-inline">$-\log$</span>.
 
+<a id="worked-example-881-kl-divergence-and-its-asymmetry"></a>
 ### Worked Example 8.8.1 — KL Divergence and Its Asymmetry
 
 Let <span class="math-inline">$P = (0.9, 0.1)$</span> and <span class="math-inline">$Q = (0.5, 0.5)$</span> over two outcomes.
@@ -6078,37 +6727,37 @@ Let <span class="math-inline">$P = (0.9, 0.1)$</span> and <span class="math-inli
 **Compute <span class="math-inline">$D_{KL}(P \| Q)$</span>:** (how much <span class="math-inline">$Q$</span> approximates <span class="math-inline">$P$</span>)
 
 
-<div class="math-block">$D_{KL}(P \| Q) = P(1)\log\frac{P(1)}{Q(1)} + P(2)\log\frac{P(2)}{Q(2)}$</div>
+<div class="math-block">$$D_{KL}(P \| Q) = P(1)\log\frac{P(1)}{Q(1)} + P(2)\log\frac{P(2)}{Q(2)}$$</div>
 
 
 
-<div class="math-block">$= 0.9 \times \log\frac{0.9}{0.5} + 0.1 \times \log\frac{0.1}{0.5}$</div>
+<div class="math-block">$$= 0.9 \times \log\frac{0.9}{0.5} + 0.1 \times \log\frac{0.1}{0.5}$$</div>
 
 
 
-<div class="math-block">$= 0.9 \times \log(1.8) + 0.1 \times \log(0.2)$</div>
+<div class="math-block">$$= 0.9 \times \log(1.8) + 0.1 \times \log(0.2)$$</div>
 
 
 Using <span class="math-inline">$\log(1.8) = 0.5878$</span> and <span class="math-inline">$\log(0.2) = -1.6094$</span>:
 
 
-<div class="math-block">$= 0.9 \times 0.5878 + 0.1 \times (-1.6094) = 0.5290 - 0.1609 = 0.3681 \text{ nats}$</div>
+<div class="math-block">$$= 0.9 \times 0.5878 + 0.1 \times (-1.6094) = 0.5290 - 0.1609 = 0.3681 \text{ nats}$$</div>
 
 
 **Compute <span class="math-inline">$D_{KL}(Q \| P)$</span>:** (the reverse direction)
 
 
-<div class="math-block">$D_{KL}(Q \| P) = 0.5 \times \log\frac{0.5}{0.9} + 0.5 \times \log\frac{0.5}{0.1}$</div>
+<div class="math-block">$$D_{KL}(Q \| P) = 0.5 \times \log\frac{0.5}{0.9} + 0.5 \times \log\frac{0.5}{0.1}$$</div>
 
 
 
-<div class="math-block">$= 0.5 \times \log(0.5556) + 0.5 \times \log(5.0)$</div>
+<div class="math-block">$$= 0.5 \times \log(0.5556) + 0.5 \times \log(5.0)$$</div>
 
 
 Using <span class="math-inline">$\log(0.5556) = -0.5878$</span> and <span class="math-inline">$\log(5.0) = 1.6094$</span>:
 
 
-<div class="math-block">$= 0.5 \times (-0.5878) + 0.5 \times 1.6094 = -0.2939 + 0.8047 = 0.5108 \text{ nats}$</div>
+<div class="math-block">$$= 0.5 \times (-0.5878) + 0.5 \times 1.6094 = -0.2939 + 0.8047 = 0.5108 \text{ nats}$$</div>
 
 
 **Conclusion:** <span class="math-inline">$D_{KL}(P \| Q) = 0.3681 \neq 0.5108 = D_{KL}(Q \| P)$</span>. KL divergence is asymmetric. <span class="math-inline">$\checkmark$</span>
@@ -6117,14 +6766,16 @@ The two directions penalize different mistakes:
 - <span class="math-inline">$D_{KL}(P \| Q)$</span>: penalizes assigning low probability under <span class="math-inline">$Q$</span> to events that are common under <span class="math-inline">$P$</span> (it "forces" <span class="math-inline">$Q$</span> to cover the support of <span class="math-inline">$P$</span>).
 - <span class="math-inline">$D_{KL}(Q \| P)$</span>: penalizes <span class="math-inline">$Q$</span> for spreading probability where <span class="math-inline">$P$</span> is concentrated (it "forces" <span class="math-inline">$Q$</span> to be cautious).
 
+<a id="worked-example-882-zero-kl-when-p-q"></a>
 ### Worked Example 8.8.2 — Zero KL When <span class="math-inline">$P = Q$</span>
 
 For <span class="math-inline">$P = Q = (0.6, 0.4)$</span>:
 
 
-<div class="math-block">$D_{KL}(P \| Q) = 0.6 \times \log\frac{0.6}{0.6} + 0.4 \times \log\frac{0.4}{0.4} = 0.6 \times \log(1) + 0.4 \times \log(1) = 0 \checkmark$</div>
+<div class="math-block">$$D_{KL}(P \| Q) = 0.6 \times \log\frac{0.6}{0.6} + 0.4 \times \log\frac{0.4}{0.4} = 0.6 \times \log(1) + 0.4 \times \log(1) = 0 \checkmark$$</div>
 
 
+<a id="engineers-angle-12"></a>
 ### Engineer's Angle
 
 KL divergence is the workhorse of probabilistic ML:
@@ -6179,18 +6830,21 @@ print(f"VAE KL: N(0.0, 1.0) vs N(0,1) = {kl_gaussian_standard(0.0, 1.0):.6f}")  
 
 ---
 
+<a id="89-entropy"></a>
 ## 8.9 Entropy
 
+<a id="plain-english-first-17"></a>
 ### Plain English First
 
 Before we can fully explain cross-entropy, we need one more concept: **entropy**. Entropy measures the average uncertainty (or information content) of a distribution. A distribution that is always the same (a coin that always lands heads) has zero entropy — no uncertainty. A fair coin has maximum entropy — you never know what comes next.
 
+<a id="formal-notation-16"></a>
 ### Formal Notation
 
 For a discrete distribution <span class="math-inline">$P$</span> over <span class="math-inline">$K$</span> outcomes:
 
 
-<div class="math-block">$H(P) = -\sum_{k=1}^{K} P(k) \log P(k)$</div>
+<div class="math-block">$$H(P) = -\sum_{k=1}^{K} P(k) \log P(k)$$</div>
 
 
 Using natural log, the unit is **nats**. Using log base 2, the unit is **bits**.
@@ -6200,81 +6854,86 @@ Using natural log, the unit is **nats**. Using log base 2, the unit is **bits**.
 - <span class="math-inline">$H(P) = 0$</span> iff <span class="math-inline">$P$</span> is concentrated on a single outcome (certain outcome).
 - <span class="math-inline">$H(P)$</span> is maximized when <span class="math-inline">$P$</span> is Uniform.
 
+<a id="worked-example-891"></a>
 ### Worked Example 8.9.1
 
 For <span class="math-inline">$P = (0.9, 0.1)$</span>:
 
-<div class="math-block">$H(P) = -(0.9 \log 0.9 + 0.1 \log 0.1)$</div>
+<div class="math-block">$$H(P) = -(0.9 \log 0.9 + 0.1 \log 0.1)$$</div>
 
 
-<div class="math-block">$= -(0.9 \times (-0.1054) + 0.1 \times (-2.3026))$</div>
+<div class="math-block">$$= -(0.9 \times (-0.1054) + 0.1 \times (-2.3026))$$</div>
 
 
-<div class="math-block">$= -((-0.0948) + (-0.2303))$</div>
+<div class="math-block">$$= -((-0.0948) + (-0.2303))$$</div>
 
 
-<div class="math-block">$= -(-0.3251) = 0.3251 \text{ nats}$</div>
+<div class="math-block">$$= -(-0.3251) = 0.3251 \text{ nats}$$</div>
 
 
 For <span class="math-inline">$P = (0.5, 0.5)$</span> (maximum entropy for two outcomes):
 
-<div class="math-block">$H(P) = -(0.5 \log 0.5 + 0.5 \log 0.5) = -(2 \times 0.5 \times (-0.6931)) = 0.6931 \text{ nats}$</div>
+<div class="math-block">$$H(P) = -(0.5 \log 0.5 + 0.5 \log 0.5) = -(2 \times 0.5 \times (-0.6931)) = 0.6931 \text{ nats}$$</div>
 
 
 The uniform distribution has higher entropy. <span class="math-inline">$\checkmark$</span>
 
 ---
 
+<a id="810-cross-entropy-and-its-connection-to-kl-divergence"></a>
 ## 8.10 Cross-Entropy and Its Connection to KL Divergence
 
+<a id="plain-english-first-18"></a>
 ### Plain English First
 
 Cross-entropy answers the question: "What is the average number of nats needed to encode samples from <span class="math-inline">$P$</span>, if we design our encoding scheme assuming <span class="math-inline">$Q$</span> is the true distribution?" If <span class="math-inline">$Q = P$</span>, the answer is just the entropy <span class="math-inline">$H(P)$</span>. If <span class="math-inline">$Q \neq P$</span>, we waste some bits — that waste is exactly the KL divergence.
 
 In machine learning, <span class="math-inline">$P$</span> is the true label distribution (often a one-hot vector) and <span class="math-inline">$Q$</span> is the model's predicted distribution (the softmax output). Cross-entropy is the loss function that training minimizes.
 
+<a id="formal-notation-17"></a>
 ### Formal Notation
 
 **Cross-entropy** between <span class="math-inline">$P$</span> (true) and <span class="math-inline">$Q$</span> (model):
 
 
-<div class="math-block">$H(P, Q) = -\sum_{k} P(k) \log Q(k)$</div>
+<div class="math-block">$$H(P, Q) = -\sum_{k} P(k) \log Q(k)$$</div>
 
 
 **Key identity:** Cross-entropy decomposes into entropy plus KL divergence:
 
 
-<div class="math-block">$H(P, Q) = H(P) + D_{KL}(P \| Q)$</div>
+<div class="math-block">$$H(P, Q) = H(P) + D_{KL}(P \| Q)$$</div>
 
 
 **Here's why:**
 
 
-<div class="math-block">$H(P, Q) = -\sum_k P(k) \log Q(k)$</div>
+<div class="math-block">$$H(P, Q) = -\sum_k P(k) \log Q(k)$$</div>
 
 
 Add and subtract <span class="math-inline">$\sum_k P(k) \log P(k)$</span>:
 
 
-<div class="math-block">$= -\sum_k P(k) \log P(k) + \sum_k P(k) \log P(k) - \sum_k P(k) \log Q(k)$</div>
+<div class="math-block">$$= -\sum_k P(k) \log P(k) + \sum_k P(k) \log P(k) - \sum_k P(k) \log Q(k)$$</div>
 
 
 
-<div class="math-block">$= H(P) + \sum_k P(k) \log \frac{P(k)}{Q(k)}$</div>
+<div class="math-block">$$= H(P) + \sum_k P(k) \log \frac{P(k)}{Q(k)}$$</div>
 
 
 
-<div class="math-block">$= H(P) + D_{KL}(P \| Q) \quad \square$</div>
+<div class="math-block">$$= H(P) + D_{KL}(P \| Q) \quad \square$$</div>
 
 
 **Consequence for training:** Since <span class="math-inline">$H(P)$</span> is fixed (the true label distribution does not depend on the model), minimizing cross-entropy over model parameters <span class="math-inline">$\theta$</span> is equivalent to minimizing the KL divergence <span class="math-inline">$D_{KL}(P \| Q_\theta)$</span>:
 
 
-<div class="math-block">$\arg\min_\theta H(P, Q_\theta) = \arg\min_\theta D_{KL}(P \| Q_\theta)$</div>
+<div class="math-block">$$\arg\min_\theta H(P, Q_\theta) = \arg\min_\theta D_{KL}(P \| Q_\theta)$$</div>
 
 
 This is why **cross-entropy loss and KL-based likelihood maximization are the same thing**.
 
+<a id="worked-example-8101-multiclass-cross-entropy-loss"></a>
 ### Worked Example 8.10.1 — Multiclass Cross-Entropy Loss
 
 A three-class classifier receives an image. The true label is "cat" (class 0), so the true distribution is the one-hot vector <span class="math-inline">$P = (1, 0, 0)$</span>.
@@ -6284,16 +6943,16 @@ The model predicts <span class="math-inline">$Q = (0.7, 0.2, 0.1)$</span>.
 **Cross-entropy loss:**
 
 
-<div class="math-block">$H(P, Q) = -(1 \times \log 0.7 + 0 \times \log 0.2 + 0 \times \log 0.1)$</div>
+<div class="math-block">$$H(P, Q) = -(1 \times \log 0.7 + 0 \times \log 0.2 + 0 \times \log 0.1)$$</div>
 
 
-<div class="math-block">$= -\log 0.7 = -(-0.3567) = 0.3567 \text{ nats}$</div>
+<div class="math-block">$$= -\log 0.7 = -(-0.3567) = 0.3567 \text{ nats}$$</div>
 
 
 **Here's why** the zero terms vanish: <span class="math-inline">$P(k) = 0$</span> for all classes except the true class, so those terms contribute zero to the sum. The cross-entropy loss for one-hot <span class="math-inline">$P$</span> reduces to:
 
 
-<div class="math-block">$H(P, Q) = -\log Q(\text{true class})$</div>
+<div class="math-block">$$H(P, Q) = -\log Q(\text{true class})$$</div>
 
 
 This is the **negative log-likelihood of the true class**. Training pushes <span class="math-inline">$Q(\text{true class})$</span> toward 1, which pushes the loss toward 0.
@@ -6301,19 +6960,20 @@ This is the **negative log-likelihood of the true class**. Training pushes <span
 **Verify the decomposition:**
 
 
-<div class="math-block">$H(P) = -(1\log 1 + 0 + 0) = 0 \quad \text{(one-hot has zero entropy)}$</div>
+<div class="math-block">$$H(P) = -(1\log 1 + 0 + 0) = 0 \quad \text{(one-hot has zero entropy)}$$</div>
 
 
 
-<div class="math-block">$D_{KL}(P \| Q) = 1 \times \log\frac{1}{0.7} = \log(1/0.7) = -\log(0.7) = 0.3567$</div>
+<div class="math-block">$$D_{KL}(P \| Q) = 1 \times \log\frac{1}{0.7} = \log(1/0.7) = -\log(0.7) = 0.3567$$</div>
 
 
 
-<div class="math-block">$H(P) + D_{KL}(P \| Q) = 0 + 0.3567 = 0.3567 = H(P, Q) \checkmark$</div>
+<div class="math-block">$$H(P) + D_{KL}(P \| Q) = 0 + 0.3567 = 0.3567 = H(P, Q) \checkmark$$</div>
 
 
 When the true distribution is one-hot, cross-entropy equals KL divergence (since <span class="math-inline">$H(P)=0$</span>).
 
+<a id="worked-example-8102-binary-cross-entropy"></a>
 ### Worked Example 8.10.2 — Binary Cross-Entropy
 
 For binary classification (<span class="math-inline">$K = 2$</span>), the true label <span class="math-inline">$y \in \{0, 1\}$</span> gives a one-hot <span class="math-inline">$P$</span>. The model predicts <span class="math-inline">$\hat{y} \in (0, 1)$</span>, so <span class="math-inline">$Q = (\hat{y}, 1-\hat{y})$</span>.
@@ -6321,21 +6981,22 @@ For binary classification (<span class="math-inline">$K = 2$</span>), the true l
 The cross-entropy reduces to the familiar formula:
 
 
-<div class="math-block">$H(P, Q) = -[y \log \hat{y} + (1-y) \log(1-\hat{y})]$</div>
+<div class="math-block">$$H(P, Q) = -[y \log \hat{y} + (1-y) \log(1-\hat{y})]$$</div>
 
 
 **Case 1:** <span class="math-inline">$y = 1$</span>, <span class="math-inline">$\hat{y} = 0.8$</span> (correct and confident):
 
-<div class="math-block">$\mathcal{L} = -\log(0.8) = 0.2231 \text{ nats}$</div>
+<div class="math-block">$$\mathcal{L} = -\log(0.8) = 0.2231 \text{ nats}$$</div>
 
 
 **Case 2:** <span class="math-inline">$y = 1$</span>, <span class="math-inline">$\hat{y} = 0.3$</span> (wrong and confident):
 
-<div class="math-block">$\mathcal{L} = -\log(0.3) = 1.2040 \text{ nats}$</div>
+<div class="math-block">$$\mathcal{L} = -\log(0.3) = 1.2040 \text{ nats}$$</div>
 
 
 The loss is much larger when the model is confidently wrong. <span class="math-inline">$\checkmark$</span> This is the loss from Section 8.1 — we now know exactly where it comes from: it is the cross-entropy between the one-hot true distribution and the Bernoulli model output.
 
+<a id="engineers-angle-13"></a>
 ### Engineer's Angle
 
 ```python
@@ -6385,6 +7046,7 @@ print(f"CE with Q≈[1,0,0]:         {cross_entropy(P_true, Q_perfect):.6f}")
 
 ---
 
+<a id="811-summary-table"></a>
 ## 8.11 Summary Table
 
 | Distribution | Type | Parameters | <span class="math-inline">$\mathbb{E}[X]$</span> | <span class="math-inline">$\text{Var}(X)$</span> | ML Connection |
@@ -6403,8 +7065,10 @@ print(f"CE with Q≈[1,0,0]:         {cross_entropy(P_true, Q_perfect):.6f}")
 
 ---
 
+<a id="812-exercises"></a>
 ## 8.12 Exercises
 
+<a id="exercise-81-easy-bernoulli-and-binomial"></a>
 ### Exercise 8.1 [Easy] — Bernoulli and Binomial
 
 A model predicts "positive" with probability <span class="math-inline">$p = 0.6$</span> on any given input, independently.
@@ -6424,62 +7088,63 @@ A model predicts "positive" with probability <span class="math-inline">$p = 0.6$
 (b) <span class="math-inline">$Y \sim \text{Binomial}(5,\, 0.6)$</span>.
 
 
-<div class="math-block">$\binom{5}{3} = \frac{5!}{3!\,2!} = \frac{5 \times 4}{2 \times 1} = 10$</div>
+<div class="math-block">$$\binom{5}{3} = \frac{5!}{3!\,2!} = \frac{5 \times 4}{2 \times 1} = 10$$</div>
 
 
 
-<div class="math-block">$P(Y = 3) = \binom{5}{3}(0.6)^3(0.4)^2 = 10 \times 0.216 \times 0.16 = 10 \times 0.03456 = 0.3456$</div>
+<div class="math-block">$$P(Y = 3) = \binom{5}{3}(0.6)^3(0.4)^2 = 10 \times 0.216 \times 0.16 = 10 \times 0.03456 = 0.3456$$</div>
 
 
 (c)
 
 
-<div class="math-block">$\mathbb{E}[Y] = 5 \times 0.6 = 3.0$</div>
+<div class="math-block">$$\mathbb{E}[Y] = 5 \times 0.6 = 3.0$$</div>
 
 
 
-<div class="math-block">$\text{Var}(Y) = 5 \times 0.6 \times 0.4 = 1.2$</div>
+<div class="math-block">$$\text{Var}(Y) = 5 \times 0.6 \times 0.4 = 1.2$$</div>
 
 
 (d)
 
 
-<div class="math-block">$P(Y = 4) = \binom{5}{4}(0.6)^4(0.4)^1 = 5 \times 0.1296 \times 0.4 = 5 \times 0.05184 = 0.2592$</div>
+<div class="math-block">$$P(Y = 4) = \binom{5}{4}(0.6)^4(0.4)^1 = 5 \times 0.1296 \times 0.4 = 5 \times 0.05184 = 0.2592$$</div>
 
 
 
-<div class="math-block">$P(Y = 5) = \binom{5}{5}(0.6)^5(0.4)^0 = 1 \times 0.07776 \times 1 = 0.07776$</div>
+<div class="math-block">$$P(Y = 5) = \binom{5}{5}(0.6)^5(0.4)^0 = 1 \times 0.07776 \times 1 = 0.07776$$</div>
 
 
 
-<div class="math-block">$P(Y \geq 4) = 0.2592 + 0.07776 = 0.33696$</div>
+<div class="math-block">$$P(Y \geq 4) = 0.2592 + 0.07776 = 0.33696$$</div>
 
 
 **Verify:** Sum all probabilities.
 
-<div class="math-block">$P(Y=0) = (0.4)^5 = 0.01024$</div>
+<div class="math-block">$$P(Y=0) = (0.4)^5 = 0.01024$$</div>
 
 
-<div class="math-block">$P(Y=1) = 5(0.6)(0.4)^4 = 5 \times 0.6 \times 0.0256 = 0.07680$</div>
+<div class="math-block">$$P(Y=1) = 5(0.6)(0.4)^4 = 5 \times 0.6 \times 0.0256 = 0.07680$$</div>
 
 
-<div class="math-block">$P(Y=2) = 10(0.6)^2(0.4)^3 = 10 \times 0.36 \times 0.064 = 0.23040$</div>
+<div class="math-block">$$P(Y=2) = 10(0.6)^2(0.4)^3 = 10 \times 0.36 \times 0.064 = 0.23040$$</div>
 
 
-<div class="math-block">$P(Y=3) = 0.34560$</div>
+<div class="math-block">$$P(Y=3) = 0.34560$$</div>
 
 
-<div class="math-block">$P(Y=4) = 0.25920$</div>
+<div class="math-block">$$P(Y=4) = 0.25920$$</div>
 
 
-<div class="math-block">$P(Y=5) = 0.07776$</div>
+<div class="math-block">$$P(Y=5) = 0.07776$$</div>
 
 
-<div class="math-block">$\text{Total} = 0.01024 + 0.07680 + 0.23040 + 0.34560 + 0.25920 + 0.07776 = 1.00000 \checkmark$</div>
+<div class="math-block">$$\text{Total} = 0.01024 + 0.07680 + 0.23040 + 0.34560 + 0.25920 + 0.07776 = 1.00000 \checkmark$$</div>
 
 
 ---
 
+<a id="exercise-82-easy-gaussian-z-scores"></a>
 ### Exercise 8.2 [Easy] — Gaussian Z-Scores
 
 The latency of a web service (in milliseconds) is modeled as <span class="math-inline">$X \sim \mathcal{N}(\mu = 200, \sigma^2 = 900)$</span>, so <span class="math-inline">$\sigma = 30$</span>.
@@ -6495,17 +7160,17 @@ The latency of a web service (in milliseconds) is modeled as <span class="math-i
 (a)
 
 
-<div class="math-block">$z_{260} = \frac{260 - 200}{30} = \frac{60}{30} = 2.0$</div>
+<div class="math-block">$$z_{260} = \frac{260 - 200}{30} = \frac{60}{30} = 2.0$$</div>
 
 
 
-<div class="math-block">$z_{170} = \frac{170 - 200}{30} = \frac{-30}{30} = -1.0$</div>
+<div class="math-block">$$z_{170} = \frac{170 - 200}{30} = \frac{-30}{30} = -1.0$$</div>
 
 
 (b) We need <span class="math-inline">$P(140 \leq X \leq 260)$</span>.
 
 
-<div class="math-block">$z_{\text{lo}} = \frac{140 - 200}{30} = -2.0, \qquad z_{\text{hi}} = \frac{260 - 200}{30} = +2.0$</div>
+<div class="math-block">$$z_{\text{lo}} = \frac{140 - 200}{30} = -2.0, \qquad z_{\text{hi}} = \frac{260 - 200}{30} = +2.0$$</div>
 
 
 This is the <span class="math-inline">$\pm 2\sigma$</span> band: <span class="math-inline">$P(-2 \leq Z \leq 2) \approx 0.9545$</span>. About **95.5%** of requests fall in this range.
@@ -6516,6 +7181,7 @@ About **0.135%** of requests exceed 290 ms. Only about 1 in 740 requests.
 
 ---
 
+<a id="exercise-83-medium-exponential-memoryless-property"></a>
 ### Exercise 8.3 [Medium] — Exponential Memoryless Property
 
 A GPU job scheduler receives jobs at a Poisson rate with average inter-arrival time of 4 minutes, so inter-arrival times follow <span class="math-inline">$X \sim \text{Exponential}(\lambda = 0.25)$</span>.
@@ -6535,7 +7201,7 @@ A GPU job scheduler receives jobs at a Poisson rate with average inter-arrival t
 (b)
 
 
-<div class="math-block">$P(X \leq 5) = 1 - e^{-0.25 \times 5} = 1 - e^{-1.25} = 1 - 0.2865 = 0.7135$</div>
+<div class="math-block">$$P(X \leq 5) = 1 - e^{-0.25 \times 5} = 1 - e^{-1.25} = 1 - 0.2865 = 0.7135$$</div>
 
 
 (Check: <span class="math-inline">$e^{-1.25} = e^{-1} \times e^{-0.25} \approx 0.3679 \times 0.7788 = 0.2865$</span>.)
@@ -6545,7 +7211,7 @@ About **71.4%** of the time the next job arrives within 5 minutes.
 (c) By the memoryless property:
 
 
-<div class="math-block">$P(X > 3 + 2 \mid X > 3) = P(X > 2) = e^{-0.25 \times 2} = e^{-0.5} \approx 0.6065$</div>
+<div class="math-block">$$P(X > 3 + 2 \mid X > 3) = P(X > 2) = e^{-0.25 \times 2} = e^{-0.5} \approx 0.6065$$</div>
 
 
 The 3 minutes already elapsed are irrelevant. There is about a **60.7%** chance of waiting at least 2 more minutes.
@@ -6553,13 +7219,14 @@ The 3 minutes already elapsed are irrelevant. There is about a **60.7%** chance 
 (d) Direct computation:
 
 
-<div class="math-block">$P(X > 5 \mid X > 3) = \frac{P(X > 5)}{P(X > 3)} = \frac{e^{-0.25 \times 5}}{e^{-0.25 \times 3}} = \frac{e^{-1.25}}{e^{-0.75}} = e^{-1.25 + 0.75} = e^{-0.5} \approx 0.6065 \checkmark$</div>
+<div class="math-block">$$P(X > 5 \mid X > 3) = \frac{P(X > 5)}{P(X > 3)} = \frac{e^{-0.25 \times 5}}{e^{-0.25 \times 3}} = \frac{e^{-1.25}}{e^{-0.75}} = e^{-1.25 + 0.75} = e^{-0.5} \approx 0.6065 \checkmark$$</div>
 
 
 Both approaches give the same answer. <span class="math-inline">$\checkmark$</span>
 
 ---
 
+<a id="exercise-84-medium-softmax-and-temperature"></a>
 ### Exercise 8.4 [Medium] — Softmax and Temperature
 
 A three-class model produces logits <span class="math-inline">$\mathbf{z} = (3.0,\, 1.0,\, 0.0)$</span>.
@@ -6577,15 +7244,15 @@ A three-class model produces logits <span class="math-inline">$\mathbf{z} = (3.0
 (a)
 
 
-<div class="math-block">$e^{3.0} = 20.0855, \quad e^{1.0} = 2.7183, \quad e^{0.0} = 1.0000$</div>
+<div class="math-block">$$e^{3.0} = 20.0855, \quad e^{1.0} = 2.7183, \quad e^{0.0} = 1.0000$$</div>
 
 
 
-<div class="math-block">$S = 20.0855 + 2.7183 + 1.0000 = 23.8038$</div>
+<div class="math-block">$$S = 20.0855 + 2.7183 + 1.0000 = 23.8038$$</div>
 
 
 
-<div class="math-block">$\pi_1 = \frac{20.0855}{23.8038} \approx 0.8437, \quad \pi_2 = \frac{2.7183}{23.8038} \approx 0.1142, \quad \pi_3 = \frac{1.0000}{23.8038} \approx 0.0420$</div>
+<div class="math-block">$$\pi_1 = \frac{20.0855}{23.8038} \approx 0.8437, \quad \pi_2 = \frac{2.7183}{23.8038} \approx 0.1142, \quad \pi_3 = \frac{1.0000}{23.8038} \approx 0.0420$$</div>
 
 
 **Verify:** <span class="math-inline">$0.8437 + 0.1142 + 0.0420 = 0.9999 \approx 1.0000$</span> <span class="math-inline">$\checkmark$</span>
@@ -6593,25 +7260,25 @@ A three-class model produces logits <span class="math-inline">$\mathbf{z} = (3.0
 (b) Two-class logits <span class="math-inline">$(3.0, 1.0)$</span>:
 
 
-<div class="math-block">$\text{softmax}_1 = \frac{e^{3.0}}{e^{3.0} + e^{1.0}} = \frac{20.0855}{20.0855 + 2.7183} = \frac{20.0855}{22.8038} \approx 0.8808$</div>
+<div class="math-block">$$\text{softmax}_1 = \frac{e^{3.0}}{e^{3.0} + e^{1.0}} = \frac{20.0855}{20.0855 + 2.7183} = \frac{20.0855}{22.8038} \approx 0.8808$$</div>
 
 
 
-<div class="math-block">$\sigma(3.0 - 1.0) = \sigma(2.0) = \frac{1}{1 + e^{-2.0}} = \frac{1}{1 + 0.1353} = \frac{1}{1.1353} \approx 0.8808 \checkmark$</div>
+<div class="math-block">$$\sigma(3.0 - 1.0) = \sigma(2.0) = \frac{1}{1 + e^{-2.0}} = \frac{1}{1 + 0.1353} = \frac{1}{1.1353} \approx 0.8808 \checkmark$$</div>
 
 
 (c) At <span class="math-inline">$T = 2.0$</span>, divide logits by <span class="math-inline">$T$</span>: scaled logits <span class="math-inline">$= (1.5,\, 0.5,\, 0.0)$</span>.
 
 
-<div class="math-block">$e^{1.5} = 4.4817, \quad e^{0.5} = 1.6487, \quad e^{0.0} = 1.0000$</div>
+<div class="math-block">$$e^{1.5} = 4.4817, \quad e^{0.5} = 1.6487, \quad e^{0.0} = 1.0000$$</div>
 
 
 
-<div class="math-block">$S = 4.4817 + 1.6487 + 1.0000 = 7.1304$</div>
+<div class="math-block">$$S = 4.4817 + 1.6487 + 1.0000 = 7.1304$$</div>
 
 
 
-<div class="math-block">$\pi_1 = \frac{4.4817}{7.1304} \approx 0.6286, \quad \pi_2 = \frac{1.6487}{7.1304} \approx 0.2312, \quad \pi_3 = \frac{1.0000}{7.1304} \approx 0.1402$</div>
+<div class="math-block">$$\pi_1 = \frac{4.4817}{7.1304} \approx 0.6286, \quad \pi_2 = \frac{1.6487}{7.1304} \approx 0.2312, \quad \pi_3 = \frac{1.0000}{7.1304} \approx 0.1402$$</div>
 
 
 The distribution is flatter (less confident) at <span class="math-inline">$T=2$</span> compared to <span class="math-inline">$T=1$</span>.
@@ -6620,6 +7287,7 @@ The distribution is flatter (less confident) at <span class="math-inline">$T=2$<
 
 ---
 
+<a id="exercise-85-hard-kl-divergence-and-cross-entropy-in-classifier-training"></a>
 ### Exercise 8.5 [Hard] — KL Divergence and Cross-Entropy in Classifier Training
 
 A binary classifier with sigmoid output is trained on a dataset with balanced classes. The true distribution over labels is <span class="math-inline">$P = (0.5, 0.5)$</span> (50% positive, 50% negative). The model currently predicts <span class="math-inline">$Q_1 = (0.8, 0.2)$</span> (overconfident on positive class).
@@ -6638,68 +7306,68 @@ A binary classifier with sigmoid output is trained on a dataset with balanced cl
 
 **Entropy of <span class="math-inline">$P$</span>:**
 
-<div class="math-block">$H(P) = -(0.5 \log 0.5 + 0.5 \log 0.5) = -(2 \times 0.5 \times (-0.6931)) = 0.6931 \text{ nats}$</div>
+<div class="math-block">$$H(P) = -(0.5 \log 0.5 + 0.5 \log 0.5) = -(2 \times 0.5 \times (-0.6931)) = 0.6931 \text{ nats}$$</div>
 
 
 **Cross-entropy <span class="math-inline">$H(P, Q_1)$</span> with <span class="math-inline">$Q_1 = (0.8, 0.2)$</span>:**
 
-<div class="math-block">$H(P, Q_1) = -(0.5 \log 0.8 + 0.5 \log 0.2)$</div>
+<div class="math-block">$$H(P, Q_1) = -(0.5 \log 0.8 + 0.5 \log 0.2)$$</div>
 
 
-<div class="math-block">$= -(0.5 \times (-0.2231) + 0.5 \times (-1.6094))$</div>
+<div class="math-block">$$= -(0.5 \times (-0.2231) + 0.5 \times (-1.6094))$$</div>
 
 
-<div class="math-block">$= -((-0.1116) + (-0.8047))$</div>
+<div class="math-block">$$= -((-0.1116) + (-0.8047))$$</div>
 
 
-<div class="math-block">$= 0.9163 \text{ nats}$</div>
+<div class="math-block">$$= 0.9163 \text{ nats}$$</div>
 
 
 **KL divergence:**
 
-<div class="math-block">$D_{KL}(P \| Q_1) = 0.5 \log\frac{0.5}{0.8} + 0.5 \log\frac{0.5}{0.2}$</div>
+<div class="math-block">$$D_{KL}(P \| Q_1) = 0.5 \log\frac{0.5}{0.8} + 0.5 \log\frac{0.5}{0.2}$$</div>
 
 
-<div class="math-block">$= 0.5 \times \log(0.625) + 0.5 \times \log(2.5)$</div>
+<div class="math-block">$$= 0.5 \times \log(0.625) + 0.5 \times \log(2.5)$$</div>
 
 
-<div class="math-block">$= 0.5 \times (-0.4700) + 0.5 \times 0.9163$</div>
+<div class="math-block">$$= 0.5 \times (-0.4700) + 0.5 \times 0.9163$$</div>
 
 
-<div class="math-block">$= -0.2350 + 0.4581 = 0.2231 \text{ nats}$</div>
+<div class="math-block">$$= -0.2350 + 0.4581 = 0.2231 \text{ nats}$$</div>
 
 
 **Verify identity:**
 
-<div class="math-block">$H(P) + D_{KL}(P \| Q_1) = 0.6931 + 0.2231 = 0.9162 \approx 0.9163 \checkmark$</div>
+<div class="math-block">$$H(P) + D_{KL}(P \| Q_1) = 0.6931 + 0.2231 = 0.9162 \approx 0.9163 \checkmark$$</div>
 
 
 (Small rounding difference in the last digit from truncated intermediate values.)
 
 (b) **Cross-entropy with <span class="math-inline">$Q_2 = (0.55, 0.45)$</span>:**
 
-<div class="math-block">$H(P, Q_2) = -(0.5 \log 0.55 + 0.5 \log 0.45)$</div>
+<div class="math-block">$$H(P, Q_2) = -(0.5 \log 0.55 + 0.5 \log 0.45)$$</div>
 
 
-<div class="math-block">$= -(0.5 \times (-0.5978) + 0.5 \times (-0.7985))$</div>
+<div class="math-block">$$= -(0.5 \times (-0.5978) + 0.5 \times (-0.7985))$$</div>
 
 
-<div class="math-block">$= -((-0.2989) + (-0.3993))$</div>
+<div class="math-block">$$= -((-0.2989) + (-0.3993))$$</div>
 
 
-<div class="math-block">$= 0.6982 \text{ nats}$</div>
+<div class="math-block">$$= 0.6982 \text{ nats}$$</div>
 
 
 **KL divergence:**
 
-<div class="math-block">$D_{KL}(P \| Q_2) = H(P, Q_2) - H(P) = 0.6982 - 0.6931 = 0.0050 \text{ nats}$</div>
+<div class="math-block">$$D_{KL}(P \| Q_2) = H(P, Q_2) - H(P) = 0.6982 - 0.6931 = 0.0050 \text{ nats}$$</div>
 
 
 Both <span class="math-inline">$H(P, Q_2) = 0.6982 < H(P, Q_1) = 0.9163$</span> and <span class="math-inline">$D_{KL}(P \| Q_2) = 0.0050 < D_{KL}(P \| Q_1) = 0.2231$</span>. The model improved: both cross-entropy and KL divergence decreased.
 
 (c) If <span class="math-inline">$Q_3 = P = (0.5, 0.5)$</span>:
 
-<div class="math-block">$H(P, Q_3) = H(P) + D_{KL}(P \| Q_3) = H(P) + 0 = H(P) = 0.6931 \text{ nats}$</div>
+<div class="math-block">$$H(P, Q_3) = H(P) + D_{KL}(P \| Q_3) = H(P) + 0 = H(P) = 0.6931 \text{ nats}$$</div>
 
 
 The minimum achievable cross-entropy is the entropy of the true label distribution. This corresponds to a perfectly calibrated model: it cannot be improved further without changing the true distribution (i.e., getting better data).
@@ -6711,6 +7379,7 @@ In practice, the true label distribution <span class="math-inline">$P$</span> is
 ---
 
 *Next: Chapter 9 — Information Theory: Entropy, Mutual Information, and their role in feature selection and generative models.*
+<a id="chapter-9-statistics-for-ml"></a>
 # Chapter 9: Statistics for ML
 
 > *"A model that trains well is promising. A model you can trust is useful."*
@@ -6729,8 +7398,10 @@ We connect everything to what came before:
 
 ---
 
+<a id="91-point-estimation-what-does-it-mean-to-fit-a-model"></a>
 ## 9.1 Point Estimation — What Does It Mean to Fit a Model?
 
+<a id="plain-english-first-19"></a>
 ### Plain English First
 
 When you train a model, you are computing a **point estimate**: a single number (or vector of numbers) that summarizes what the data is telling you. For example, after seeing data <span class="math-inline">$\{x_1, x_2, \ldots, x_n\}$</span>, you might produce:
@@ -6743,6 +7414,7 @@ The hat notation <span class="math-inline">$\hat{\theta}$</span> universally mea
 
 There are infinitely many ways to produce an estimate. You could guess at random. You could always output zero. You could average the data. What makes one estimator better than another? We need a principled criterion. The most important one in machine learning is **Maximum Likelihood Estimation**.
 
+<a id="formal-notation-18"></a>
 ### Formal Notation
 
 An **estimator** is a function <span class="math-inline">$\hat{\theta}(\mathbf{x})$</span> that maps a dataset <span class="math-inline">$\mathbf{x} = (x_1, \ldots, x_n)$</span> to a parameter value. It is itself a random variable — different random datasets produce different estimates.
@@ -6759,8 +7431,10 @@ Two properties we want an estimator to have:
 
 ---
 
+<a id="92-maximum-likelihood-estimation-mle"></a>
 ## 9.2 Maximum Likelihood Estimation (MLE)
 
+<a id="plain-english-first-20"></a>
 ### Plain English First
 
 Maximum Likelihood Estimation answers a fundamental question: given that I observed this data, which parameter value made the data most probable?
@@ -6771,6 +7445,7 @@ That value — the one that makes the data "most likely" — is the MLE estimate
 
 This is not just a heuristic. It is the mathematical justification for why neural networks minimize cross-entropy loss, why linear regression minimizes squared error, and why these are the right choices under specific probabilistic assumptions.
 
+<a id="formal-notation-19"></a>
 ### Formal Notation
 
 Let <span class="math-inline">$\mathbf{x} = (x_1, x_2, \ldots, x_n)$</span> be <span class="math-inline">$n$</span> independent, identically distributed (i.i.d.) observations from a distribution with parameter <span class="math-inline">$\theta$</span>.
@@ -6778,7 +7453,7 @@ Let <span class="math-inline">$\mathbf{x} = (x_1, x_2, \ldots, x_n)$</span> be <
 **Likelihood function:** The probability of observing the data as a function of <span class="math-inline">$\theta$</span>:
 
 
-<div class="math-block">$\mathcal{L}(\theta) = p(\mathbf{x} \mid \theta) = \prod_{i=1}^{n} p(x_i \mid \theta)$</div>
+<div class="math-block">$$\mathcal{L}(\theta) = p(\mathbf{x} \mid \theta) = \prod_{i=1}^{n} p(x_i \mid \theta)$$</div>
 
 
 The product appears because the observations are independent (as in Chapter 7 — joint probability of independent events is the product of individual probabilities).
@@ -6786,15 +7461,16 @@ The product appears because the observations are independent (as in Chapter 7 �
 **MLE estimate:**
 
 
-<div class="math-block">$\hat{\theta}_{\text{MLE}} = \arg\max_\theta \mathcal{L}(\theta)$</div>
+<div class="math-block">$$\hat{\theta}_{\text{MLE}} = \arg\max_\theta \mathcal{L}(\theta)$$</div>
 
 
+<a id="921-the-log-likelihood-trick-products-become-sums"></a>
 ### 9.2.1 The Log-Likelihood Trick: Products Become Sums
 
 The likelihood is a product of <span class="math-inline">$n$</span> terms, each in <span class="math-inline">$[0, 1]$</span>. For large <span class="math-inline">$n$</span>, this product is astronomically small and numerically unstable. The solution: maximize the **log-likelihood** instead.
 
 
-<div class="math-block">$\ell(\theta) = \log \mathcal{L}(\theta) = \log \prod_{i=1}^{n} p(x_i \mid \theta) = \sum_{i=1}^{n} \log p(x_i \mid \theta)$</div>
+<div class="math-block">$$\ell(\theta) = \log \mathcal{L}(\theta) = \log \prod_{i=1}^{n} p(x_i \mid \theta) = \sum_{i=1}^{n} \log p(x_i \mid \theta)$$</div>
 
 
 **Here's why** this is valid: logarithm is a strictly increasing function, so <span class="math-inline">$\arg\max \mathcal{L}(\theta) = \arg\max \log \mathcal{L}(\theta)$</span>. The maximizer does not change.
@@ -6804,11 +7480,12 @@ The likelihood is a product of <span class="math-inline">$n$</span> terms, each 
 **The connection to Chapter 8:** For a one-hot true distribution <span class="math-inline">$P$</span> and a model distribution <span class="math-inline">$Q$</span>, the cross-entropy is:
 
 
-<div class="math-block">$H(P, Q) = -\sum_k P(k) \log Q(k) = -\log Q(\text{true class})$</div>
+<div class="math-block">$$H(P, Q) = -\sum_k P(k) \log Q(k) = -\log Q(\text{true class})$$</div>
 
 
 This is exactly the negative log-likelihood of the true class under the model's distribution. Training by minimizing cross-entropy is equivalent to maximizing the log-likelihood. This is not a coincidence — it is the mathematical foundation of why cross-entropy loss is correct.
 
+<a id="922-deriving-mle-for-the-bernoulli-parameter"></a>
 ### 9.2.2 Deriving MLE for the Bernoulli Parameter
 
 **Setup:** We have <span class="math-inline">$n$</span> independent coin flips, each following <span class="math-inline">$\text{Bernoulli}(p)$</span>. Observed outcomes <span class="math-inline">$x_i \in \{0, 1\}$</span> with <span class="math-inline">$k = \sum_{i=1}^{n} x_i$</span> heads total. Find <span class="math-inline">$\hat{p}_{\text{MLE}}$</span>.
@@ -6818,41 +7495,41 @@ This is exactly the negative log-likelihood of the true class under the model's 
 Using the Bernoulli PMF <span class="math-inline">$P(X = x_i) = p^{x_i}(1-p)^{1-x_i}$</span>:
 
 
-<div class="math-block">$\mathcal{L}(p) = \prod_{i=1}^{n} p^{x_i}(1-p)^{1-x_i} = p^k (1-p)^{n-k}$</div>
+<div class="math-block">$$\mathcal{L}(p) = \prod_{i=1}^{n} p^{x_i}(1-p)^{1-x_i} = p^k (1-p)^{n-k}$$</div>
 
 
 **Step 2 — Take the log-likelihood:**
 
 
-<div class="math-block">$\ell(p) = k \log p + (n - k) \log(1 - p)$</div>
+<div class="math-block">$$\ell(p) = k \log p + (n - k) \log(1 - p)$$</div>
 
 
 **Step 3 — Differentiate and set to zero (Chapter 5 — setting derivative to zero finds the maximum):**
 
 
-<div class="math-block">$\frac{d\ell}{dp} = \frac{k}{p} - \frac{n-k}{1-p} = 0$</div>
+<div class="math-block">$$\frac{d\ell}{dp} = \frac{k}{p} - \frac{n-k}{1-p} = 0$$</div>
 
 
 **Step 4 — Solve:**
 
 
-<div class="math-block">$\frac{k}{p} = \frac{n-k}{1-p}$</div>
+<div class="math-block">$$\frac{k}{p} = \frac{n-k}{1-p}$$</div>
 
 
 
-<div class="math-block">$k(1-p) = (n-k)p$</div>
+<div class="math-block">$$k(1-p) = (n-k)p$$</div>
 
 
 
-<div class="math-block">$k - kp = np - kp$</div>
+<div class="math-block">$$k - kp = np - kp$$</div>
 
 
 
-<div class="math-block">$k = np$</div>
+<div class="math-block">$$k = np$$</div>
 
 
 
-<div class="math-block">$\hat{p}_{\text{MLE}} = \frac{k}{n}$</div>
+<div class="math-block">$$\hat{p}_{\text{MLE}} = \frac{k}{n}$$</div>
 
 
 **Interpretation:** The MLE for the Bernoulli parameter is simply the fraction of observed successes. This is the intuitive answer — and now we have derived it from first principles.
@@ -6860,11 +7537,12 @@ Using the Bernoulli PMF <span class="math-inline">$P(X = x_i) = p^{x_i}(1-p)^{1-
 **Step 5 — Verify it is a maximum, not a minimum:** Check the second derivative.
 
 
-<div class="math-block">$\frac{d^2\ell}{dp^2} = -\frac{k}{p^2} - \frac{n-k}{(1-p)^2}$</div>
+<div class="math-block">$$\frac{d^2\ell}{dp^2} = -\frac{k}{p^2} - \frac{n-k}{(1-p)^2}$$</div>
 
 
 For <span class="math-inline">$k > 0$</span> and <span class="math-inline">$k < n$</span>, both terms are negative, so <span class="math-inline">$\frac{d^2\ell}{dp^2} < 0$</span> at the critical point — confirming a maximum. <span class="math-inline">$\checkmark$</span>
 
+<a id="worked-example-921-mle-for-bernoulli"></a>
 ### Worked Example 9.2.1 — MLE for Bernoulli
 
 Dataset: <span class="math-inline">$\{1, 0, 1, 1, 0\}$</span> — five coin flips.
@@ -6872,25 +7550,26 @@ Dataset: <span class="math-inline">$\{1, 0, 1, 1, 0\}$</span> — five coin flip
 <span class="math-inline">$n = 5$</span>, <span class="math-inline">$k = 3$</span> (three heads).
 
 
-<div class="math-block">$\hat{p}_{\text{MLE}} = \frac{3}{5} = 0.6$</div>
+<div class="math-block">$$\hat{p}_{\text{MLE}} = \frac{3}{5} = 0.6$$</div>
 
 
 **Verify by comparing log-likelihoods at nearby values:**
 
 
-<div class="math-block">$\ell(0.6) = 3\log(0.6) + 2\log(0.4) = 3(-0.5108) + 2(-0.9163) = -1.5325 - 1.8326 = -3.3651$</div>
+<div class="math-block">$$\ell(0.6) = 3\log(0.6) + 2\log(0.4) = 3(-0.5108) + 2(-0.9163) = -1.5325 - 1.8326 = -3.3651$$</div>
 
 
 
-<div class="math-block">$\ell(0.5) = 3\log(0.5) + 2\log(0.5) = 5 \times (-0.6931) = -3.4657$</div>
+<div class="math-block">$$\ell(0.5) = 3\log(0.5) + 2\log(0.5) = 5 \times (-0.6931) = -3.4657$$</div>
 
 
 
-<div class="math-block">$\ell(0.7) = 3\log(0.7) + 2\log(0.3) = 3(-0.3567) + 2(-1.2040) = -1.0700 - 2.4079 = -3.4779$</div>
+<div class="math-block">$$\ell(0.7) = 3\log(0.7) + 2\log(0.3) = 3(-0.3567) + 2(-1.2040) = -1.0700 - 2.4079 = -3.4779$$</div>
 
 
 Indeed <span class="math-inline">$\ell(0.6) = -3.3651 > \ell(0.5) = -3.4657$</span> and <span class="math-inline">$\ell(0.6) > \ell(0.7) = -3.4779$</span>. The log-likelihood is highest at <span class="math-inline">$\hat{p} = 0.6$</span>. <span class="math-inline">$\checkmark$</span>
 
+<a id="923-deriving-mle-for-the-gaussian-mean"></a>
 ### 9.2.3 Deriving MLE for the Gaussian Mean
 
 **Setup:** We have <span class="math-inline">$n$</span> i.i.d. observations from <span class="math-inline">$\mathcal{N}(\mu, \sigma^2)$</span> where <span class="math-inline">$\sigma^2$</span> is known. Find <span class="math-inline">$\hat{\mu}_{\text{MLE}}$</span>.
@@ -6900,15 +7579,15 @@ Indeed <span class="math-inline">$\ell(0.6) = -3.3651 > \ell(0.5) = -3.4657$</sp
 Using the Gaussian PDF from Chapter 8:
 
 
-<div class="math-block">$\ell(\mu) = \sum_{i=1}^{n} \log \frac{1}{\sigma\sqrt{2\pi}} \exp\!\left(-\frac{(x_i - \mu)^2}{2\sigma^2}\right)$</div>
+<div class="math-block">$$\ell(\mu) = \sum_{i=1}^{n} \log \frac{1}{\sigma\sqrt{2\pi}} \exp\!\left(-\frac{(x_i - \mu)^2}{2\sigma^2}\right)$$</div>
 
 
 
-<div class="math-block">$= \sum_{i=1}^{n} \left[-\frac{1}{2}\log(2\pi\sigma^2) - \frac{(x_i - \mu)^2}{2\sigma^2}\right]$</div>
+<div class="math-block">$$= \sum_{i=1}^{n} \left[-\frac{1}{2}\log(2\pi\sigma^2) - \frac{(x_i - \mu)^2}{2\sigma^2}\right]$$</div>
 
 
 
-<div class="math-block">$= -\frac{n}{2}\log(2\pi\sigma^2) - \frac{1}{2\sigma^2}\sum_{i=1}^{n}(x_i - \mu)^2$</div>
+<div class="math-block">$$= -\frac{n}{2}\log(2\pi\sigma^2) - \frac{1}{2\sigma^2}\sum_{i=1}^{n}(x_i - \mu)^2$$</div>
 
 
 **Step 2 — Maximize over <span class="math-inline">$\mu$</span>:** The first term is a constant in <span class="math-inline">$\mu$</span>. Maximizing <span class="math-inline">$\ell(\mu)$</span> is equivalent to minimizing <span class="math-inline">$\sum_{i=1}^{n}(x_i - \mu)^2$</span> — the **sum of squared errors**.
@@ -6918,47 +7597,49 @@ Using the Gaussian PDF from Chapter 8:
 **Step 3 — Differentiate and set to zero:**
 
 
-<div class="math-block">$\frac{d}{d\mu}\left[-\frac{1}{2\sigma^2}\sum_{i=1}^{n}(x_i - \mu)^2\right] = \frac{1}{\sigma^2}\sum_{i=1}^{n}(x_i - \mu) = 0$</div>
+<div class="math-block">$$\frac{d}{d\mu}\left[-\frac{1}{2\sigma^2}\sum_{i=1}^{n}(x_i - \mu)^2\right] = \frac{1}{\sigma^2}\sum_{i=1}^{n}(x_i - \mu) = 0$$</div>
 
 
 
-<div class="math-block">$\sum_{i=1}^{n} x_i - n\mu = 0$</div>
+<div class="math-block">$$\sum_{i=1}^{n} x_i - n\mu = 0$$</div>
 
 
 
-<div class="math-block">$\hat{\mu}_{\text{MLE}} = \frac{1}{n}\sum_{i=1}^{n} x_i = \bar{x}$</div>
+<div class="math-block">$$\hat{\mu}_{\text{MLE}} = \frac{1}{n}\sum_{i=1}^{n} x_i = \bar{x}$$</div>
 
 
 **Interpretation:** The MLE for the Gaussian mean is the sample mean. Again, the intuitive answer is the right one — and the derivation shows it follows directly from the Gaussian assumption plus the log-likelihood trick.
 
 **A note on MLE for variance:** The MLE for <span class="math-inline">$\sigma^2$</span> turns out to be <span class="math-inline">$\frac{1}{n}\sum(x_i - \bar{x})^2$</span>, which is the **biased** estimator. The unbiased estimator divides by <span class="math-inline">$n-1$</span> (Bessel's correction): <span class="math-inline">$s^2 = \frac{1}{n-1}\sum(x_i - \bar{x})^2$</span>. This is why statistics libraries report <span class="math-inline">$n-1$</span> in the denominator — they use the unbiased version. MLE is optimal in many ways, but "unbiased" is not always one of them.
 
+<a id="worked-example-922-mle-for-gaussian-mean"></a>
 ### Worked Example 9.2.2 — MLE for Gaussian Mean
 
 Dataset: <span class="math-inline">$\{2, 4, 6\}$</span> (three observations, known <span class="math-inline">$\sigma^2 = 4$</span>, so <span class="math-inline">$\sigma = 2$</span>).
 
 
-<div class="math-block">$\hat{\mu}_{\text{MLE}} = \frac{2 + 4 + 6}{3} = \frac{12}{3} = 4$</div>
+<div class="math-block">$$\hat{\mu}_{\text{MLE}} = \frac{2 + 4 + 6}{3} = \frac{12}{3} = 4$$</div>
 
 
 **Verify the derivative is zero at <span class="math-inline">$\mu = 4$</span>:**
 
 
-<div class="math-block">$\sum_{i=1}^{3}(x_i - 4) = (2 - 4) + (4 - 4) + (6 - 4) = -2 + 0 + 2 = 0 \checkmark$</div>
+<div class="math-block">$$\sum_{i=1}^{3}(x_i - 4) = (2 - 4) + (4 - 4) + (6 - 4) = -2 + 0 + 2 = 0 \checkmark$$</div>
 
 
 **Compare log-likelihoods:**
 
 
-<div class="math-block">$\ell(4) = -\frac{3}{2}\log(8\pi) - \frac{(2-4)^2 + (4-4)^2 + (6-4)^2}{8} = -\frac{3}{2}\log(8\pi) - \frac{4+0+4}{8} = -\frac{3}{2}\log(8\pi) - 1$</div>
+<div class="math-block">$$\ell(4) = -\frac{3}{2}\log(8\pi) - \frac{(2-4)^2 + (4-4)^2 + (6-4)^2}{8} = -\frac{3}{2}\log(8\pi) - \frac{4+0+4}{8} = -\frac{3}{2}\log(8\pi) - 1$$</div>
 
 
 
-<div class="math-block">$\ell(5) = -\frac{3}{2}\log(8\pi) - \frac{(2-5)^2 + (4-5)^2 + (6-5)^2}{8} = -\frac{3}{2}\log(8\pi) - \frac{9+1+1}{8} = -\frac{3}{2}\log(8\pi) - 1.375$</div>
+<div class="math-block">$$\ell(5) = -\frac{3}{2}\log(8\pi) - \frac{(2-5)^2 + (4-5)^2 + (6-5)^2}{8} = -\frac{3}{2}\log(8\pi) - \frac{9+1+1}{8} = -\frac{3}{2}\log(8\pi) - 1.375$$</div>
 
 
 Since <span class="math-inline">$-1 > -1.375$</span>, we confirm <span class="math-inline">$\ell(4) > \ell(5)$</span>: the MLE at <span class="math-inline">$\mu = 4$</span> has a higher log-likelihood than the competitor at <span class="math-inline">$\mu = 5$</span>. <span class="math-inline">$\checkmark$</span>
 
+<a id="summary-mle-loss-functions"></a>
 ### Summary: MLE Loss Functions
 
 | Noise model (on <span class="math-inline">$y$</span>) | Resulting MLE loss |
@@ -6969,6 +7650,7 @@ Since <span class="math-inline">$-1 > -1.375$</span>, we confirm <span class="ma
 
 These are not arbitrary choices. Each loss function is the negative log-likelihood of the corresponding distributional assumption. Choosing a loss function is choosing a noise model.
 
+<a id="engineers-angle-14"></a>
 ### Engineer's Angle
 
 ```python
@@ -7036,14 +7718,17 @@ for mu in [3.0, 4.0, 5.0]:
 
 ---
 
+<a id="93-the-normal-equation-closed-form-linear-regression"></a>
 ## 9.3 The Normal Equation — Closed-Form Linear Regression
 
+<a id="plain-english-first-21"></a>
 ### Plain English First
 
 In Chapter 6, we minimized the squared-error loss by gradient descent: update parameters repeatedly, one small step at a time. But for linear regression specifically, there is a better option: **solve exactly in one shot**.
 
 Calculus tells us that at a minimum, all partial derivatives equal zero. For linear regression, that "all derivatives equal zero" condition is a system of linear equations — and we know how to solve those exactly using the matrix tools from Chapter 3. The result is the **Normal Equation**: a single matrix formula that gives the optimal weights directly.
 
+<a id="formal-notation-20"></a>
 ### Formal Notation
 
 Given a dataset with <span class="math-inline">$n$</span> examples and <span class="math-inline">$d$</span> features, define:
@@ -7055,7 +7740,7 @@ Given a dataset with <span class="math-inline">$n$</span> examples and <span cla
 The **MSE loss** is:
 
 
-<div class="math-block">$\mathcal{L}(\mathbf{w}) = \frac{1}{n}\|X\mathbf{w} - \mathbf{y}\|_2^2 = \frac{1}{n}(X\mathbf{w} - \mathbf{y})^T(X\mathbf{w} - \mathbf{y})$</div>
+<div class="math-block">$$\mathcal{L}(\mathbf{w}) = \frac{1}{n}\|X\mathbf{w} - \mathbf{y}\|_2^2 = \frac{1}{n}(X\mathbf{w} - \mathbf{y})^T(X\mathbf{w} - \mathbf{y})$$</div>
 
 
 **Here's why** the Normal Equation is <span class="math-inline">$\mathbf{w} = (X^TX)^{-1}X^T\mathbf{y}$</span>:
@@ -7063,22 +7748,22 @@ The **MSE loss** is:
 **Step 1 — Expand the loss (dropping the <span class="math-inline">$\frac{1}{n}$</span> constant which does not affect the minimizer):**
 
 
-<div class="math-block">$\mathcal{L}(\mathbf{w}) = (X\mathbf{w} - \mathbf{y})^T(X\mathbf{w} - \mathbf{y})$</div>
+<div class="math-block">$$\mathcal{L}(\mathbf{w}) = (X\mathbf{w} - \mathbf{y})^T(X\mathbf{w} - \mathbf{y})$$</div>
 
 
-<div class="math-block">$= \mathbf{w}^TX^TX\mathbf{w} - \mathbf{w}^TX^T\mathbf{y} - \mathbf{y}^TX\mathbf{w} + \mathbf{y}^T\mathbf{y}$</div>
+<div class="math-block">$$= \mathbf{w}^TX^TX\mathbf{w} - \mathbf{w}^TX^T\mathbf{y} - \mathbf{y}^TX\mathbf{w} + \mathbf{y}^T\mathbf{y}$$</div>
 
 
 Since <span class="math-inline">$\mathbf{w}^TX^T\mathbf{y}$</span> is a scalar, it equals its own transpose: <span class="math-inline">$\mathbf{y}^TX\mathbf{w}$</span>. So:
 
 
-<div class="math-block">$\mathcal{L}(\mathbf{w}) = \mathbf{w}^TX^TX\mathbf{w} - 2\mathbf{y}^TX\mathbf{w} + \mathbf{y}^T\mathbf{y}$</div>
+<div class="math-block">$$\mathcal{L}(\mathbf{w}) = \mathbf{w}^TX^TX\mathbf{w} - 2\mathbf{y}^TX\mathbf{w} + \mathbf{y}^T\mathbf{y}$$</div>
 
 
 **Step 2 — Differentiate with respect to <span class="math-inline">$\mathbf{w}$</span> (Chapter 6 — gradient of a quadratic form):**
 
 
-<div class="math-block">$\nabla_\mathbf{w} \mathcal{L} = 2X^TX\mathbf{w} - 2X^T\mathbf{y}$</div>
+<div class="math-block">$$\nabla_\mathbf{w} \mathcal{L} = 2X^TX\mathbf{w} - 2X^T\mathbf{y}$$</div>
 
 
 **Trust this result:** The gradient of <span class="math-inline">$\mathbf{w}^TA\mathbf{w}$</span> is <span class="math-inline">$2A\mathbf{w}$</span> when <span class="math-inline">$A$</span> is symmetric (which <span class="math-inline">$X^TX$</span> is), and the gradient of <span class="math-inline">$\mathbf{b}^T\mathbf{w}$</span> is <span class="math-inline">$\mathbf{b}$</span>. Both follow from the matrix calculus rules in Chapter 6.
@@ -7086,11 +7771,11 @@ Since <span class="math-inline">$\mathbf{w}^TX^T\mathbf{y}$</span> is a scalar, 
 **Step 3 — Set gradient to zero:**
 
 
-<div class="math-block">$2X^TX\mathbf{w} - 2X^T\mathbf{y} = \mathbf{0}$</div>
+<div class="math-block">$$2X^TX\mathbf{w} - 2X^T\mathbf{y} = \mathbf{0}$$</div>
 
 
 
-<div class="math-block">$X^TX\mathbf{w} = X^T\mathbf{y}$</div>
+<div class="math-block">$$X^TX\mathbf{w} = X^T\mathbf{y}$$</div>
 
 
 These are the **Normal Equations** — a system of <span class="math-inline">$d$</span> linear equations in <span class="math-inline">$d$</span> unknowns.
@@ -7098,11 +7783,12 @@ These are the **Normal Equations** — a system of <span class="math-inline">$d$
 **Step 4 — Solve (if <span class="math-inline">$X^TX$</span> is invertible):**
 
 
-<div class="math-block">$\boxed{\mathbf{w} = (X^TX)^{-1}X^T\mathbf{y}}$</div>
+<div class="math-block">$$\boxed{\mathbf{w} = (X^TX)^{-1}X^T\mathbf{y}}$$</div>
 
 
 This is the Normal Equation.
 
+<a id="worked-example-931-fitting-a-line"></a>
 ### Worked Example 9.3.1 — Fitting a Line
 
 Fit <span class="math-inline">$\hat{y} = w_1 x + w_0$</span> to three data points: <span class="math-inline">$(1, 2)$</span>, <span class="math-inline">$(2, 3)$</span>, <span class="math-inline">$(3, 5)$</span>.
@@ -7110,47 +7796,47 @@ Fit <span class="math-inline">$\hat{y} = w_1 x + w_0$</span> to three data point
 **Step 1 — Build the design matrix.** Include a bias column of ones:
 
 
-<div class="math-block">$X = \begin{bmatrix} 1 & 1 \\ 2 & 1 \\ 3 & 1 \end{bmatrix}, \qquad \mathbf{y} = \begin{bmatrix} 2 \\ 3 \\ 5 \end{bmatrix}$</div>
+<div class="math-block">$$X = \begin{bmatrix} 1 & 1 \\ 2 & 1 \\ 3 & 1 \end{bmatrix}, \qquad \mathbf{y} = \begin{bmatrix} 2 \\ 3 \\ 5 \end{bmatrix}$$</div>
 
 
 **Step 2 — Compute <span class="math-inline">$X^TX$</span>:**
 
 
-<div class="math-block">$X^TX = \begin{bmatrix} 1 & 2 & 3 \\ 1 & 1 & 1 \end{bmatrix} \begin{bmatrix} 1 & 1 \\ 2 & 1 \\ 3 & 1 \end{bmatrix}$</div>
+<div class="math-block">$$X^TX = \begin{bmatrix} 1 & 2 & 3 \\ 1 & 1 & 1 \end{bmatrix} \begin{bmatrix} 1 & 1 \\ 2 & 1 \\ 3 & 1 \end{bmatrix}$$</div>
 
 
 
-<div class="math-block">$= \begin{bmatrix} 1^2 + 2^2 + 3^2 & 1 + 2 + 3 \\ 1 + 2 + 3 & 1 + 1 + 1 \end{bmatrix} = \begin{bmatrix} 14 & 6 \\ 6 & 3 \end{bmatrix}$</div>
+<div class="math-block">$$= \begin{bmatrix} 1^2 + 2^2 + 3^2 & 1 + 2 + 3 \\ 1 + 2 + 3 & 1 + 1 + 1 \end{bmatrix} = \begin{bmatrix} 14 & 6 \\ 6 & 3 \end{bmatrix}$$</div>
 
 
 **Step 3 — Compute <span class="math-inline">$X^T\mathbf{y}$</span>:**
 
 
-<div class="math-block">$X^T\mathbf{y} = \begin{bmatrix} 1 & 2 & 3 \\ 1 & 1 & 1 \end{bmatrix} \begin{bmatrix} 2 \\ 3 \\ 5 \end{bmatrix} = \begin{bmatrix} 1(2) + 2(3) + 3(5) \\ 1(2) + 1(3) + 1(5) \end{bmatrix} = \begin{bmatrix} 23 \\ 10 \end{bmatrix}$</div>
+<div class="math-block">$$X^T\mathbf{y} = \begin{bmatrix} 1 & 2 & 3 \\ 1 & 1 & 1 \end{bmatrix} \begin{bmatrix} 2 \\ 3 \\ 5 \end{bmatrix} = \begin{bmatrix} 1(2) + 2(3) + 3(5) \\ 1(2) + 1(3) + 1(5) \end{bmatrix} = \begin{bmatrix} 23 \\ 10 \end{bmatrix}$$</div>
 
 
 **Step 4 — Invert <span class="math-inline">$X^TX$</span>.** For a <span class="math-inline">$2 \times 2$</span> matrix <span class="math-inline">$\begin{bmatrix} a & b \\ c & d \end{bmatrix}$</span>, the inverse is <span class="math-inline">$\frac{1}{ad-bc}\begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$</span>:
 
 
-<div class="math-block">$\det(X^TX) = 14 \times 3 - 6 \times 6 = 42 - 36 = 6$</div>
+<div class="math-block">$$\det(X^TX) = 14 \times 3 - 6 \times 6 = 42 - 36 = 6$$</div>
 
 
 
-<div class="math-block">$(X^TX)^{-1} = \frac{1}{6}\begin{bmatrix} 3 & -6 \\ -6 & 14 \end{bmatrix} = \begin{bmatrix} 1/2 & -1 \\ -1 & 7/3 \end{bmatrix}$</div>
+<div class="math-block">$$(X^TX)^{-1} = \frac{1}{6}\begin{bmatrix} 3 & -6 \\ -6 & 14 \end{bmatrix} = \begin{bmatrix} 1/2 & -1 \\ -1 & 7/3 \end{bmatrix}$$</div>
 
 
 **Step 5 — Multiply to get <span class="math-inline">$\mathbf{w}$</span>:**
 
 
-<div class="math-block">$\mathbf{w} = (X^TX)^{-1} X^T\mathbf{y} = \begin{bmatrix} 1/2 & -1 \\ -1 & 7/3 \end{bmatrix} \begin{bmatrix} 23 \\ 10 \end{bmatrix}$</div>
+<div class="math-block">$$\mathbf{w} = (X^TX)^{-1} X^T\mathbf{y} = \begin{bmatrix} 1/2 & -1 \\ -1 & 7/3 \end{bmatrix} \begin{bmatrix} 23 \\ 10 \end{bmatrix}$$</div>
 
 
 
-<div class="math-block">$w_1 = \frac{1}{2}(23) + (-1)(10) = 11.5 - 10 = 1.5$</div>
+<div class="math-block">$$w_1 = \frac{1}{2}(23) + (-1)(10) = 11.5 - 10 = 1.5$$</div>
 
 
 
-<div class="math-block">$w_0 = (-1)(23) + \frac{7}{3}(10) = -23 + \frac{70}{3} = \frac{-69 + 70}{3} = \frac{1}{3} \approx 0.333$</div>
+<div class="math-block">$$w_0 = (-1)(23) + \frac{7}{3}(10) = -23 + \frac{70}{3} = \frac{-69 + 70}{3} = \frac{1}{3} \approx 0.333$$</div>
 
 
 **Fitted model:** <span class="math-inline">$\hat{y} = 1.5x + \tfrac{1}{3}$</span>
@@ -7168,9 +7854,10 @@ Fit <span class="math-inline">$\hat{y} = w_1 x + w_0$</span> to three data point
 The gradient condition is <span class="math-inline">$X^TX\mathbf{w} = X^T\mathbf{y}$</span>:
 
 
-<div class="math-block">$\begin{bmatrix} 14 & 6 \\ 6 & 3 \end{bmatrix} \begin{bmatrix} 1.5 \\ 1/3 \end{bmatrix} = \begin{bmatrix} 14(1.5) + 6(1/3) \\ 6(1.5) + 3(1/3) \end{bmatrix} = \begin{bmatrix} 21 + 2 \\ 9 + 1 \end{bmatrix} = \begin{bmatrix} 23 \\ 10 \end{bmatrix} = X^T\mathbf{y} \checkmark$</div>
+<div class="math-block">$$\begin{bmatrix} 14 & 6 \\ 6 & 3 \end{bmatrix} \begin{bmatrix} 1.5 \\ 1/3 \end{bmatrix} = \begin{bmatrix} 14(1.5) + 6(1/3) \\ 6(1.5) + 3(1/3) \end{bmatrix} = \begin{bmatrix} 21 + 2 \\ 9 + 1 \end{bmatrix} = \begin{bmatrix} 23 \\ 10 \end{bmatrix} = X^T\mathbf{y} \checkmark$$</div>
 
 
+<a id="931-normal-equation-vs-gradient-descent"></a>
 ### 9.3.1 Normal Equation vs. Gradient Descent
 
 | | Normal Equation | Gradient Descent |
@@ -7186,6 +7873,7 @@ The gradient condition is <span class="math-inline">$X^TX\mathbf{w} = X^T\mathbf
 
 **Trust this result:** When <span class="math-inline">$X^TX$</span> is singular (which happens when features are linearly dependent — collinear), <span class="math-inline">$(X^TX)^{-1}$</span> does not exist. The fix is to use the Moore-Penrose pseudoinverse <span class="math-inline">$X^+$</span> or to add regularization — which leads directly to Section 9.5.
 
+<a id="engineers-angle-15"></a>
 ### Engineer's Angle
 
 ```python
@@ -7262,8 +7950,10 @@ print(f"\nMSE = {mse:.6f}")
 
 ---
 
+<a id="94-bias-variance-tradeoff"></a>
 ## 9.4 Bias-Variance Tradeoff
 
+<a id="plain-english-first-22"></a>
 ### Plain English First
 
 Every prediction error comes from three sources. The **dartboard analogy** makes them viscerally clear.
@@ -7276,6 +7966,7 @@ Imagine you throw many darts at a target. Your "model" is your throwing arm for 
 
 The third source of error — **noise** — is the irreducible scatter in the data itself. No matter how good your model, if the data is inherently noisy, you cannot eliminate this error.
 
+<a id="formal-notation-21"></a>
 ### Formal Notation
 
 Consider a fixed test point <span class="math-inline">$x_0$</span> with true output <span class="math-inline">$y_0 = f(x_0) + \epsilon$</span>, where <span class="math-inline">$f$</span> is the true (unknown) function and <span class="math-inline">$\epsilon \sim \mathcal{N}(0, \sigma^2)$</span> is irreducible noise.
@@ -7285,50 +7976,51 @@ Your model <span class="math-inline">$\hat{f}$</span> is trained on a random tra
 Define:
 
 
-<div class="math-block">$\text{Bias}(\hat{f}) = \bar{f} - f(x_0) = \mathbb{E}[\hat{f}(x_0)] - f(x_0)$</div>
+<div class="math-block">$$\text{Bias}(\hat{f}) = \bar{f} - f(x_0) = \mathbb{E}[\hat{f}(x_0)] - f(x_0)$$</div>
 
 
 
-<div class="math-block">$\text{Variance}(\hat{f}) = \mathbb{E}\!\left[(\hat{f}(x_0) - \bar{f})^2\right]$</div>
+<div class="math-block">$$\text{Variance}(\hat{f}) = \mathbb{E}\!\left[(\hat{f}(x_0) - \bar{f})^2\right]$$</div>
 
 
 
-<div class="math-block">$\text{MSE} = \mathbb{E}\!\left[(\hat{f}(x_0) - y_0)^2\right]$</div>
+<div class="math-block">$$\text{MSE} = \mathbb{E}\!\left[(\hat{f}(x_0) - y_0)^2\right]$$</div>
 
 
 **Theorem:**
 
 
-<div class="math-block">$\text{MSE} = \text{Bias}^2 + \text{Variance} + \sigma^2$</div>
+<div class="math-block">$$\text{MSE} = \text{Bias}^2 + \text{Variance} + \sigma^2$$</div>
 
 
 **Here's why** the decomposition holds:
 
 
-<div class="math-block">$\text{MSE} = \mathbb{E}\!\left[(\hat{f}(x_0) - y_0)^2\right] = \mathbb{E}\!\left[(\hat{f}(x_0) - f(x_0) - \epsilon)^2\right]$</div>
+<div class="math-block">$$\text{MSE} = \mathbb{E}\!\left[(\hat{f}(x_0) - y_0)^2\right] = \mathbb{E}\!\left[(\hat{f}(x_0) - f(x_0) - \epsilon)^2\right]$$</div>
 
 
 Add and subtract <span class="math-inline">$\bar{f}$</span> inside:
 
 
-<div class="math-block">$= \mathbb{E}\!\left[(\hat{f}(x_0) - \bar{f} + \bar{f} - f(x_0) - \epsilon)^2\right]$</div>
+<div class="math-block">$$= \mathbb{E}\!\left[(\hat{f}(x_0) - \bar{f} + \bar{f} - f(x_0) - \epsilon)^2\right]$$</div>
 
 
 Let <span class="math-inline">$U = \hat{f}(x_0) - \bar{f}$</span> (zero-mean random variable: <span class="math-inline">$\mathbb{E}[U] = 0$</span>), <span class="math-inline">$B = \bar{f} - f(x_0)$</span> (the bias, a constant), and keep <span class="math-inline">$\epsilon$</span> (also zero-mean, independent of training data). Then:
 
 
-<div class="math-block">$\text{MSE} = \mathbb{E}[(U + B - \epsilon)^2]$</div>
+<div class="math-block">$$\text{MSE} = \mathbb{E}[(U + B - \epsilon)^2]$$</div>
 
 
-<div class="math-block">$= \mathbb{E}[U^2] + B^2 + \mathbb{E}[\epsilon^2] + 2B\,\mathbb{E}[U] - 2B\,\mathbb{E}[\epsilon] - 2\,\mathbb{E}[U\epsilon]$</div>
+<div class="math-block">$$= \mathbb{E}[U^2] + B^2 + \mathbb{E}[\epsilon^2] + 2B\,\mathbb{E}[U] - 2B\,\mathbb{E}[\epsilon] - 2\,\mathbb{E}[U\epsilon]$$</div>
 
 
 The cross-terms vanish: <span class="math-inline">$\mathbb{E}[U] = 0$</span>, <span class="math-inline">$\mathbb{E}[\epsilon] = 0$</span>, and <span class="math-inline">$U$</span> and <span class="math-inline">$\epsilon$</span> are independent so <span class="math-inline">$\mathbb{E}[U\epsilon] = 0$</span>. Therefore:
 
 
-<div class="math-block">$\boxed{\text{MSE} = \underbrace{\mathbb{E}[U^2]}_{\text{Variance}} + \underbrace{B^2}_{\text{Bias}^2} + \underbrace{\mathbb{E}[\epsilon^2]}_{\sigma^2} = \text{Variance} + \text{Bias}^2 + \sigma^2} \quad \square$</div>
+<div class="math-block">$$\boxed{\text{MSE} = \underbrace{\mathbb{E}[U^2]}_{\text{Variance}} + \underbrace{B^2}_{\text{Bias}^2} + \underbrace{\mathbb{E}[\epsilon^2]}_{\sigma^2} = \text{Variance} + \text{Bias}^2 + \sigma^2} \quad \square$$</div>
 
 
+<a id="worked-example-941-two-models-at-a-test-point"></a>
 ### Worked Example 9.4.1 — Two Models at a Test Point
 
 True function: <span class="math-inline">$f(x) = 2x + 1$</span>. Test point <span class="math-inline">$x_0 = 3$</span>, so <span class="math-inline">$f(3) = 7$</span>. Noise <span class="math-inline">$\epsilon \sim \mathcal{N}(0, 0.25)$</span> so <span class="math-inline">$\sigma^2 = 0.25$</span>.
@@ -7336,41 +8028,41 @@ True function: <span class="math-inline">$f(x) = 2x + 1$</span>. Test point <spa
 **Model A — High-bias constant predictor:** Always predicts <span class="math-inline">$\hat{f}_A(x) = 3$</span> (the training mean, ignoring <span class="math-inline">$x$</span>). This is deterministic regardless of the training set.
 
 
-<div class="math-block">$\text{Bias}_A = \mathbb{E}[\hat{f}_A(3)] - f(3) = 3 - 7 = -4$</div>
+<div class="math-block">$$\text{Bias}_A = \mathbb{E}[\hat{f}_A(3)] - f(3) = 3 - 7 = -4$$</div>
 
 
 
-<div class="math-block">$\text{Bias}_A^2 = 16$</div>
+<div class="math-block">$$\text{Bias}_A^2 = 16$$</div>
 
 
 
-<div class="math-block">$\text{Variance}_A = \mathbb{E}[(\hat{f}_A(3) - 3)^2] = 0 \quad \text{(constant predictor has zero variance)}$</div>
+<div class="math-block">$$\text{Variance}_A = \mathbb{E}[(\hat{f}_A(3) - 3)^2] = 0 \quad \text{(constant predictor has zero variance)}$$</div>
 
 
 
-<div class="math-block">$\text{MSE}_A = 16 + 0 + 0.25 = 16.25$</div>
+<div class="math-block">$$\text{MSE}_A = 16 + 0 + 0.25 = 16.25$$</div>
 
 
 **Model B — Low-bias flexible predictor:** Interpolates training data, producing predictions <span class="math-inline">$\hat{f}_B(3) \in \{6, 8\}$</span> with equal probability across training sets (noisy, but centered on the truth).
 
 
-<div class="math-block">$\mathbb{E}[\hat{f}_B(3)] = \frac{6 + 8}{2} = 7$</div>
+<div class="math-block">$$\mathbb{E}[\hat{f}_B(3)] = \frac{6 + 8}{2} = 7$$</div>
 
 
 
-<div class="math-block">$\text{Bias}_B = 7 - 7 = 0$</div>
+<div class="math-block">$$\text{Bias}_B = 7 - 7 = 0$$</div>
 
 
 
-<div class="math-block">$\text{Bias}_B^2 = 0$</div>
+<div class="math-block">$$\text{Bias}_B^2 = 0$$</div>
 
 
 
-<div class="math-block">$\text{Variance}_B = \frac{(6-7)^2 + (8-7)^2}{2} = \frac{1 + 1}{2} = 1$</div>
+<div class="math-block">$$\text{Variance}_B = \frac{(6-7)^2 + (8-7)^2}{2} = \frac{1 + 1}{2} = 1$$</div>
 
 
 
-<div class="math-block">$\text{MSE}_B = 0 + 1 + 0.25 = 1.25$</div>
+<div class="math-block">$$\text{MSE}_B = 0 + 1 + 0.25 = 1.25$$</div>
 
 
 **Conclusion:** Model B has MSE of 1.25 vs Model A's 16.25. Model A's large bias overwhelms its advantage in variance. We prefer Model B.
@@ -7380,6 +8072,7 @@ True function: <span class="math-inline">$f(x) = 2x + 1$</span>. Test point <spa
 | Model A (constant predictor) | 16 | 0 | 0.25 | **16.25** |
 | Model B (flexible predictor) | 0 | 1 | 0.25 | **1.25** |
 
+<a id="941-the-tradeoff"></a>
 ### 9.4.1 The Tradeoff
 
 Bias and variance are in tension:
@@ -7393,6 +8086,7 @@ The bias-variance tradeoff explains why:
 - A degree-30 polynomial overfit (high variance) the same data.
 - The optimal degree lies between, and can be found by cross-validation (Section 9.7).
 
+<a id="engineers-angle-16"></a>
 ### Engineer's Angle
 
 ```python
@@ -7454,28 +8148,32 @@ print(f"  Model B: {sim_mse_B:.4f} (analytical: {mse_B})")
 
 ---
 
+<a id="95-overfitting-and-regularization"></a>
 ## 9.5 Overfitting and Regularization
 
+<a id="plain-english-first-23"></a>
 ### Plain English First
 
 Overfitting is the variance problem made concrete: the model learns the training data — including its noise — so well that it performs poorly on new data. Regularization is the cure: add a penalty for complexity directly into the loss function, discouraging the optimizer from finding weights that are large in magnitude.
 
 There are two canonical forms of regularization, and they have very different behaviors.
 
+<a id="formal-notation-22"></a>
 ### Formal Notation
 
 The regularized loss adds a penalty term to the base loss <span class="math-inline">$\mathcal{L}_0(\mathbf{w})$</span> (e.g., MSE or cross-entropy):
 
 
-<div class="math-block">$\mathcal{L}_{\text{Ridge}}(\mathbf{w}) = \mathcal{L}_0(\mathbf{w}) + \lambda\|\mathbf{w}\|_2^2 = \mathcal{L}_0(\mathbf{w}) + \lambda \sum_{j=1}^{d} w_j^2$</div>
+<div class="math-block">$$\mathcal{L}_{\text{Ridge}}(\mathbf{w}) = \mathcal{L}_0(\mathbf{w}) + \lambda\|\mathbf{w}\|_2^2 = \mathcal{L}_0(\mathbf{w}) + \lambda \sum_{j=1}^{d} w_j^2$$</div>
 
 
 
-<div class="math-block">$\mathcal{L}_{\text{Lasso}}(\mathbf{w}) = \mathcal{L}_0(\mathbf{w}) + \lambda\|\mathbf{w}\|_1 = \mathcal{L}_0(\mathbf{w}) + \lambda \sum_{j=1}^{d} |w_j|$</div>
+<div class="math-block">$$\mathcal{L}_{\text{Lasso}}(\mathbf{w}) = \mathcal{L}_0(\mathbf{w}) + \lambda\|\mathbf{w}\|_1 = \mathcal{L}_0(\mathbf{w}) + \lambda \sum_{j=1}^{d} |w_j|$$</div>
 
 
 The **hyperparameter** <span class="math-inline">$\lambda \geq 0$</span> controls the strength of regularization. <span class="math-inline">$\lambda = 0$</span> gives the unregularized model; large <span class="math-inline">$\lambda$</span> heavily penalizes large weights.
 
+<a id="951-l2-regularization-ridge"></a>
 ### 9.5.1 L2 Regularization (Ridge)
 
 **What it does:** Shrinks all weights toward zero proportionally. Large weights are penalized quadratically, so all weights survive but in reduced magnitude.
@@ -7483,15 +8181,16 @@ The **hyperparameter** <span class="math-inline">$\lambda \geq 0$</span> control
 **The Ridge Normal Equation:** For linear regression with L2 regularization, set the gradient of the penalized loss to zero:
 
 
-<div class="math-block">$\nabla_{\mathbf{w}}\bigl(\mathcal{L}_0 + \lambda\|\mathbf{w}\|^2\bigr) = 2X^TX\mathbf{w} - 2X^T\mathbf{y} + 2\lambda\mathbf{w} = \mathbf{0}$</div>
+<div class="math-block">$$\nabla_{\mathbf{w}}\bigl(\mathcal{L}_0 + \lambda\|\mathbf{w}\|^2\bigr) = 2X^TX\mathbf{w} - 2X^T\mathbf{y} + 2\lambda\mathbf{w} = \mathbf{0}$$</div>
 
 
 
-<div class="math-block">$\Longrightarrow\quad (X^TX + \lambda I)\mathbf{w} = X^T\mathbf{y} \quad\Longrightarrow\quad \mathbf{w}_{\text{Ridge}} = (X^TX + \lambda I)^{-1}X^T\mathbf{y}$</div>
+<div class="math-block">$$\Longrightarrow\quad (X^TX + \lambda I)\mathbf{w} = X^T\mathbf{y} \quad\Longrightarrow\quad \mathbf{w}_{\text{Ridge}} = (X^TX + \lambda I)^{-1}X^T\mathbf{y}$$</div>
 
 
 **Here's why** adding <span class="math-inline">$\lambda I$</span> helps when <span class="math-inline">$X^TX$</span> is nearly singular: the eigenvalues of <span class="math-inline">$X^TX$</span> are non-negative (it is positive semi-definite), so some may be near zero, making the inverse unstable. Adding <span class="math-inline">$\lambda > 0$</span> shifts all eigenvalues up by <span class="math-inline">$\lambda$</span>, making every eigenvalue at least <span class="math-inline">$\lambda > 0$</span>, so the matrix is now invertible. This is a stability improvement even beyond regularization.
 
+<a id="worked-example-951-ridge-vs-ols"></a>
 ### Worked Example 9.5.1 — Ridge vs OLS
 
 Using the same data <span class="math-inline">$(1, 2), (2, 3), (3, 5)$</span> from Section 9.3, apply Ridge with <span class="math-inline">$\lambda = 1$</span>.
@@ -7501,27 +8200,27 @@ Using the same data <span class="math-inline">$(1, 2), (2, 3), (3, 5)$</span> fr
 **Ridge computation:**
 
 
-<div class="math-block">$X^TX + \lambda I = \begin{bmatrix} 14 & 6 \\ 6 & 3 \end{bmatrix} + \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 15 & 6 \\ 6 & 4 \end{bmatrix}$</div>
+<div class="math-block">$$X^TX + \lambda I = \begin{bmatrix} 14 & 6 \\ 6 & 3 \end{bmatrix} + \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 15 & 6 \\ 6 & 4 \end{bmatrix}$$</div>
 
 
 
-<div class="math-block">$\det\begin{bmatrix} 15 & 6 \\ 6 & 4 \end{bmatrix} = 15 \times 4 - 6 \times 6 = 60 - 36 = 24$</div>
+<div class="math-block">$$\det\begin{bmatrix} 15 & 6 \\ 6 & 4 \end{bmatrix} = 15 \times 4 - 6 \times 6 = 60 - 36 = 24$$</div>
 
 
 
-<div class="math-block">$\left(X^TX + I\right)^{-1} = \frac{1}{24}\begin{bmatrix} 4 & -6 \\ -6 & 15 \end{bmatrix} = \begin{bmatrix} 1/6 & -1/4 \\ -1/4 & 5/8 \end{bmatrix}$</div>
+<div class="math-block">$$\left(X^TX + I\right)^{-1} = \frac{1}{24}\begin{bmatrix} 4 & -6 \\ -6 & 15 \end{bmatrix} = \begin{bmatrix} 1/6 & -1/4 \\ -1/4 & 5/8 \end{bmatrix}$$</div>
 
 
 
-<div class="math-block">$\mathbf{w}_{\text{Ridge}} = \begin{bmatrix} 1/6 & -1/4 \\ -1/4 & 5/8 \end{bmatrix} \begin{bmatrix} 23 \\ 10 \end{bmatrix}$</div>
+<div class="math-block">$$\mathbf{w}_{\text{Ridge}} = \begin{bmatrix} 1/6 & -1/4 \\ -1/4 & 5/8 \end{bmatrix} \begin{bmatrix} 23 \\ 10 \end{bmatrix}$$</div>
 
 
 
-<div class="math-block">$w_1 = \frac{23}{6} - \frac{10}{4} = 3.8333 - 2.5 = 1.3333$</div>
+<div class="math-block">$$w_1 = \frac{23}{6} - \frac{10}{4} = 3.8333 - 2.5 = 1.3333$$</div>
 
 
 
-<div class="math-block">$w_0 = -\frac{23}{4} + \frac{50}{8} = -5.75 + 6.25 = 0.5$</div>
+<div class="math-block">$$w_0 = -\frac{23}{4} + \frac{50}{8} = -5.75 + 6.25 = 0.5$$</div>
 
 
 **Ridge result:** <span class="math-inline">$\mathbf{w}_{\text{Ridge}} = \begin{bmatrix} 1.333 \\ 0.500 \end{bmatrix}$</span>
@@ -7535,6 +8234,7 @@ Using the same data <span class="math-inline">$(1, 2), (2, 3), (3, 5)$</span> fr
 
 Ridge shrinks the slope from 1.5 toward 0 (reduced from 1.500 to 1.333). The intercept shifts because the weights trade off against each other. Both weights moved toward smaller magnitude — the defining behavior of L2 regularization.
 
+<a id="952-l1-regularization-lasso-and-why-it-causes-sparsity"></a>
 ### 9.5.2 L1 Regularization (Lasso) and Why It Causes Sparsity
 
 L1 regularization does something that L2 does not: it drives many weights to **exactly zero**, producing a **sparse** solution where only a subset of features matter.
@@ -7557,24 +8257,25 @@ At <span class="math-inline">$w_j = 0$</span>, the derivative of <span class="ma
 
 L2 does not have this property: the L2 gradient is <span class="math-inline">$2\lambda w_j$</span>, which shrinks to zero as <span class="math-inline">$w_j \to 0$</span>, meaning the penalty asymptotically vanishes and never actually zeros out the weight.
 
+<a id="953-bayesian-interpretation-of-regularization"></a>
 ### 9.5.3 Bayesian Interpretation of Regularization
 
 Regularization is not an ad hoc trick — it is Bayesian inference in disguise. Recall Bayes' theorem from Chapter 7:
 
 
-<div class="math-block">$p(\mathbf{w} \mid \mathbf{X}, \mathbf{y}) \propto p(\mathbf{y} \mid \mathbf{X}, \mathbf{w}) \cdot p(\mathbf{w})$</div>
+<div class="math-block">$$p(\mathbf{w} \mid \mathbf{X}, \mathbf{y}) \propto p(\mathbf{y} \mid \mathbf{X}, \mathbf{w}) \cdot p(\mathbf{w})$$</div>
 
 
 Taking the log:
 
 
-<div class="math-block">$\log p(\mathbf{w} \mid \mathbf{X}, \mathbf{y}) = \log p(\mathbf{y} \mid \mathbf{X}, \mathbf{w}) + \log p(\mathbf{w}) + \text{const}$</div>
+<div class="math-block">$$\log p(\mathbf{w} \mid \mathbf{X}, \mathbf{y}) = \log p(\mathbf{y} \mid \mathbf{X}, \mathbf{w}) + \log p(\mathbf{w}) + \text{const}$$</div>
 
 
 The **MAP (Maximum A Posteriori)** estimate maximizes this, which is equivalent to minimizing:
 
 
-<div class="math-block">$-\log p(\mathbf{y} \mid \mathbf{X}, \mathbf{w}) - \log p(\mathbf{w})$</div>
+<div class="math-block">$$-\log p(\mathbf{y} \mid \mathbf{X}, \mathbf{w}) - \log p(\mathbf{w})$$</div>
 
 
 Now choose a prior on <span class="math-inline">$\mathbf{w}$</span>:
@@ -7582,7 +8283,7 @@ Now choose a prior on <span class="math-inline">$\mathbf{w}$</span>:
 **Gaussian prior** <span class="math-inline">$p(\mathbf{w}) \propto \exp\!\left(-\frac{\|\mathbf{w}\|_2^2}{2\tau^2}\right)$</span>:
 
 
-<div class="math-block">$-\log p(\mathbf{w}) = \frac{\|\mathbf{w}\|_2^2}{2\tau^2} + \text{const} \propto \|\mathbf{w}\|_2^2$</div>
+<div class="math-block">$$-\log p(\mathbf{w}) = \frac{\|\mathbf{w}\|_2^2}{2\tau^2} + \text{const} \propto \|\mathbf{w}\|_2^2$$</div>
 
 
 This is exactly the L2 penalty with <span class="math-inline">$\lambda = \frac{1}{2\tau^2}$</span>.
@@ -7590,7 +8291,7 @@ This is exactly the L2 penalty with <span class="math-inline">$\lambda = \frac{1
 **Laplace prior** <span class="math-inline">$p(\mathbf{w}) \propto \exp\!\left(-\frac{\|\mathbf{w}\|_1}{b}\right)$</span>:
 
 
-<div class="math-block">$-\log p(\mathbf{w}) = \frac{\|\mathbf{w}\|_1}{b} + \text{const} \propto \|\mathbf{w}\|_1$</div>
+<div class="math-block">$$-\log p(\mathbf{w}) = \frac{\|\mathbf{w}\|_1}{b} + \text{const} \propto \|\mathbf{w}\|_1$$</div>
 
 
 This is exactly the L1 penalty with <span class="math-inline">$\lambda = \frac{1}{b}$</span>.
@@ -7599,6 +8300,7 @@ This is exactly the L1 penalty with <span class="math-inline">$\lambda = \frac{1
 
 Regularization strength <span class="math-inline">$\lambda$</span> encodes how strongly you hold this belief. Small <span class="math-inline">$\lambda$</span> = weak prior (data dominates). Large <span class="math-inline">$\lambda$</span> = strong prior (regularizer dominates, model barely fits data).
 
+<a id="engineers-angle-17"></a>
 ### Engineer's Angle
 
 ```python
@@ -7685,8 +8387,10 @@ print(f"  Laplace  log-prior: {laplace_log_prior(w_dense, b):.4f}")
 
 ---
 
+<a id="96-train-validation-test-split"></a>
 ## 9.6 Train / Validation / Test Split
 
+<a id="plain-english-first-24"></a>
 ### Plain English First
 
 You have a dataset. You want to report how good your model is. If you test it on the same data you trained it on, the number you get is meaningless — the model has already seen those examples and may have memorized them. You need data the model has **never seen**.
@@ -7695,6 +8399,7 @@ But there is a second, subtler trap: every time you tune a hyperparameter (learn
 
 The solution is three-way data splitting.
 
+<a id="the-three-splits"></a>
 ### The Three Splits
 
 **Training set (typically 60–80% of data):**
@@ -7709,6 +8414,7 @@ Used to make hyperparameter decisions: which regularization strength, which arch
 
 **Used exactly once.** Report this number in your paper or to your stakeholders. Never make any model decision based on the test set — not architecture, not preprocessing, not feature selection. Once you have looked at the test set performance, it is "spent."
 
+<a id="the-information-hierarchy"></a>
 ### The Information Hierarchy
 
 ```
@@ -7723,6 +8429,7 @@ Each level uses data from the level above to evaluate choices, and is itself eva
 
 **Why can't you just use test error?** If you tune on test error (even indirectly, by running many experiments and selecting the best), the test error is no longer unbiased. Each time you look and adapt, you "spend" some of the test set's value.
 
+<a id="practical-guidance-for-engineers"></a>
 ### Practical Guidance for Engineers
 
 | Dataset size | Recommended split | Validation strategy |
@@ -7734,6 +8441,7 @@ Each level uses data from the level above to evaluate choices, and is itself eva
 
 **Time-series warning:** For sequential data (financial, sensor, text with temporal structure), always split chronologically. Training on future data to predict the past is data leakage — a silent but fatal mistake.
 
+<a id="engineers-angle-18"></a>
 ### Engineer's Angle
 
 ```python
@@ -7795,14 +8503,17 @@ def time_series_split(data, train_frac=0.70, val_frac=0.15):
 
 ---
 
+<a id="97-cross-validation"></a>
 ## 9.7 Cross-Validation
 
+<a id="plain-english-first-25"></a>
 ### Plain English First
 
 A 70/15/15 split works well when you have thousands of examples. But when your dataset is small — say, 200 examples — a single validation fold of 30 examples is noisy. The performance estimate on 30 examples may vary a lot depending on which 30 you happened to set aside.
 
 **K-fold cross-validation** solves this by getting <span class="math-inline">$k$</span> different performance estimates from the same data and averaging them. You train <span class="math-inline">$k$</span> different models, each time leaving out a different fold for validation. Every example is in the validation set exactly once.
 
+<a id="how-k-fold-works"></a>
 ### How K-Fold Works
 
 1. Randomly partition the dataset into <span class="math-inline">$k$</span> equally-sized folds: <span class="math-inline">$F_1, F_2, \ldots, F_k$</span>.
@@ -7811,12 +8522,13 @@ A 70/15/15 split works well when you have thousands of examples. But when your d
    b. **Evaluate** on <span class="math-inline">$F_i$</span>. Record the performance metric (e.g., MSE or accuracy).
 3. **Report** the mean (and optionally standard deviation) across the <span class="math-inline">$k$</span> fold scores.
 
+<a id="formal-notation-23"></a>
 ### Formal Notation
 
 Let <span class="math-inline">$\text{err}_i$</span> be the validation error on fold <span class="math-inline">$i$</span>.
 
 
-<div class="math-block">$\widehat{\text{CV}}_k = \frac{1}{k} \sum_{i=1}^{k} \text{err}_i$</div>
+<div class="math-block">$$\widehat{\text{CV}}_k = \frac{1}{k} \sum_{i=1}^{k} \text{err}_i$$</div>
 
 
 The standard deviation <span class="math-inline">$\text{std}(\text{err}_1, \ldots, \text{err}_k)$</span> quantifies the **stability** of the estimate.
@@ -7826,6 +8538,7 @@ The standard deviation <span class="math-inline">$\text{std}(\text{err}_1, \ldot
 - <span class="math-inline">$k = 10$</span>: slightly better statistical properties, 2<span class="math-inline">$\times$</span> cost of 5-fold.
 - <span class="math-inline">$k = n$</span> (leave-one-out cross-validation, LOO-CV): minimal bias, but requires <span class="math-inline">$n$</span> training runs. Used when <span class="math-inline">$n$</span> is very small.
 
+<a id="when-to-use-cross-validation"></a>
 ### When to Use Cross-Validation
 
 **Use it when:**
@@ -7837,6 +8550,7 @@ The standard deviation <span class="math-inline">$\text{std}(\text{err}_1, \ldot
 
 **Do not use it for time-series data.** Use time-series cross-validation instead (each fold respects chronological order: train on past, validate on future).
 
+<a id="worked-example-971-5-fold-cross-validation"></a>
 ### Worked Example 9.7.1 — 5-Fold Cross-Validation
 
 Dataset of 10 examples (for illustration). We use a constant-mean predictor and measure MSE.
@@ -7856,7 +8570,7 @@ Split into 5 folds of 2 examples each:
 | 5 | 8, 9 | 8, 10 | 1,3,2,5,4,7,6,9 | <span class="math-inline">$37/8=4.625$</span> | <span class="math-inline">$\frac{(8-4.625)^2+(10-4.625)^2}{2} = \frac{11.391+28.891}{2} = 20.141$</span> |
 
 
-<div class="math-block">$\widehat{\text{CV}}_5 = \frac{20.141 + 8.5 + 2.25 + 8.5 + 20.141}{5} = \frac{59.532}{5} = 11.906$</div>
+<div class="math-block">$$\widehat{\text{CV}}_5 = \frac{20.141 + 8.5 + 2.25 + 8.5 + 20.141}{5} = \frac{59.532}{5} = 11.906$$</div>
 
 
 **Verify fold 3 arithmetic:**
@@ -7872,6 +8586,7 @@ Average: <span class="math-inline">$(11.391 + 28.891)/2 = 40.282/2 = 20.141$</sp
 
 > **Note:** The worked example above uses sequential (non-shuffled) fold assignment — fold 1 gets indices 0–1, fold 2 gets indices 2–3, and so on — so that the table arithmetic can be followed by hand. The Python code below follows best practice and shuffles the data before partitioning, which means the fold assignments and resulting MSE values will differ from the table. Both approaches are correct; the code is what you would use in practice.
 
+<a id="engineers-angle-19"></a>
 ### Engineer's Angle
 
 ```python
@@ -7925,8 +8640,10 @@ print(f"\n5-Fold CV MSE: {cv_score:.4f} ± {cv_std:.4f}")
 
 ---
 
+<a id="98-hypothesis-testing-is-your-model-improvement-real"></a>
 ## 9.8 Hypothesis Testing — Is Your Model Improvement Real?
 
+<a id="plain-english-first-26"></a>
 ### Plain English First
 
 You trained Model B and it scores 82% accuracy on the test set, up from Model A's 70%. Should you ship Model B? Not yet — you need to ask: **could this difference be due to random chance?**
@@ -7935,6 +8652,7 @@ If you only have 100 test examples, a 12-point accuracy difference might be a st
 
 The key idea: you assume the two models are actually equally good (the **null hypothesis**) and ask: if that were true, how surprising is the observed difference? If the difference is very surprising under the null hypothesis, you reject it — the improvement is likely real.
 
+<a id="formal-notation-24"></a>
 ### Formal Notation
 
 **Null hypothesis (<span class="math-inline">$H_0$</span>):** The two models have the same true accuracy. The observed difference is due to sampling variability.
@@ -7944,13 +8662,14 @@ The key idea: you assume the two models are actually equally good (the **null hy
 **P-value:** The probability, assuming <span class="math-inline">$H_0$</span> is true, of observing a difference at least as extreme as the one observed.
 
 
-<div class="math-block">$p\text{-value} = P(\text{test statistic} \geq \text{observed} \mid H_0)$</div>
+<div class="math-block">$$p\text{-value} = P(\text{test statistic} \geq \text{observed} \mid H_0)$$</div>
 
 
 **Decision rule:** If <span class="math-inline">$p\text{-value} < \alpha$</span> (the significance level, typically <span class="math-inline">$\alpha = 0.05$</span>), reject <span class="math-inline">$H_0$</span>. The improvement is statistically significant.
 
 **Warning on p-values:** A small p-value does not mean the improvement is large or practically important. It means the data is inconsistent with the null hypothesis. A 0.1% improvement can be statistically significant with enough data; a 5% improvement can be statistically insignificant with too little data. Always pair p-values with **effect sizes** and **confidence intervals** (Section 9.9).
 
+<a id="two-proportion-z-test"></a>
 ### Two-Proportion Z-Test
 
 For comparing two model accuracies, the appropriate test is the **two-proportion z-test**.
@@ -7960,29 +8679,30 @@ For comparing two model accuracies, the appropriate test is the **two-proportion
 **Pooled proportion (under <span class="math-inline">$H_0$</span>: both models have the same true accuracy):**
 
 
-<div class="math-block">$\hat{p}_{\text{pool}} = \frac{k_A + k_B}{n_A + n_B}$</div>
+<div class="math-block">$$\hat{p}_{\text{pool}} = \frac{k_A + k_B}{n_A + n_B}$$</div>
 
 
 **Standard error of the difference (under <span class="math-inline">$H_0$</span>):**
 
 
-<div class="math-block">$\text{SE} = \sqrt{\hat{p}_{\text{pool}}(1 - \hat{p}_{\text{pool}})\left(\frac{1}{n_A} + \frac{1}{n_B}\right)}$</div>
+<div class="math-block">$$\text{SE} = \sqrt{\hat{p}_{\text{pool}}(1 - \hat{p}_{\text{pool}})\left(\frac{1}{n_A} + \frac{1}{n_B}\right)}$$</div>
 
 
 **Z-statistic:**
 
 
-<div class="math-block">$z = \frac{\hat{p}_B - \hat{p}_A}{\text{SE}}$</div>
+<div class="math-block">$$z = \frac{\hat{p}_B - \hat{p}_A}{\text{SE}}$$</div>
 
 
 Under <span class="math-inline">$H_0$</span>, <span class="math-inline">$z$</span> approximately follows <span class="math-inline">$\mathcal{N}(0, 1)$</span> (using the Central Limit Theorem from Chapter 8). The two-tailed p-value is:
 
 
-<div class="math-block">$p\text{-value} = 2\bigl(1 - \Phi(|z|)\bigr)$</div>
+<div class="math-block">$$p\text{-value} = 2\bigl(1 - \Phi(|z|)\bigr)$$</div>
 
 
 where <span class="math-inline">$\Phi$</span> is the standard normal CDF from Chapter 8.
 
+<a id="worked-example-981-is-model-b-better"></a>
 ### Worked Example 9.8.1 — Is Model B Better?
 
 Model A: 70 correct out of 100. <span class="math-inline">$\hat{p}_A = 0.70$</span>.
@@ -7990,31 +8710,31 @@ Model B: 82 correct out of 100. <span class="math-inline">$\hat{p}_B = 0.82$</sp
 
 **Step 1 — Pooled proportion:**
 
-<div class="math-block">$\hat{p}_{\text{pool}} = \frac{70 + 82}{100 + 100} = \frac{152}{200} = 0.76$</div>
+<div class="math-block">$$\hat{p}_{\text{pool}} = \frac{70 + 82}{100 + 100} = \frac{152}{200} = 0.76$$</div>
 
 
 **Step 2 — Standard error:**
 
-<div class="math-block">$\text{SE} = \sqrt{0.76 \times 0.24 \times \left(\frac{1}{100} + \frac{1}{100}\right)} = \sqrt{0.1824 \times 0.02} = \sqrt{0.003648}$</div>
+<div class="math-block">$$\text{SE} = \sqrt{0.76 \times 0.24 \times \left(\frac{1}{100} + \frac{1}{100}\right)} = \sqrt{0.1824 \times 0.02} = \sqrt{0.003648}$$</div>
 
 
-<div class="math-block">$= 0.06040$</div>
+<div class="math-block">$$= 0.06040$$</div>
 
 
 **Step 3 — Z-statistic:**
 
-<div class="math-block">$z = \frac{0.82 - 0.70}{0.06040} = \frac{0.12}{0.06040} \approx 1.987$</div>
+<div class="math-block">$$z = \frac{0.82 - 0.70}{0.06040} = \frac{0.12}{0.06040} \approx 1.987$$</div>
 
 
 **Step 4 — P-value:**
 
-<div class="math-block">$\Phi(1.987) = \frac{1}{2}\!\left[1 + \text{erf}\!\left(\frac{1.987}{\sqrt{2}}\right)\right] = \frac{1}{2}\!\left[1 + \text{erf}(1.405)\right]$</div>
+<div class="math-block">$$\Phi(1.987) = \frac{1}{2}\!\left[1 + \text{erf}\!\left(\frac{1.987}{\sqrt{2}}\right)\right] = \frac{1}{2}\!\left[1 + \text{erf}(1.405)\right]$$</div>
 
 
 <span class="math-inline">$\text{erf}(1.405) \approx 0.9531$</span>, so <span class="math-inline">$\Phi(1.987) \approx \frac{1}{2}(1.9531) = 0.9766$</span>.
 
 
-<div class="math-block">$p\text{-value} = 2(1 - 0.9766) = 2(0.0234) = 0.0469$</div>
+<div class="math-block">$$p\text{-value} = 2(1 - 0.9766) = 2(0.0234) = 0.0469$$</div>
 
 
 **Decision:** <span class="math-inline">$p\text{-value} = 0.047 < 0.05$</span>. We reject <span class="math-inline">$H_0$</span> at the 5% significance level. The improvement from 70% to 82% on 100 test examples is statistically significant — it is unlikely to be random chance.
@@ -8025,6 +8745,7 @@ Model B: 82 correct out of 100. <span class="math-inline">$\hat{p}_B = 0.82$</sp
 2. Consider collecting more test data to get a more reliable estimate.
 3. Check whether a 12-percentage-point improvement matters in your application (practical significance vs. statistical significance).
 
+<a id="engineers-angle-20"></a>
 ### Engineer's Angle
 
 ```python
@@ -8074,8 +8795,10 @@ z3, pv3 = two_proportion_z_test(k_A=700, n_A=1000, k_B=820, n_B=1000)
 
 ---
 
+<a id="99-confidence-intervals"></a>
 ## 9.9 Confidence Intervals
 
+<a id="plain-english-first-27"></a>
 ### Plain English First
 
 A point estimate like "our model achieves 82% accuracy" is incomplete. It tells you the center of the estimate but nothing about the uncertainty. A confidence interval gives you a range that quantifies that uncertainty.
@@ -8086,6 +8809,7 @@ The common reading of a 95% confidence interval <span class="math-inline">$[\hat
 
 Here is the correct interpretation, and why the wrong reading is so tempting but incorrect.
 
+<a id="the-correct-interpretation"></a>
 ### The Correct Interpretation
 
 A 95% confidence interval is constructed by a procedure. If you repeat the procedure — collect a new sample, compute the interval — across many repetitions, **95% of the intervals you construct will contain the true parameter**.
@@ -8096,12 +8820,13 @@ The true parameter <span class="math-inline">$p^*$</span> is a fixed (unknown) n
 
 **Practical implication:** "I am 95% confident" means "the procedure that generated this interval is correct 95% of the time." It is a statement about the reliability of your measurement process, not a probability about this specific interval.
 
+<a id="formal-notation-25"></a>
 ### Formal Notation
 
 For a proportion <span class="math-inline">$\hat{p}$</span> estimated from <span class="math-inline">$n$</span> observations, the **Wald confidence interval** at level <span class="math-inline">$1 - \alpha$</span> is:
 
 
-<div class="math-block">$\hat{p} \pm z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$</div>
+<div class="math-block">$$\hat{p} \pm z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$</div>
 
 
 where <span class="math-inline">$z_{\alpha/2}$</span> is the critical value from the standard normal such that <span class="math-inline">$\Phi(z_{\alpha/2}) = 1 - \alpha/2$</span>.
@@ -8112,6 +8837,7 @@ For <span class="math-inline">$\alpha = 0.01$</span> (99% CI): <span class="math
 
 **Trust this result:** <span class="math-inline">$z_{0.025} = 1.96$</span> is the value such that 2.5% of the standard normal distribution lies above it. It comes from <span class="math-inline">$\Phi^{-1}(0.975)$</span>, which does not have a closed form but is a standard table entry.
 
+<a id="worked-example-991-accuracy-confidence-interval"></a>
 ### Worked Example 9.9.1 — Accuracy Confidence Interval
 
 Model B achieved 82% accuracy on <span class="math-inline">$n = 100$</span> test examples. Construct a 95% confidence interval for the true accuracy <span class="math-inline">$p^*$</span>.
@@ -8120,23 +8846,24 @@ Model B achieved 82% accuracy on <span class="math-inline">$n = 100$</span> test
 
 **Step 2 — Standard error:**
 
-<div class="math-block">$\text{SE} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} = \sqrt{\frac{0.82 \times 0.18}{100}} = \sqrt{\frac{0.1476}{100}} = \sqrt{0.001476} = 0.03842$</div>
+<div class="math-block">$$\text{SE} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} = \sqrt{\frac{0.82 \times 0.18}{100}} = \sqrt{\frac{0.1476}{100}} = \sqrt{0.001476} = 0.03842$$</div>
 
 
 **Step 3 — Margin of error:**
 
-<div class="math-block">$E = 1.96 \times 0.03842 = 0.07530$</div>
+<div class="math-block">$$E = 1.96 \times 0.03842 = 0.07530$$</div>
 
 
 **Step 4 — Confidence interval:**
 
-<div class="math-block">$[0.82 - 0.0753, \; 0.82 + 0.0753] = [0.7447, \; 0.8953]$</div>
+<div class="math-block">$$[0.82 - 0.0753, \; 0.82 + 0.0753] = [0.7447, \; 0.8953]$$</div>
 
 
 **Correct interpretation:** The procedure used to construct this interval has the property that 95% of such intervals contain the true accuracy. This specific interval <span class="math-inline">$[0.745, 0.895]$</span> is a realization of that procedure.
 
 **Practical reading:** The true accuracy is somewhere in the range 74.5% to 89.5%. That is a wide interval — a 15-percentage-point spread — because <span class="math-inline">$n = 100$</span> is not many test examples.
 
+<a id="worked-example-992-how-many-examples-do-you-need"></a>
 ### Worked Example 9.9.2 — How Many Examples Do You Need?
 
 How large a test set is needed for a 95% CI with margin of error <span class="math-inline">$E = \pm 2\%$</span> around an accuracy of <span class="math-inline">$\hat{p} = 0.82$</span>?
@@ -8144,11 +8871,11 @@ How large a test set is needed for a 95% CI with margin of error <span class="ma
 **Rearrange** <span class="math-inline">$E = 1.96\sqrt{\hat{p}(1-\hat{p})/n}$</span> for <span class="math-inline">$n$</span>:
 
 
-<div class="math-block">$n = \frac{(1.96)^2 \hat{p}(1-\hat{p})}{E^2} = \frac{3.8416 \times 0.82 \times 0.18}{(0.02)^2}$</div>
+<div class="math-block">$$n = \frac{(1.96)^2 \hat{p}(1-\hat{p})}{E^2} = \frac{3.8416 \times 0.82 \times 0.18}{(0.02)^2}$$</div>
 
 
 
-<div class="math-block">$= \frac{3.8416 \times 0.1476}{0.0004} = \frac{0.5672}{0.0004} = 1418$</div>
+<div class="math-block">$$= \frac{3.8416 \times 0.1476}{0.0004} = \frac{0.5672}{0.0004} = 1418$$</div>
 
 
 **You need approximately 1,418 test examples** to achieve a 95% CI with half-width of 2 percentage points. With only 100 test examples (as in Example 9.9.1), the half-width is about 7.5 percentage points — four times wider.
@@ -8163,6 +8890,7 @@ How large a test set is needed for a 95% CI with margin of error <span class="ma
 
 **The key insight:** Halving the confidence interval width requires quadrupling the test set size (because SE scales as <span class="math-inline">$1/\sqrt{n}$</span>). Evaluating models reliably is expensive.
 
+<a id="engineers-angle-21"></a>
 ### Engineer's Angle
 
 ```python
@@ -8226,6 +8954,7 @@ for n in [100, 400, 1000, 1418, 10000]:
 
 ---
 
+<a id="910-connecting-everything-the-full-model-evaluation-pipeline"></a>
 ## 9.10 Connecting Everything: The Full Model Evaluation Pipeline
 
 This chapter has built a complete framework for statistical decision-making in machine learning. Here is how the pieces connect in a real evaluation pipeline.
@@ -8242,6 +8971,7 @@ This chapter has built a complete framework for statistical decision-making in m
 
 ---
 
+<a id="911-summary-table"></a>
 ## 9.11 Summary Table
 
 | Concept | Formula / Rule | ML Application |
@@ -8268,8 +8998,10 @@ This chapter has built a complete framework for statistical decision-making in m
 
 ---
 
+<a id="912-exercises"></a>
 ## 9.12 Exercises
 
+<a id="exercise-91-easy-mle-for-bernoulli"></a>
 ### Exercise 9.1 [Easy] — MLE for Bernoulli
 
 A binary spam classifier is evaluated on 8 emails, and correctly predicts 6 of them.
@@ -8289,53 +9021,53 @@ A binary spam classifier is evaluated on 8 emails, and correctly predicts 6 of t
 **(a)** <span class="math-inline">$n = 8$</span>, <span class="math-inline">$k = 6$</span>. The log-likelihood is:
 
 
-<div class="math-block">$\ell(p) = k \log p + (n - k)\log(1-p) = 6\log p + 2\log(1-p)$</div>
+<div class="math-block">$$\ell(p) = k \log p + (n - k)\log(1-p) = 6\log p + 2\log(1-p)$$</div>
 
 
 **(b)** Differentiating and setting to zero:
 
 
-<div class="math-block">$\frac{d\ell}{dp} = \frac{6}{p} - \frac{2}{1-p} = 0$</div>
+<div class="math-block">$$\frac{d\ell}{dp} = \frac{6}{p} - \frac{2}{1-p} = 0$$</div>
 
 
 
-<div class="math-block">$6(1-p) = 2p$</div>
+<div class="math-block">$$6(1-p) = 2p$$</div>
 
 
 
-<div class="math-block">$6 - 6p = 2p$</div>
+<div class="math-block">$$6 - 6p = 2p$$</div>
 
 
 
-<div class="math-block">$6 = 8p$</div>
+<div class="math-block">$$6 = 8p$$</div>
 
 
 
-<div class="math-block">$\hat{p}_{\text{MLE}} = \frac{6}{8} = 0.75$</div>
+<div class="math-block">$$\hat{p}_{\text{MLE}} = \frac{6}{8} = 0.75$$</div>
 
 
 **(c)** Evaluating at <span class="math-inline">$\hat{p} = 0.75$</span>:
 
 
-<div class="math-block">$\ell(0.75) = 6\log(0.75) + 2\log(0.25)$</div>
+<div class="math-block">$$\ell(0.75) = 6\log(0.75) + 2\log(0.25)$$</div>
 
 
-<div class="math-block">$= 6(-0.2877) + 2(-1.3863)$</div>
+<div class="math-block">$$= 6(-0.2877) + 2(-1.3863)$$</div>
 
 
-<div class="math-block">$= -1.7262 - 2.7726 = -4.4988$</div>
+<div class="math-block">$$= -1.7262 - 2.7726 = -4.4988$$</div>
 
 
 Evaluating at <span class="math-inline">$p = 0.9$</span>:
 
 
-<div class="math-block">$\ell(0.9) = 6\log(0.9) + 2\log(0.1)$</div>
+<div class="math-block">$$\ell(0.9) = 6\log(0.9) + 2\log(0.1)$$</div>
 
 
-<div class="math-block">$= 6(-0.1054) + 2(-2.3026)$</div>
+<div class="math-block">$$= 6(-0.1054) + 2(-2.3026)$$</div>
 
 
-<div class="math-block">$= -0.6322 - 4.6052 = -5.2374$</div>
+<div class="math-block">$$= -0.6322 - 4.6052 = -5.2374$$</div>
 
 
 Since <span class="math-inline">$-4.4988 > -5.2374$</span>, the MLE at <span class="math-inline">$p = 0.75$</span> has higher log-likelihood than <span class="math-inline">$p = 0.9$</span>. <span class="math-inline">$\checkmark$</span>
@@ -8344,6 +9076,7 @@ Since <span class="math-inline">$-4.4988 > -5.2374$</span>, the MLE at <span cla
 
 ---
 
+<a id="exercise-92-easy-normal-equation"></a>
 ### Exercise 9.2 [Easy] — Normal Equation
 
 Fit a linear model <span class="math-inline">$\hat{y} = w_1 x + w_0$</span> to the data points <span class="math-inline">$(0, 1)$</span>, <span class="math-inline">$(1, 3)$</span>, <span class="math-inline">$(2, 4)$</span> using the Normal Equation.
@@ -8365,37 +9098,37 @@ Fit a linear model <span class="math-inline">$\hat{y} = w_1 x + w_0$</span> to t
 **(a)**
 
 
-<div class="math-block">$X = \begin{bmatrix} 0 & 1 \\ 1 & 1 \\ 2 & 1 \end{bmatrix}, \qquad \mathbf{y} = \begin{bmatrix} 1 \\ 3 \\ 4 \end{bmatrix}$</div>
+<div class="math-block">$$X = \begin{bmatrix} 0 & 1 \\ 1 & 1 \\ 2 & 1 \end{bmatrix}, \qquad \mathbf{y} = \begin{bmatrix} 1 \\ 3 \\ 4 \end{bmatrix}$$</div>
 
 
 **(b)**
 
 
-<div class="math-block">$X^TX = \begin{bmatrix} 0 & 1 & 2 \\ 1 & 1 & 1 \end{bmatrix}\begin{bmatrix} 0 & 1 \\ 1 & 1 \\ 2 & 1 \end{bmatrix} = \begin{bmatrix} 0+1+4 & 0+1+2 \\ 0+1+2 & 1+1+1 \end{bmatrix} = \begin{bmatrix} 5 & 3 \\ 3 & 3 \end{bmatrix}$</div>
+<div class="math-block">$$X^TX = \begin{bmatrix} 0 & 1 & 2 \\ 1 & 1 & 1 \end{bmatrix}\begin{bmatrix} 0 & 1 \\ 1 & 1 \\ 2 & 1 \end{bmatrix} = \begin{bmatrix} 0+1+4 & 0+1+2 \\ 0+1+2 & 1+1+1 \end{bmatrix} = \begin{bmatrix} 5 & 3 \\ 3 & 3 \end{bmatrix}$$</div>
 
 
 
-<div class="math-block">$X^T\mathbf{y} = \begin{bmatrix} 0 & 1 & 2 \\ 1 & 1 & 1 \end{bmatrix}\begin{bmatrix} 1 \\ 3 \\ 4 \end{bmatrix} = \begin{bmatrix} 0+3+8 \\ 1+3+4 \end{bmatrix} = \begin{bmatrix} 11 \\ 8 \end{bmatrix}$</div>
+<div class="math-block">$$X^T\mathbf{y} = \begin{bmatrix} 0 & 1 & 2 \\ 1 & 1 & 1 \end{bmatrix}\begin{bmatrix} 1 \\ 3 \\ 4 \end{bmatrix} = \begin{bmatrix} 0+3+8 \\ 1+3+4 \end{bmatrix} = \begin{bmatrix} 11 \\ 8 \end{bmatrix}$$</div>
 
 
 **(c)**
 
 
-<div class="math-block">$\det\begin{bmatrix} 5 & 3 \\ 3 & 3 \end{bmatrix} = 5 \times 3 - 3 \times 3 = 15 - 9 = 6$</div>
+<div class="math-block">$$\det\begin{bmatrix} 5 & 3 \\ 3 & 3 \end{bmatrix} = 5 \times 3 - 3 \times 3 = 15 - 9 = 6$$</div>
 
 
 
-<div class="math-block">$(X^TX)^{-1} = \frac{1}{6}\begin{bmatrix} 3 & -3 \\ -3 & 5 \end{bmatrix} = \begin{bmatrix} 1/2 & -1/2 \\ -1/2 & 5/6 \end{bmatrix}$</div>
+<div class="math-block">$$(X^TX)^{-1} = \frac{1}{6}\begin{bmatrix} 3 & -3 \\ -3 & 5 \end{bmatrix} = \begin{bmatrix} 1/2 & -1/2 \\ -1/2 & 5/6 \end{bmatrix}$$</div>
 
 
 **(d)**
 
 
-<div class="math-block">$w_1 = \frac{1}{2}(11) + \left(-\frac{1}{2}\right)(8) = 5.5 - 4.0 = 1.5$</div>
+<div class="math-block">$$w_1 = \frac{1}{2}(11) + \left(-\frac{1}{2}\right)(8) = 5.5 - 4.0 = 1.5$$</div>
 
 
 
-<div class="math-block">$w_0 = \left(-\frac{1}{2}\right)(11) + \frac{5}{6}(8) = -5.5 + \frac{40}{6} = -5.5 + 6.\overline{6} = 1.1\overline{6} = \frac{7}{6}$</div>
+<div class="math-block">$$w_0 = \left(-\frac{1}{2}\right)(11) + \frac{5}{6}(8) = -5.5 + \frac{40}{6} = -5.5 + 6.\overline{6} = 1.1\overline{6} = \frac{7}{6}$$</div>
 
 
 **Fitted model:** <span class="math-inline">$\hat{y} = 1.5x + \frac{7}{6} \approx 1.5x + 1.167$</span>
@@ -8403,11 +9136,12 @@ Fit a linear model <span class="math-inline">$\hat{y} = w_1 x + w_0$</span> to t
 **(e)** Verify <span class="math-inline">$X^TX\mathbf{w} = X^T\mathbf{y}$</span>:
 
 
-<div class="math-block">$\begin{bmatrix} 5 & 3 \\ 3 & 3 \end{bmatrix}\begin{bmatrix} 3/2 \\ 7/6 \end{bmatrix} = \begin{bmatrix} 5(3/2) + 3(7/6) \\ 3(3/2) + 3(7/6) \end{bmatrix} = \begin{bmatrix} 15/2 + 7/2 \\ 9/2 + 7/2 \end{bmatrix} = \begin{bmatrix} 22/2 \\ 16/2 \end{bmatrix} = \begin{bmatrix} 11 \\ 8 \end{bmatrix} = X^T\mathbf{y} \checkmark$</div>
+<div class="math-block">$$\begin{bmatrix} 5 & 3 \\ 3 & 3 \end{bmatrix}\begin{bmatrix} 3/2 \\ 7/6 \end{bmatrix} = \begin{bmatrix} 5(3/2) + 3(7/6) \\ 3(3/2) + 3(7/6) \end{bmatrix} = \begin{bmatrix} 15/2 + 7/2 \\ 9/2 + 7/2 \end{bmatrix} = \begin{bmatrix} 22/2 \\ 16/2 \end{bmatrix} = \begin{bmatrix} 11 \\ 8 \end{bmatrix} = X^T\mathbf{y} \checkmark$$</div>
 
 
 ---
 
+<a id="exercise-93-medium-bias-variance-decomposition"></a>
 ### Exercise 9.3 [Medium] — Bias-Variance Decomposition
 
 True function: <span class="math-inline">$f(x) = x^2$</span>. Test point: <span class="math-inline">$x_0 = 2$</span>, so <span class="math-inline">$f(2) = 4$</span>. Noise: <span class="math-inline">$\sigma^2 = 1$</span>.
@@ -8431,40 +9165,40 @@ You have two models:
 **(a) Model P:**
 
 
-<div class="math-block">$\mathbb{E}[\hat{f}_P(2)] = \frac{3.5 + 4.0 + 4.5 + 4.0}{4} = \frac{16}{4} = 4$</div>
+<div class="math-block">$$\mathbb{E}[\hat{f}_P(2)] = \frac{3.5 + 4.0 + 4.5 + 4.0}{4} = \frac{16}{4} = 4$$</div>
 
 
 
-<div class="math-block">$\text{Bias}_P = 4 - 4 = 0, \qquad \text{Bias}_P^2 = 0$</div>
+<div class="math-block">$$\text{Bias}_P = 4 - 4 = 0, \qquad \text{Bias}_P^2 = 0$$</div>
 
 
 
-<div class="math-block">$\text{Var}_P = \frac{(3.5-4)^2 + (4.0-4)^2 + (4.5-4)^2 + (4.0-4)^2}{4}$</div>
+<div class="math-block">$$\text{Var}_P = \frac{(3.5-4)^2 + (4.0-4)^2 + (4.5-4)^2 + (4.0-4)^2}{4}$$</div>
 
 
-<div class="math-block">$= \frac{0.25 + 0 + 0.25 + 0}{4} = \frac{0.5}{4} = 0.125$</div>
+<div class="math-block">$$= \frac{0.25 + 0 + 0.25 + 0}{4} = \frac{0.5}{4} = 0.125$$</div>
 
 
 
-<div class="math-block">$\text{MSE}_P = 0 + 0.125 + 1 = 1.125$</div>
+<div class="math-block">$$\text{MSE}_P = 0 + 0.125 + 1 = 1.125$$</div>
 
 
 **(b) Model C:**
 
 
-<div class="math-block">$\mathbb{E}[\hat{f}_C(2)] = 2 \quad \text{(deterministic)}$</div>
+<div class="math-block">$$\mathbb{E}[\hat{f}_C(2)] = 2 \quad \text{(deterministic)}$$</div>
 
 
 
-<div class="math-block">$\text{Bias}_C = 2 - 4 = -2, \qquad \text{Bias}_C^2 = 4$</div>
+<div class="math-block">$$\text{Bias}_C = 2 - 4 = -2, \qquad \text{Bias}_C^2 = 4$$</div>
 
 
 
-<div class="math-block">$\text{Var}_C = 0 \quad \text{(constant predictor)}$</div>
+<div class="math-block">$$\text{Var}_C = 0 \quad \text{(constant predictor)}$$</div>
 
 
 
-<div class="math-block">$\text{MSE}_C = 4 + 0 + 1 = 5$</div>
+<div class="math-block">$$\text{MSE}_C = 4 + 0 + 1 = 5$$</div>
 
 
 **(c)** Model P has MSE = 1.125 vs Model C's MSE = 5. **Model P is much better.** Model C's large bias (<span class="math-inline">$-2$</span>) overwhelms its zero variance. The constant predictor of <span class="math-inline">$2$</span> is far from the true value of <span class="math-inline">$4$</span>.
@@ -8477,6 +9211,7 @@ For Model C: More data does not help at all — it always predicts 2 regardless,
 
 ---
 
+<a id="exercise-94-medium-regularization-and-the-bayesian-interpretation"></a>
 ### Exercise 9.4 [Medium] — Regularization and the Bayesian Interpretation
 
 A linear regression model has learned weight <span class="math-inline">$w = 3.0$</span> on a dataset with <span class="math-inline">$n = 50$</span> examples.
@@ -8525,6 +9260,7 @@ Setting to zero: <span class="math-inline">$g = 0.2$</span>. Since <span class="
 
 ---
 
+<a id="exercise-95-hard-full-evaluation-pipeline"></a>
 ### Exercise 9.5 [Hard] — Full Evaluation Pipeline
 
 A team trains two image classifiers on 8,000 training examples. They evaluate on a 1,000-example test set. Model A achieves 88% accuracy (880/1000 correct). Model B achieves 91% accuracy (910/1000 correct).
@@ -8548,29 +9284,29 @@ A team trains two image classifiers on 8,000 training examples. They evaluate on
 **Model A** (<span class="math-inline">$\hat{p}_A = 0.88$</span>, <span class="math-inline">$n = 1000$</span>):
 
 
-<div class="math-block">$\text{SE}_A = \sqrt{\frac{0.88 \times 0.12}{1000}} = \sqrt{\frac{0.1056}{1000}} = \sqrt{0.0001056} = 0.010276$</div>
+<div class="math-block">$$\text{SE}_A = \sqrt{\frac{0.88 \times 0.12}{1000}} = \sqrt{\frac{0.1056}{1000}} = \sqrt{0.0001056} = 0.010276$$</div>
 
 
 
-<div class="math-block">$E_A = 1.96 \times 0.010276 = 0.020141$</div>
+<div class="math-block">$$E_A = 1.96 \times 0.010276 = 0.020141$$</div>
 
 
 
-<div class="math-block">$\text{CI}_A = [0.88 - 0.0201, \; 0.88 + 0.0201] = [0.8599, \; 0.9001]$</div>
+<div class="math-block">$$\text{CI}_A = [0.88 - 0.0201, \; 0.88 + 0.0201] = [0.8599, \; 0.9001]$$</div>
 
 
 **Model B** (<span class="math-inline">$\hat{p}_B = 0.91$</span>, <span class="math-inline">$n = 1000$</span>):
 
 
-<div class="math-block">$\text{SE}_B = \sqrt{\frac{0.91 \times 0.09}{1000}} = \sqrt{\frac{0.0819}{1000}} = \sqrt{0.0000819} = 0.009050$</div>
+<div class="math-block">$$\text{SE}_B = \sqrt{\frac{0.91 \times 0.09}{1000}} = \sqrt{\frac{0.0819}{1000}} = \sqrt{0.0000819} = 0.009050$$</div>
 
 
 
-<div class="math-block">$E_B = 1.96 \times 0.009050 = 0.017738$</div>
+<div class="math-block">$$E_B = 1.96 \times 0.009050 = 0.017738$$</div>
 
 
 
-<div class="math-block">$\text{CI}_B = [0.91 - 0.0177, \; 0.91 + 0.0177] = [0.8923, \; 0.9277]$</div>
+<div class="math-block">$$\text{CI}_B = [0.91 - 0.0177, \; 0.91 + 0.0177] = [0.8923, \; 0.9277]$$</div>
 
 
 Note that the confidence intervals barely overlap. This is suggestive, but CI overlap is not a reliable significance test — always run the hypothesis test directly, as in part (b).
@@ -8578,26 +9314,26 @@ Note that the confidence intervals barely overlap. This is suggestive, but CI ov
 **(b)** Two-proportion z-test:
 
 
-<div class="math-block">$\hat{p}_{\text{pool}} = \frac{880 + 910}{1000 + 1000} = \frac{1790}{2000} = 0.895$</div>
+<div class="math-block">$$\hat{p}_{\text{pool}} = \frac{880 + 910}{1000 + 1000} = \frac{1790}{2000} = 0.895$$</div>
 
 
 
-<div class="math-block">$\text{SE} = \sqrt{0.895 \times 0.105 \times \left(\frac{1}{1000} + \frac{1}{1000}\right)} = \sqrt{0.09398 \times 0.002} = \sqrt{0.00018795}$</div>
+<div class="math-block">$$\text{SE} = \sqrt{0.895 \times 0.105 \times \left(\frac{1}{1000} + \frac{1}{1000}\right)} = \sqrt{0.09398 \times 0.002} = \sqrt{0.00018795}$$</div>
 
 
-<div class="math-block">$= 0.013710$</div>
-
-
-
-<div class="math-block">$z = \frac{0.91 - 0.88}{0.013710} = \frac{0.03}{0.013710} = 2.188$</div>
+<div class="math-block">$$= 0.013710$$</div>
 
 
 
-<div class="math-block">$\Phi(2.188) = \frac{1}{2}\!\left[1 + \text{erf}\!\left(\frac{2.188}{\sqrt{2}}\right)\right] = \frac{1}{2}[1 + \text{erf}(1.547)] \approx \frac{1}{2}[1 + 0.9714] = 0.9857$</div>
+<div class="math-block">$$z = \frac{0.91 - 0.88}{0.013710} = \frac{0.03}{0.013710} = 2.188$$</div>
 
 
 
-<div class="math-block">$p\text{-value} = 2(1 - 0.9857) = 2(0.0143) = 0.0286$</div>
+<div class="math-block">$$\Phi(2.188) = \frac{1}{2}\!\left[1 + \text{erf}\!\left(\frac{2.188}{\sqrt{2}}\right)\right] = \frac{1}{2}[1 + \text{erf}(1.547)] \approx \frac{1}{2}[1 + 0.9714] = 0.9857$$</div>
+
+
+
+<div class="math-block">$$p\text{-value} = 2(1 - 0.9857) = 2(0.0143) = 0.0286$$</div>
 
 
 Since <span class="math-inline">$0.0286 < 0.05$</span>, the improvement is **statistically significant** at <span class="math-inline">$\alpha = 0.05$</span>. <span class="math-inline">$\checkmark$</span>
@@ -8605,7 +9341,7 @@ Since <span class="math-inline">$0.0286 < 0.05$</span>, the improvement is **sta
 **(c)** Required <span class="math-inline">$n$</span> for <span class="math-inline">$\hat{p} = 0.91$</span>, <span class="math-inline">$E = 0.01$</span>:
 
 
-<div class="math-block">$n = \frac{(1.96)^2 \times 0.91 \times 0.09}{(0.01)^2} = \frac{3.8416 \times 0.0819}{0.0001} = \frac{0.31463}{0.0001} = 3146.3$</div>
+<div class="math-block">$$n = \frac{(1.96)^2 \times 0.91 \times 0.09}{(0.01)^2} = \frac{3.8416 \times 0.0819}{0.0001} = \frac{0.31463}{0.0001} = 3146.3$$</div>
 
 
 **Required test set size: <span class="math-inline">$n \approx 3{,}147$</span> examples** for a ±1% CI at 95% confidence.
@@ -8617,7 +9353,7 @@ Since <span class="math-inline">$0.0286 < 0.05$</span>, the improvement is **sta
 **(e)** Under <span class="math-inline">$H_0$</span> (all models equally good), each test has a 5% false-positive rate — a 5% chance of incorrectly declaring significance. Running 20 independent tests:
 
 
-<div class="math-block">$\text{Expected false positives} = 20 \times 0.05 = 1 \text{ false "significant" result}$</div>
+<div class="math-block">$$\text{Expected false positives} = 20 \times 0.05 = 1 \text{ false "significant" result}$$</div>
 
 
 This is the **multiple comparisons problem**. With 20 tests, you expect 1 spurious "significant" result purely by chance even if none of the models differ. To control the overall false-positive rate at 5%, apply a correction such as **Bonferroni correction**: use <span class="math-inline">$\alpha' = 0.05 / 20 = 0.0025$</span> for each individual test, so that the family-wise error rate stays at 5%.
@@ -8627,12 +9363,14 @@ The implication: in any ML research with many ablations, hyperparameter comparis
 ---
 
 *Next: Chapter 10 — Putting It All Together: a complete worked example integrating linear algebra, calculus, probability, and statistics to analyze a real machine learning system end to end.*
+<a id="chapter-10-putting-it-all-together-math-inside-a-neural-network"></a>
 # Chapter 10: Putting It All Together — Math Inside a Neural Network
 
 > *"A neural network is not magic. It is matrix multiplication, followed by a nonlinearity, followed by calculus, followed by probability. You know all of that now."*
 
 ---
 
+<a id="100-what-this-chapter-does"></a>
 ## 10.0 What This Chapter Does
 
 You have spent nine chapters building four mathematical toolkits:
@@ -8650,6 +9388,7 @@ Every equation will be tagged with the chapter that introduced it. By the end, y
 
 ---
 
+<a id="101-the-big-picture-how-the-four-pillars-combine"></a>
 ## 10.1 The Big Picture — How the Four Pillars Combine
 
 Here is the complete flow through a neural network:
@@ -8699,8 +9438,10 @@ This loop — forward pass, loss, backward pass, update — is **all** that happ
 
 ---
 
+<a id="102-the-forward-pass-computing-a-prediction"></a>
 ## 10.2 The Forward Pass — Computing a Prediction
 
+<a id="1021-the-linear-layer-mathbfh-wmathbfx-mathbfb"></a>
 ### 10.2.1 The Linear Layer: <span class="math-inline">$\mathbf{h} = W\mathbf{x} + \mathbf{b}$</span>
 
 The fundamental operation in every neural network layer is a **linear transformation** — a matrix-vector product followed by adding a bias vector.
@@ -8708,7 +9449,7 @@ The fundamental operation in every neural network layer is a **linear transforma
 For a layer with <span class="math-inline">$n_{\text{in}}$</span> input features and <span class="math-inline">$n_{\text{out}}$</span> neurons:
 
 
-<div class="math-block">$\mathbf{z} = W\mathbf{x} + \mathbf{b} \quad \text{(Ch 3 — matrix-vector product)}$</div>
+<div class="math-block">$$\mathbf{z} = W\mathbf{x} + \mathbf{b} \quad \text{(Ch 3 — matrix-vector product)}$$</div>
 
 
 where:
@@ -8720,7 +9461,7 @@ where:
 **In component form (from Ch 3):**
 
 
-<div class="math-block">$z_j = \sum_{i=1}^{n_{\text{in}}} W_{ji}\, x_i + b_j, \quad j = 1, \ldots, n_{\text{out}}$</div>
+<div class="math-block">$$z_j = \sum_{i=1}^{n_{\text{in}}} W_{ji}\, x_i + b_j, \quad j = 1, \ldots, n_{\text{out}}$$</div>
 
 
 This is the dot product of the <span class="math-inline">$j$</span>-th row of <span class="math-inline">$W$</span> with <span class="math-inline">$\mathbf{x}$</span>, plus a bias. It computes a weighted sum of the inputs for neuron <span class="math-inline">$j$</span>.
@@ -8730,15 +9471,16 @@ This is the dot product of the <span class="math-inline">$j$</span>-th row of <s
 **Concrete example for our 2→4 network:**
 
 
-<div class="math-block">$W_1 = \begin{bmatrix} w_{11} & w_{12} \\ w_{21} & w_{22} \\ w_{31} & w_{32} \\ w_{41} & w_{42} \end{bmatrix} \in \mathbb{R}^{4 \times 2}, \quad \mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}, \quad \mathbf{b}_1 \in \mathbb{R}^4$</div>
+<div class="math-block">$$W_1 = \begin{bmatrix} w_{11} & w_{12} \\ w_{21} & w_{22} \\ w_{31} & w_{32} \\ w_{41} & w_{42} \end{bmatrix} \in \mathbb{R}^{4 \times 2}, \quad \mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}, \quad \mathbf{b}_1 \in \mathbb{R}^4$$</div>
 
 
 
-<div class="math-block">$\mathbf{z}_1 = W_1 \mathbf{x} + \mathbf{b}_1 \in \mathbb{R}^4 \quad \text{(Ch 3)}$</div>
+<div class="math-block">$$\mathbf{z}_1 = W_1 \mathbf{x} + \mathbf{b}_1 \in \mathbb{R}^4 \quad \text{(Ch 3)}$$</div>
 
 
 ---
 
+<a id="1022-relu-activation-why-we-need-nonlinearity"></a>
 ### 10.2.2 ReLU Activation — Why We Need Nonlinearity
 
 After the linear layer, we apply an **activation function**. Without it, the whole network would just be a single big linear transformation — it could only learn linear boundaries. Activation functions introduce nonlinearity, giving the network expressive power.
@@ -8746,19 +9488,19 @@ After the linear layer, we apply an **activation function**. Without it, the who
 The most common activation is **ReLU** (Rectified Linear Unit):
 
 
-<div class="math-block">$\text{ReLU}(z) = \max(0, z) \quad \text{(Ch 5)}$</div>
+<div class="math-block">$$\text{ReLU}(z) = \max(0, z) \quad \text{(Ch 5)}$$</div>
 
 
 Applied element-wise to a vector:
 
 
-<div class="math-block">$\mathbf{h} = \text{ReLU}(\mathbf{z}_1) = \begin{bmatrix} \max(0, z_{1,1}) \\ \max(0, z_{1,2}) \\ \vdots \\ \max(0, z_{1,4}) \end{bmatrix}$</div>
+<div class="math-block">$$\mathbf{h} = \text{ReLU}(\mathbf{z}_1) = \begin{bmatrix} \max(0, z_{1,1}) \\ \max(0, z_{1,2}) \\ \vdots \\ \max(0, z_{1,4}) \end{bmatrix}$$</div>
 
 
 **The derivative of ReLU** (needed for backpropagation) is the step function:
 
 
-<div class="math-block">$\text{ReLU}'(z) = \begin{cases} 1 & \text{if } z > 0 \\ 0 & \text{if } z \leq 0 \end{cases} \quad \text{(Ch 5 — derivative of a piecewise function)}$</div>
+<div class="math-block">$$\text{ReLU}'(z) = \begin{cases} 1 & \text{if } z > 0 \\ 0 & \text{if } z \leq 0 \end{cases} \quad \text{(Ch 5 — derivative of a piecewise function)}$$</div>
 
 
 **Why ReLU works:** ReLU is not differentiable at exactly <span class="math-inline">$z=0$</span>, but in practice we set the derivative to 0 there (the "subgradient" convention). The key properties are:
@@ -8770,12 +9512,13 @@ Applied element-wise to a vector:
 
 ---
 
+<a id="1023-softmax-output-converting-scores-to-probabilities"></a>
 ### 10.2.3 Softmax Output — Converting Scores to Probabilities
 
 The second (output) layer produces raw **logit scores** <span class="math-inline">$\mathbf{z}_2 \in \mathbb{R}^{n_{\text{out}}}$</span>. To interpret these as probabilities over classes, we apply **softmax** (from Ch 8):
 
 
-<div class="math-block">$p_k = \text{softmax}(\mathbf{z}_2)_k = \frac{e^{z_{2,k}}}{\displaystyle\sum_{j=1}^{n_{\text{out}}} e^{z_{2,j}}}, \quad k = 1, \ldots, n_{\text{out}} \quad \text{(Ch 8)}$</div>
+<div class="math-block">$$p_k = \text{softmax}(\mathbf{z}_2)_k = \frac{e^{z_{2,k}}}{\displaystyle\sum_{j=1}^{n_{\text{out}}} e^{z_{2,j}}}, \quad k = 1, \ldots, n_{\text{out}} \quad \text{(Ch 8)}$$</div>
 
 
 **Properties (from Ch 8):**
@@ -8786,32 +9529,35 @@ The second (output) layer produces raw **logit scores** <span class="math-inline
 **Numerical stability (from Ch 8):** In practice we subtract the maximum logit before exponentiating:
 
 
-<div class="math-block">$p_k = \frac{e^{z_{2,k} - \max_j z_{2,j}}}{\displaystyle\sum_{j} e^{z_{2,j} - \max_j z_{2,j}}} \quad \text{(Ch 8 — numerically stable softmax)}$</div>
+<div class="math-block">$$p_k = \frac{e^{z_{2,k} - \max_j z_{2,j}}}{\displaystyle\sum_{j} e^{z_{2,j} - \max_j z_{2,j}}} \quad \text{(Ch 8 — numerically stable softmax)}$$</div>
 
 
 This does not change the result mathematically (the max cancels), but prevents floating-point overflow when logit values are large.
 
 ---
 
+<a id="1024-complete-forward-pass-summary"></a>
 ### 10.2.4 Complete Forward Pass Summary
 
 For a 2-layer network with input <span class="math-inline">$\mathbf{x}$</span>, parameters <span class="math-inline">$(W_1, \mathbf{b}_1, W_2, \mathbf{b}_2)$</span>:
 
 
-<div class="math-block">$\boxed{\begin{aligned}
+<div class="math-block">$$\boxed{\begin{aligned}
 \mathbf{z}_1 &= W_1 \mathbf{x} + \mathbf{b}_1 & &\text{(Ch 3 — linear layer)} \\
 \mathbf{h} &= \text{ReLU}(\mathbf{z}_1) & &\text{(Ch 5 — nonlinear activation)} \\
 \mathbf{z}_2 &= W_2 \mathbf{h} + \mathbf{b}_2 & &\text{(Ch 3 — linear layer)} \\
 \mathbf{p} &= \text{softmax}(\mathbf{z}_2) & &\text{(Ch 8 — probability distribution)}
-\end{aligned}}$</div>
+\end{aligned}}$$</div>
 
 
 The network has transformed a raw input vector into a probability distribution over classes. The question now is: how do we measure whether that distribution is good?
 
 ---
 
+<a id="103-the-loss-function-cross-entropy-from-mle"></a>
 ## 10.3 The Loss Function — Cross-Entropy from MLE
 
+<a id="1031-what-the-loss-measures"></a>
 ### 10.3.1 What the Loss Measures
 
 The loss function answers: *how wrong is the prediction?* We need a scalar number that we can minimize with gradient descent.
@@ -8819,7 +9565,7 @@ The loss function answers: *how wrong is the prediction?* We need a scalar numbe
 For classification with <span class="math-inline">$K$</span> classes, we use **cross-entropy loss**:
 
 
-<div class="math-block">$L = -\sum_{k=1}^{K} y_k \log p_k \quad \text{(Ch 8 — cross-entropy)}$</div>
+<div class="math-block">$$L = -\sum_{k=1}^{K} y_k \log p_k \quad \text{(Ch 8 — cross-entropy)}$$</div>
 
 
 where <span class="math-inline">$\mathbf{y} \in \{0,1\}^K$</span> is the **one-hot** true label vector (<span class="math-inline">$y_k = 1$</span> for the true class, 0 for all others) and <span class="math-inline">$\mathbf{p}$</span> is the softmax output.
@@ -8827,11 +9573,12 @@ where <span class="math-inline">$\mathbf{y} \in \{0,1\}^K$</span> is the **one-h
 Because <span class="math-inline">$y_k = 1$</span> for exactly one class, this simplifies to:
 
 
-<div class="math-block">$L = -\log p_{\text{true class}} \quad \text{(Ch 8)}$</div>
+<div class="math-block">$$L = -\log p_{\text{true class}} \quad \text{(Ch 8)}$$</div>
 
 
 **Intuition:** If the network assigns probability 0.99 to the correct class, <span class="math-inline">$L = -\log(0.99) \approx 0.01$</span> — small loss. If it assigns 0.01, <span class="math-inline">$L = -\log(0.01) \approx 4.6$</span> — large loss. The log function amplifies confidence in the wrong direction.
 
+<a id="1032-why-cross-entropy-comes-from-mle"></a>
 ### 10.3.2 Why Cross-Entropy Comes from MLE
 
 This is not an arbitrary choice — cross-entropy loss **is** maximum likelihood estimation for a categorical distribution.
@@ -8839,29 +9586,31 @@ This is not an arbitrary choice — cross-entropy loss **is** maximum likelihood
 **Recall from Ch 9 (MLE):** Given a model parameterized by <span class="math-inline">$\theta$</span>, MLE finds the parameters that maximize the likelihood of the observed data:
 
 
-<div class="math-block">$\hat{\theta} = \arg\max_\theta \prod_{i=1}^{n} P(\mathbf{y}^{(i)} \mid \mathbf{x}^{(i)}; \theta) \quad \text{(Ch 9 — MLE)}$</div>
+<div class="math-block">$$\hat{\theta} = \arg\max_\theta \prod_{i=1}^{n} P(\mathbf{y}^{(i)} \mid \mathbf{x}^{(i)}; \theta) \quad \text{(Ch 9 — MLE)}$$</div>
 
 
 For a neural network with softmax output, the probability the model assigns to the true label for example <span class="math-inline">$i$</span> is <span class="math-inline">$p_{\text{true class}}^{(i)}$</span>. Taking the log-likelihood (from Ch 9):
 
 
-<div class="math-block">$\log \mathcal{L}(\theta) = \sum_{i=1}^{n} \log P(\mathbf{y}^{(i)} \mid \mathbf{x}^{(i)}; \theta) = \sum_{i=1}^{n} \sum_{k=1}^{K} y_k^{(i)} \log p_k^{(i)} \quad \text{(Ch 9)}$</div>
+<div class="math-block">$$\log \mathcal{L}(\theta) = \sum_{i=1}^{n} \log P(\mathbf{y}^{(i)} \mid \mathbf{x}^{(i)}; \theta) = \sum_{i=1}^{n} \sum_{k=1}^{K} y_k^{(i)} \log p_k^{(i)} \quad \text{(Ch 9)}$$</div>
 
 
 **Maximizing** log-likelihood is equivalent to **minimizing** negative log-likelihood:
 
 
-<div class="math-block">$L = -\frac{1}{n}\sum_{i=1}^{n}\sum_{k=1}^{K} y_k^{(i)} \log p_k^{(i)} \quad \text{(Ch 8 + Ch 9 — cross-entropy = negative MLE)}$</div>
+<div class="math-block">$$L = -\frac{1}{n}\sum_{i=1}^{n}\sum_{k=1}^{K} y_k^{(i)} \log p_k^{(i)} \quad \text{(Ch 8 + Ch 9 — cross-entropy = negative MLE)}$$</div>
 
 
 This is exactly the cross-entropy loss. So every time you minimize cross-entropy, you are doing MLE — finding the network weights that make the training data most probable under the model. The connection between Ch 8 and Ch 9 is not coincidence; it is the mathematical foundation.
 
 ---
 
+<a id="104-the-backward-pass-backpropagation"></a>
 ## 10.4 The Backward Pass — Backpropagation
 
 Backpropagation is the **chain rule from Chapter 5 applied recursively** to compute the gradient of the loss with respect to every parameter in the network. We need <span class="math-inline">$\frac{\partial L}{\partial W_1}$</span>, <span class="math-inline">$\frac{\partial L}{\partial \mathbf{b}_1}$</span>, <span class="math-inline">$\frac{\partial L}{\partial W_2}$</span>, <span class="math-inline">$\frac{\partial L}{\partial \mathbf{b}_2}$</span> in order to run gradient descent.
 
+<a id="1041-the-key-insight-softmax-cross-entropy-collapses-beautifully"></a>
 ### 10.4.1 The Key Insight: Softmax + Cross-Entropy Collapses Beautifully
 
 Before working through the full chain, let's derive the gradient of cross-entropy loss through the softmax layer — this is the heart of the calculation.
@@ -8873,7 +9622,7 @@ Before working through the full chain, let's derive the gradient of cross-entrop
 Using the chain rule (Ch 5):
 
 
-<div class="math-block">$\frac{\partial L}{\partial z_{2,k}} = \sum_{j=1}^{K} \frac{\partial L}{\partial p_j} \cdot \frac{\partial p_j}{\partial z_{2,k}}$</div>
+<div class="math-block">$$\frac{\partial L}{\partial z_{2,k}} = \sum_{j=1}^{K} \frac{\partial L}{\partial p_j} \cdot \frac{\partial p_j}{\partial z_{2,k}}$$</div>
 
 
 **Step 1:** <span class="math-inline">$\frac{\partial L}{\partial p_j} = -\frac{y_j}{p_j}$</span> (derivative of <span class="math-inline">$-y_j \log p_j$</span>)
@@ -8881,39 +9630,40 @@ Using the chain rule (Ch 5):
 **Step 2:** The derivative of softmax (from Ch 8):
 
 
-<div class="math-block">$\frac{\partial p_j}{\partial z_{2,k}} = \begin{cases} p_k(1 - p_k) & \text{if } j = k \\ -p_j p_k & \text{if } j \neq k \end{cases} \quad \text{(Ch 8 — softmax Jacobian)}$</div>
+<div class="math-block">$$\frac{\partial p_j}{\partial z_{2,k}} = \begin{cases} p_k(1 - p_k) & \text{if } j = k \\ -p_j p_k & \text{if } j \neq k \end{cases} \quad \text{(Ch 8 — softmax Jacobian)}$$</div>
 
 
 **Step 3:** Putting it together:
 
 
-<div class="math-block">$\frac{\partial L}{\partial z_{2,k}} = \frac{\partial L}{\partial p_k} \cdot \frac{\partial p_k}{\partial z_{2,k}} + \sum_{j \neq k} \frac{\partial L}{\partial p_j} \cdot \frac{\partial p_j}{\partial z_{2,k}}$</div>
+<div class="math-block">$$\frac{\partial L}{\partial z_{2,k}} = \frac{\partial L}{\partial p_k} \cdot \frac{\partial p_k}{\partial z_{2,k}} + \sum_{j \neq k} \frac{\partial L}{\partial p_j} \cdot \frac{\partial p_j}{\partial z_{2,k}}$$</div>
 
 
 
-<div class="math-block">$= \left(-\frac{y_k}{p_k}\right) p_k(1-p_k) + \sum_{j \neq k}\left(-\frac{y_j}{p_j}\right)(-p_j p_k)$</div>
+<div class="math-block">$$= \left(-\frac{y_k}{p_k}\right) p_k(1-p_k) + \sum_{j \neq k}\left(-\frac{y_j}{p_j}\right)(-p_j p_k)$$</div>
 
 
 
-<div class="math-block">$= -y_k(1-p_k) + \sum_{j \neq k} y_j p_k$</div>
+<div class="math-block">$$= -y_k(1-p_k) + \sum_{j \neq k} y_j p_k$$</div>
 
 
 
-<div class="math-block">$= -y_k + y_k p_k + p_k \sum_{j \neq k} y_j$</div>
+<div class="math-block">$$= -y_k + y_k p_k + p_k \sum_{j \neq k} y_j$$</div>
 
 
 
-<div class="math-block">$= -y_k + p_k \underbrace{\sum_{j=1}^{K} y_j}_{=1 \text{ (one-hot: exactly one } y_j=1 \text{)}}$</div>
+<div class="math-block">$$= -y_k + p_k \underbrace{\sum_{j=1}^{K} y_j}_{=1 \text{ (one-hot: exactly one } y_j=1 \text{)}}$$</div>
 
 
 
-<div class="math-block">$\boxed{\frac{\partial L}{\partial z_{2,k}} = p_k - y_k} \quad \text{(Ch 5 + Ch 8 + Ch 9 — the miracle)}$</div>
+<div class="math-block">$$\boxed{\frac{\partial L}{\partial z_{2,k}} = p_k - y_k} \quad \text{(Ch 5 + Ch 8 + Ch 9 — the miracle)}$$</div>
 
 
 In vector form: <span class="math-inline">$\frac{\partial L}{\partial \mathbf{z}_2} = \mathbf{p} - \mathbf{y}$</span>.
 
 **This is the capstone of the book.** Three chapters of mathematics — the chain rule (Ch 5), softmax (Ch 8), and MLE / cross-entropy (Ch 9) — combine into a two-symbol answer: prediction minus truth. The cross-terms from the softmax Jacobian cancel exactly because the one-hot labels sum to 1. If the model predicts <span class="math-inline">$p_k = 1$</span> for the true class, the gradient is zero. If it predicts the wrong class confidently, the gradient is large and in the right direction.
 
+<a id="1042-gradient-with-respect-to-output-layer-weights-w_2"></a>
 ### 10.4.2 Gradient with Respect to Output Layer Weights <span class="math-inline">$W_2$</span>
 
 Now we work backward through the output layer. We have <span class="math-inline">$\mathbf{z}_2 = W_2 \mathbf{h} + \mathbf{b}_2$</span>.
@@ -8923,21 +9673,22 @@ Now we work backward through the output layer. We have <span class="math-inline"
 Each entry <span class="math-inline">$W_{2,kj}$</span> affects <span class="math-inline">$\mathbf{z}_2$</span> only through <span class="math-inline">$z_{2,k} = \sum_j W_{2,kj} h_j + b_{2,k}$</span>.
 
 
-<div class="math-block">$\frac{\partial L}{\partial W_{2,kj}} = \frac{\partial L}{\partial z_{2,k}} \cdot \frac{\partial z_{2,k}}{\partial W_{2,kj}} = (p_k - y_k) \cdot h_j \quad \text{(Ch 5 — chain rule)}$</div>
+<div class="math-block">$$\frac{\partial L}{\partial W_{2,kj}} = \frac{\partial L}{\partial z_{2,k}} \cdot \frac{\partial z_{2,k}}{\partial W_{2,kj}} = (p_k - y_k) \cdot h_j \quad \text{(Ch 5 — chain rule)}$$</div>
 
 
 Stacking these into matrix form (Ch 3):
 
 
-<div class="math-block">$\frac{\partial L}{\partial W_2} = (\mathbf{p} - \mathbf{y})\, \mathbf{h}^\top \quad \text{(Ch 3 — outer product, Ch 5 — chain rule)}$</div>
+<div class="math-block">$$\frac{\partial L}{\partial W_2} = (\mathbf{p} - \mathbf{y})\, \mathbf{h}^\top \quad \text{(Ch 3 — outer product, Ch 5 — chain rule)}$$</div>
 
 
 **For the bias <span class="math-inline">$\mathbf{b}_2$</span>:**
 
 
-<div class="math-block">$\frac{\partial z_{2,k}}{\partial b_{2,k}} = 1, \quad \text{so} \quad \frac{\partial L}{\partial \mathbf{b}_2} = \mathbf{p} - \mathbf{y} \quad \text{(Ch 5)}$</div>
+<div class="math-block">$$\frac{\partial z_{2,k}}{\partial b_{2,k}} = 1, \quad \text{so} \quad \frac{\partial L}{\partial \mathbf{b}_2} = \mathbf{p} - \mathbf{y} \quad \text{(Ch 5)}$$</div>
 
 
+<a id="1043-gradient-with-respect-to-hidden-layer-weights-w_1"></a>
 ### 10.4.3 Gradient with Respect to Hidden Layer Weights <span class="math-inline">$W_1$</span>
 
 To reach <span class="math-inline">$W_1$</span>, we must pass through two more operations: the output-layer multiplication and the ReLU. This is where the chain rule chains.
@@ -8945,7 +9696,7 @@ To reach <span class="math-inline">$W_1$</span>, we must pass through two more o
 **Step 1: Gradient with respect to hidden output <span class="math-inline">$\mathbf{h}$</span>**
 
 
-<div class="math-block">$\frac{\partial L}{\partial \mathbf{h}} = W_2^\top \cdot (\mathbf{p} - \mathbf{y}) \quad \text{(Ch 3 — matrix transpose, Ch 5 — chain rule for linear layer)}$</div>
+<div class="math-block">$$\frac{\partial L}{\partial \mathbf{h}} = W_2^\top \cdot (\mathbf{p} - \mathbf{y}) \quad \text{(Ch 3 — matrix transpose, Ch 5 — chain rule for linear layer)}$$</div>
 
 
 **Intuition:** <span class="math-inline">$W_2^\top$</span> "sends back" the error signal from the output to each hidden unit, weighted by how strongly that hidden unit influenced each output.
@@ -8955,7 +9706,7 @@ To reach <span class="math-inline">$W_1$</span>, we must pass through two more o
 Since <span class="math-inline">$\mathbf{h} = \text{ReLU}(\mathbf{z}_1)$</span>:
 
 
-<div class="math-block">$\frac{\partial L}{\partial \mathbf{z}_1} = \frac{\partial L}{\partial \mathbf{h}} \odot \text{ReLU}'(\mathbf{z}_1) \quad \text{(Ch 5 — chain rule, element-wise)}$</div>
+<div class="math-block">$$\frac{\partial L}{\partial \mathbf{z}_1} = \frac{\partial L}{\partial \mathbf{h}} \odot \text{ReLU}'(\mathbf{z}_1) \quad \text{(Ch 5 — chain rule, element-wise)}$$</div>
 
 
 where <span class="math-inline">$\odot$</span> is element-wise multiplication and <span class="math-inline">$\text{ReLU}'(z) = \mathbb{1}[z > 0]$</span>.
@@ -8967,66 +9718,70 @@ This is the **gating** behavior of ReLU: if a hidden neuron was "off" during the
 Since <span class="math-inline">$\mathbf{z}_1 = W_1 \mathbf{x} + \mathbf{b}_1$</span>, by the same logic as Step 2 above:
 
 
-<div class="math-block">$\frac{\partial L}{\partial W_1} = \frac{\partial L}{\partial \mathbf{z}_1} \cdot \mathbf{x}^\top \quad \text{(Ch 3 — outer product, Ch 5 — chain rule)}$</div>
+<div class="math-block">$$\frac{\partial L}{\partial W_1} = \frac{\partial L}{\partial \mathbf{z}_1} \cdot \mathbf{x}^\top \quad \text{(Ch 3 — outer product, Ch 5 — chain rule)}$$</div>
 
 
 
-<div class="math-block">$\frac{\partial L}{\partial \mathbf{b}_1} = \frac{\partial L}{\partial \mathbf{z}_1} \quad \text{(Ch 5)}$</div>
+<div class="math-block">$$\frac{\partial L}{\partial \mathbf{b}_1} = \frac{\partial L}{\partial \mathbf{z}_1} \quad \text{(Ch 5)}$$</div>
 
 
+<a id="1044-complete-backpropagation-all-gradients"></a>
 ### 10.4.4 Complete Backpropagation — All Gradients
 
 Let <span class="math-inline">$\boldsymbol{\delta}_2 = \mathbf{p} - \mathbf{y}$</span> (the output error) and <span class="math-inline">$\boldsymbol{\delta}_1 = (W_2^\top \boldsymbol{\delta}_2) \odot \text{ReLU}'(\mathbf{z}_1)$</span> (the hidden error).
 
 
-<div class="math-block">$\boxed{\begin{aligned}
+<div class="math-block">$$\boxed{\begin{aligned}
 \boldsymbol{\delta}_2 &= \mathbf{p} - \mathbf{y} & &\text{(Ch 5+8+9 — combined gradient)} \\[4pt]
 \frac{\partial L}{\partial W_2} &= \boldsymbol{\delta}_2\, \mathbf{h}^\top & &\text{(Ch 3+5 — outer product)} \\[2pt]
 \frac{\partial L}{\partial \mathbf{b}_2} &= \boldsymbol{\delta}_2 & &\text{(Ch 5)} \\[6pt]
 \boldsymbol{\delta}_1 &= (W_2^\top \boldsymbol{\delta}_2) \odot \text{ReLU}'(\mathbf{z}_1) & &\text{(Ch 3+5 — backprop through ReLU)} \\[4pt]
 \frac{\partial L}{\partial W_1} &= \boldsymbol{\delta}_1\, \mathbf{x}^\top & &\text{(Ch 3+5 — outer product)} \\[2pt]
 \frac{\partial L}{\partial \mathbf{b}_1} &= \boldsymbol{\delta}_1 & &\text{(Ch 5)}
-\end{aligned}}$</div>
+\end{aligned}}$$</div>
 
 
 The pattern is systematic: every backward step multiplies by the transpose of the forward weight matrix and then gates by the activation derivative. This is the structure that makes backpropagation efficient — each gradient is a local computation at each layer, reusing the error signal from the layer above.
 
 ---
 
+<a id="105-weight-update-gradient-descent-and-adam"></a>
 ## 10.5 Weight Update — Gradient Descent and Adam
 
 With the gradients computed, we apply the update rule.
 
+<a id="1051-vanilla-sgd"></a>
 ### 10.5.1 Vanilla SGD
 
 
-<div class="math-block">$W \leftarrow W - \alpha \frac{\partial L}{\partial W} \quad \text{(Ch 6 — gradient descent)}$</div>
+<div class="math-block">$$W \leftarrow W - \alpha \frac{\partial L}{\partial W} \quad \text{(Ch 6 — gradient descent)}$$</div>
 
 
 
-<div class="math-block">$\mathbf{b} \leftarrow \mathbf{b} - \alpha \frac{\partial L}{\partial \mathbf{b}} \quad \text{(Ch 6)}$</div>
+<div class="math-block">$$\mathbf{b} \leftarrow \mathbf{b} - \alpha \frac{\partial L}{\partial \mathbf{b}} \quad \text{(Ch 6)}$$</div>
 
 
 The learning rate <span class="math-inline">$\alpha$</span> controls the step size. Too large and training oscillates; too small and it is slow (Section 6.4 in Ch 6 showed this tradeoff explicitly).
 
+<a id="1052-adam-for-reference"></a>
 ### 10.5.2 Adam (for reference)
 
 In practice, most deep learning training uses **Adam** (from Ch 6), which adapts the learning rate per parameter:
 
 
-<div class="math-block">$\mathbf{m}_t = \beta_1 \mathbf{m}_{t-1} + (1-\beta_1)\nabla L \quad \text{(Ch 6 — first moment, like momentum)}$</div>
+<div class="math-block">$$\mathbf{m}_t = \beta_1 \mathbf{m}_{t-1} + (1-\beta_1)\nabla L \quad \text{(Ch 6 — first moment, like momentum)}$$</div>
 
 
 
-<div class="math-block">$\mathbf{v}_t = \beta_2 \mathbf{v}_{t-1} + (1-\beta_2)(\nabla L)^2 \quad \text{(Ch 6 — second moment)}$</div>
+<div class="math-block">$$\mathbf{v}_t = \beta_2 \mathbf{v}_{t-1} + (1-\beta_2)(\nabla L)^2 \quad \text{(Ch 6 — second moment)}$$</div>
 
 
 
-<div class="math-block">$\hat{\mathbf{m}}_t = \frac{\mathbf{m}_t}{1-\beta_1^t}, \quad \hat{\mathbf{v}}_t = \frac{\mathbf{v}_t}{1-\beta_2^t} \quad \text{(Ch 6 — bias correction)}$</div>
+<div class="math-block">$$\hat{\mathbf{m}}_t = \frac{\mathbf{m}_t}{1-\beta_1^t}, \quad \hat{\mathbf{v}}_t = \frac{\mathbf{v}_t}{1-\beta_2^t} \quad \text{(Ch 6 — bias correction)}$$</div>
 
 
 
-<div class="math-block">$\theta_t = \theta_{t-1} - \alpha \frac{\hat{\mathbf{m}}_t}{\sqrt{\hat{\mathbf{v}}_t} + \epsilon} \quad \text{(Ch 6 — Adam update)}$</div>
+<div class="math-block">$$\theta_t = \theta_{t-1} - \alpha \frac{\hat{\mathbf{m}}_t}{\sqrt{\hat{\mathbf{v}}_t} + \epsilon} \quad \text{(Ch 6 — Adam update)}$$</div>
 
 
 Default hyperparameters: <span class="math-inline">$\alpha=0.001$</span>, <span class="math-inline">$\beta_1=0.9$</span>, <span class="math-inline">$\beta_2=0.999$</span>, <span class="math-inline">$\epsilon=10^{-8}$</span>.
@@ -9037,16 +9792,18 @@ The from-scratch implementation in Section 10.7 uses vanilla SGD for clarity. Ad
 
 ---
 
+<a id="106-regularization-in-neural-networks"></a>
 ## 10.6 Regularization in Neural Networks
 
 Large neural networks have millions of parameters and can memorize training data perfectly — fitting noise rather than patterns. **Regularization** (Ch 9) fights this overfitting.
 
+<a id="1061-l2-weight-decay"></a>
 ### 10.6.1 L2 Weight Decay
 
 Add a penalty on large weights to the loss:
 
 
-<div class="math-block">$L_{\text{reg}} = L_{\text{CE}} + \frac{\lambda}{2} \|W\|_F^2 \quad \text{(Ch 9 — L2 regularization)}$</div>
+<div class="math-block">$$L_{\text{reg}} = L_{\text{CE}} + \frac{\lambda}{2} \|W\|_F^2 \quad \text{(Ch 9 — L2 regularization)}$$</div>
 
 
 where <span class="math-inline">$\|W\|_F^2 = \sum_{i,j} W_{ij}^2$</span> is the squared Frobenius norm of the weight matrix (the matrix analog of the Euclidean norm from Ch 2).
@@ -9054,13 +9811,13 @@ where <span class="math-inline">$\|W\|_F^2 = \sum_{i,j} W_{ij}^2$</span> is the 
 The gradient of the regularization term is:
 
 
-<div class="math-block">$\frac{\partial}{\partial W}\left(\frac{\lambda}{2}\|W\|_F^2\right) = \lambda W \quad \text{(Ch 5 — derivative of squared norm)}$</div>
+<div class="math-block">$$\frac{\partial}{\partial W}\left(\frac{\lambda}{2}\|W\|_F^2\right) = \lambda W \quad \text{(Ch 5 — derivative of squared norm)}$$</div>
 
 
 So the modified weight update becomes:
 
 
-<div class="math-block">$W \leftarrow W - \alpha\left(\frac{\partial L_{\text{CE}}}{\partial W} + \lambda W\right) = W(1 - \alpha\lambda) - \alpha\frac{\partial L_{\text{CE}}}{\partial W} \quad \text{(Ch 6 — weight decay update)}$</div>
+<div class="math-block">$$W \leftarrow W - \alpha\left(\frac{\partial L_{\text{CE}}}{\partial W} + \lambda W\right) = W(1 - \alpha\lambda) - \alpha\frac{\partial L_{\text{CE}}}{\partial W} \quad \text{(Ch 6 — weight decay update)}$$</div>
 
 
 The factor <span class="math-inline">$(1 - \alpha\lambda)$</span> multiplies the weights before the gradient step — it *decays* the weights toward zero at every update, which is why this is called weight decay.
@@ -9068,15 +9825,16 @@ The factor <span class="math-inline">$(1 - \alpha\lambda)$</span> multiplies the
 **Statistical interpretation (from Ch 9):** L2 regularization is equivalent to placing a Gaussian prior on the weights and doing MAP (maximum a posteriori) estimation rather than pure MLE. The MAP solution is:
 
 
-<div class="math-block">$\hat{\theta}_{\text{MAP}} = \arg\max_\theta \left[\log \mathcal{L}(\theta) - \frac{\lambda}{2}\|\theta\|^2\right] \quad \text{(Ch 9 — MAP = MLE + prior)}$</div>
+<div class="math-block">$$\hat{\theta}_{\text{MAP}} = \arg\max_\theta \left[\log \mathcal{L}(\theta) - \frac{\lambda}{2}\|\theta\|^2\right] \quad \text{(Ch 9 — MAP = MLE + prior)}$$</div>
 
 
+<a id="1062-dropout-regularization-by-forgetting"></a>
 ### 10.6.2 Dropout — Regularization by Forgetting
 
 **Dropout** is a regularization technique specific to neural networks. During training, each neuron's output is randomly zeroed out with probability <span class="math-inline">$p$</span> (typically <span class="math-inline">$p=0.5$</span>):
 
 
-<div class="math-block">$h_j^{\text{drop}} = \begin{cases} h_j / (1-p) & \text{with probability } 1-p \\ 0 & \text{with probability } p \end{cases}$</div>
+<div class="math-block">$$h_j^{\text{drop}} = \begin{cases} h_j / (1-p) & \text{with probability } 1-p \\ 0 & \text{with probability } p \end{cases}$$</div>
 
 
 The division by <span class="math-inline">$(1-p)$</span> is the **inverted dropout** scaling — it ensures the expected value of <span class="math-inline">$h_j^{\text{drop}}$</span> equals <span class="math-inline">$h_j$</span>, so we can use the network at test time without any dropout (just forward-pass as normal).
@@ -9089,6 +9847,7 @@ The division by <span class="math-inline">$(1-p)$</span> is the **inverted dropo
 
 ---
 
+<a id="107-complete-from-scratch-implementation"></a>
 ## 10.7 Complete From-Scratch Implementation
 
 We now build everything from scratch. This is a 2-layer neural network:
@@ -9326,6 +10085,7 @@ print()
 print(f"Final avg cross-entropy loss: {avg_loss:.6f}")
 ```
 
+<a id="1071-running-the-code-verified-output"></a>
 ### 10.7.1 Running the Code — Verified Output
 
 When you run the code above (Python 3, no dependencies), you get:
@@ -9401,6 +10161,7 @@ Final avg cross-entropy loss: 0.000409
 
 The loss starts near <span class="math-inline">$\ln(2) \approx 0.693$</span> (the entropy of a uniform binary distribution — from Ch 8), drops rapidly to below 0.01 by epoch 500, and converges to **0.000409** — far below the 0.05 target. All 4 XOR predictions are correct.
 
+<a id="1072-tracing-the-math-through-one-training-step"></a>
 ### 10.7.2 Tracing the Math Through One Training Step
 
 Let's trace one backward pass step by step, mapping each computation to its equation:
@@ -9411,41 +10172,42 @@ After the forward pass, suppose <span class="math-inline">$\mathbf{p} = [0.45, 0
 
 **Output error (Section 10.4.1):**
 
-<div class="math-block">$\boldsymbol{\delta}_2 = \mathbf{p} - \mathbf{y} = [0.45-0, 0.55-1] = [0.45, -0.45] \quad \text{(Ch 5+8+9)}$</div>
+<div class="math-block">$$\boldsymbol{\delta}_2 = \mathbf{p} - \mathbf{y} = [0.45-0, 0.55-1] = [0.45, -0.45] \quad \text{(Ch 5+8+9)}$$</div>
 
 
 Interpretation: class 0 is getting too much probability (0.45 instead of 0), class 1 gets too little (0.55 instead of 1). The error signal has the right sign to correct both.
 
 **Gradient for <span class="math-inline">$W_2$</span> (Section 10.4.2):**
 
-<div class="math-block">$\frac{\partial L}{\partial W_2} = \boldsymbol{\delta}_2 \otimes \mathbf{h} \quad \text{(Ch 3+5)}$</div>
+<div class="math-block">$$\frac{\partial L}{\partial W_2} = \boldsymbol{\delta}_2 \otimes \mathbf{h} \quad \text{(Ch 3+5)}$$</div>
 
 
 Each entry: <span class="math-inline">$\frac{\partial L}{\partial W_{2,kj}} = \delta_{2,k} \cdot h_j$</span>. The gradient is large where the error <span class="math-inline">$\delta_{2,k}$</span> is large **and** the hidden activation <span class="math-inline">$h_j$</span> is large — both conditions must hold.
 
 **Backprop through <span class="math-inline">$W_2$</span> (Section 10.4.3):**
 
-<div class="math-block">$\frac{\partial L}{\partial \mathbf{h}} = W_2^\top \boldsymbol{\delta}_2 \quad \text{(Ch 3+5)}$</div>
+<div class="math-block">$$\frac{\partial L}{\partial \mathbf{h}} = W_2^\top \boldsymbol{\delta}_2 \quad \text{(Ch 3+5)}$$</div>
 
 
 Each hidden unit gets a gradient signal proportional to its contribution to the output error, weighted by <span class="math-inline">$W_2$</span>.
 
 **Gate through ReLU:**
 
-<div class="math-block">$\frac{\partial L}{\partial \mathbf{z}_1} = \frac{\partial L}{\partial \mathbf{h}} \odot \text{ReLU}'(\mathbf{z}_1) \quad \text{(Ch 5)}$</div>
+<div class="math-block">$$\frac{\partial L}{\partial \mathbf{z}_1} = \frac{\partial L}{\partial \mathbf{h}} \odot \text{ReLU}'(\mathbf{z}_1) \quad \text{(Ch 5)}$$</div>
 
 
 Hidden units that were "off" (output 0 during forward pass) receive zero gradient. They do not update. Hidden units that were "on" pass the full gradient through.
 
 **SGD update:**
 
-<div class="math-block">$W_1 \leftarrow W_1 - \alpha \cdot \boldsymbol{\delta}_1 \otimes \mathbf{x} \quad \text{(Ch 6)}$</div>
+<div class="math-block">$$W_1 \leftarrow W_1 - \alpha \cdot \boldsymbol{\delta}_1 \otimes \mathbf{x} \quad \text{(Ch 6)}$$</div>
 
 
 The weight connecting input feature <span class="math-inline">$x_j$</span> to hidden unit <span class="math-inline">$i$</span> is updated proportionally to how much the feature was active (<span class="math-inline">$x_j$</span>) and how much the hidden unit's error signal is (<span class="math-inline">$\delta_{1,i}$</span>).
 
 ---
 
+<a id="108-what-you-now-know-the-complete-map"></a>
 ## 10.8 What You Now Know — The Complete Map
 
 Every concept in this book just appeared in the code above. Here is the full mapping:
@@ -9478,6 +10240,7 @@ There is not a single line of the training loop that doesn't connect to a chapte
 
 ---
 
+<a id="109-common-failure-modes-using-the-math-to-debug"></a>
 ## 10.9 Common Failure Modes — Using the Math to Debug
 
 Now that you can read the math, you can debug with it.
@@ -9505,6 +10268,7 @@ Now that you can read the math, you can debug with it.
 
 ---
 
+<a id="1010-scaling-up-from-xor-to-real-networks"></a>
 ## 10.10 Scaling Up — From XOR to Real Networks
 
 The XOR network has 4 parameters per weight matrix. Real networks have millions. How does everything we derived scale?
@@ -9532,10 +10296,12 @@ The math you derived in this chapter is what those frameworks compute. When you 
 
 ---
 
+<a id="1011-where-to-go-next"></a>
 ## 10.11 Where to Go Next
 
 You have the mathematical foundation. Here are the most productive next steps:
 
+<a id="implement-before-moving-on"></a>
 ### Implement Before Moving On
 
 Before touching a framework, implement one more from-scratch network:
@@ -9545,6 +10311,7 @@ Before touching a framework, implement one more from-scratch network:
 
 These exercises will make the abstractions in PyTorch and JAX feel transparent rather than magical.
 
+<a id="core-resources"></a>
 ### Core Resources
 
 **Linear Algebra:**
@@ -9567,6 +10334,7 @@ These exercises will make the abstractions in PyTorch and JAX feel transparent r
 - Andrej Karpathy's *makemore* and *nanoGPT* — transformer implementations with hand-written training loops that you can now read
 - *Dive into Deep Learning* (d2l.ai) — mathematical rigor with PyTorch/JAX code side by side
 
+<a id="the-next-layer-of-math"></a>
 ### The Next Layer of Math
 
 Once you're comfortable with what's in this book, these are the natural next topics:
@@ -9581,6 +10349,7 @@ Once you're comfortable with what's in this book, these are the natural next top
 
 ---
 
+<a id="1012-chapter-summary"></a>
 ## 10.12 Chapter Summary
 
 You started this book knowing high school algebra. You now understand every piece of mathematics that runs inside a neural network.
@@ -9597,6 +10366,7 @@ The weight update is gradient descent or Adam (Ch 6), moving parameters in the d
 
 ---
 
+<a id="exercises-6"></a>
 ## Exercises
 
 **10.1** In the from-scratch code, `dz2 = [p[k] - y_oh[k] for k in range(n_out)]` computes the combined softmax + cross-entropy gradient. Verify this formula by expanding the chain rule for <span class="math-inline">$K=2$</span> classes: compute <span class="math-inline">$\frac{\partial L}{\partial z_{2,0}}$</span> and <span class="math-inline">$\frac{\partial L}{\partial z_{2,1}}$</span> separately using the softmax derivative from Ch 8 and the chain rule from Ch 5.
@@ -9628,13 +10398,13 @@ The `[0,0]` example contributes slightly more loss. Both are tiny. Average <span
 *Solution:*
 
 
-<div class="math-block">$L_{\text{reg}} = L_{\text{CE}} + \frac{0.01}{2}\left(\|W_1\|_F^2 + \|W_2\|_F^2\right) \quad \text{(Ch 9)}$</div>
+<div class="math-block">$$L_{\text{reg}} = L_{\text{CE}} + \frac{0.01}{2}\left(\|W_1\|_F^2 + \|W_2\|_F^2\right) \quad \text{(Ch 9)}$$</div>
 
 
 The gradient becomes:
 
 
-<div class="math-block">$\frac{\partial L_{\text{reg}}}{\partial W_1} = \frac{\partial L_{\text{CE}}}{\partial W_1} + 0.01 \cdot W_1 = \boldsymbol{\delta}_1 \otimes \mathbf{x} + 0.01 \cdot W_1$</div>
+<div class="math-block">$$\frac{\partial L_{\text{reg}}}{\partial W_1} = \frac{\partial L_{\text{CE}}}{\partial W_1} + 0.01 \cdot W_1 = \boldsymbol{\delta}_1 \otimes \mathbf{x} + 0.01 \cdot W_1$$</div>
 
 
 The SGD update: <span class="math-inline">$W_1 \leftarrow W_1 - \alpha(\boldsymbol{\delta}_1 \otimes \mathbf{x} + 0.01 \cdot W_1) = W_1(1 - 0.01\alpha) - \alpha\,\boldsymbol{\delta}_1 \otimes \mathbf{x}$</span>.
