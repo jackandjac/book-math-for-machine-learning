@@ -1,0 +1,12 @@
+# Build artifacts
+math-for-ml-book-raw.md
+math-for-ml-book.pdf
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+
+# Node
+node_modules/
