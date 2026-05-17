@@ -23,13 +23,14 @@ pdf: $(LATEX_MASTER)
 # Build PDF using md-to-pdf (via npx — requires node/npm, no pandoc/latex needed)
 # Uses headless Chrome via Puppeteer. Run from project root.
 md-pdf: $(CHAPTERS)
-	cat $(CHAPTERS) > math-for-ml-book.md
+	cat $(CHAPTERS) > math-for-ml-book-raw.md
+	node preprocess-math.js math-for-ml-book-raw.md math-for-ml-book.md
 	node $(shell npx --no-install -p md-to-pdf which md-to-pdf 2>/dev/null || echo "$$HOME/.npm/_npx/55158e48eb5c59f7/node_modules/md-to-pdf/dist/cli.js") \
 	  --config-file .md-to-pdf.json \
 	  math-for-ml-book.md \
 	  < /dev/null
 	cp math-for-ml-book.pdf $(PDF_OUT)
-	rm math-for-ml-book.md
+	rm math-for-ml-book-raw.md
 	@echo "✓ PDF built: $(PDF_OUT)"
 
 # Build PDF directly from Markdown via pandoc (requires pandoc + texlive)

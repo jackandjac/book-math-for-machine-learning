@@ -8,7 +8,7 @@
     { "url": "https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" },
     { "url": "https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" },
     {
-      "content": "renderMathInElement(document.body, { delimiters: [ {left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\\\(', right: '\\\\)', display: false}, {left: '\\\\[', right: '\\\\]', display: true} ], throwOnError: false, strict: false });"
+      "content": "(function waitForKatex() { if (typeof renderMathInElement === 'undefined') { setTimeout(waitForKatex, 50); return; } renderMathInElement(document.body, { delimiters: [ {left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\\\(', right: '\\\\)', display: false}, {left: '\\\\[', right: '\\\\]', display: true} ], throwOnError: false, strict: false }); })()"
     }
   ],
   "pdf_options": {
