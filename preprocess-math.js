@@ -105,20 +105,22 @@ content = content.replace(/\$([^$\n]+?)\$/g, (_match, latex) => {
 });
 
 // Pass 3: restore display math as raw HTML div
-// Use a function replacer to prevent $ in latex from being interpreted as backreferences
+// Encode backslashes as &#92; so marked doesn't strip them from inline HTML content
 displayStore.forEach((latex, id) => {
+  const escaped = latex.replace(/\\/g, '&#92;');
   content = content.replace(
     `DISPLAYMATH_PLACEHOLDER_${id}_END`,
-    () => `\n<div class="math-block">$$${latex}$$</div>\n`
+    () => `\n<div class="math-block">$$${escaped}$$</div>\n`
   );
 });
 
 // Pass 4: restore inline math as raw HTML span
-// Use a function replacer to prevent $ in latex from being interpreted as backreferences
+// Encode backslashes as &#92; so marked doesn't strip them from inline HTML content
 inlineStore.forEach((latex, id) => {
+  const escaped = latex.replace(/\\/g, '&#92;');
   content = content.replace(
     `INLINEMATH_PLACEHOLDER_${id}_END`,
-    () => `<span class="math-inline">$${latex}$</span>`
+    () => `<span class="math-inline">$${escaped}$</span>`
   );
 });
 
