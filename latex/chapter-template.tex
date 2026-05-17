@@ -1,0 +1,235 @@
+% ============================================================
+%  chapter-template.tex — Markdown-to-LaTeX Conversion Guide
+%  Math for Machine Learning: A Software Engineer's Guide
+%
+%  This file is NOT included in book.tex.  It serves as a
+%  reference showing how each Markdown construct maps to its
+%  LaTeX equivalent when converting chapters by hand or when
+%  reviewing pandoc output.
+%
+%  Pandoc one-liner (run from the repo root):
+%    pandoc chapters/07-probability-foundations.md \
+%      --from markdown --to latex \
+%      --listings \
+%      -o latex/ch07.tex
+% ============================================================
+
+% ------------------------------------------------------------
+% HEADING MAPPING
+% ------------------------------------------------------------
+%
+%  Markdown                          LaTeX
+%  ────────────────────────────────  ─────────────────────────
+%  # Chapter N: Title                \chapter{Title}
+%  ## 9.2 Section Title              \section{Section Title}
+%  ### 9.2.1 Subsection Title        \subsection{Subsection Title}
+%  #### Sub-subsection Title         \subsubsection{Sub-subsection Title}
+%
+% Example:
+\chapter{Probability Foundations}         % from # Chapter 7: Probability Foundations
+\section{Sample Spaces and Events}        % from ## 7.1 Sample Spaces and Events
+\subsection{The Kolmogorov Axioms}        % from ### 7.1.1 The Kolmogorov Axioms
+
+% ------------------------------------------------------------
+% INLINE MATH
+% ------------------------------------------------------------
+%
+%  Markdown: The probability $P(A) \in [0, 1]$ for any event $A$.
+%  LaTeX:    The probability $P(A) \in [0, 1]$ for any event $A$.
+%            (identical — pandoc preserves $ delimiters)
+
+The probability $P(A) \in [0, 1]$ for any event $A$.
+
+% ------------------------------------------------------------
+% DISPLAY MATH (equation environment)
+% ------------------------------------------------------------
+%
+%  Markdown:
+%    $$
+%    \mathcal{L}(\theta) = \prod_{i=1}^{n} p(x_i \mid \theta)
+%    $$
+%
+%  LaTeX (pandoc output uses equation*; use equation for numbered):
+
+\begin{equation}
+  \mathcal{L}(\theta) = \prod_{i=1}^{n} p(x_i \mid \theta)
+  \label{eq:likelihood}
+\end{equation}
+
+% Cross-reference: see equation~\eqref{eq:likelihood}.
+
+% Multi-line aligned equations:
+\begin{align}
+  \ell(\theta)
+    &= \log \mathcal{L}(\theta) \notag \\
+    &= \sum_{i=1}^{n} \log p(x_i \mid \theta)
+    \label{eq:loglik}
+\end{align}
+
+% ------------------------------------------------------------
+% BOLD / ITALIC TEXT
+% ------------------------------------------------------------
+%
+%  Markdown: **bold**, *italic*, ***bold italic***
+%  LaTeX:    \textbf{bold}, \textit{italic}, \textbf{\textit{bold italic}}
+
+\textbf{Maximum Likelihood Estimation} (MLE) is the cornerstone of
+\textit{parametric} statistics.
+
+% ------------------------------------------------------------
+% BLOCK QUOTE
+% ------------------------------------------------------------
+%
+%  Markdown:
+%    > "A model that trains well is promising. A model you can trust is useful."
+%
+%  LaTeX:
+
+\begin{quote}
+  \itshape
+  ``A model that trains well is promising.
+    A model you can trust is useful.''
+\end{quote}
+
+% ------------------------------------------------------------
+% UNORDERED LIST
+% ------------------------------------------------------------
+%
+%  Markdown:
+%    - First item
+%    - Second item
+%      - Nested item
+%
+%  LaTeX:
+
+\begin{itemize}
+  \item First item
+  \item Second item
+    \begin{itemize}
+      \item Nested item
+    \end{itemize}
+\end{itemize}
+
+% ------------------------------------------------------------
+% ORDERED LIST
+% ------------------------------------------------------------
+%
+%  Markdown:
+%    1. Compute the likelihood.
+%    2. Take the log.
+%    3. Differentiate and set to zero.
+%
+%  LaTeX:
+
+\begin{enumerate}
+  \item Compute the likelihood.
+  \item Take the log.
+  \item Differentiate and set to zero.
+\end{enumerate}
+
+% ------------------------------------------------------------
+% TABLE
+% ------------------------------------------------------------
+%
+%  Markdown:
+%    | Fold | Val indices | Fold MSE |
+%    |------|-------------|----------|
+%    | 1    | 0, 1        | 20.141   |
+%    | 2    | 2, 3        | 8.500    |
+%
+%  LaTeX (booktabs style):
+
+\begin{table}[htbp]
+  \centering
+  \caption{5-Fold cross-validation results.}
+  \label{tab:cv-results}
+  \begin{tabular}{ccc}
+    \toprule
+    Fold & Val indices & Fold MSE \\
+    \midrule
+    1 & 0, 1 & 20.141 \\
+    2 & 2, 3 & 8.500  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% ------------------------------------------------------------
+% CODE LISTING (fenced code block)
+% ------------------------------------------------------------
+%
+%  Markdown:
+%    ```python
+%    import numpy as np
+%    w = np.linalg.solve(X.T @ X, X.T @ y)
+%    print(w)
+%    ```
+%
+%  LaTeX (listings package, style defined in preamble.tex):
+
+\begin{lstlisting}[style=python, caption={Normal Equation solution.}, label={lst:normal-eq}]
+import numpy as np
+
+# Normal Equation: w = (X^T X)^{-1} X^T y
+w = np.linalg.solve(X.T @ X, X.T @ y)
+print(w)
+\end{lstlisting}
+
+% Plain/output listing (no syntax highlighting):
+\begin{lstlisting}[style=text, caption={Program output.}]
+Weights: [1.234  0.567  -0.890]
+\end{lstlisting}
+
+% ------------------------------------------------------------
+% FIGURE
+% ------------------------------------------------------------
+%
+%  Markdown: (no native figure syntax; images use ![caption](path))
+%
+%  LaTeX:
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{figures/bias-variance-tradeoff}
+  \caption{The bias-variance tradeoff: model complexity vs.\ test error.}
+  \label{fig:bias-variance}
+\end{figure}
+
+% Cross-reference: Figure~\ref{fig:bias-variance} shows \ldots
+
+% ------------------------------------------------------------
+% DEFINITION / THEOREM ENVIRONMENTS
+% ------------------------------------------------------------
+%
+%  These environments are declared in preamble.tex.
+
+\begin{definition}[Sample Space]
+  The \textbf{sample space} $\Omega$ is the set of all possible outcomes
+  of a random experiment.
+\end{definition}
+
+\begin{theorem}[Bayes' Theorem]
+  For events $A$ and $B$ with $P(B) > 0$:
+  \begin{equation}
+    P(A \mid B) = \frac{P(B \mid A)\,P(A)}{P(B)}.
+  \end{equation}
+\end{theorem}
+
+\begin{example}[Medical Test]
+  A test has sensitivity 99\% and specificity 99\%.
+  If the disease prevalence is 1 in 10{,}000, then by Bayes' theorem
+  the positive predictive value is approximately 1\%.
+\end{example}
+
+% ------------------------------------------------------------
+% CROSS-REFERENCES
+% ------------------------------------------------------------
+%
+%  Always use \label{} on equations, figures, tables, and sections.
+%  Reference with \ref{} (number only) or \eqref{} (equation with parens).
+
+% \section{The Bias-Variance Tradeoff}
+% \label{sec:bias-variance}
+%
+% As derived in equation~\eqref{eq:loglik} and illustrated in
+% Figure~\ref{fig:bias-variance}, the decomposition holds for any
+% squared-error loss (see also Table~\ref{tab:cv-results}).

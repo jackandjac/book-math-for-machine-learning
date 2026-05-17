@@ -1,0 +1,192 @@
+% ============================================================
+%  preamble.tex — Math for Machine Learning
+%  All package imports and global settings.
+%  XeLaTeX required (fontspec, unicode-math).
+% ============================================================
+
+% --- Encoding & fonts -----------------------------------------------------------
+\usepackage{fontspec}
+\usepackage{unicode-math}
+
+% Main body font: Libertinus Serif (open-source; mirrors Linux Libertine)
+% Fall back to Latin Modern if Libertinus is not installed.
+\IfFontExistsTF{Libertinus Serif}{%
+  \setmainfont{Libertinus Serif}%
+}{%
+  \setmainfont{Latin Modern Roman}%
+}
+
+% Sans-serif used for chapter/section headings
+\IfFontExistsTF{Libertinus Sans}{%
+  \setsansfont{Libertinus Sans}%
+}{%
+  \setsansfont{Latin Modern Sans}%
+}
+
+% Monospace used for code listings
+\IfFontExistsTF{Fira Code}{%
+  \setmonofont{Fira Code}[Scale=MatchLowercase]%
+}{%
+  \setmonofont{Latin Modern Mono}[Scale=MatchLowercase]%
+}
+
+% --- Page geometry --------------------------------------------------------------
+\usepackage[
+  paperwidth  = 6.125in,
+  paperheight = 9.25in,
+  top         = 0.875in,
+  bottom      = 1in,
+  inner       = 0.875in,
+  outer       = 0.75in,
+  includeheadfoot
+]{geometry}
+
+% --- Mathematics ----------------------------------------------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}           % extends amsmath (pmatrix*, dcases, …)
+
+% Per-chapter numbering of equations, figures, and tables
+\usepackage{chngcntr}
+\counterwithin{equation}{chapter}
+\counterwithin{figure}{chapter}
+\counterwithin{table}{chapter}
+
+% Theorem-like environments
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{example}{Example}[chapter]
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{note}{Note}
+
+% --- Code listings --------------------------------------------------------------
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codebg}    {HTML}{F8F8F8}
+\definecolor{codeframe} {HTML}{DDDDDD}
+\definecolor{keyword}   {HTML}{0000CC}
+\definecolor{string}    {HTML}{006600}
+\definecolor{comment}   {HTML}{888888}
+\definecolor{number}    {HTML}{AA4400}
+
+\lstdefinestyle{python}{
+  language        = Python,
+  backgroundcolor = \color{codebg},
+  frame           = single,
+  rulecolor       = \color{codeframe},
+  basicstyle      = \small\ttfamily,
+  keywordstyle    = \color{keyword}\bfseries,
+  stringstyle     = \color{string},
+  commentstyle    = \color{comment}\itshape,
+  numberstyle     = \tiny\color{number},
+  numbers         = left,
+  numbersep       = 6pt,
+  stepnumber      = 1,
+  showstringspaces= false,
+  breaklines      = true,
+  breakatwhitespace = true,
+  tabsize         = 4,
+  captionpos      = b,
+  aboveskip       = \medskipamount,
+  belowskip       = \medskipamount,
+}
+
+\lstdefinestyle{text}{
+  backgroundcolor = \color{codebg},
+  frame           = single,
+  rulecolor       = \color{codeframe},
+  basicstyle      = \small\ttfamily,
+  numbers         = none,
+  showstringspaces= false,
+  breaklines      = true,
+  breakatwhitespace = true,
+  tabsize         = 4,
+  captionpos      = b,
+  aboveskip       = \medskipamount,
+  belowskip       = \medskipamount,
+}
+
+% Default listing style is Python
+\lstset{style=python}
+
+% --- Tables ---------------------------------------------------------------------
+\usepackage{booktabs}     % \toprule, \midrule, \bottomrule
+\usepackage{array}        % extended column types
+\usepackage{tabularx}     % auto-width columns
+
+% --- Figures & captions ---------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\captionsetup{
+  font        = small,
+  labelfont   = bf,
+  labelsep    = period,
+}
+
+% --- Hyperlinks -----------------------------------------------------------------
+\usepackage[
+  colorlinks  = true,
+  linkcolor   = black,
+  citecolor   = black,
+  urlcolor    = blue,
+  pdftitle    = {Math for Machine Learning — A Software Engineer's Guide},
+  pdfauthor   = {},
+  pdfsubject  = {Mathematics for Machine Learning},
+  pdfkeywords = {linear algebra, calculus, probability, statistics, machine learning},
+  bookmarks   = true,
+  bookmarksnumbered = true,
+  unicode     = true,
+]{hyperref}
+
+% --- Typography -----------------------------------------------------------------
+\usepackage{microtype}    % character protrusion and font expansion
+\usepackage{parskip}      % inter-paragraph spacing instead of indent
+\setlength{\parindent}{0pt}
+
+% --- Block quotes ---------------------------------------------------------------
+\usepackage{csquotes}     % \enquote{} and display block quotes
+
+% --- Headers & footers ----------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\itshape\leftmark}   % even pages: chapter name
+\fancyhead[RO]{\small\itshape\rightmark}  % odd pages:  section name
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Plain style for chapter-opening pages
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\small\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+
+% --- Misc utilities -------------------------------------------------------------
+\usepackage{enumitem}     % flexible list spacing
+\setlist{nosep, leftmargin=*}
+
+\usepackage{xspace}       % smart trailing space in macros
+
+% --- Convenience math macros ----------------------------------------------------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\inner}[2]{\left\langle#1,\,#2\right\rangle}
+\newcommand{\T}{^{\mathsf{T}}}         % transpose: \mathbf{A}\T
+\newcommand{\inv}{^{-1}}               % inverse:   \mathbf{A}\inv

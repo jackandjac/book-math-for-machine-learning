@@ -1,0 +1,107 @@
+% =============================================================================
+%  book.tex — XeLaTeX master document
+%  Math for Machine Learning: A Software Engineer's Guide
+%
+%  Build:
+%    cd latex && xelatex book.tex && xelatex book.tex
+%  (Double pass needed for TOC, cross-references, and hyperlinks.)
+%
+%  The Markdown chapters are NOT \input here directly — Markdown must first
+%  be converted to LaTeX via pandoc (see make pandoc-pdf) or hand-translated
+%  using the patterns in chapter-template.tex.  The \include stubs below are
+%  placeholders that point to the expected LaTeX filenames.
+% =============================================================================
+
+\documentclass[
+  11pt,
+  twoside,        % recto/verso layout (mirrored inner/outer margins)
+  openright,      % chapters start on odd (right-hand) pages
+  final
+]{book}
+
+% ---------------------------------------------------------------------------
+% Load all packages and settings
+% ---------------------------------------------------------------------------
+\input{preamble}
+
+% =============================================================================
+%  Document
+% =============================================================================
+\begin{document}
+
+% ---------------------------------------------------------------------------
+% Front matter
+% ---------------------------------------------------------------------------
+\frontmatter
+
+% ---- Title page ------------------------------------------------------------
+\begin{titlepage}
+  \centering
+  \vspace*{2.5cm}
+
+  {\Huge\bfseries Math for Machine Learning}\\[0.8em]
+  {\LARGE A Software Engineer's Guide}
+
+  \vspace{1.5cm}
+  \rule{0.5\textwidth}{0.4pt}
+  \vspace{1.5cm}
+
+  % Subtitle / tagline
+  {\large
+    From first principles to neural networks —\\[0.3em]
+    every formula explained, every algorithm coded.
+  }
+
+  \vfill
+
+  % Edition / year
+  {\normalsize First Edition \\ \the\year}
+\end{titlepage}
+
+% ---- Copyright / colophon page --------------------------------------------
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{small}
+\noindent
+Copyright \textcopyright\ \the\year.  All rights reserved.\\[1em]
+
+\noindent
+Typeset in \XeLaTeX\ using Libertinus Serif and Fira Code.
+\end{small}
+\vspace*{\fill}
+\clearpage
+
+% ---- Table of contents ----------------------------------------------------
+\tableofcontents
+
+% ---------------------------------------------------------------------------
+% Main matter
+% ---------------------------------------------------------------------------
+\mainmatter
+
+% Each chapter lives in its own .tex file inside the latex/ directory.
+% Convert the Markdown source with pandoc:
+%
+%   pandoc ../chapters/01-why-math-for-ml.md -o ch01.tex
+%
+% or hand-translate following the patterns in chapter-template.tex.
+%
+% Uncomment the \include lines as chapter .tex files become available.
+
+\include{ch01}   % Chapter  1 — Why Math for ML?
+\include{ch02}   % Chapter  2 — Vectors
+\include{ch03}   % Chapter  3 — Matrices
+\include{ch04}   % Chapter  4 — Decompositions
+\include{ch05}   % Chapter  5 — Derivatives
+\include{ch06}   % Chapter  6 — Gradients & Optimization
+\include{ch07}   % Chapter  7 — Probability Foundations
+\include{ch08}   % Chapter  8 — Distributions
+\include{ch09}   % Chapter  9 — Statistics for ML
+\include{ch10}   % Chapter 10 — Putting It Together
+
+% ---------------------------------------------------------------------------
+% Back matter
+% ---------------------------------------------------------------------------
+\backmatter
+
+\end{document}
